@@ -22,7 +22,7 @@ Students by the end of the course will be able to ...
 
 **Course Dates:** Tuesday, July 9 – Thursday, August 15, 2019 (6 weeks)
 
-**Class Times:** Tuesday and Thursday at 3:30–5:20pm (12 class sessions)
+**Class Times:** Tuesday and Thursday at 1:30–3:20pm (12 class sessions)
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
