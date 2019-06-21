@@ -1,4 +1,4 @@
-# FEW 2.1: Writing JavaScript Libraries
+# Title
 
 ## Course Description
 
@@ -9,6 +9,8 @@ This course focuses on creating and publishing frontend libraries in JavaScript.
 [FEW 1.2](https://github.com/Make-School-Courses/FEW-1.2-JavaScript-Foundations)
 
 ## Learning Outcomes
+
+**[INSTRUCTOR NOTE: PLEASE LIST (5-8) LEARNING OUTCOMES]**
 
 Students by the end of the course will be able to ...
 
@@ -71,12 +73,13 @@ You will implement industry best practices by:
 **More Details coming soon!**
 
 ## Evaluation
-
+**[MAKE SPECIFIC TO YOUR COURSE SO IT IS SUPER CLEAR]**
 To pass this course you must meet the following requirements:
 
 - Complete all required assignments 
 - Pass all projects according to the associated project rubric
-- Pass the final summative assessment >=75%
+- Pass the final summative assessment according to the rubric as specified in this class
+    - This will be further explained in the [study guide](ADD_STUDY_GUIDE_LNK)
 - Actively participate in class and abide by the attendance policy
 - Make up all classwork from all absences
 
