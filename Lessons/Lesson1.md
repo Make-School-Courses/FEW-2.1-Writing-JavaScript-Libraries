@@ -10,6 +10,10 @@ In this class you will begin writing the code that will be a JavaScript Library.
 1. Build a library of string functions/utilities
 1. Use JavaScript String methods
 
+### Course Progress Tracker 
+
+https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+
 ## JavaScript Libraries
 
 ### Q: What are libraries? 
@@ -111,6 +115,15 @@ JavaScript provides many method to manipulate strings already but it deosn't do 
 - snakeCase() - Removes extra space and replaces spaces with an underscore "_", and makes all characters lowercase. 
   - Example: "  what the    heck   " -> "what_the_heck"
 
+## Wrap up
+
+### Review Objective 
+
+Q: What was covered today? 
+
+### Homework
+
+[Assignment 1 - String Lib](../Assignments/assignment-1-string-lib.md)
 
 ## Minute-by-Minute [OPTIONAL]
 
