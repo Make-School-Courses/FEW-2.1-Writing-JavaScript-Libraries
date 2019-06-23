@@ -1,4 +1,4 @@
-# Class - Title Rubric
+# FEW 2.1 - Assignment 1 Strign Lib - Rubric
 
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|
