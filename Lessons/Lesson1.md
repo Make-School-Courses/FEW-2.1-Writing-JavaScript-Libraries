@@ -1,6 +1,6 @@
-# Introduction to JS Libraries 
+# FEW 2.1 - Lesson 1 - Introduction to JS Libraries 
 
-In this class you will begin writing the code that will be a JavaScript Library. 
+In this class, you will begin writing the code that will be a JavaScript Library. 
 
 ## Learning Objectives (5 min)
 
@@ -20,19 +20,19 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 A library of code is like a library of books. Imagine each book as a block of code. Unlike a traditional library that contains books on every topic, software libraries contain code that is focused in a single area. 
 
-Libraries of code like the public library makes code available to anyone who wants to use it. Unlike the public library your JavaScript library can be checked out as many times as there projects that might need to use it. 
+Libraries of code like the public library make the code available to anyone who wants to use it. Unlike the public library, your JavaScript library can be checked out as many times as there projects that might need to use it. 
 
-Libraries are portable. Books can be cheked out from the public library. Any one of your software projects can "check out" code libraries.  
+Libraries are portable. Books can be checked out from the public library. Anyone of your software projects can "check out" code libraries.  
 
 ### Q: Why make a library? 
 
-By puting code in a library you are making it portable and packaging it in a form that is easily shared. 
+By putting the code in a library you are making it portable and packaging it in a form that is easily shared. 
 
-You're also toking DRY to the next level! Code in a library can be shared across multiple projects, and when change, updates, and bug fixes are made they can all be made in a single location. 
+You're also taking DRY to the next level! The code in a library can be shared across multiple projects, and when change, updates, and bug fixes are made they can all be made in a single location. 
 
 ### Q: When to make a library? 
 
-Anytime you find you are writing the same code in more than one project. When you have code that that you want to share with other people. 
+Anytime you find you are writing the same code in more than one project. When you have code that you want to share with other people. 
 
 You've already been using libraries of code in any of the projects that you have built using NPM. 
 
@@ -72,11 +72,11 @@ Discussion: What do you see there? What are these libraries good for?
 
 ### Q: What kind of code do you see? 
 
-Take a look at a couple libraries below and look at the code. With your pair discuss the general features of the code. 
+Take a look at a couple of libraries below and look at the code. With your pair discuss the general features of the code. 
 
-Just skim the repos and look at a couple files. Usually the code will be in `index.js` or in `src` folder. 
+Just skim the repos and look at a couple of files. Usually, the code will be in `index.js` or in `src` folder. 
 
-Look for these things in each of these thinsg as you explore the repos below. 
+Look for these things in each of these things as you explore the repos below. 
 
 - How much code is there? 
 - How is organized? 
@@ -88,32 +88,15 @@ Look for these things in each of these thinsg as you explore the repos below.
 
 ## Writing your first library
 
-The goal of this first library is to make some String functions. These will be generic utilities that help you work with Strings. 
+The goal of the first homework assignment is to write a simple library. 
 
-JavaScript provides many method to manipulate strings already but it deosn't do some of the things that we might want to do. It's your job to write functions that solve the problems below. 
+Why write a simple library? If we keep it simple you will be able to do a good job and get it finished before the next class. 
 
-- capitalize() - makes first character of a given string uppercase. 
-  - Example: hello world -> Hello world
-- allCaps() - makes all characters uppercase. (this is the same as .toUppercase())
-  - Example: foo bar -> FOO BAR
-- capitalizeWords() - makes the first character of each word uppercase. Imagine that each word is separated by a space. 
-  - Example: do all the things -> Do All The Things
-    - Advanced: capitalizeHeadline() - capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from
-      - Example: the mot foo in bar -> The Most Foo in Bar
-- oddCaps() - Makes all odd characters uppercase and even characters lowercase. 
-  - Example: hello world -> hElLo wOrLd
-    - Advanced: Don't count spaces
-      - Example: hello world -> hElLo WoRlD
-  - evenCaps() - Make all even characters uppercase and the odd characters lowercase. 
-    - Example: foo bar -> FoO BaR
-      - Advanced: Don't count the spaces
-        - Example: foo bar -> FoO bAr
-- removeExtraSpaces() - Removes all spaces from the beginning and ending of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it is replaced by a single space. 
-  - Example: "   Hello    world!   " -> "Hello world!"
-- kabobCase() - Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase. 
-  - Example: "   Hello    world   " -> "hello-world"
-- snakeCase() - Removes extra space and replaces spaces with an underscore "_", and makes all characters lowercase. 
-  - Example: "  what the    heck   " -> "what_the_heck"
+Why write a library at all? Remember all of the advanatage of storing code in a central location. While it might not seem to add to much to your work flow today, this is how professionals hanlde code. 
+
+### Homework
+
+[Assignment 1 - String Lib](../Assignments/assignment-1-string-lib.md)
 
 ## Wrap up
 
@@ -121,9 +104,6 @@ JavaScript provides many method to manipulate strings already but it deosn't do 
 
 Q: What was covered today? 
 
-### Homework
-
-[Assignment 1 - String Lib](../Assignments/assignment-1-string-lib.md)
 
 ## Minute-by-Minute [OPTIONAL]
 
