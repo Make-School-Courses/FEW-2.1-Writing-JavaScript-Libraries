@@ -28,18 +28,18 @@ Students by the end of the course will be able to ...
 
 | Class |          Date          |                 Topics                  |
 |:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Tue, July 9                      | [String Libraries] |
-|  2 |   Thu, July 11                        | [NPM] |
-|  3 |   Tue, July 16                    | [Writing Tests] |
-|  4 |   Thu, July 18                        | [Continuous Integration] |
-|  5 |   Tue, July 23                     | [Math Libraries] |
-|  6 |   Thu, July 25                        | [Building with Webpack] |
-|  7 |   Tue, July 30                     | [Date Libraries] |
-|  8 |   Thu, August 1                        | [TypeScript] |
-| 9 |   Tue, August 6                       | [API Wrapper Libraries] |
-| 10 |   Thu, August 8                         | IIFEs and Script Tags |  
-| 11 |   Tue, August 13                     | Final Presentations |
-| 12 |   Thu, August 15                     | Final Exam  |
+|  1 |   Tue, July 9             | [String Libraries]                      |
+|  2 |   Thu, July 11            | [NPM]                                   |
+|  3 |   Tue, July 16            | [Writing Tests]                         |
+|  4 |   Thu, July 18            | [Continuous Integration]                |
+|  5 |   Tue, July 23            | [Math Libraries]                        |
+|  6 |   Thu, July 25            | [Building with Webpack]                 |
+|  7 |   Tue, July 30            | [Date Libraries]                        |
+|  8 |   Thu, August 1           | [TypeScript]                            |
+|  9 |   Tue, August 6           | [API Wrapper Libraries]                 |
+| 10 |   Thu, August 8           | IIFEs and Script Tags                   |  
+| 11 |   Tue, August 13          | Final Presentations                     |
+| 12 |   Thu, August 15          | Final Exam                              |
 
 [String Libraries]:https://docs.google.com/presentation/d/1JMHlFPjdAM9FLhOU3WsUfBaQyTK-pQ31rnbb3AMM5hc/edit?usp=sharing
 [NPM]:https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing
