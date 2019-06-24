@@ -117,7 +117,7 @@ Now add a new file `tests/test.js`. Your tests will be written here.
 
 When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console.
 
-A test is run by calling the:
+A test is run by calling:
 
 `test(desc, callback)`
 
