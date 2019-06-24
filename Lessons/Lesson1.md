@@ -94,6 +94,28 @@ Why write a simple library? If we keep it simple you will be able to do a good j
 
 Why write a library at all? Remember all of the advanatage of storing code in a central location. While it might not seem to add to much to your work flow today, this is how professionals hanlde code. 
 
+### String functions
+
+Strings are one of, if not, the most common data type you might work with. JavaScript provides many string functions such as: 
+
+- [`String.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [`String.charAt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [`String.endsWith()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
+- [And many more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+The problems outlines in the homework can be solved in many different ways. Here are a few ideas to get you started. 
+
+- String.charAt()
+- String.toUpperCase()
+
+Use these to make the first letter of a string uppercase. 
+
+Arrays can you solve other problems. Try making the first letter of each word in a String uppercase. Assume that each word is separated by a " ". Use these functions: 
+
+- String.split()
+- String.toUpperCase()
+- Array.join()
+
 ### Homework
 
 [Assignment 1 - String Lib](../Assignments/assignment-1-string-lib.md)
@@ -114,5 +136,5 @@ Q: What was covered today?
 | 0:20        | 0:45      | Exploring Libraries       |
 | 1:05        | 0:10      | BREAK                     |
 | 1:15        | 0:40      | Writing your first library|
-| 1:55        | 0:40      | Writing your first library|
+| 1:55        | 0:40      | Wrap up and review        |
 | TOTAL       | 2:00      |                           |
