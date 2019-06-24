@@ -12,7 +12,7 @@ Reduces defects when integrating new features.
 
 Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer you will probably be writing unit tests at some point you should learn how to do it now. 
 
-## Learning Objectives (5 min)
+## Learning Objectives
 
 1. Write Unit tests
 1. Identify what to test
@@ -156,40 +156,19 @@ https://jestjs.io/docs/en/getting-started
 
 ## Testing the string functions
 
-To use you
+To use your library in your tests you'll need to import it. Tests are run in the Node environment use `require()` to import them as a module.
+
+`const lib = require('../index.js')`
+
+Modify line above to suite your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
+
+Note! If your functions are global or they are added to the prototype of a global object you can just use something: 
+
+`require('../index.js')`
+
+## Write some tests
 
 
-
-
-
-
-
-
-
-
-## Overview/TT I (20 min)
-
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
-
-## In Class Activity I (30 min)
-
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
-
-## Overview/TT II (optional) (20 min)
-
-## In Class Activity II (optional) (30 min)
 
 ## Wrap Up (5 min)
 
@@ -207,8 +186,8 @@ To use you
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
+| 0:20        | 0:30      | Writing Tests with Jest   |
 | 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
+| 1:00        | 0:45      | Pair and write tests      |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
