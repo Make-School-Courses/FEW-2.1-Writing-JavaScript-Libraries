@@ -190,7 +190,7 @@ If the version was: 1.0.0 change this to 1.0.1
 
 Now run:
 
-`npm publish`
+`npm publish --access=public`
 
 Check your package on [npm](https://www.npmjs.com ).
 
