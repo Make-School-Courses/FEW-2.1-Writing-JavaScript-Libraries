@@ -20,7 +20,7 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 A library of code is like a library of books. Imagine each book as a block of code. Unlike a traditional library that contains books on every topic, software libraries contain code that is focused in a single area.
 
-Libraries of code like the public library make the code available to anyone who wants to use it. Unlike the public library, your JavaScript library can be checked out as many times as there projects that might need to use it. 
+Libraries of code like the public library make the code available to anyone who wants to use it. Unlike the public library, your JavaScript library can be checked out as many times as there are projects that might need to use it.
 
 Libraries are portable. Books can be checked out from the public library. Anyone of your software projects can "check out" code libraries.  
 
@@ -32,7 +32,7 @@ You're also taking DRY to the next level! The code in a library can be shared ac
 
 ### Q: When to make a library?
 
-Anytime you find you are writing the same code in more than one project. When you have code that you want to share with other people.
+Any time you find you are writing the same code in more than one project. When you have code that you want to share with other people.
 
 You've already been using libraries of code in any of the projects that you have built using NPM.
 
@@ -42,9 +42,9 @@ Node Package Manager is the world's largest software registry. It's like a libra
 
 ### Q: What will I make in this class?
 
-You will several Libraries. The libraries you write will be smaller and focus utility functions at first. Think of the code in each of the libraries written in this class as an interview question.
+You will write several libraries. The libraries you write will be smaller and focus on utility functions at first. Think of the code in each of the libraries written in this class as an interview question.
 
-Much of the code we write here has already been written. Normally we wouldn't want to reinvent the wheel but the goal of this class is learning how to write code and how to turn it into libraries. From that perspective recreating code that already exists is a great learning experience.
+Much of the code we write here has already been written. Normally we wouldn't want to reinvent the wheel, but the goal of this class is learning how to write code and how to turn it into libraries. From that perspective, recreating code that already exists is a great learning experience.
 
 ### Let's look at  some existing libraries
 
@@ -96,7 +96,7 @@ Why write a library at all? Remember all of the advantages of storing code in a 
 
 ### String functions
 
-Strings are one of, if not, the most common data type you might work with. JavaScript provides many string functions such as:
+Strings are one of, if not the most common data type you might work with. JavaScript provides many string functions such as:
 
 - [`String.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
 - [`String.charAt()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
@@ -110,7 +110,7 @@ The problems outlined in the homework can be solved in many different ways. Here
 
 Use these to make the first letter of a string uppercase.
 
-Arrays can you solve other problems. Try making the first letter of each word in a String uppercase. Assume that each word is separated by a " ". Use these functions:
+Arrays can help you solve other problems. Try making the first letter of each word in a String uppercase. Assume that each word is separated by a " ". Use these functions:
 
 - String.split()
 - String.toUpperCase()
