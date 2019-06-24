@@ -27,7 +27,7 @@ Students by the end of the course will be able to ...
 **Class Times:** Tuesday and Thursday at 1:30–3:20pm (12 class sessions)
 
 | Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
+|:------|-----------------------:|:----------------------------------------|
 |  1 |   Tue, July 9             | [String Libraries]                      |
 |  2 |   Thu, July 11            | [NPM]                                   |
 |  3 |   Tue, July 16            | [Writing Tests]                         |
