@@ -238,11 +238,11 @@ Click the link to the right of npm bundle size. It looks like:
 
 Now select the format: min, and type your package name into the field. If you have scoped your package include your @username like this: `@username/packagename`.
 
-Choose: "Copy Markdown from the menu at the bottom.
+Choose "Copy Markdown" from the menu at the bottom.
 
 Paste this into your README.md.
 
-commit and push this to GitHub.
+Commit and push this to GitHub.
 
 Check out your GitHub page and you should see your new badge!
 
@@ -250,15 +250,13 @@ Repeat this again for the version. Try this on your own. Get the npm version num
 
 ### Update your npm package page
 
-After your happy with your, GitHub README update your work on npm.
+After you're happy with your GitHub README, update your work on npm.
 
 Update the version number of your package. Is this a MAJOR? MINOR? or PATCH?
 
 `npm publish`
 
 Visit npm and check out your package.
-
-`npm publish`
 
 ## Extend String with prototype
 
