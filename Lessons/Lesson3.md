@@ -200,7 +200,7 @@ test('Test isFizzy', () => {
 })
 ```
 
-With a test like this would you be confident that this would catch errors in the future?
+With a test like this, would you be confident that this would catch errors in the future?
 
 ### Debriefing the tests
 
@@ -220,7 +220,7 @@ To use your library in your tests you'll need to import it. Tests are run in the
 
 Modify the line above to suit your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
 
-Note! If your functions are global or they are added to the prototype of a global object you can just use something:
+Note! If your functions are global or they are added to the prototype of a global object you can just use something like:
 
 `require('../index.js')`
 
