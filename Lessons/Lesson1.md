@@ -36,11 +36,11 @@ Anytime you find you are writing the same code in more than one project. When yo
 
 You've already been using libraries of code in any of the projects that you have built using NPM. 
 
-### What's NPM? 
+### Q: What's NPM? 
 
 Node Package Manager is the world's largest software registry. It's like a library of code where you check out code like books! 
 
-### What will I make in this class? 
+### Q: What will I make in this class? 
 
 You will several Libraries. The libraries you write will be smaller and focus utility functions at first. Think of the code in each of the libraries written in this class as an interview question. 
 
