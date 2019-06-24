@@ -92,7 +92,7 @@ The goal of the first homework assignment is to write a simple library.
 
 Why write a simple library? If we keep it simple you will be able to do a good job and get it finished before the next class. 
 
-Why write a library at all? Remember all of the advanatage of storing code in a central location. While it might not seem to add to much to your work flow today, this is how professionals hanlde code. 
+Why write a library at all? Remember all of the advantages of storing code in a central location. While it might not seem to add too much to your workflow today, this is how professionals handle code. 
 
 ### String functions
 
@@ -103,7 +103,7 @@ Strings are one of, if not, the most common data type you might work with. JavaS
 - [`String.endsWith()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith)
 - [And many more](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-The problems outlines in the homework can be solved in many different ways. Here are a few ideas to get you started. 
+The problems outlined in the homework can be solved in many different ways. Here are a few ideas to get you started. 
 
 - String.charAt()
 - String.toUpperCase()

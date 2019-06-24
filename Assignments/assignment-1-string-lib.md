@@ -53,6 +53,6 @@ You will use this assignment in class 2
 
 ## Assessment
 
-Your work will assessed by a rubric. You can self assess your work by looking at the rubric. Wonder what is expected of your work check the rubric. 
+Your work will be assessed by a rubric. You can self assess your work by looking at the rubric. Wonder what is expected of your work check the rubric. 
 
 [Assignment 1 String Lib Rubic](assignment-1-string-lib-rubric.md)

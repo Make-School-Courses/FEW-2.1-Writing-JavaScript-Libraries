@@ -5,7 +5,7 @@ n this lesson you will publish your library and share it with the world.
 ## Learning Objectives (5 min)
 
 1. Describe what and NPM package is
-1. Create NPM Packlages 
+1. Create NPM Packages 
 1. Publish your NPM package
 
 ### Course Progress Tracker 
@@ -16,15 +16,15 @@ Update the [progress tracker](https://docs.google.com/spreadsheets/d/1o-43DQx161
 
 npm is the world’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
 
-NPM orgasnizes code into *packages* (sometimes called *modules*). A package is a directory with one or more files and a file named `package.json` which contains meta data about the package. 
+NPM organizes code into *packages* (sometimes called *modules*). A package is a directory with one or more files and a file named `package.json` which contains metadata about the package. 
 
-A *dependancy* is a package that your project depends on.
+A *dependency* is a package that your project depends on.
 
 Each package should contain code that *does one thing* well. 
 
-In this way you can use these shared packages like *building blocks* to easily build large complex projects. 
+In this way, you can use these shared packages like *building blocks* to easily build large complex projects. 
 
-Packages can be written that work with Node.js on the serverside, run on the command line, or can be used in frontend web projects that run in the browser. 
+Packages can be written that work with Node.js on the server side, run on the command line, or can be used in frontend web projects that run in the browser. 
 
 You can publish your packages and use them with all of your projects and share them with other developers around the world. 
 
@@ -66,31 +66,31 @@ The data describes:
 - dependencies
 - and more...
 
-package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has it's own dependencies. It's a little like those russian dolls. 
+package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has its own dependencies. It's a little like those Russian dolls. 
 
 ### Make your package 
 
-Using Terminal naviagate to the directory containing your String lib. Create a new package.json file and initialize this directory as an npm package by running: 
+Using Terminal navigate to the directory containing your String lib. Create a new package.json file and initialize this directory as an npm package by running: 
 
 `npm init`
 
-Answer all the questions to the best of your ability. You can edit these later. Everything you enter here is meta data that describes the package that will evenutally be hosted on npm.com. This includes: 
+Answer all the questions to the best of your ability. You can edit these later. Everything you enter here is metadata that describes the package that will eventually be hosted on npm.com. This includes: 
 
 - name
 - description 
 - version 
 
-You can use the default values, shown in (...), by hitting the Enter key when that appear. 
+You can use the default values, shown in (...), by hitting the Enter key when that appears. 
 
 ### Login into npm 
 
-We are using the npm cli you need to log in in the command line. 
+We are using the npm CLI you need to log in in the command line. 
 
 You'll need to enter your: 
 
 - npm user name
 - npm password 
-- email address used withh npm
+- email address used with npm
 
 `npm login`
 
@@ -102,7 +102,7 @@ To publish your package use:
 
 #### Resolving errors
 
-All packages on npm are public and share the same name space. The most common error will a name collision. It might look like: 
+All packages on npm are public and share the same namespace. The most common error will a name collision. It might look like: 
 
 ```
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/test-error - You do not have permission to publish "test-error". Are you logged in as the correct user?
@@ -112,7 +112,7 @@ Here I tried to publish a package with the name `test-error`. This package alrea
 
 If you're having trouble finding a name test your name ideas by searching for the names on npm. 
 
-Another option is publish to a scope. This puts all of the packages under the scope of your username and you can use any name. 
+Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. 
 
 ### Publishing in scope
 
@@ -126,31 +126,31 @@ Run `npm init --scope=username` instead of `npm init`
 
 Visit https://www.npmjs.com 
 
-Login and click the profile icon in the upper right. Choose "Packages" from the menu. This should show the list of packages you have published. 
+Log in and click the profile icon in the upper right. Choose "Packages" from the menu. This should show the list of packages you have published. 
 
 Your package should appear on the list, pat yourself on the back!
 
 Click the name of your package on the list and view it on npm. Notice a few things. 
 
-The npm page for a package shows the **text from the README.md** file in the github repo for the package. This means your read me should look good and explain what your library does. This will encourage other developers to use your library. 
+The npm page for a package shows the **text from the README.md** file in the GitHub repo for the package. This means your read me should look good and explain what your library does. This will encourage other developers to use your library. 
 
-The version number, last update date, weekly downloads, github repo and more are shown here. 
+The version number, last update date, weekly downloads, GitHub repo and more are shown here. 
 
-## Vesion numbers and SemVer
+## Version numbers and SemVer
 
-All packages on npm use semver. What's semver? Semver stands for semantic version. It's those version numbers you see on everything software: 
+All packages on npm using semver. What's semver? Semver stands for semantic version. It's those version numbers you see on everything software: 
 
 `1.0.0` or `1.0.16` or `2.1.18`
 
 The first digit is the **MAJOR** version. You'll update this when you make changes that make a new version **incompatible** with an older version. 
 
-The second digit is the **MINOR** version. You'll change this when you add **more functionality** but are **still backwards compatible**. 
+The second digit is the **MINOR** version. You'll change this when you add **more functionality** but are **still backward compatible**. 
 
-The last digit is a **PATCH** version. You'll change this when you make **bug fixes and improvements** that are backwards compatible but do not add new features. 
+The last digit is a **PATCH** version. You'll change this when you make **bug fixes and improvements** that are backward compatible but do not add new features. 
 
 <div style="font-size: 3em; text-align: center">MAJOR.MINOR.PATCH</div>
 
-### Version acitivities
+### Version activities
 
 Read the questions below and figure out the new version numbers
 
@@ -174,7 +174,7 @@ You'll probably see an error:
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/@soggybag%2fjustincase - You cannot publish over the previously published versions: 1.0.2.
 ```
 
-Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are same. 
+Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are the same. 
 
 To publish a new version you need to update the version number in package.json. 
 
@@ -186,7 +186,7 @@ Let's make this a PATCH. This change is just an improvement, you didn't change a
 
 In `package.json` add 1 to the last digit in the version.
 
-If the version was: 1.0.0 change this to: 1.0.1
+If the version was: 1.0.0 change this to 1.0.1
 
 Now run: 
 
@@ -216,7 +216,7 @@ You've probably seen those nifty badges on display on GitHub repos. Take a look 
 
 https://github.com/badges/shields
 
-The badges make your repos look legit. Thats sort for *legitimate*, which means:  
+The badges make your repos look legit. That's sort for *legitimate*, which means:  
 
 > conforming to recognized principles or accepted rules and standards
 
@@ -224,7 +224,7 @@ Code libraries that conform to rules and standards are more likely to get adopte
 
 These badges show all sorts of information about the repo, the code in the repo and more. Your repo is just getting started so you can't make use of all of these yet. 
 
-Let's start with a couple easy badges. Size and version. 
+Let's start with a couple of easy badges. Size and version. 
 
 Go to: 
 
@@ -246,11 +246,11 @@ commit and push this to GitHub.
 
 Check out your GitHub page and you should see your new badge!
 
-Reape this again for the vserion. Try this on your own. Get the npm version number. 
+Repeat this again for the version. Try this on your own. Get the npm version number. 
 
 ### Update your npm package page
 
-After your happy with your GitHub README update your work on npm. 
+After your happy with your, GitHub README update your work on npm. 
 
 Update the version number of your package. Is this a MAJOR? MINOR? or PATCH? 
 
@@ -262,15 +262,15 @@ Visit npm and check out your package.
 
 ## Extend String with prototype
 
-The functions you wrote might take a String as a parameter and return a String. There is nothing wrong with this but there are otehr approaches. 
+The functions you wrote might take a String as a parameter and return a String. There is nothing wrong with this but there are other approaches. 
 
-An alternative might be to add your methods to the String class through the prototype chain. This is how the built in String functions work! 
+An alternative might be to add your methods to the String class through the prototype chain. This is how the built-in String functions work! 
 
-Q: What is protoype? 
+Q: What is prototype? 
 
 A: In JavaScript prototype is a special property all objects have. Objects inherit methods through the prototype. When you call a method on an object if the method doesn't exist on that object JavaScript looks for the method on the prototype. By adding a method to an object's prototype all other objects that share the prototype are able to also use the method. 
 
-For example all Strings share the same prototype. When you call: `"hello".toUpperCase()` calls `toUpperCase()` on the prototype. 'toUpperCase' is really long I'd rather write 'allCaps' to do the same thing. 
+For example, all Strings share the same prototype. When you call: `"hello".toUpperCase()` calls `toUpperCase()` on the prototype. 'toUpperCase' is really long I'd rather write 'allCaps' to do the same thing. 
 
 ```
 // Assign a new method to String.prototype
@@ -284,9 +284,9 @@ console.log(str.allCaps()) // HELLO WORLD
 
 **Important!**
 
-Inside the allCaps function `this` is the string/object that you called the method on. In this case it's `str` on the last line above. 
+Inside the allCaps function `this` is the string/object that you called the method on. In this case, it's `str` on the last line above. 
 
-You can not use an arrow function here! *Arrow functions do not bind this* so this is lost! Its not the object that called the method. 
+You can not use an arrow function here! *Arrow functions do not bind this* so this is lost! It's not the object that called the method. 
 
 Using ES5 functions the value for this is the object the method was called on. 
 

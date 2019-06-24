@@ -24,7 +24,7 @@ Your GitHub and npm pages should show the version and size badges to let people 
 
 Your ReadMe should be well written. 
 
-- Includes well written description
+- Includes well-written description
 - Includes code samples and documentation
 
 You must code review with another student and apply their feedback to your work. 
@@ -37,7 +37,7 @@ Move all functions to `String.prototype`
 
 - GitHub project is linked in the progress tracker
 - npm page is linked in the ReadMe of the GitHub repo
-- Put your name next to the student who you code reviewed
+- Put your name next to the student whom you code reviewed
 
 ### Due date
 

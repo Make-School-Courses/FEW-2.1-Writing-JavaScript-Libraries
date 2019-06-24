@@ -1,4 +1,4 @@
-# FEW 2.1 - Unit Testing
+# FEW 2.1 - Lesson 3 - Unit Testing
 
 Quality code is test passing code. Unit testing is a system that is used to test units of code. Code that passes the test is deemed quality and fit for use. Unit testing is a part of the Agile Methodology. 
 
@@ -6,7 +6,7 @@ Quality code is test passing code. Unit testing is a system that is used to test
 
 Improves code quality by exposing edge cases and finding bugs. 
 
-Spots bugs ealier. Using tests will bring bugs to light before you publish your app. 
+Spots bugs earlier. Using tests will bring bugs to light before you publish your app. 
 
 Reduces defects when integrating new features. 
 
@@ -22,11 +22,11 @@ Professionals use unit tests. If you are planning to get a with a company that e
 
 Q: What is a unit test?
 
-A: A unit test a test of a software system usully a function. A unit test most often testing that the expected output of a function is correct for a given input. 
+A: A unit test is a test of a software system usually a function. A unit test most often testing that the expected output of a function is correct for a given input. 
 
 Q: How do you do a unit test? 
 
-Unit tests are run by software and can be automated. In this class we will use Jest. 
+Unit tests are run by software and can be automated. In this class, we will use Jest. 
 
 Q: What is Jest?
 
@@ -45,19 +45,40 @@ A: Jest works well with React. Anyone that has built React apps may want to writ
 
 Q: What can you Test? 
 
-A: Usually you are testing functions by looking the output for a given input.
+A: Usually you are testing functions by looking at the output for a given input.
 
 Q: How do you write a test? 
 
 A: Before writing a test you'll want to think about what you are testing and what you should test for.
 
-For example you wrote a function that uppercased the first letter of a string. You might expect the input to be: 
+For example, you wrote a function that uppercased the first letter of a string. You might expect the input to be: 
 
 widget -> Widget
 
 Can you think of any edge cases? 
 
 What about the capitalizeAll() function what would be a good test? What are the edge cases? 
+
+## Testing example 
+
+Create a new project
+
+Add the sample code provided 
+
+Write tests
+
+These tests 
+
+
+
+
+
+
+
+
+
+
+
 
 ## Writing tests with Jest
 
@@ -67,17 +88,17 @@ Add Jest:
 
 `npm install --save-dev jest`
 
-`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now. These dependencies are only used fro development. 
+`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now. These dependencies are only used for development. 
 
 Now that jest is installed, we need a test commend. Add this to package.json. Add/edit package.json to look like this: 
 
 ```
 "scripts": {
-		"test": "jest"
+        "test": "jest"
 },
 ```
 
-You'll just tests by running:
+You'll just test by running:
 
 `npm run test` 
 
@@ -127,9 +148,9 @@ Tests:       1 passed, 1 total
 ...
 ```
 
-Looks like one test suite passed out of a total tests of 1. 
+Looks like one test suite passed out of a total of 1 test. 
 
-What did we test? Nothing. The callback function will register an error if any code excuted inside it throws an error, otherwise the test is passing. 
+What did we test? Nothing. The callback function will register an error if any code executed inside it throws an error, otherwise, the test is passing. 
 
 Add the following inside the callback.
 
@@ -160,7 +181,7 @@ To use your library in your tests you'll need to import it. Tests are run in the
 
 `const lib = require('../index.js')`
 
-Modify line above to suite your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
+Modify the line above to suite your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
 
 Note! If your functions are global or they are added to the prototype of a global object you can just use something: 
 
