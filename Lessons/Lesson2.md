@@ -260,6 +260,47 @@ Visit npm and check out your package.
 
 `npm publish`
 
+## Extend String with prototype
+
+The functions you wrote might take a String as a parameter and return a String. There is nothing wrong with this but there are otehr approaches. 
+
+An alternative might be to add your methods to the String class through the prototype chain. This is how the built in String functions work! 
+
+Q: What is protoype? 
+
+A: In JavaScript prototype is a special property all objects have. Objects inherit methods through the prototype. When you call a method on an object if the method doesn't exist on that object JavaScript looks for the method on the prototype. By adding a method to an object's prototype all other objects that share the prototype are able to also use the method. 
+
+For example all Strings share the same prototype. When you call: `"hello".toUpperCase()` calls `toUpperCase()` on the prototype. 'toUpperCase' is really long I'd rather write 'allCaps' to do the same thing. 
+
+```
+// Assign a new method to String.prototype
+String.prototype.allCaps = function() {
+  return this.toUpperCase()
+}
+
+const str = 'hello world'
+console.log(str.allCaps()) // HELLO WORLD
+```
+
+**Important!**
+
+Inside the allCaps function `this` is the string/object that you called the method on. In this case it's `str` on the last line above. 
+
+You can not use an arrow function here! *Arrow functions do not bind this* so this is lost! Its not the object that called the method. 
+
+Using ES5 functions the value for this is the object the method was called on. 
+
+### Challenge
+
+Rewrite your string functions so they are all methods of the String object. This means you'll need to add them all to: `String.prototype`. Here is a sample: 
+
+```
+// Capitalize first letter
+String.prototype.capitalize = function() {
+  return this.charAt(0).toUpperCase() + this.slice(1)
+}
+```
+
 ## Resources 
 
 Publish to NPM: https://zellwk.com/blog/publish-to-npm/

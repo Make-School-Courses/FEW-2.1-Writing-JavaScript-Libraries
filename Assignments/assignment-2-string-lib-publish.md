@@ -31,6 +31,8 @@ You must code review with another student and apply their feedback to your work.
 
 - You have reviewed your String lib code with another student
 
+Move all functions to `String.prototype`
+
 ### Deliverable
 
 - GitHub project is linked in the progress tracker
