@@ -61,34 +61,29 @@ What about the capitalizeAll() function what would be a good test? What are the 
 
 ## Testing example 
 
-Create a new project
+Remember that fizz buzz thing? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands. 
 
-Add the sample code provided 
+Pair with someone **you haven't paired with before**.
 
-Write tests
-
-These tests 
-
-
-
-
-
-
-
-
-
-
-
+The goal of this exercise is to write some tests with Jest that test the functions in the sample code provided. 
 
 ## Writing tests with Jest
 
-Jest a framework and will be a dev dependency. A dev dependency is one that used for development but not used in the library itself. 
+Jest a framework which you will use as a *dev dependency*. A dev dependency is one that is used for development but not used in your source code. 
+
+Make a new directory for this exercise.
+
+Navigate to the directory and initialize a new npm package. 
+
+`npm init`
 
 Add Jest: 
 
 `npm install --save-dev jest`
 
-`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now. These dependencies are only used for development. 
+`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now. 
+
+Dev Dependencies are only used for development. 
 
 Now that jest is installed, we need a test commend. Add this to package.json. Add/edit package.json to look like this: 
 
@@ -98,7 +93,7 @@ Now that jest is installed, we need a test commend. Add this to package.json. Ad
 },
 ```
 
-You'll just test by running:
+You'll run a test with:
 
 `npm run test` 
 
@@ -116,13 +111,17 @@ Add a new directory named "tests".
 
 `mkdir tests`
 
-Now add a new file `tests/test.js` that will run your tests. 
+Now add a new file `tests/test.js`. Your tests will be written here.  
 
 `touch tests/test.js`
 
-When you run Jest it will look for any files with `test.js` in the name and run any test code found there. It logs the results of all tests to the console. 
+When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console. 
 
-A test is run by calling the `test(desc, callback)` function. You supply two parameters a description string and a callback. 
+A test is run by calling the: 
+
+`test(desc, callback)` 
+
+You supply two parameters a *description string* and a *callback function*. 
 
 Open `test.js` in your editor and write a test. Add the following  code to `test.js`:
 
@@ -150,7 +149,7 @@ Tests:       1 passed, 1 total
 
 Looks like one test suite passed out of a total of 1 test. 
 
-What did we test? Nothing. The callback function will register an error if any code executed inside it throws an error, otherwise, the test is passing. 
+What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing. 
 
 Add the following inside the callback.
 
@@ -160,7 +159,7 @@ test('Sanity check', () => {
 })
 ```
 
-Run your test again. The test should fail this time. 
+Run your test again. The test should *fail* this time. 
 
 ```
 ...
@@ -169,11 +168,49 @@ Tests:       1 failed, 1 total
 ...
 ```
 
-`expect().toBe()` is an assertion which like asking a question. Here you are saying you expect 2+2 to be 5. It isn't so the assertion fails. 
+`expect().toBe()` is an assertion, this is like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails. 
 
 Fix the test by changing 5 to 4 and run it again. This time the test passes.
 
 https://jestjs.io/docs/en/getting-started
+
+## Testing Fizz Buzz
+
+Make a new file in your example directory: 
+
+`touch index.js`
+
+Get the [sample code](#samplecode) and paste it into `index.js`.
+
+The goal for you and your pair is to write tests for each of the functions in the sample code: 
+
+- isFizzy()
+- isBuzzy()
+- fizzyBuzzy()
+- fizzBuzz()
+
+For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like: 
+
+```
+test('Test isFizzy', () => {
+  expect(tests.isFizzy(1)).toBe(false)
+  expect(tests.isFizzy(3)).toBe(true)
+  expect(tests.isFizzy(4)).toBe(false)
+  expect(tests.isFizzy(6)).toBe(true)
+})
+```
+
+With a test like this would you be confident that this would catch errors in the future? 
+
+### Debriefing the tests
+
+Discuss these questions 
+
+- What did you test? 
+- What was easy to test? 
+- What was difficult to test? 
+- How many things did a test have to look at? 
+- Are you confident that your tests will catch errors that might arise with any possible input? 
 
 ## Testing the string functions
 
@@ -181,7 +218,7 @@ To use your library in your tests you'll need to import it. Tests are run in the
 
 `const lib = require('../index.js')`
 
-Modify the line above to suite your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
+Modify the line above to suit your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
 
 Note! If your functions are global or they are added to the prototype of a global object you can just use something: 
 
@@ -212,3 +249,52 @@ Note! If your functions are global or they are added to the prototype of a globa
 | 1:00        | 0:45      | Pair and write tests      |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
+
+
+# Sample Code 
+
+```
+function test() {
+  return 'It works!'
+}
+
+function isFizzy(n) {
+  return n % 3 === 0
+}
+
+function isBuzzy(n) {
+  return n % 5 === 0
+}
+
+function fizzyBuzzy(n) {
+  let result = ''
+  if (isFizzy(n)) { result += 'fizz' }
+  if (isBuzzy(n)) { result += ' buzz' }
+  return result
+}
+
+function fizzBuzz(count) {
+  let result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }
+  for (let i = 1; i <= count; i += 1) {
+    const str = fizzyBuzzy(i)
+    switch(str) {
+      case 'fizz': 
+        result.fizz += 1
+        break
+      case 'buzz': 
+        result.buzz += 1
+        break
+      case 'fizz buzz':
+        result.fizzBuzz += 1
+        break
+    }
+  }
+  return result
+}
+
+module.exports.test = test
+module.exports.isFizzy = isFizzy
+module.exports.isBuzzy = isBuzzy
+module.exports.fizzyBuzzy = fizzyBuzzy
+module.exports.fizzBuzz = fizzBuzz
+```
