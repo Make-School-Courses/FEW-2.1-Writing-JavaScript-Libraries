@@ -1,4 +1,4 @@
-# Class - Assignment Title 
+# FEW 2.1 - Publish String Lib to npm
 
 ## Description 
 
