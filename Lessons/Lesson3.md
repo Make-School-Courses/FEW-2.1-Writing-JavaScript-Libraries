@@ -168,7 +168,7 @@ Tests:       1 failed, 1 total
 ...
 ```
 
-`expect().toBe()` is an assertion, this is like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails.
+`expect().toBe()` is an assertion, which is kind of like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails.
 
 Fix the test by changing 5 to 4 and run it again. This time the test passes.
 
@@ -180,7 +180,7 @@ Make a new file in your example directory:
 
 `touch index.js`
 
-Get the [sample code](#samplecode) and paste it into `index.js`.
+Get the [sample code](#sample-code) and paste it into `index.js`.
 
 The goal for you and your pair is to write tests for each of the functions in the sample code:
 
