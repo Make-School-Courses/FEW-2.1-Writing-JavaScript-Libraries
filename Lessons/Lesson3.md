@@ -254,25 +254,25 @@ Note! If your functions are global or they are added to the prototype of a globa
 # Sample Code
 
 ```
-function test() {
-  return 'It works!'
-}
-
+/** Return true if n is divisible by 3, false otherwise. */
 function isFizzy(n) {
   return n % 3 === 0
 }
 
+/** Return true if n is divisible by 5, false otherwise. */
 function isBuzzy(n) {
   return n % 5 === 0
 }
 
+/** Return a string containing 'fizz' and/or 'buzz' appropriately. */
 function fizzyBuzzy(n) {
   let result = ''
   if (isFizzy(n)) { result += 'fizz' }
-  if (isBuzzy(n)) { result += ' buzz' }
+  if (isBuzzy(n)) { result += 'buzz' }
   return result
 }
 
+/** Return an object containing counts of fizz, buzz, & fizzbuzz for 1..count */
 function fizzBuzz(count) {
   let result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }
   for (let i = 1; i <= count; i += 1) {
@@ -284,7 +284,7 @@ function fizzBuzz(count) {
       case 'buzz':
         result.buzz += 1
         break
-      case 'fizz buzz':
+      case 'fizzbuzz':
         result.fizzBuzz += 1
         break
     }
