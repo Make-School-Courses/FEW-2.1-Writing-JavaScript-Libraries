@@ -49,7 +49,7 @@ Challenges
   - 
 - 
 
-- BigInt - Is class that tracks extra large integer values. I hear these are great for Incremental games. BigInt holds a large number as a string. It provides methods that perform math operatio. 
+- BigInt - Is class that tracks extra large integer values. I hear these are great for Incremental games. BigInt holds a large number as a string. It provides methods that perform math operation. 
   - new BigInt(value = 0) - Initialize with a value or 0. 
   - BigInt.add(x) - adds x to the value. Since value is a String you need add the first digit to the first digit held in value and carry the one if the total is over 10. Do the same with the 10s and 100s etc. This is just like adding numbers with pencil and paper.
     - Q: Is this legit? A: Yes! There are a couple libraries that do this. Computers have a limit to how large a number they can handle. In most cases this is enough. For some uses you need larger numbers. 
@@ -57,6 +57,11 @@ Challenges
     - Advanced
       - BigInt.multiply(x) - Multiplies the BigInt value by x. 
       - BigInt.divide(x) - Divides the BigInt value by x. 
+- hexMath() - ??? Does math with hex values 
+  - add()
+  - subtract()
+  - addRGB(r, g, b)
+  - subtractRGB(r, g, b)
 
 ### Deliverable
 
