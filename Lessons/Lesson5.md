@@ -87,6 +87,15 @@ Properties
 - Math.SQRT1_2
 - Math.SQRT2
 
+----
+
+Arithmetic operators 
+
+- +, -, *, /, **, %
+- ++, --
+
+--- 
+
 
 
 
