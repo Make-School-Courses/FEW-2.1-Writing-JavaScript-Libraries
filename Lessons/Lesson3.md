@@ -1,16 +1,16 @@
 # FEW 2.1 - Lesson 3 - Unit Testing
 
-Quality code is test passing code. Unit testing is a system that is used to test units of code. Code that passes the test is deemed quality and fit for use. Unit testing is a part of the Agile Methodology. 
+Quality code is test passing code. Unit testing is a system that is used to test units of code. Code that passes the test is deemed quality and fit for use. Unit testing is a part of the Agile Methodology.
 
-## Why use unit tests? 
+## Why use unit tests?
 
-Improves code quality by exposing edge cases and finding bugs. 
+Improves code quality by exposing edge cases and finding bugs.
 
-Spots bugs earlier. Using tests will bring bugs to light before you publish your app. 
+Spots bugs earlier. Using tests will bring bugs to light before you publish your app.
 
-Reduces defects when integrating new features. 
+Reduces defects when integrating new features.
 
-Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer you will probably be writing unit tests at some point you should learn how to do it now. 
+Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer, you will probably be writing unit tests at some point, so you should learn how to do it now.
 
 ## Learning Objectives
 
@@ -22,70 +22,70 @@ Professionals use unit tests. If you are planning to get a with a company that e
 
 Q: What is a unit test?
 
-A: A unit test is a test of a software system usually a function. A unit test most often testing that the expected output of a function is correct for a given input. 
+A: A unit test is a test of a software system, usually a single function. A unit test most often is testing that the expected output of a function is correct for a given input.
 
-Q: How do you do a unit test? 
+Q: How do you do a unit test?
 
-Unit tests are run by software and can be automated. In this class, we will use Jest. 
+Unit tests are run by software and can be automated. In this class, we will use Jest.
 
 Q: What is Jest?
 
-A: [Jest](https://jestjs.io) is a JavaScript testing framework. I was written by Facebook. It works with: 
+A: [Jest](https://jestjs.io) is a JavaScript testing framework that was written by Facebook. It works with:
 
 - TypeScript
-- Node 
+- Node
 - React
-- Vue 
-- Angular 
+- Vue
+- Angular
 - and more
 
-Q: Why use Jest? 
+Q: Why use Jest?
 
-A: Jest works well with React. Anyone that has built React apps may want to write unit tests for these. 
+A: Jest works well with React. Anyone that has built React apps may want to write unit tests for these.
 
-Q: What can you Test? 
+Q: What can you test?
 
 A: Usually you are testing functions by looking at the output for a given input.
 
-Q: How do you write a test? 
+Q: How do you write a test?
 
 A: Before writing a test you'll want to think about what you are testing and what you should test for.
 
-For example, you wrote a function that uppercased the first letter of a string. You might expect the input to be: 
+For example, you wrote a function that uppercased the first letter of a string. You might expect the input to be:
 
 widget -> Widget
 
-Can you think of any edge cases? 
+Can you think of any edge cases?
 
-What about the capitalizeAll() function what would be a good test? What are the edge cases? 
+What about the capitalizeAll() function what would be a good test? What are the edge cases?
 
-## Testing example 
+## Testing example
 
-Remember that fizz buzz thing? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands. 
+Remember that fizz buzz thing? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands.
 
 Pair with someone **you haven't paired with before**.
 
-The goal of this exercise is to write some tests with Jest that test the functions in the sample code provided. 
+The goal of this exercise is to write some tests with Jest that test the functions in the sample code provided.
 
 ## Writing tests with Jest
 
-Jest a framework which you will use as a *dev dependency*. A dev dependency is one that is used for development but not used in your source code. 
+Jest is a framework that you will use as a *dev dependency*. A dev dependency is one that is used for development but not used in your source code.
 
 Make a new directory for this exercise.
 
-Navigate to the directory and initialize a new npm package. 
+Navigate to the directory and initialize a new npm package.
 
 `npm init`
 
-Add Jest: 
+Add Jest:
 
 `npm install --save-dev jest`
 
-`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now. 
+`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now.
 
-Dev Dependencies are only used for development. 
+Dev Dependencies are only used for development.
 
-Now that jest is installed, we need a test commend. Add this to package.json. Add/edit package.json to look like this: 
+Now that jest is installed, we need a test command. Add this to package.json. Add/edit package.json to look like this:
 
 ```
 "scripts": {
@@ -95,9 +95,9 @@ Now that jest is installed, we need a test commend. Add this to package.json. Ad
 
 You'll run a test with:
 
-`npm run test` 
+`npm run test`
 
-Try it now. You should see an error: 
+Try it now. You should see an error:
 
 ```
 ...
@@ -105,9 +105,9 @@ No tests found, exiting with code 1
 ...
 ```
 
-You haven't written any tests yet so this makes sense. 
+You haven't written any tests yet so this makes sense.
 
-Add a new directory named "tests". 
+Add a new directory named "tests".
 
 `mkdir tests`
 
@@ -115,27 +115,27 @@ Now add a new file `tests/test.js`. Your tests will be written here.
 
 `touch tests/test.js`
 
-When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console. 
+When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console.
 
-A test is run by calling the: 
+A test is run by calling:
 
-`test(desc, callback)` 
+`test(desc, callback)`
 
-You supply two parameters a *description string* and a *callback function*. 
+You supply two parameters a *description string* and a *callback function*.
 
 Open `test.js` in your editor and write a test. Add the following  code to `test.js`:
 
 ```
 test('Sanity check', () => {
-  
+
 })
 ```
 
-Run your test. 
+Run your test.
 
 `npm run test`
 
-You should see some output in the console. 
+You should see some output in the console.
 
 ```
 ...
@@ -147,9 +147,9 @@ Tests:       1 passed, 1 total
 ...
 ```
 
-Looks like one test suite passed out of a total of 1 test. 
+Looks like one test suite passed out of a total of 1 test.
 
-What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing. 
+What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing.
 
 Add the following inside the callback.
 
@@ -159,7 +159,7 @@ test('Sanity check', () => {
 })
 ```
 
-Run your test again. The test should *fail* this time. 
+Run your test again. The test should *fail* this time.
 
 ```
 ...
@@ -168,7 +168,7 @@ Tests:       1 failed, 1 total
 ...
 ```
 
-`expect().toBe()` is an assertion, this is like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails. 
+`expect().toBe()` is an assertion, which is kind of like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails.
 
 Fix the test by changing 5 to 4 and run it again. This time the test passes.
 
@@ -176,20 +176,20 @@ https://jestjs.io/docs/en/getting-started
 
 ## Testing Fizz Buzz
 
-Make a new file in your example directory: 
+Make a new file in your example directory:
 
 `touch index.js`
 
-Get the [sample code](#samplecode) and paste it into `index.js`.
+Get the [sample code](#sample-code) and paste it into `index.js`.
 
-The goal for you and your pair is to write tests for each of the functions in the sample code: 
+The goal for you and your pair is to write tests for each of the functions in the sample code:
 
 - isFizzy()
 - isBuzzy()
 - fizzyBuzzy()
 - fizzBuzz()
 
-For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like: 
+For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like:
 
 ```
 test('Test isFizzy', () => {
@@ -200,17 +200,17 @@ test('Test isFizzy', () => {
 })
 ```
 
-With a test like this would you be confident that this would catch errors in the future? 
+With a test like this, would you be confident that this would catch errors in the future?
 
 ### Debriefing the tests
 
-Discuss these questions 
+Discuss these questions
 
-- What did you test? 
-- What was easy to test? 
-- What was difficult to test? 
-- How many things did a test have to look at? 
-- Are you confident that your tests will catch errors that might arise with any possible input? 
+- What did you test?
+- What was easy to test?
+- What was difficult to test?
+- How many things did a test have to look at?
+- Are you confident that your tests will catch errors that might arise with any possible input?
 
 ## Testing the string functions
 
@@ -220,7 +220,7 @@ To use your library in your tests you'll need to import it. Tests are run in the
 
 Modify the line above to suit your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
 
-Note! If your functions are global or they are added to the prototype of a global object you can just use something: 
+Note! If your functions are global or they are added to the prototype of a global object you can just use something like:
 
 `require('../index.js')`
 
@@ -251,40 +251,40 @@ Note! If your functions are global or they are added to the prototype of a globa
 | TOTAL       | 1:50      | -                         |
 
 
-# Sample Code 
+# Sample Code
 
 ```
-function test() {
-  return 'It works!'
-}
-
+/** Return true if n is divisible by 3, false otherwise. */
 function isFizzy(n) {
   return n % 3 === 0
 }
 
+/** Return true if n is divisible by 5, false otherwise. */
 function isBuzzy(n) {
   return n % 5 === 0
 }
 
+/** Return a string containing 'fizz' and/or 'buzz' appropriately. */
 function fizzyBuzzy(n) {
   let result = ''
   if (isFizzy(n)) { result += 'fizz' }
-  if (isBuzzy(n)) { result += ' buzz' }
+  if (isBuzzy(n)) { result += 'buzz' }
   return result
 }
 
+/** Return an object containing counts of fizz, buzz, & fizzbuzz for 1..count */
 function fizzBuzz(count) {
   let result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }
   for (let i = 1; i <= count; i += 1) {
     const str = fizzyBuzzy(i)
     switch(str) {
-      case 'fizz': 
+      case 'fizz':
         result.fizz += 1
         break
-      case 'buzz': 
+      case 'buzz':
         result.buzz += 1
         break
-      case 'fizz buzz':
+      case 'fizzbuzz':
         result.fizzBuzz += 1
         break
     }
