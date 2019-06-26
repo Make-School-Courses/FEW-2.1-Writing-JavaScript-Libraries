@@ -72,7 +72,26 @@ Number Methods
 
 What's happening there in JS style computeriness (functions as constructor)
 
+---
+
 - Math - 
+
+Properties
+
+- Math.E
+- Math.LN10
+- Math.LN2
+- Math.LOG10E
+- Math.LOG2E
+- Math.PI
+- Math.SQRT1_2
+- Math.SQRT2
+
+
+
+
+
+
 
 
 
@@ -82,10 +101,9 @@ What's happening there in JS style computeriness (functions as constructor)
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+1. Use Math
+1. Identify the limits of math and numbers on the computer
+1. Use Math to do things with numbers  
 
 ## Initial Exercise (15 min)
 
