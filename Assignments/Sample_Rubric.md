@@ -1,4 +1,4 @@
-# Class - Title Rubric
+# FEW 2.1 - Title Rubric
 
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|
