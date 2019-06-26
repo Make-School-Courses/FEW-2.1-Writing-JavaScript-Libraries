@@ -12,7 +12,9 @@ In your repo create a file named: `index.js`. You'll add code to this file that 
 
 ## What code to write
 
-The goal of this first library is to make some String functions. These will be generic utilities that help you work with Strings. 
+The goal of this first library is to make write utilities that work with Strings. Strings are one of the most common data types that you work on a regular basis. There are very few programs that don't make use of Strings in one form or another.
+
+JavaScript has a built in String Object/Class that has many methods built into it. These do a lot but often you want to more. 
 
 JavaScript provides many methods to manipulate strings already but it doesn't do some of the things that we might want to do. It's your job to write functions that solve the problems below. 
 
@@ -40,6 +42,13 @@ JavaScript provides many methods to manipulate strings already but it doesn't do
   - Example:` "  what the    heck   "` -> `"what_the_heck"`
 8. `camelCase()` - Lowercases the first character of the first word. Then uppercases the first character of all other words, and removes all spaces. 
   - Example: `Camel Case` -> `camelCase`
+
+Stretch Challenges 
+
+If you're finding the functions above easy try these. 
+
+padWithZeros(before, after) - Should pad a String with 
+
 
 These functions should all take a string as input and return a string as output. 
 
