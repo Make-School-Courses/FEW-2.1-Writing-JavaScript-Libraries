@@ -100,6 +100,8 @@ To publish your package use:
 
 `npm publish`
 
+The first time you publish, you will need to add `--access=public` to avoid an error. After that, future publications will default to public access.
+
 #### Resolving errors
 
 All packages on npm are public and share the same namespace. The most common error will a name collision. It might look like:
@@ -190,7 +192,7 @@ If the version was: 1.0.0 change this to 1.0.1
 
 Now run:
 
-`npm publish --access=public`
+`npm publish`
 
 Check your package on [npm](https://www.npmjs.com ).
 

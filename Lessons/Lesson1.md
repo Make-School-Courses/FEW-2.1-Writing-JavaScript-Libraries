@@ -76,10 +76,10 @@ Take a look at a couple of libraries below and look at the code. With your pair 
 
 Just skim the repos and look at a couple of files. Usually, the code will be in `index.js` or in `src` folder.
 
-Look for these things in each of these things as you explore the repos below.
+Look for each of these things as you explore the repos below.
 
 - How much code is there?
-- How is organized?
+- How is it organized?
 - What language?
 
 - [has-values](https://github.com/jonschlinkert/has-values)
