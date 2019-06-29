@@ -33,7 +33,7 @@ Challenges
 
 - goldenRatio - Add a new property to Number that is the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio)
 - Number Methods - This method already exists, your job is to make a method that does the same thing. Rather than Math.round(x) your method will work like this: x.round(). 
-  - round() - x = 9.99 - x.round() -> 10
+  - round() - x = 9.99 - x.round() -> 10  
   - floor() - x = 9.99 - x.floor() -> 9
   - ceil() - x = 1.03 - x.ceil() -> 2
 - pad(x, y) - pads Number with x 0 before, and y 0 after. 
@@ -47,8 +47,20 @@ Challenges
 - tax(rate) - Returns the tax amount
 - withTax(rate) - returns the amount with tax
 - toPercent() - converts a number to percent
+- mortage()
+- interest()
+- decimalToBinary(float) -> 10010100100101001001010
+- numberToBinary(n) -> 01001001010
+- binaryToNumber(n) -> 34
+- intToHex(int) -> #332211
+
+- Random functions 
+  - random()
+  - randomRange()
+  - randomColor()
   - 
-- 
+
+Stretch 
 
 - BigInt - Is class that tracks extra large integer values. I hear these are great for Incremental games. BigInt holds a large number as a string. It provides methods that perform math operation. 
   - new BigInt(value = 0) - Initialize with a value or 0. 
