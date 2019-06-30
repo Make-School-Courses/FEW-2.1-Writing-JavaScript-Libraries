@@ -1,6 +1,6 @@
 # FEW 2.1 - Bundling Libraries for distribution
 
-This scless session covers the concept of bundling. This the process of combining files and processing them for use and distribution. 
+This class session covers the concept of bundling. This the process of combining files and processing them for use and distribution. 
 
 ## Why learn how to bundle files? 
 
@@ -16,9 +16,9 @@ Bundling is the process of processing and combining files together into a single
 
 ### Modules 
 
-Modules is the concept of separating code into different scopes and making it avilable to your program. 
+Modules are the concept of separating code into different scopes and making it available to your program. 
 
-In the browsers all code is global. A variable defined in one file is avialable in another. 
+In the browsers all code is global. A variable defined in one file is available in another. 
 
 This creates a few problems. 
 
@@ -60,14 +60,14 @@ There are several tools you can use to bundle your code and several patterns/sta
 
 Rollup seems to be the most modern and up to date choice out of this list. 
 
-Reollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
+Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
 
 ### Common JS 
 
 Is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
 
 ```
-const yourCode = rewquire('your-code')
+const yourCode = require('your-code')
 ...
 yourCode.yourMethod()
 ```
@@ -99,7 +99,7 @@ yourMethod()
 
 Follow the instructions below to bundle your project with rollup.js.
 
-Intall rollup.js 
+Install rollup.js 
 
 `npm install --save-dev rollup`
 
@@ -116,7 +116,7 @@ export default {
 };
 ```
 
-This base config outputs a UMD file named "your-module.js". When loaded this file will create a global variable named 'yourModule'. Remember UMD format is meant to be loaded in the borwser. 
+This base config outputs a UMD file named "your-module.js". When loaded this file will create a global variable named 'yourModule'. Remember UMD format is meant to be loaded in the browser. 
 
 Move your source files into a folder named 'src' create this folder if you haven't yet. 
 
@@ -134,13 +134,13 @@ Make a test file: example.html. Import your script with the script tag:
 
 `<script src="./umd/just-in-case.js"></script>`
 
-Notice the path to your library uses. It points to the umd folder at the file named in your config file.
+Notice the path to your library uses. It points to the 'umd' folder at the file named in your config file.
 
 Write some test code in your test file. Load the text file in the browser. 
 
 Examine the source code that was written. It is pretty obscure. Note that it is using one of the module patterns evolved from the IIFE. 
 
-The source code has not been minified. You can minify using Terser.sj plugin for Rollup. 
+The source code has not been minified. You can minify using Terser.js plugin for Rollup. 
 
 Import Terser.js plugin for RollUp. 
 
@@ -172,7 +172,7 @@ export default [
 ];
 ```
 
-Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benfit. 
+Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit. 
 
 Modify `package.json`. We need to make sure that importers of the library get the right file. 
 
@@ -247,7 +247,7 @@ Import your package.
 
 `npm i your-module`
 
-Make an html file to test in browser 'example.html'.
+Make an HTML file to test in browser 'example.html'.
 
 Add the script tag. 
 
@@ -259,7 +259,7 @@ Add the script tag.
 </script>
 ```
 
-Note the path is pointing to the a file in node_modules. You'll need to customize the second script to work with your code. 
+Note the path is pointing to the file in node_modules. You'll need to customize the second script to work with your code. 
 
 Test your work in Node JS. Make a new file 'server.js'. 
 
@@ -290,12 +290,12 @@ import { yourMethod } from 'your-module'
 console.log(yourMethod())
 ```
 
-Wow that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. The same process was done to all of the libraries that you are importing. 
+Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. The same process was done to all of the libraries that you are importing. 
 
 
 ### Code Coverage
 
-Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration code coverage is a metric that gives another way to look at the quality and reliability of our code. 
+Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration, code coverage is a metric that gives another way to look at the quality and reliability of our code. 
 
 `npx jest --coverage`
 
@@ -328,15 +328,23 @@ Let's read the coverage summary closely.
 - % Func - What percentage of functions have been executed? 
 - % Lines - What percentage of executable lines of code have been executed? 
 - Uncovered Line #s - Which lines have not been covered by testing?
-  - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the serc folder. In the example test.js imports from './lib'.
+  - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the 'src' folder. In the example test.js imports from './lib'.
 
 Take a look at your code and figure out: 
 
 - What hasn't been tested
-- Which branches havn't been executed
+- Which branches haven't been executed
 - Functions that have been tested
 
 https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b
+
+### Pair programming 
+
+Take some time to pair program and solve issues with your code. You'll split the time half focussed on one project and half focussed on the other. 
+
+The goal of this session is to 
+
+Pair up with someone you haven't paired with before. 
 
 ## Homework 
 
@@ -358,9 +366,9 @@ Your code should work with:
 | ----------- | --------- | ------------------------- |
 | 0:00        | 0:05      | Objectives                |
 | 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
+| 0:20        | 0:30      | Bundle files with RollUp  |
 | 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
+| 1:00        | 0:45      | Code Coverage pair and test |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
 
