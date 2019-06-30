@@ -1,4 +1,4 @@
-# FEW 2.1 - Publish String Lib to npm
+# FEW 2.1 - Assignment 2 - Publish String Lib to npm
 
 ## Description 
 

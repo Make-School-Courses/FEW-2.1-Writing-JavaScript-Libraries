@@ -1,4 +1,4 @@
-# FEW 2.1 Assignment - 1 - String Lib
+# FEW 2.1 Assignment 1 - String Lib
 
 The goal of this assignment is to create a JavaScript Library of String functions. 
 

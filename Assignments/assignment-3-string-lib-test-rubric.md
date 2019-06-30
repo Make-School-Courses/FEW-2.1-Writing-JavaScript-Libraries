@@ -1,4 +1,4 @@
-# FEW 2.1 - Assignment 3 String Lib Tests - Rubric
+# FEW 2.1 - Assignment 3 - String Lib Tests Rubric
 
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|

@@ -1,4 +1,4 @@
-# FEW 2.1 - String Lib Continuous Integration
+# FEW 2.1 - Assignment 4 - Continuous Integration
 
 ## Description 
 

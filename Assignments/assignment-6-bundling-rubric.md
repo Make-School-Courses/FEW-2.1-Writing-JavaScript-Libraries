@@ -1,4 +1,4 @@
-# FEW 2.1 - Assignment 5 - Math Lib Rubric
+# FEW 2.1 - Assignment 6 - Bundling Rubric
 
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|

@@ -1,4 +1,4 @@
-# FEW 2.1 - String Lib Tests
+# FEW 2.1 - Assignment 3 - String Lib Tests
 
 ## Description 
 

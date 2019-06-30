@@ -1,4 +1,4 @@
-# FEW 2.1 - Continuous Integration
+# FEW 2.1 - Assignment 4 - Continuous Integration Rubric
 
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|

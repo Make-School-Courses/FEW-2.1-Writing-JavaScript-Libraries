@@ -1,296 +1,301 @@
-# FEW 2.1 - Building libraries with Webpack
+# FEW 2.1 - Bundling Libraries for distribution
 
-## Why build with Webpack?
+This scless session covers the concept of bundling. This the process of combining files and processing them for use and distribution. 
 
-Just because you wrote the code doesn't mean it's usable everywhere. Your ES6 JS might not run in a browser or in a Node environment. While you could write the compatible code you'd need to updated it manually. 
+## Why learn how to bundle files? 
 
-The solution, write modern JS in ES6 and transpile to ES5, Commonjs, and other forms to make your code universal!
+All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
 
-## Learning Objectives
+Bundling your files means other you can distribute them and the world can use anywhere without extra work. 
 
-1. Explain the uses and advantages of transpiling
-1. Use Babel to transpile 
-1. Use Webpack to automate processes
-1. Identify code coverage (lines, branches, and functions that have not been tested)
+Bundling files also processes your files for different environments. Your files need to be handled differently if they are used in the browser, or in NodeJS, or in a React project. 
 
-## Transpiling 
+### Bundling 
 
-A transpiler is a tool that reads code written in one programming language and outputs equivalent code in another language. JS is so widely used across so many systems there is a lot of fragmentation. Code you write today might work in the latest version of Chrome but doesn't work in the last version if Internet Explorer, and needs a few extra lines or changes to be compatible with a Node.js environment. 
-
-It's all JavaScript but not quite the same langauge. 
-
-We handle transpiling with [Babeljs.io](https://babeljs.io). Go to [Try it out](https://babeljs.io/repl). Paste the source code from your Math lib into the left pane. 
-
-The right pane shows how Babel transpiles your code. There are options on the left to adjust how Babel writes the code. 
-
-Q: Whay kinds of changes di you spot? 
-Q: What do think these changes do?
-
-Q: Why transpile and learn Babel? 
-A: You'll see it everywhere, and it will make your code universally compatible in all JavaScript environments. 
-
-https://scotch.io/tutorials/javascript-transpilers-what-they-are-why-we-need-them
-
-## Modules, CommonJS, and IIFEs
-
-JavaScript code runs in a wide variety of environments. 
-
-- Browsers (and there are many of these)
-- Node.JS (uses JS but is different)
-
-There are two things that are important to understand here. 
-
-- Making code safely available 
-- Making code compatible
-
-Scripts written in the script tag or imported with the script tag in the browser all run in the same environment. No matter where a script is defined all of it's code is thrown into a common pool of code. 
-
-Quick everyone write some pseudo code. We need some code that takes orders for products, and tracks the number of orders submitted. 
-
-- function that takes an order for a product. It should take the id of the product, the number to order 
-- You need a variable that counts the number of total orders. This increments with each order. 
-
-List the variable and function names on the board. 
-
-Using all of these code together creates a clash. More than one of these functions and variables uses the same identifiers. 
-
-We could use an IIFE to isolate our code from other code: 
-
-```
-(function() {
-  var count = 0
-
-  function orderCookies(name, number) {
-    count += 1
-    console.log(name, 'placed an order' )
-  }
-})()
-```
-
-Q: What is the scope of `count` and `orderCookies`
-
-This isolates your code from all of the other code. Problem you can't access this code from outside. This is where the concept of modules come in. Modules use the pattern above with additional code that returns elements that you want to be publicly accessible.
-
-This problem has been solved through commonjs and requirejs. Thes 
+Bundling is the process of processing and combining files together into a single file. 
 
 ### Modules 
 
-The module pattern allows a developer to define a scope for variables and functions that is seprate from everything else in the program. This is handled through the use of IIFE (Immediately Invoked Function Expressions). 
+Modules is the concept of separating code into different scopes and making it avilable to your program. 
 
-### UMD (Universal Module Definition)
+In the browsers all code is global. A variable defined in one file is avialable in another. 
 
-Take a quick look at this article. 
+This creates a few problems. 
 
-https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/
+```
+// my-code.js
+function load() { /* does something important */}
+//
+<script src="my-code.js"></script>
+<script>
+  function load() {} // accidentally overwrites important code 
+</script>
+```
 
-You don't ever have to write this code. Instead Babel will take your code and wrap in one of these module defintions. 
+The module pattern uses scope to solve the problem above
 
-## Build Tools: Webpack 
+```
+// my-code.js
+(function() {
+  // Code safely scoped to function
+  function load() { /* does something important */}
+})()
 
-Modern JavaScript applications process files, transpile, and bundle them together. Webpack is currently the most popular tool for this. 
+//
+<script src="my-code.js"></script>
+<script>
+  function load() {} // global scoped 
+</script>
+```
 
-Q: Why? Too many to do justice in this lesson. here are the big ones. 
+You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
 
-- **Transpiling** for compatibility
-- **Preprcessing** JS and SASS, and minify
-- **Bundling** files
-- **Reporting** code coverage and testing
-- **Utility processes** like launching local sever and watching files for changes
+## Bundling code with Rollup
 
-transpiling for browser compatibility is important. This allows you to write code in any form of JS and be sure it will run in the same way in any environment. 
+There are several tools you can use to bundle your code and several patterns/standards that they follow. 
 
-Preprocessing files. SASS for example, must be processed and turned into vanilla CSS. This is a requirement. You couldn't use SASS unless it was converted to vanilla CSS. 
+- [Common.js](http://www.commonjs.org)
+- [Require.js](https://requirejs.org)
+- [rollUp.js](https://rollupjs.org/guide/en/)
 
-Minifying is the process of minimizing the size of files before they used in the application. This saves decreases load times. Essentially this is the process of removing all of the unnecessary characters including comments and white space. This is important since you as a developer want to include comments for good code quality but these comments increase your load size! Minifying also replaces the names of functions and variables with shorter names. If you used letter names for each variable and function you'd be decreasing the file size but your code would be impossible to read! 
+Rollup seems to be the most modern and up to date choice out of this list. 
 
-Bundling files is the process of taking many small seprate files and combining them into a single "bundle". This is saves load times since your app now only needs to load a single file. You also don't have to manage links to many files which could save you some organizational overhead. 
+Reollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
 
-In short it's a pretty good idea. 
+### Common JS 
 
-## Build Lib with Webpack
+Is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
 
-The steps here build a simple library from scratch using all of the concepts from class with the addition of Webpack. 
+```
+const yourCode = rewquire('your-code')
+...
+yourCode.yourMethod()
+```
 
-### Step 1 - Getting started
+### UMD (Universal Module Definition) 
 
-Make a new folder. Initialize an npm project:
+To wrap up code for use in the script tag in the browser you'll need to make a UMD module. 
+
+```
+<script src="your-code.js"></script>
+<script>
+  ...
+  yourCode.method()
+  ...
+</script>
+```
+
+### ES Modules 
+
+ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. These modules are further processed and bundled before they are used. 
+
+```
+import { yourMethod } from 'your-code'
+...
+yourMethod()
+```
+
+## Use Rollup
+
+Follow the instructions below to bundle your project with rollup.js.
+
+Intall rollup.js 
+
+`npm install --save-dev rollup`
+
+Create a config file for rollup. Make a new file named `rollup.config.js`. 
+
+```
+export default {
+    input: 'src/index.js',
+    output: {
+        file: 'umd/your-module.js',
+        format: 'umd',
+        name: 'yourModule'
+    }
+};
+```
+
+This base config outputs a UMD file named "your-module.js". When loaded this file will create a global variable named 'yourModule'. Remember UMD format is meant to be loaded in the borwser. 
+
+Move your source files into a folder named 'src' create this folder if you haven't yet. 
+
+Rollup will automatically build from the `src` directory. 
+
+Test your work so far. 
+
+`npx rollup --config`
+
+This should build the UMD module from your source files and save these a folder named `umd`. 
+
+Test your module. 
+
+Make a test file: example.html. Import your script with the script tag: 
+
+`<script src="./umd/just-in-case.js"></script>`
+
+Notice the path to your library uses. It points to the umd folder at the file named in your config file.
+
+Write some test code in your test file. Load the text file in the browser. 
+
+Examine the source code that was written. It is pretty obscure. Note that it is using one of the module patterns evolved from the IIFE. 
+
+The source code has not been minified. You can minify using Terser.sj plugin for Rollup. 
+
+Import Terser.js plugin for RollUp. 
+
+`npm install --save-dev rollup-plugin-terser`
+
+Modify `rollup.config.js`: 
+
+```
+import { terser } from 'rollup-plugin-terser';
+
+export default [
+  {
+    input: 'src/index.js',
+    plugins: [terser()],
+    output: {
+        file: 'umd/your-module.js',
+        format: 'umd',
+        name: 'yourModule',
+        esModule: false
+    }
+  },
+  {
+    input: 'src/index.js',
+    output: {
+      file: 'esm/index.js',
+      format: 'esm'
+    }
+  }
+];
+```
+
+Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benfit. 
+
+Modify `package.json`. We need to make sure that importers of the library get the right file. 
+
+Set "main" for Node JS environments.
+
+```
+  ...
+  "main": "umd/jus-in-case.js",
+  ...
+```
+
+Use "module" to designate ES Module.
+
+```
+  ...
+  "module": "esm/index.js",
+  ...
+```
+
+Use "files" to designate which files should be distributed by npm. 
+
+```
+  ...
+  "files": [
+    "esm/*",
+    "emd/*"
+  ]
+  ...
+```
+
+Add "prepare" script. This script is run by npm each time you install or publish. 
+
+```
+  ...
+  "scripts: {
+    ...
+    "prepare": "rollup --config",
+    ...
+  }
+  ...
+```
+
+Test your work so far. 
+
+`npm pack`
+
+This command is like `npm publish` it prepares your files but doesn't send them to the server. Use `pack` to test your work locally. When you're satisfied use `publish` to upload to npm. 
+
+Run your tests
+
+`npm test`
+
+If everything is good commit and push to GitHub. 
+
+Check your Status on Travis. 
+
+Check your Coverage on Coveralls.
+
+Take a look at your package on npm. Check the version number. 
+
+You can test the Node JS version of the package using the "RunKit" link.
+
+(I had a problem with this showing an outdated version.)
+
+Create a test project for your package. 
+
+Create a new folder and initialize a new npm project. 
 
 `npm init -y`
 
-### Step 2 - Use Module Exports 
+Import your package. 
 
-Let's write a simple library with a couple functions that illustrate how to work in both the browser and node. 
+`npm i your-module`
 
-make a new file `index.js`
+Make an html file to test in browser 'example.html'.
 
-```
-// code here... ????????????
-```
+Add the script tag. 
 
-- Assign functions to module.exports
-- Global values, classes and ... ???
-
-### Step 3 - src directory 
-
-Everything builds from src. Your source code are the files you maintain and the files that are processed, transpiled, and bundled. 
-
-- Make `src` directory and move source code (index.js) here. 
-- Set the entry point in package.json to: `"main": "src/index.js"`
-
-Test this by run 
-
-`node`
-
-At the prompt 
-
-`> var mylib = require('.')`
-
-Test your lib 
-
-`> mylib`
-
-Call a method...
-
-If you've used modern JS you'll errors!!!!!!!
-
-Node doesn't fully support all of the new ES6 features. Use Babel to convert your code into ES5 universally compatible code. 
-
-### Step 4 - Install Babel
-
-Here you'll add and configure Babel.
-
-`npm i -D @babel/core @babel/cli @babel/preset-env`
-
-Add a new file `.babelrc` in the root directory.
-
-```
-{
-  "presets": [
-    "@babel/preset-env"
-  ]
-}
+```HTML
+<script src="./node_modules/your-module/umd/your-module.js"></script>
+<script>
+ console.log(yourModule)
+ console.log(yourModule.method())
+</script>
 ```
 
-package.json
+Note the path is pointing to the a file in node_modules. You'll need to customize the second script to work with your code. 
 
-`"build:commonjs": "babel src --out-dir lib",`
+Test your work in Node JS. Make a new file 'server.js'. 
 
-Run the script: 
+```JavaScript
+const yourModule = require('your-module')
 
-`npm run build:commonjs`
-
-Webpack processes and creates a bundle in `lib/index.js`. The input file came from `src/index.js` and was output to `lib/index.js`. We need to set a new entry point in `package.json`.
-
-`"main": "lib/index.js",`
-
-Try testing your package in node. 
-
-Start the node environment: 
-
-`node`
-
-Require your package: 
-
-`var lib = require('.')`
-
-
-See your stuff on this: 
-
-`this` 
-
-(should log `this` to the console)
-
-Call methods on lib: 
-
-`lib.lottery()`
-
-`Number([1,2,3,4,5,6])`
-
-Take a look at `lib/index.js` compare this file to `src/index.js`. The second is the source code we wrote. The first is the processed and bundled code. 
-
-You can see that the code is working in a Node environment. What if we wanted this code to also work in the browser? 
-
-### Build a UMD Bundle 
-
-The code above works with Node but we need a universal module that can be used in Node or in a Borwser. 
-
-Make a new file in your root directory: `webpack.config.js`
-
-Add the following code to `webpack.config.js`
-
-```
-const path = require('path')
-
-module.exports = {
-  output: {
-    filename: 'test-module.js',
-    library: 'testModule',
-    libraryTarget: 'commonjs2'
-  }
-}
+console.log(yourModule)
+console.log(yourModule.method())
 ```
 
-Here you are naming the output file and the name of the module. You'll have a file you can import in a node environment: 
+Again, modify the code here to test your library code. 
 
-`require('test-module.js')`
+Test your code in a React project. 
 
-For browsers this will give us an object on the window object with all of our methods and properties attached to it. 
+Create a new React app. 
 
-`window.testModule`
+`npx create-react-app your-module-react-test`
 
-Use Webpack to create the bundle: 
+Import your module. 
 
-`npx webpack` or `webpack`
+`npm i your-module`
 
-This should create: 
+Write some test code in `App.js`
 
-`dist/test-module.js`
+```JavaScript
+import { yourMethod } from 'your-module'
 
-Take a look at `test-module.js` the code here looks a little weird. It's minified, has some extra code added that is part of the Universal Module Definition standard. Scroll all the way to the right you should be able find some of your source code modified to run everywhere.
-
-You shoudl also see a warning in the terminal. 
-
-> WARNING in configuration
-> The 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.
-> You can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/
-
-We didn't set the mode when ran webpack so webpack defaulted to 'production' mode. This why the code was minified. There might be times when you want to work in development mode and have more readble code. 
-
-Try: 
-
-`npx webpack --mode=development` or `webpack --mode=development`
-
-Take a look at `dist/test-module.js`. It's a lot easier to read now. There is a lot of extra code and comments. This code has not been minified. It has been made compatible with older browsers and the Universal Module Defintion.
-
-`node`
-
-`> require('./dist/test-module.js')`
-
-Add a couple build scripts to `package.json`:
-
-```
-"build": "npm run build:commonjs && webpack --mode=production", 
-"build-dev": "npm run build:commonjs && webpack --mode=development", 
+console.log(yourMethod())
 ```
 
+Wow that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. The same process was done to all of the libraries that you are importing. 
 
 
+### Code Coverage
 
-
-
-
-
-
-
-
-
-
-
-
-
-### Step 9 - Add Coverage 
-
-Test your coverage 
+Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration code coverage is a metric that gives another way to look at the quality and reliability of our code. 
 
 `npx jest --coverage`
 
@@ -325,108 +330,27 @@ Let's read the coverage summary closely.
 - Uncovered Line #s - Which lines have not been covered by testing?
   - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the serc folder. In the example test.js imports from './lib'.
 
-Some code added via Babel will create branches that do not get tested. This is soemthing we can live with for now.  
+Take a look at your code and figure out: 
+
+- What hasn't been tested
+- Which branches havn't been executed
+- Functions that have been tested
 
 https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b
 
-### Step 5 - Travis 
+## Homework 
 
-.travis.yml
+Your goal is to bundle your lib and publish an updated version to npm. 
 
-```
-language: node_js
-node_js:
-  - node
-```
+Your code should work with: 
 
-push these changes check travis.com and wait patiently...
-
-#### Add coveralls 
-
-`npm i -D coveralls`
-
-package.json -> "scripts"
-
-`"coverage": "npm test -- --coverage",`
-
-Update `.travis.yml` to run this run your coverage script when you push to GitHub. 
-
-```
-language: node_js
-node_js:
-  - node
-script:
-  - npm run coverage -- --coverageReporters=text-lcov | coveralls
-```
-
-Commit and push to GitHub. Wait patiently for Travis to begin it's build. When this is complete check with Coveralls. 
-
-
-
-
-
-
-
-https://nmackey.com/library-webpack-babel/
-
-Good tutorials does it all (maybe too much)
-https://medium.com/@TeeFouad/a-simple-guide-to-publishing-an-npm-package-506dd7f3c47a
-
-Webpack Authoring Libraries 
-
-https://webpack.js.org/guides/author-libraries/
-
-Great guide to Webpack 4
-
-https://www.valentinog.com/blog/webpack/
-
-NPM package publish with Webpack: https://tech.namshi.io/blog/2016/07/20/the-copy-paste-guide-foror-creating-npm-packages-in-es6-with-babel-and-webpack/
-
-Concepts
-- Build systems 
-- Bundle
-- Webpack
-  - Which version? -> 4+
-- Transpiling
-- Babel
-- Plugins 
-  - Processing HTML and CSS loaders
-- Webpack dev server
-
-Building and publishing React Components
-
-https://medium.com/dailyjs/building-a-react-component-with-webpack-publish-to-npm-deploy-to-github-guide-6927f60b3220
-
-
-
-
-
-## In Class Activity I (30 min)
-
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
-
-## Overview/TT II (optional) (20 min)
-
-## In Class Activity II (optional) (30 min)
-
-## Wrap Up (5 min)
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- Common JS - Node JS 
+- UMD - In the browser
+- ES Module - React with import
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
 
 ## Minute-by-Minute [OPTIONAL]
 
