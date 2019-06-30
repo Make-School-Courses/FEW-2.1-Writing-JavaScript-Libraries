@@ -33,7 +33,7 @@ Students by the end of the course will be able to ...
 |  3 |   Tue, July 16            | [Writing Tests]                         |
 |  4 |   Thu, July 18            | [Continuous Integration]                |
 |  5 |   Tue, July 23            | [Math Libraries]                        |
-|  6 |   Thu, July 25            | [Building with Webpack]                 |
+|  6 |   Thu, July 25            | [Bundling Libraries for distribution]   |
 |  7 |   Tue, July 30            | [Date Libraries]                        |
 |  8 |   Thu, August 1           | [TypeScript]                            |
 |  9 |   Tue, August 6           | [API Wrapper Libraries]                 |
@@ -46,7 +46,7 @@ Students by the end of the course will be able to ...
 [Writing Tests]:https://drive.google.com/open?id=1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4
 [Continuous Integration]:https://docs.google.com/presentation/d/1bVj1kQjZEEP5CHJ75VXzsDhledgpasC0cEoDBK9zjuk/edit?usp=sharing
 [Math Libraries]:https://docs.google.com/presentation/d/15crKRdhAXxcNsy5rHMvGAXm8RDYbkFVqCV6WGCcGy-U/edit?usp=sharing
-[Building with Webpack]:https://docs.google.com/presentation/d/1_gX4K3VfCgsY7XH-xfc7q3T1MhEarPRoVla-AXJCae8/edit?usp=sharing
+[Bundling Libraries for distribution]:https://docs.google.com/presentation/d/1_gX4K3VfCgsY7XH-xfc7q3T1MhEarPRoVla-AXJCae8/edit?usp=sharing
 [Date Libraries]:https://docs.google.com/presentation/d/1zBpVfNByDj5u4Bsg1EtW_zx3qm_6oEm85BStYOyKlDk/edit?usp=sharing
 [TypeScript]:https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit?usp=sharing
 [API Wrapper Libraries]:https://docs.google.com/presentation/d/14t1i4u9oZcwIFAdHm8t_SrAFVUA70cpwmfS_bEJ8ISI/edit?usp=sharing
