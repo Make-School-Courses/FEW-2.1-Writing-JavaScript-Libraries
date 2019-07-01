@@ -215,7 +215,11 @@ Add "prepare" script. This script is run by npm each time you install or publish
   ...
 ```
 
-Test your work so far. 
+### Testing your work
+
+Pair up with someone you haven't paired with before. The goal will be to test the build system. You'll do this by following the instructions below. 
+
+Start here: 
 
 `npm pack`
 

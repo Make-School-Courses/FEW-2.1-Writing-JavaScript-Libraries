@@ -1,22 +1,22 @@
 # FEW 2.1 - Math Lib
 
-The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library. 
+The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers. 
 
-## Why you should know this or industry application
+## Why you should know this
 
-math and Numbers in JS can be a pain point which many people will complain about. Understanding how math and numbers work in JS will give you deeper insights into the language, it will help at interviews and in your own work. 
+Math and Numbers in JS can be a pain point which many people will complain about. Understanding how math and numbers work in JS will give you deeper insights into the language, it will help you at interviews and in your own work. 
 
 Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
 
 ## Numbers in JS (really its been doing the right thing all along...)
 
-~ Numbers 0.1 + 0.2 != 0.3 
+Q: Why 0.1 + 0.2 != 0.3 ?
 
 0.1 + 0.2 ->  0.30000000000000004
 
-Why? https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
+https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
 
-Its because numbers are represented as 1 and 0 behind the scenes in a 64bit package 
+A: Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
 
 Can this be done with a calculator as a classroom exercise?
 
