@@ -104,7 +104,7 @@ The first time you publish, you will need to add `--access=public` to avoid an e
 
 #### Resolving errors
 
-All packages on npm are public and share the same namespace. The most common error will a name collision. It might look like:
+All packages on npm are public and share the same namespace. The most common error will be a name collision. It might look like:
 
 ```
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/test-error - You do not have permission to publish "test-error". Are you logged in as the correct user?
