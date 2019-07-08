@@ -62,16 +62,14 @@ You will implement industry best practices by:
 
 ## Evaluation
 
-You must publish 4 libraries to NPM.
+To pass this course you must meet the following requirements:
 
-- String
-- Math
-- Date 
-- API Wrapper
-
-Each of these should implement continuous integration, unit testing, and be bundled for distributions. 
-
-You must also score a passing grade on the final assessment. 
+- Complete all required assignments 
+    - String, Math, Date, API Wrapper
+    - Each of these should implement continuous integration, unit testing, and be bundled for distributions. 
+- Achieve a passing score on the final assessment
+- Actively participate in class and abide by the attendance policy
+- Make up all classwork from all absences
 
 ## Make School Course Policies
 - [Program Learning Outcomes](https://make.sc/program-learning-outcomes)
