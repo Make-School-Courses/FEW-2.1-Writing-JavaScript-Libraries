@@ -96,7 +96,7 @@ function mystery(x: Cat) {
 
 ### Static typing can improve your workflow.
 
-Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type.
+Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
 
 ### Advantages of dynamic typing
 
@@ -108,13 +108,189 @@ There isn't just one right answer that works in all scenarios; you will need to 
 
 ## Features of TypeScript
 
-### Variables (including function variables)
+### Variables
 
+The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
 
+```
+let sum: number = 10;
+const title: string = 'hello';
+let done: boolean = false;
 
-### Classes
+sum = undefined; // OK
+sum = null; // OK
+sum = '100'; // Not OK - will result in a compile error
+```
+
+There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
+
+```
+let list1: number[] = [1, 2, 3];
+let list1: Array<number> = [1, 2, 3];
+```
+
+What if we want an array with mixed values of different types? In that case, we can use the 'tuple' type:
+
+```
+let person1: [string, number] = ['Jane', 20];
+```
+
+You can also easily make your own enum type. If you try to print the value of an enum, you'll see that it's actually a number, with the first value defaulting to 0.
+
+```
+enum Fruit { Apple, Orange, Pear };
+
+let f: Fruit = Fruit.Pear;
+
+console.log(Fruit.Apple); // 0
+console.log(Fruit.Orange); // 1
+console.log(Fruit.Pear); // 2
+```
+
+Finally, if you don't know what the type of a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
+
+```
+let someValue: any = 10;
+someValue = [1, 2, 3];
+```
+
+### Functions & Function Variables
+
+We can add types to the variables and return values of functions:
+
+```
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+add(4, 6);
+```
+
+We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
+
+```
+function greet(greeting = 'Hello', person?: string) {
+  if (person) {
+    console.log(`${greeting}, ${person}!`);
+  } else {
+    console.log(`${greeting}!`);
+  }
+}
+
+greet(); // prints 'Hello!'
+greet('Hola'); // prints 'Hola!'
+greet(undefined, 'Jane'); // prints 'Hello, Jane!'
+```
+
+### Classes & Interfaces
+
+In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
+
+```
+let person: {name: string, age: number} = {name: 'Jane', age: 22};
+```
+
+We can also define the type ahead of time using an interface:
+
+```
+
+```
 
 ### Interfaces
+
+## Activity: Get Your Project Up and Running with TypeScript
+
+Let's try out what we learned by modifying an existing project with TypeScript. Go ahead and clone the `justincase` NPM library:
+
+```
+git clone https://github.com/soggybag/justincase
+```
+
+Now, we just need to make a few small changes to get it working again!
+
+### Add Types
+
+Rename the files to use a TypeScript extension (e.g. `index.js` to `index.ts`), and modify the functions to use types.
+
+To get the string prototype functions to compile, you will need to add the following interface definition to `index.js`:
+
+```
+declare global {
+    interface String {
+        capitalize(): string;
+        capitalizeAll(): string;
+        allCaps(): string;
+        oddCaps(): string;
+        evenCaps(): string;
+        kabobCase(): string;
+        snakeCase(): string;
+        stripSpaces(): string;
+        stripExtraSpaces(): string;
+    }
+}
+```
+
+### Modify package.json & rollup.config.js
+
+Go to package.json and update the 'input' filenames to to use their new TypeScript file extensions. Then add the following line after the main and module:
+
+```
+"types": "esm/index.d.ts",
+```
+
+Next, modify the 'prepare' (or 'build') script to run the `tsc` compiler so that we get our nifty typings files:
+
+```
+"scripts": {
+    "prepare": "rollup --config && tsc",
+}
+```
+
+We also need to install a TypeScript plugin for Rollup which will allow us to transpile the TypeScript code into good old JavaScript. You can install with npm in your terminal:
+
+```
+npm install --save-dev typescript rollup-plugin-typescript2
+```
+
+Then go to rollup.config.js and enter the following into your plugins for both output files:
+
+```
+plugins: [
+  typescript({
+    typescript: require('typescript'),
+  }),
+]
+```
+
+Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
+
+### Add tsconfig.json
+
+Add a new file `tsconfig.json` with the following content:
+
+```
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./esm",
+    "outDir": "./esm",
+    "module": "es6",
+    "target": "es5",
+    "noImplicitAny": true,
+    "moduleResolution": "node"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
+
+For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
+
+Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
 
 ## Wrap Up (5 min)
 
