@@ -31,7 +31,7 @@ Your README should also include some professional documentation. This will inclu
 
 Challenges 
 
-- goldenRatio - Add a new property to Number that is the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio)
+- GoldenRatio - Add a new property to Number that is the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio)
 - Number Methods - This method already exists, your job is to make a method that does the same thing. Rather than Math.round(x) your method will work like this: x.round(). 
   - round() - x = 9.99 - x.round() -> 10  
   - floor() - x = 9.99 - x.floor() -> 9

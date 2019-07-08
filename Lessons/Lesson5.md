@@ -8,6 +8,12 @@ Math and Numbers in JS can be a pain point which many people will complain about
 
 Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
 
+## Learning Objectives
+
+1. Use Math methods
+1. Identify the limits of math and numbers on the computer
+1. 
+
 ## Numbers in JS (really its been doing the right thing all along...)
 
 Q: Why 0.1 + 0.2 != 0.3 ?
@@ -43,22 +49,66 @@ What is NaN? Where does it appear? (Batman example: Array(16).join(“wtf” - 1
 
 Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
 
-new Number() vs Number()
+### new Number() vs Number()
 
-- Number.EPSILON
-- Number.MAX_SAFE_INTEGER
-- Number.MAX_VALUE
-- Number.MIN_SAFE_INTEGER
-- Number.MIN_VALUE
-- Number.NEGATIVE_INFINITY
-- Number.NaN
-- Number.POSITIVE_INFINITY 
+The **Number** JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the **Number() constructor**. A primitive type object **number** is created using the **Number() function**.
 
-Number Methods 
+```
+// Create a new Number Object
+var n = new Number(123) // Creates a new Number Object
 
-- Number.isFinite()
-- Number.isInteger()
-- Number.isNaN()
+var x = 123 // Creates a new Number primitive
+
+// These are not equivalent!
+x === n // false
+```
+
+Use `Number()` to covert a value to a number. 
+
+```
+var a = Number('123')
+var b = 123
+
+a === b
+
+var c = Number('z') // NaN (Not a Number)
+var d = Number('234') // 234
+```
+
+Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
+
+There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
+
+### Numbers 
+
+`1` === 1
+`1e+1` === 10 -> 1 * 10
+`23e+3` === 23000 -> 23 * 1000
+`44e-2` === 0.44 -> 44 * 0.01
+
+There isn't much more to this. Except: 
+
+- JS only has number (there are no Int, floats, Doubles, etc.)
+- JS Numbers are always floats 
+
+### Number Properties
+
+The Number object also holds many useful properties. 
+
+- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with.  
+- Number.MAX_SAFE_INTEGER - The largest safe integer you can work with. You can use larger numbers but math operations may not work as expected. 
+- Number.MAX_VALUE - The maximum mueric value representable in JS. 
+- Number.MIN_SAFE_INTEGER - The smallest safe integer you can work with. 
+- Number.MIN_VALUE - The msallest positive numeric value representable in JS.  
+- Number.NEGATIVE_INFINITY - Represents negative infinity
+- Number.NaN - Not a Number. 
+- Number.POSITIVE_INFINITY - Positive infinity
+
+### Number Methods 
+
+- Number.isFinite() - Tests for inifinity
+- Number.isInteger() - Determines whether a number is an integer
+- Number.isNaN() - 
 - Number.isSafeInteger()
 - Number.parseFloat()
 - Number.parseInt()
@@ -96,25 +146,11 @@ Arithmetic operators
 
 --- 
 
+https://exercism.io/tracks/javascript/exercises
 
+ 
 
-
-
-
-
-
-
-
-
-
-
-## Learning Objectives (5 min)
-
-1. Use Math
-1. Identify the limits of math and numbers on the computer
-1. Use Math to do things with numbers  
-
-## Initial Exercise (15 min)
+## Initial Exercise
 
 - Funny comic
 - Prime the Pump (e.g. think and jot, think pair share, etc)

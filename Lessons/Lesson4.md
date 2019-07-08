@@ -99,25 +99,21 @@ Using a **single computer** spend 10 mins solving linter errors person A's proje
 
 ## Travis CI 
 
-[Travis CI](https://travis-ci.org) is a Continuous Integration platform. It automates building and testing your software projects. 
+[Travis CI](https://travis-ci.com) is a Continuous Integration platform. It automates building and testing your software projects. 
+
+Follow the instructions here: 
 
 https://docs.travis-ci.com/user/for-beginners/
+
+https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
 
 ### Sign up and connect to Github 
 
 Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
 
-[Sign up for Travis](https://travis-ci.org) with GitHub.
+[Sign up for Travis](https://travis-ci.com) with GitHub.
 
 Authorize Travis with your GitHub account.
-
-### Add a new repo to Travis
-
-Add your Repo by clicking the + next to "My Repositories" on the main Travis page. 
-
-Search the list of repos and find your String Lib. Click the switch on the right to activate that repo. 
-
-Add a .travis.yml file to your repo. Add the language setting to this file. Push this change to the repo. 
 
 #### Add .travis.yml
 

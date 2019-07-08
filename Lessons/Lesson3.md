@@ -226,7 +226,7 @@ Note! If your functions are global or they are added to the prototype of a globa
 
 ## Write some tests
 
-
+Write test for FizzBuzz methods above. 
 
 ## Wrap Up (5 min)
 

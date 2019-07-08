@@ -11,6 +11,10 @@ Explain why students should care to learn the material presented in this class.
 1. Design
 1. Implement
 
+### Course Progress Tracker
+
+https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+
 ## Initial Exercise (15 min)
 
 - Funny comic
