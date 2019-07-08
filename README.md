@@ -26,30 +26,20 @@ Students by the end of the course will be able to ...
 
 **Class Times:** Tuesday and Thursday at 1:30–3:20pm (12 class sessions)
 
-| Class |          Date          |                 Topics                  |
-|:------|-----------------------:|:----------------------------------------|
-|  1 |   Tue, July 9             | [String Libraries]                      |
-|  2 |   Thu, July 11            | [NPM]                                   |
-|  3 |   Tue, July 16            | [Writing Tests]                         |
-|  4 |   Thu, July 18            | [Continuous Integration]                |
-|  5 |   Tue, July 23            | [Math Libraries]                        |
-|  6 |   Thu, July 25            | [Bundling Libraries for distribution]   |
-|  7 |   Tue, July 30            | [Date Libraries]                        |
-|  8 |   Thu, August 1           | [TypeScript]                            |
-|  9 |   Tue, August 6           | [API Wrapper Libraries]                 |
-| 10 |   Thu, August 8           | IIFEs and Script Tags                   |  
-| 11 |   Tue, August 13          | Final Presentations                     |
-| 12 |   Thu, August 15          | Final Exam                              |
-
-[String Libraries]:https://docs.google.com/presentation/d/1JMHlFPjdAM9FLhOU3WsUfBaQyTK-pQ31rnbb3AMM5hc/edit?usp=sharing
-[NPM]:https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing
-[Writing Tests]:https://drive.google.com/open?id=1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4
-[Continuous Integration]:https://docs.google.com/presentation/d/1bVj1kQjZEEP5CHJ75VXzsDhledgpasC0cEoDBK9zjuk/edit?usp=sharing
-[Math Libraries]:https://docs.google.com/presentation/d/15crKRdhAXxcNsy5rHMvGAXm8RDYbkFVqCV6WGCcGy-U/edit?usp=sharing
-[Bundling Libraries for distribution]:https://docs.google.com/presentation/d/1_gX4K3VfCgsY7XH-xfc7q3T1MhEarPRoVla-AXJCae8/edit?usp=sharing
-[Date Libraries]:https://docs.google.com/presentation/d/1zBpVfNByDj5u4Bsg1EtW_zx3qm_6oEm85BStYOyKlDk/edit?usp=sharing
-[TypeScript]:https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit?usp=sharing
-[API Wrapper Libraries]:https://docs.google.com/presentation/d/14t1i4u9oZcwIFAdHm8t_SrAFVUA70cpwmfS_bEJ8ISI/edit?usp=sharing
+| Class |      Date     |                     Topics                     |
+|:------|--------------:|:-----------------------------------------------|
+|  1 |   Tue, July 9    | [Writing JS Libraries](lessons/lesson-01.md)   |
+|  2 |   Thu, July 11   | [Publishing to NPM](lessons/lesson-02.md)      |
+|  3 |   Tue, July 16   | [Unit Testing](lessons/lesson-03.md)           |
+|  4 |   Thu, July 18   | [Continuous Integration](lessons/lesson-04.md) |
+|  5 |   Tue, July 23   | [Math Libraries](lessons/lesson-05.md)         |
+|  6 |   Thu, July 25   | [Bundling Libraries](lessons/lesson-06.md)     |
+|  7 |   Tue, July 30   | [Date Libraries](lessons/lesson-07.md)         |
+|  8 |   Thu, August 1  | [TypeScript intro](lessons/lesson-08.md)       |
+|  9 |   Tue, August 6  | [Typescript Part 2](lessons/lesson-09.md)      |
+| 10 |   Thu, August 8  | [](lessons/lesson-10.md) |  
+| 11 |   Tue, August 13 | [Final Presentations](lessons/lesson-11.md)    |
+| 12 |   Thu, August 15 | [Final Exam](lessons/lesson-12.md)             |
 
 ## Class Assignments
 
@@ -64,25 +54,24 @@ Over the course of the class, you will **write and publish 4 of your own JS libr
 
 You will implement industry best practices by: 
 
-- Writing tests
-- Using a Preprocessor bundler (Webpack)
+- Writing unit tests
+- Using a Preprocessor/bundler
 - Publishing to Github
 - Publishing to NPM 
-- Using Continuous Integration (Travis CI, Code Coverage, Code Climate)
-
-**More Details coming soon!**
+- Using Continuous Integration 
 
 ## Evaluation
-**[MAKE SPECIFIC TO YOUR COURSE SO IT IS SUPER CLEAR]**
-To pass this course you must meet the following requirements:
 
-- Complete all required assignments 
-- Pass all projects according to the associated project rubric
-- Pass the final summative assessment according to the rubric as specified in this class
-    - This will be further explained in the [study guide](ADD_STUDY_GUIDE_LNK)
-- Actively participate in class and abide by the attendance policy
-- Make up all classwork from all absences
+You must publish 4 libraries to NPM.
 
+- String
+- Math
+- Date 
+- API Wrapper
+
+Each of these should implement continuous integration, unit testing, and be bundled for distributions. 
+
+You must also score a passing grade on the final assessment. 
 
 ## Make School Course Policies
 - [Program Learning Outcomes](https://make.sc/program-learning-outcomes)

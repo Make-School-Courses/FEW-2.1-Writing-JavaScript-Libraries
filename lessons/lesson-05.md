@@ -138,17 +138,13 @@ Properties
 - Math.SQRT2
 
 ----
-
 Arithmetic operators 
 
 - +, -, *, /, **, %
 - ++, --
-
 --- 
 
 https://exercism.io/tracks/javascript/exercises
-
- 
 
 ## Initial Exercise
 
@@ -159,31 +155,7 @@ https://exercism.io/tracks/javascript/exercises
 - Quiz on homework or topic(s) of past class
 - Concept Test
 
-## Overview/TT I (20 min)
-
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
-
-## In Class Activity I (30 min)
-
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
-
-## Overview/TT II (optional) (20 min)
-
-## In Class Activity II (optional) (30 min)
-
-## Wrap Up (5 min)
+## Wrap Up
 
 - Continue working on your current tutorial
 - Complete reading
