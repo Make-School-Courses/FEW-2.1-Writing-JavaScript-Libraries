@@ -2,7 +2,7 @@
 
 In this class, you will begin writing the code that will be a JavaScript Library.
 
-## Learning Objectives (5 min)
+## Learning Objectives
 
 1. Describe a software library
   - How they are used
@@ -15,6 +15,8 @@ In this class, you will begin writing the code that will be a JavaScript Library
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
 ## JavaScript Libraries
+
+Slides: https://docs.google.com/presentation/d/1JMHlFPjdAM9FLhOU3WsUfBaQyTK-pQ31rnbb3AMM5hc/edit?usp=sharing
 
 ### Q: What are libraries?
 
