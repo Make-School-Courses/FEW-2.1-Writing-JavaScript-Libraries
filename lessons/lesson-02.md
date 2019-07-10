@@ -4,7 +4,7 @@ In this lesson you will publish your library and share it with the world.
 
 ## Learning Objectives (5 min)
 
-1. Describe what and NPM package is
+1. Describe, define, and use SEMVer
 1. Create NPM Packages
 1. Publish your NPM package
 
@@ -43,6 +43,8 @@ All of the packages you publish can be published from source code hosted on GitH
 https://docs.npmjs.com/about-npm/
 
 ## Getting started with NPM
+
+Follow these instructions to create an account, install npm CLI, and publish a package to the npm registry. 
 
 ### Sign up
 
