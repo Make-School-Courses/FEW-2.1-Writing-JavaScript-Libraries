@@ -112,11 +112,9 @@ All packages on npm are public and share the same namespace. The most common err
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/test-error - You do not have permission to publish "test-error". Are you logged in as the correct user?
 ```
 
-Here I tried to publish a package with the name `test-error`. This package already exists. **Search for it on npm**.
+Here I tried to publish a package with the name `test-error`. This package already exists. Hint: **Search for it on npm**. If you're having trouble finding a name test your name ideas by searching for the names on npm.
 
-If you're having trouble finding a name test your name ideas by searching for the names on npm.
-
-Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name.
+Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
 
 ### Publishing in scope
 
@@ -139,6 +137,10 @@ Click the name of your package on the list and view it on npm. Notice a few thin
 The npm page for a package shows the **text from the README.md** file in the GitHub repo for the package. This means your readme should look good and explain what your library does. This will encourage other developers to use your library.
 
 The version number, last update date, weekly downloads, GitHub repo and more are shown here.
+
+## Connect your GitHub to npm 
+
+https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry
 
 ## Version numbers and SemVer
 
