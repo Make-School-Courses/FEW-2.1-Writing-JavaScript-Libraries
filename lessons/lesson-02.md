@@ -8,6 +8,10 @@ In this lesson you will publish your library and share it with the world.
 1. Create NPM Packages
 1. Publish your NPM package
 
+## Slides 
+
+https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing
+
 ### Course Progress Tracker
 
 Update the [progress tracker](https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807)
@@ -138,7 +142,7 @@ The npm page for a package shows the **text from the README.md** file in the Git
 
 The version number, last update date, weekly downloads, GitHub repo and more are shown here.
 
-## Connect your GitHub to npm 
+## Connect your GitHub to npm (optional)
 
 https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry
 
