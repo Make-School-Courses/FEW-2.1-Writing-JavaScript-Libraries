@@ -29,7 +29,7 @@ Using CI will provide automated feedback on the quality of a codebase as each ne
 1. Use Linting to improve code quality and catch bugs
 1. Use Continuous Integration to automate testing
 
-## Install and lint your work!
+## Install ESLint and lint your work!
 
 Linting is not a CI but is related as a part of industry best practices and code quality. We've covered this in other classes but it's important so we will review it again here. 
 
@@ -37,16 +37,16 @@ Linting is not a CI but is related as a part of industry best practices and code
 
 Linting is an automated process that looks at your code and evaluates it for consistent style and quality. This has two effects on your work.
 
-- When working in a team it ensures that everyone on the team is coding with a consistent style. 
-- Catches errors and questionable coding structures before they get merged into a larger code base. 
+- When working in a team it ensures that everyone on the team is coding with a **consistent style**. 
+- **Catches errors** and questionable coding structures before they get merged into a larger code base. 
 
-**As a student you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
+As a student **you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
 
-ESLint needs to be installed in two places: *in the project* through npm and *in your editor*.
+ESLint needs to be installed in two places: _in the project_ through npm and _in your editor_.
 
-Q: Do you consider your self an advanced coder who follows professional best practices?
+**Q:** Do you consider your self an advanced coder who follows professional best practices?
 
-A: You have already install installed ESLint, and you do it for every project!
+**A:** You have already install installed ESLint, and you do it for every project!
 
 ## Activity: Install ESLint
 
@@ -87,15 +87,15 @@ You may need to close and reopen your project in your editor before the Linter s
 
 ## Pair up and solve linting errors
 
-Pair with a person *you haven't paired with* before. 
+Pair with a person _you haven't paired with_ before. 
 
 Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
 
 ### Discuss the linter suggestions
 
-- Q: What suggestions did the linter make that were obviously useful? 
-- Q: Did the linter suggest anything that seemed strange or not obvious? 
-- Q: Do you think your code is of better quality after?
+- **Q:** What suggestions did the linter make that were obviously useful? 
+- **Q:** Did the linter suggest anything that seemed strange or not obvious? 
+- **Q:** Do you think your code is of better quality after?
 
 ## Travis CI 
 
@@ -125,7 +125,7 @@ Add a new file to the root directory of your String Lib project. Name this file:
 
 Add the following to this file: 
 
-```
+```yml
 sudo: false
 language: node_js
 node_js:
@@ -145,9 +145,9 @@ script:
 - npm run coveralls
 ```
 
-This config script to use the latest stable version of node, build your project from the master branch, install node modules, and then run your npm test script followed by the coveralls script. 
+This config script uses the latest stable version of node, builds your project from the master branch, install node modules, and then runs your npm test script followed by the coveralls script. 
 
-The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll do this in the next step. 
+The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll set this up this in the next step. 
 
 https://docs.travis-ci.com/user/tutorial/
 
@@ -171,7 +171,7 @@ Add the Coveralls package to your project.
 
 Add this line to your package.json:
 
-```
+```JSON
 "scripts": {
   "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
 },
@@ -185,11 +185,11 @@ https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-
 
 ### Give yourself a badge! 
 
-You've earned it, give yourself a badge or two! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
+Give yourself a badge or two, you've earned them! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
 
-Q: Why? 
+**Q:** Why add these badges? 
 
-A: It will show the status of your software project at a glance. This makes it quick and easy for you and your collaborators to know the status. This increases the credibility of your repositories. A stranger visiting your repo will know if the code there is test passing. It increases your credibility as the owner of the repo! 
+**A:** It will show the status of your software project at a glance. It increases the credibility of your repositories.
 
 #### Travis badge 
 
