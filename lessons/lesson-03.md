@@ -202,6 +202,27 @@ test('Test isFizzy', () => {
 
 With a test like this, would you be confident that this would catch errors in the future?
 
+## Checking Coverage
+
+How much of your code is covered by the test you wrote? Pretty good question huh?
+
+Jest will automate this for you. 
+
+`npx jest --coverage`
+
+This should provide output similar to: 
+
+```
+----------|----------|----------|----------|----------|-------------------|
+File      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------|----------|----------|----------|----------|-------------------|
+All files |    96.88 |      100 |       80 |    96.55 |                   |
+ index.js |    96.88 |      100 |       80 |    96.55 |                70 |
+----------|----------|----------|----------|----------|-------------------|
+```
+
+This tells you what % of code statements were covered by the tests. What % of code branches were covered, these are if else, switch cases etc. What % of functions were tested. What % of lines of code were tested, and line numbers for lines of code that were not tested. 
+
 ### Debriefing the tests
 
 Discuss these questions
@@ -224,11 +245,13 @@ Note! If your functions are global or they are added to the prototype of a globa
 
 `require('../index.js')`
 
+Use the coverage command with Jest to test the coverage of your tests. 
+
 ## Write some tests
 
 Write test for FizzBuzz methods above. 
 
-## Wrap Up (5 min)
+## Wrap Up
 
 - Continue working on your current tutorial
 - Complete reading
@@ -253,38 +276,58 @@ Write test for FizzBuzz methods above.
 
 # Sample Code
 
-```
-/** Return true if n is divisible by 3, false otherwise. */
+```JavaScript
+const FIZZ = 'fizz'
+const BUZZ = 'buzz'
+const FIZZBUZZ = 'fizzbuzz'
+
+/** 
+ * Returns true when n is divisible by 3 
+ * @param {Number} n
+ * @returns {Boolean} fizziness 
+ * */
 function isFizzy(n) {
   return n % 3 === 0
 }
 
-/** Return true if n is divisible by 5, false otherwise. */
+/**
+ * Returns true when n is divisible by 5
+ * @param {Number} n 
+ * @returns {Boolean buzziness
+ */
 function isBuzzy(n) {
   return n % 5 === 0
 }
 
-/** Return a string containing 'fizz' and/or 'buzz' appropriately. */
+/**
+ * Returns FIZZ, BUZZ, or FIZZBUZZ when a number is divisible by 3, 5, or both
+ * @param {Number} n
+ * @returns {String} '', 'FIZZ', 'BUZZ', or 'FIZZBUZZ'
+ */
 function fizzyBuzzy(n) {
   let result = ''
-  if (isFizzy(n)) { result += 'fizz' }
-  if (isBuzzy(n)) { result += 'buzz' }
+  if (isFizzy(n)) { result += FIZZ }
+  if (isBuzzy(n)) { result += BUZZ }
   return result
 }
 
-/** Return an object containing counts of fizz, buzz, & fizzbuzz for 1..count */
+/**
+ * Generates a results object describing a sequence of fizz buzz for count.
+ * @param {Number} count 
+ * @returns {Object} with properties count, fizz, buzz, and fizzbuzz
+ */
 function fizzBuzz(count) {
   let result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }
   for (let i = 1; i <= count; i += 1) {
     const str = fizzyBuzzy(i)
     switch(str) {
-      case 'fizz':
+      case FIZZ: 
         result.fizz += 1
         break
-      case 'buzz':
+      case BUZZ: 
         result.buzz += 1
         break
-      case 'fizzbuzz':
+      case FIZZBUZZ:
         result.fizzBuzz += 1
         break
     }
@@ -297,4 +340,7 @@ module.exports.isFizzy = isFizzy
 module.exports.isBuzzy = isBuzzy
 module.exports.fizzyBuzzy = fizzyBuzzy
 module.exports.fizzBuzz = fizzBuzz
+module.exports.FIZZ = FIZZ
+module.exports.BUZZ = BUZZ
+module.exports.FIZZBUZZ = FIZZBUZZ
 ```
