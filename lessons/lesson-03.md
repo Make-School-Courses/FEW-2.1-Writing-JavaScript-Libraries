@@ -10,27 +10,27 @@ Spots bugs earlier. Using tests will bring bugs to light before you publish your
 
 Reduces defects when integrating new features.
 
-Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer, you will probably be writing unit tests at some point, so you should learn how to do it now.
+Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer, you will probably be writing unit tests at some point, so you should learn how to do it.
 
 ## Learning Objectives
 
 1. Write Unit tests
 1. Identify what to test
-1. Install, setup and run unit tests
+1. Measure code coverage
 
 ## Unit Testing
 
-Q: What is a unit test?
+**Q:** What is a unit test?
 
-A: A unit test is a test of a software system, usually a single function. A unit test most often is testing that the expected output of a function is correct for a given input.
+**A:** A unit test is a test of a software system, usually a single function. A unit test most often is testing that the expected output of a function is correct for a given input.
 
-Q: How do you do a unit test?
+**Q:** How do you do a unit test?
 
-Unit tests are run by software and can be automated. In this class, we will use Jest.
+**A:** Unit tests are run by software and can be automated. In this class, we will use Jest.
 
-Q: What is Jest?
+**Q:** What is Jest?
 
-A: [Jest](https://jestjs.io) is a JavaScript testing framework that was written by Facebook. It works with:
+**A:** [Jest](https://jestjs.io) is a JavaScript testing framework that was written by Facebook. It works with:
 
 - TypeScript
 - Node
@@ -39,17 +39,17 @@ A: [Jest](https://jestjs.io) is a JavaScript testing framework that was written 
 - Angular
 - and more
 
-Q: Why use Jest?
+**Q:** Why use Jest?
 
-A: Jest works well with React. Anyone that has built React apps may want to write unit tests for these.
+**A:** Jest works well with React. If you're building React apps Jest is a good choice. 
 
-Q: What can you test?
+**Q:** What can you test?
 
-A: Usually you are testing functions by looking at the output for a given input.
+**A:** Usually you are testing functions by looking at the output for a given input.
 
-Q: How do you write a test?
+**Q:** How do you write a test?
 
-A: Before writing a test you'll want to think about what you are testing and what you should test for.
+**A:** Before writing a test you'll want to think about what you are testing and what you should test for.
 
 For example, you wrote a function that uppercased the first letter of a string. You might expect the input to be:
 
@@ -61,33 +61,33 @@ What about the capitalizeAll() function what would be a good test? What are the 
 
 ## Testing example
 
-Remember that fizz buzz thing? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands.
+Heard of Fizz Buzz? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands!
 
 Pair with someone **you haven't paired with before**.
 
-The goal of this exercise is to write some tests with Jest that test the functions in the sample code provided.
+The goal of this exercise is to write some tests with Jest that test the functions in the [sample code](#sample-code) provided. The code is at the bottom of this page. 
+
+## Getting Started Fizz Buzz
+
+- Make a new directory
+- Navigate the terminal to the directory
+- `npm init -y`
+- `touch index.js` 
+- Get the [sample code](#sample-code) (at the bottom of this page) paste it into `index.js`. 
 
 ## Writing tests with Jest
 
-Jest is a framework that you will use as a *dev dependency*. A dev dependency is one that is used for development but not used in your source code.
-
-Make a new directory for this exercise.
-
-Navigate to the directory and initialize a new npm package.
-
-`npm init`
+Jest is a framework that you will use as a *dev dependency*. A dev dependency is one that is used for development but _not used in your source code_.
 
 Add Jest:
 
 `npm install --save-dev jest`
 
-`--save-dev` creates an entry under `"devDependencies"` in your package.json. Look for this right now.
+`--save-dev` creates an entry under `"devDependencies"` in your `package.json`. Look for this right now.
 
-Dev Dependencies are only used for development.
+Now that jest is installed, you need a test command. Add this to `package.json`. Add/edit `package.json` to look like this:
 
-Now that jest is installed, we need a test command. Add this to package.json. Add/edit package.json to look like this:
-
-```
+```JSON
 "scripts": {
         "test": "jest"
 },
@@ -125,7 +125,7 @@ You supply two parameters a *description string* and a *callback function*.
 
 Open `test.js` in your editor and write a test. Add the following  code to `test.js`:
 
-```
+```JavaScript
 test('Sanity check', () => {
 
 })
@@ -147,7 +147,7 @@ Tests:       1 passed, 1 total
 ...
 ```
 
-Looks like one test suite passed out of a total of 1 test.
+Looks like 1 test  passed out of a total of 1 test.
 
 What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing.
 
@@ -168,30 +168,24 @@ Tests:       1 failed, 1 total
 ...
 ```
 
-`expect().toBe()` is an assertion, which is kind of like asking a question. *Here you are saying you expect 2+2 to be 5*. Expecting 2+2 to 5 is insane so the assertion fails.
+`expect().toBe()` is an assertion. An assertion is you expressing the answer you are expecting to get. *Here you are saying you expect `2+2` to be `5`*. Expecting `2+2` to `5` is insane so the assertion fails.
 
-Fix the test by changing 5 to 4 and run it again. This time the test passes.
+Fix the test by changing `5` to `4` and run it again. This time the test passes since no error was thrown.
 
 https://jestjs.io/docs/en/getting-started
 
 ## Testing Fizz Buzz
 
-Make a new file in your example directory:
+Your goal is to examine the source code and write some tests. The [sample code](#sample-code) contains these functions. Each function takes some input and returns output. 
 
-`touch index.js`
-
-Get the [sample code](#sample-code) and paste it into `index.js`.
-
-The goal for you and your pair is to write tests for each of the functions in the sample code:
-
-- isFizzy()
-- isBuzzy()
-- fizzyBuzzy()
-- fizzBuzz()
+- `isFizzy()`
+- `isBuzzy()`
+- `fizzyBuzzy()`
+- `fizzBuzz()`
 
 For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like:
 
-```
+```JavaScript
 test('Test isFizzy', () => {
   expect(tests.isFizzy(1)).toBe(false)
   expect(tests.isFizzy(3)).toBe(true)
@@ -200,7 +194,9 @@ test('Test isFizzy', () => {
 })
 ```
 
-With a test like this, would you be confident that this would catch errors in the future?
+## Activity
+
+Write tests for FizzBuzz. Do your best write as many tests as you can. 
 
 ## Checking Coverage
 
@@ -222,6 +218,8 @@ All files |    96.88 |      100 |       80 |    96.55 |                   |
 ```
 
 This tells you what % of code statements were covered by the tests. What % of code branches were covered, these are if else, switch cases etc. What % of functions were tested. What % of lines of code were tested, and line numbers for lines of code that were not tested. 
+
+Check coverage and identify what has not been tested. 
 
 ### Debriefing the tests
 
