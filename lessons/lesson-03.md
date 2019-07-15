@@ -198,6 +198,8 @@ test('Test isFizzy', () => {
 
 Write tests for FizzBuzz. Do your best write as many tests as you can. 
 
+**Before writing any code.** Discuss with a partner what you are going to test. Describe the test you are going to write. Your partner should think of any edge cases or problems areas. Then switch roles.  
+
 ## Checking Coverage
 
 How much of your code is covered by the test you wrote? Pretty good question huh?
@@ -259,7 +261,7 @@ Write test for FizzBuzz methods above.
 
 1. Links to additional readings and videos
 
-## Minute-by-Minute [OPTIONAL]
+## Minute-by-Minute 
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
