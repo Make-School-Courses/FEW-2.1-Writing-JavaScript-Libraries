@@ -4,6 +4,10 @@
 
 The goal of this assignment is to write unit tests for your String Lib. 
 
+## Slides
+
+https://docs.google.com/presentation/d/1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4/edit?usp=sharing
+
 ### Why this assignment?
 
 Testing is part of the Agile development process. Expect to see at companies large and small. Using tests improves code quality. 
