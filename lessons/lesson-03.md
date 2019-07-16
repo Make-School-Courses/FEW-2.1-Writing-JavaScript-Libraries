@@ -194,11 +194,25 @@ test('Test isFizzy', () => {
 })
 ```
 
+### Testing basics 
+
+**[`expect()`](https://jestjs.io/docs/en/expect)**
+
+Use `expect()` to look at a value. Call one of these methods to check that value: 
+
+- [`.toBe(value)`](https://jestjs.io/docs/en/expect#tobevalue) to compare primitive values
+- [`.toEqual(value)`](https://jestjs.io/docs/en/expect#toequalvalue) to check equality of objects. This does a recursive "deep" check for equality. 
+- [`.not`](https://jestjs.io/docs/en/expect#not) to check something is not the value you were expecting. 
+
+See the link to the docs above for more information. 
+
 ## Activity
 
 Write tests for FizzBuzz. Do your best write as many tests as you can. 
 
 **Before writing any code.** Discuss with a partner what you are going to test. Describe the test you are going to write. Your partner should think of any edge cases or problems areas. Then switch roles.  
+
+Refer to the [Jest docs](https://jestjs.io/docs/en/getting-started.html) while you work. 
 
 ## Checking Coverage
 
@@ -293,7 +307,7 @@ function isFizzy(n) {
 /**
  * Returns true when n is divisible by 5
  * @param {Number} n 
- * @returns {Boolean buzziness
+ * @returns {Boolean} buzziness
  */
 function isBuzzy(n) {
   return n % 5 === 0
