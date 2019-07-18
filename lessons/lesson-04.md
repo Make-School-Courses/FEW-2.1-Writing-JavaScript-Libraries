@@ -12,13 +12,15 @@ In this lesson, you will apply some of these ideas to your code base.
 
 ### Quick Discussion
 
+Read this: https://codeship.com/continuous-integration-essentials
+
 Pair up and answer these questions: 
 
 Q: Do you see any advantages of using CI?
 
 Q: Do you see any downsides to CI?
 
-## Why should you learn about Continuous Integration? 
+## Why should you learn about Continuous Integration?
 
 CI is a modern software development *best practice*. You should always be striving to follow best practices in your work and be familiar with what industry considers best practices if you plan to integrate yourself with the industry! 
 
@@ -107,7 +109,7 @@ https://docs.travis-ci.com/user/for-beginners/
 
 https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
 
-### Sign up and connect to Github 
+### Setup Travis-CI 
 
 Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
 
@@ -208,6 +210,21 @@ It should display a coverage badge near the right side. Click the tiny embed but
 Copy the Markdown code in the text box. 
 
 Paste the markdown code into your repo. 
+
+## Stretch goals 
+
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library. Try these:
+
+- Invent your own utility functions. 
+- Research existing libraries on npm to identify useful functions you can implement. Research these: 
+  - https://www.npmjs.com/package/string
+  - https://www.npmjs.com/package/query-string
+  - https://www.npmjs.com/package/chalk
+  - https://www.npmjs.com/package/validator
+  - https://www.npmjs.com/package/camelcase
+  - https://www.npmjs.com/package/crypto-random-string
+  - https://www.npmjs.com/package/url-parse
+  - https://www.npmjs.com/package/magic-string
 
 ## Additional Resources
 
