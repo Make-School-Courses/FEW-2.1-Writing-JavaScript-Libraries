@@ -21,6 +21,9 @@ In a statically typed language, variables' types are *static*, meaning that once
 
 Examples of statically typed languages include Java, C, C++, and Swift.
 
+Q: Can you use static typing in JS
+A: Nope. TypeScript is another separate from JS and must be compiled into vanilla JS to be used. 
+
 ### Q: What is dynamic typing?
 
 In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
@@ -172,7 +175,7 @@ add(4, 6);
 
 We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
 
-```
+```TypeScript
 function greet(greeting = 'Hello', person?: string) {
   if (person) {
     console.log(`${greeting}, ${person}!`);
@@ -190,14 +193,14 @@ greet(undefined, 'Jane'); // prints 'Hello, Jane!'
 
 In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
 
-```
-let person: {name: string, age: number} = {name: 'Jane', age: 22};
+```TypeScript
+let person: { name: string, age: number } = { name: 'Jane', age: 22 };
 ```
 
 We can also define the type ahead of time using an interface:
 
-```
-
+```TypeScript
+  // lesson 9?
 ```
 
 ### Interfaces
@@ -218,33 +221,33 @@ Rename the files to use a TypeScript extension (e.g. `index.js` to `index.ts`), 
 
 To get the string prototype functions to compile, you will need to add the following interface definition to `index.js`:
 
-```
+```TypeScript
 declare global {
-    interface String {
-        capitalize(): string;
-        capitalizeAll(): string;
-        allCaps(): string;
-        oddCaps(): string;
-        evenCaps(): string;
-        kabobCase(): string;
-        snakeCase(): string;
-        stripSpaces(): string;
-        stripExtraSpaces(): string;
-    }
+  interface String {
+    capitalize(): string;
+    capitalizeAll(): string;
+    allCaps(): string;
+    oddCaps(): string;
+    evenCaps(): string;
+    kabobCase(): string;
+    snakeCase(): string;
+    stripSpaces(): string;
+    stripExtraSpaces(): string;
+  }
 }
 ```
 
 ### Modify package.json & rollup.config.js
 
-Go to package.json and update the 'input' filenames to to use their new TypeScript file extensions. Then add the following line after the main and module:
+Go to package.json and update the 'input' filenames to use their new TypeScript file extensions. Then add the following line after the main and module:
 
-```
+```JSON
 "types": "esm/index.d.ts",
 ```
 
 Next, modify the 'prepare' (or 'build') script to run the `tsc` compiler so that we get our nifty typings files:
 
-```
+```JSON
 "scripts": {
     "prepare": "rollup --config && tsc",
 }
@@ -258,12 +261,16 @@ npm install --save-dev typescript rollup-plugin-typescript2
 
 Then go to rollup.config.js and enter the following into your plugins for both output files:
 
-```
-plugins: [
-  typescript({
-    typescript: require('typescript'),
-  }),
-]
+```JavaScript
+output: {
+  ...
+  plugins: [
+    typescript({
+      typescript: require('typescript'),
+    }),
+  ]
+  ...
+}
 ```
 
 Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
