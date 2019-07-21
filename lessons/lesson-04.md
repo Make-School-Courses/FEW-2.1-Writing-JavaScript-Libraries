@@ -171,11 +171,13 @@ Add the Coveralls package to your project.
 
 `npm install coveralls --save-dev`
 
-Add this line to your package.json:
+Add this line to your `package.json`:
 
 ```JSON
 "scripts": {
+  ...
   "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+  ...
 },
 ```
 

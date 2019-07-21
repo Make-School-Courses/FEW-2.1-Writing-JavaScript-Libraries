@@ -25,9 +25,9 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 
 In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
 
-```
+```JavaScript
 let x = 10;
-x = "hello";
+x = 'hello';
 ```
 
 In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
@@ -40,13 +40,16 @@ Discussion: Write down 3 reasons each for using either a statically typed or dyn
 
 ### Static typing catches errors earlier in program development.
 
-```
+Q: What is happening on each line of code below? 
+
+```JavaScript
 const intFuncs = [];
 
-intFuncs.push((x) => 2*x);
-intFuncs.push((x) => x*x);
+intFuncs.push((x) => 2 * x);
+intFuncs.push((x) => x * x);
 
 intFuncs.push((x) => x.toString() + x.toString());
+// intFuncs.push((x) => x.toFixed(2)); // ?
 
 let total = 0;
 intFuncs.forEach((func) => total += func(10));
@@ -62,7 +65,7 @@ const intFuncs: Array<(x: number) => number> = [];
 
 Consider this code:
 
-```
+```JavaScript
 function mystery(x) {
   if (x.powerLevel <= 100) {
     x.leave();
@@ -79,7 +82,7 @@ Now, consider the following questions:
 
 Now, let's take a look at this code with some types added.
 
-```
+```TypeScript
 class Cat {
   powerLevel: number;
   personality: string;
@@ -105,6 +108,7 @@ There isn't just one right answer that works in all scenarios; you will need to 
 - It's faster to write, thus might be better for scripting
 - It's more succinct
 - It's more tolerant to change: a code refactor will have a smaller area of effect
+- Doesn't require extra compilation step
 
 ## Features of TypeScript
 
@@ -112,7 +116,7 @@ There isn't just one right answer that works in all scenarios; you will need to 
 
 The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
 
-```
+```TypeScript
 let sum: number = 10;
 const title: string = 'hello';
 let done: boolean = false;
@@ -124,20 +128,20 @@ sum = '100'; // Not OK - will result in a compile error
 
 There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
 
-```
+```TypeScript
 let list1: number[] = [1, 2, 3];
 let list1: Array<number> = [1, 2, 3];
 ```
 
 What if we want an array with mixed values of different types? In that case, we can use the 'tuple' type:
 
-```
+```TypeScript
 let person1: [string, number] = ['Jane', 20];
 ```
 
 You can also easily make your own enum type. If you try to print the value of an enum, you'll see that it's actually a number, with the first value defaulting to 0.
 
-```
+```TypeScript
 enum Fruit { Apple, Orange, Pear };
 
 let f: Fruit = Fruit.Pear;
@@ -147,18 +151,18 @@ console.log(Fruit.Orange); // 1
 console.log(Fruit.Pear); // 2
 ```
 
-Finally, if you don't know what the type of a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
+Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
 
-```
+```TypeScript
 let someValue: any = 10;
 someValue = [1, 2, 3];
 ```
 
 ### Functions & Function Variables
 
-We can add types to the variables and return values of functions:
+We can add types to the parameters and return values of functions:
 
-```
+```TypeScript
 function add(num1: number, num2: number): number {
   return num1 + num2;
 }
