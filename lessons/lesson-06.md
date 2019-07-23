@@ -1,14 +1,20 @@
 # FEW 2.1 - Bundling Libraries for distribution
 
-This class session covers the concept of bundling. This the process of combining files and processing them for use and distribution. 
+This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
 
 ## Why learn how to bundle files? 
 
 All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
 
-Bundling your files means other you can distribute them and the world can use anywhere without extra work. 
+Bundling your files allows them to be distributed so they can be used anywhere without extra work. 
 
 Bundling files also processes your files for different environments. Your files need to be handled differently if they are used in the browser, or in NodeJS, or in a React project. 
+
+## Learning Objectives 
+
+- Describe reasons for bundling files
+- Define UMD and ESM bundles 
+- Use Rollup to bundle your library for distribution
 
 ### Bundling 
 
@@ -18,35 +24,38 @@ Bundling is the process of processing and combining files together into a single
 
 Modules are the concept of separating code into different scopes and making it available to your program. 
 
-In the browsers all code is global. A variable defined in one file is available in another. 
+In the browser all code is global. A variable defined in one file is available in another file. 
 
 This creates a few problems. 
 
-```
+```JavaScript
 // my-code.js
 function load() { /* does something important */}
-//
+// 
 <script src="my-code.js"></script>
+// -------------------------------
 <script>
   function load() {} // accidentally overwrites important code 
 </script>
 ```
 
-The module pattern uses scope to solve the problem above
+The module pattern uses scope to solve the problem above. Wrapping code in an anonymous function stores all of the variables and functions in the scope of that function. 
 
-```
+```JavaScript
 // my-code.js
 (function() {
   // Code safely scoped to function
   function load() { /* does something important */}
-})()
+})() // Immediately executes the function above
 
-//
 <script src="my-code.js"></script>
+// ---------------------------------------
 <script>
   function load() {} // global scoped 
 </script>
 ```
+
+This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced module bundles are based on this. 
 
 You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
 
@@ -64,9 +73,9 @@ Rollup describes itself as a "module bundler for JavaScript". Sounds like what w
 
 ### Common JS 
 
-Is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
+CommonJS is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
 
-```
+```JavaScript
 const yourCode = require('your-code')
 ...
 yourCode.yourMethod()
@@ -74,9 +83,9 @@ yourCode.yourMethod()
 
 ### UMD (Universal Module Definition) 
 
-To wrap up code for use in the script tag in the browser you'll need to make a UMD module. 
+To wrap up code for use in the script tag in the browser you'll need to make a UMD module. A UMD module be imported via the script tag and imported with `require()` in a Node JS environment. 
 
-```
+```JavaScript
 <script src="your-code.js"></script>
 <script>
   ...
@@ -89,13 +98,13 @@ To wrap up code for use in the script tag in the browser you'll need to make a U
 
 ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. These modules are further processed and bundled before they are used. 
 
-```
+```JavaScript
 import { yourMethod } from 'your-code'
 ...
 yourMethod()
 ```
 
-## Use Rollup
+## Bundling files with rollup
 
 Follow the instructions below to bundle your project with rollup.js.
 
@@ -105,20 +114,22 @@ Install rollup.js
 
 Create a config file for rollup. Make a new file named `rollup.config.js`. 
 
-```
+```JavaScript
 export default {
-    input: 'src/index.js',
-    output: {
-        file: 'umd/your-module.js',
-        format: 'umd',
-        name: 'yourModule'
-    }
+  input: 'src/index.js',
+  output: {
+    file: 'umd/your-module.js',
+    format: 'umd',
+    name: 'yourModule'
+  }
 };
 ```
 
-This base config outputs a UMD file named "your-module.js". When loaded this file will create a global variable named 'yourModule'. Remember UMD format is meant to be loaded in the browser. 
+This base config takes an input file from: `src/index.js` and outputs a UMD file `umd/your-module.js`. 
 
-Move your source files into a folder named 'src' create this folder if you haven't yet. 
+When loaded this file will create a global variable named `yourModule`. Remember UMD format is meant to be loaded in the browser. The code is also wrapped in a function following the CommonJS module pattern for use with Node JS. 
+
+Move your source files into a folder named `src` create this folder if you haven't yet. 
 
 Rollup will automatically build from the `src` directory. 
 
@@ -130,11 +141,11 @@ This should build the UMD module from your source files and save these a folder 
 
 Test your module. 
 
-Make a test file: example.html. Import your script with the script tag: 
+Make a test file: `example.html`. Import your script with the script tag: 
 
 `<script src="./umd/just-in-case.js"></script>`
 
-Notice the path to your library uses. It points to the 'umd' folder at the file named in your config file.
+Notice the path to your library, it points to the `umd` folder at the file named in your config file.
 
 Write some test code in your test file. Load the text file in the browser. 
 
@@ -142,13 +153,13 @@ Examine the source code that was written. It is pretty obscure. Note that it is 
 
 The source code has not been minified. You can minify using Terser.js plugin for Rollup. 
 
-Import Terser.js plugin for RollUp. 
+Import `Terser.js` plugin for RollUp. 
 
 `npm install --save-dev rollup-plugin-terser`
 
 Modify `rollup.config.js`: 
 
-```
+```JavaScript
 import { terser } from 'rollup-plugin-terser';
 
 export default [
@@ -172,13 +183,11 @@ export default [
 ];
 ```
 
-Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit. 
+Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit from minification. 
 
-Modify `package.json`. We need to make sure that importers of the library get the right file. 
+Modify `package.json`. We need to make sure that importers of the library get the right file. Set "main" for Node JS environments.
 
-Set "main" for Node JS environments.
-
-```
+```JSON
   ...
   "main": "umd/jus-in-case.js",
   ...
@@ -186,7 +195,7 @@ Set "main" for Node JS environments.
 
 Use "module" to designate ES Module.
 
-```
+```JSON
   ...
   "module": "esm/index.js",
   ...
@@ -194,7 +203,7 @@ Use "module" to designate ES Module.
 
 Use "files" to designate which files should be distributed by npm. 
 
-```
+```JSON
   ...
   "files": [
     "esm/*",
@@ -205,7 +214,7 @@ Use "files" to designate which files should be distributed by npm.
 
 Add "prepare" script. This script is run by npm each time you install or publish. 
 
-```
+```jSON
   ...
   "scripts: {
     ...
@@ -265,7 +274,7 @@ Add the script tag.
 
 Note the path is pointing to the file in node_modules. You'll need to customize the second script to work with your code. 
 
-Test your work in Node JS. Make a new file 'server.js'. 
+Test your work in Node JS. Make a new file `server.js`. 
 
 ```JavaScript
 const yourModule = require('your-module')
@@ -294,8 +303,7 @@ import { yourMethod } from 'your-module'
 console.log(yourMethod())
 ```
 
-Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. The same process was done to all of the libraries that you are importing. 
-
+Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. 
 
 ### Code Coverage
 
