@@ -2,7 +2,7 @@
 
 ## Description 
 
-The goal of this assignment is to practice everything you leanred so far in lessons 1 through 4 and practice those skills making another library! 
+The goal of this assignment is to practice everything you learned so far in lessons 1 through 4 and practice those skills making another library! 
 
 ### Why this assignment?
 
@@ -29,52 +29,42 @@ The README in your repo should inlcude Badges that show the status and meta info
 
 Your README should also include some professional documentation. This will include a description of the library, and formatted code samples. 
 
-Challenges 
+### Challenges 
 
 - GoldenRatio - Add a new property to Number that is the [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio)
-- Number Methods - This method already exists, your job is to make a method that does the same thing. Rather than Math.round(x) your method will work like this: x.round(). 
-  - round() - x = 9.99 - x.round() -> 10  
-  - floor() - x = 9.99 - x.floor() -> 9
-  - ceil() - x = 1.03 - x.ceil() -> 2
-- pad(x, y) - pads Number with x 0 before, and y 0 after. 
-  - Example: 34.801.pad(4,4) -> 0034.801
-- degToRad() - 
-- radToDeg() - 
-- toDollars() - 
-  - 3.99 -> $3.99
-  - 0.99 -> ¢0.99
-  - pads with 0 1.99 -> $01.99
-- tax(rate) - Returns the tax amount
-- withTax(rate) - returns the amount with tax
-- toPercent() - converts a number to percent
-- mortage()
-- interest()
-- decimalToBinary(float) -> 10010100100101001001010
-- numberToBinary(n) -> 01001001010
-- binaryToNumber(n) -> 34
-- intToHex(int) -> #332211
-
+- Number Methods - This method already exists, your job is to make a method that does the same thing. Rather than Math.round(x) your method will work like this: `x.round()`. 
+  - `round()` - `x = 9.99` - `x.round()` -> 10  
+  - `floor()` - `x = 9.99` - `x.floor()` -> 9
+  - `ceil()` - `x = 1.03` - `x.ceil()` -> 2
+- `pad(x, y)` - pads Number with x 0 before, and y 0 after. 
+  - Example: `34.801.pad(4,4)` -> 0034.801
+- `degToRad(n)` - 
+- `radToDeg(n)` - 
+- `toDollars(amount)` - 
+  - `toDollars(3.9)` -> $3.90
+  - `toDollars(0.99)` -> ¢0.99
+  - Create a currency formatting function that simplifies the use of: [`Intl.NumberFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat)
+    - `intFormat(amount, countryCode, style)`
+- `tax(rate)` - Returns the tax amount
+- `withTax(rate)` - returns the amount with tax
+- `interest()` - https://stackoverflow.com/questions/28325001/how-to-calculate-interest-javascript
+- `mortage(principal, numberOfPayments, interestRate)` - https://stackoverflow.com/questions/17101442/how-to-calculate-mortgage-in-javascrip 
+- `intToHex(int)` -> #332211 - https://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hexadecimal-in-javascript
 - Random functions 
-  - random()
-  - randomRange()
-  - randomColor()
-  - 
+  - `random(n)` - returns an integer from 0 to n - 1
+  - `randomRange(min, max)` - returns an integer between min and max
+  - `randomColor()` - Returns a random hex color
 
-Stretch 
+### Stretch 
 
 - BigInt - Is class that tracks extra large integer values. I hear these are great for Incremental games. BigInt holds a large number as a string. It provides methods that perform math operation. 
-  - new BigInt(value = 0) - Initialize with a value or 0. 
-  - BigInt.add(x) - adds x to the value. Since value is a String you need add the first digit to the first digit held in value and carry the one if the total is over 10. Do the same with the 10s and 100s etc. This is just like adding numbers with pencil and paper.
+  - `new BigInt(value = 0)` - Initialize with a value or 0. 
+  - `BigInt.add(x)` - adds x to the value. Since value is a String you need add the first digit to the first digit held in value and carry the one if the total is over 10. Do the same with the 10s and 100s etc. This is just like adding numbers with pencil and paper.
     - Q: Is this legit? A: Yes! There are a couple libraries that do this. Computers have a limit to how large a number they can handle. In most cases this is enough. For some uses you need larger numbers. 
-  - BigInt.subtract(x) - Subtracts x from the value of BigInt. 
+  - `BigInt.subtract(x)` - Subtracts x from the value of BigInt. 
     - Advanced
-      - BigInt.multiply(x) - Multiplies the BigInt value by x. 
-      - BigInt.divide(x) - Divides the BigInt value by x. 
-- hexMath() - ??? Does math with hex values 
-  - add()
-  - subtract()
-  - addRGB(r, g, b)
-  - subtractRGB(r, g, b)
+      - `BigInt.multiply(x)` - Multiplies the BigInt value by x. 
+      - `BigInt.divide(x)` - Divides the BigInt value by x. 
 
 ### Deliverable
 

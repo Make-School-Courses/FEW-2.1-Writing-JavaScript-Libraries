@@ -239,6 +239,17 @@ declare global {
 
 ### Modify package.json & rollup.config.js
 
+----
+`npm install --save-dev rollup typescript rollup-plugin-typescript2`
+
+Change the name of `src/index.js` to `src/index.ts`. This makes this a TypeScript file. 
+
+Update `roll.config.js` by changing the `input` file to `src/index.ts`. This now points to the 'new' typescript file.
+
+
+
+----
+
 Go to package.json and update the 'input' filenames to use their new TypeScript file extensions. Then add the following line after the main and module:
 
 ```JSON
