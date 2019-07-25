@@ -237,49 +237,44 @@ declare global {
 }
 ```
 
+To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
+
 ### Modify package.json & rollup.config.js
 
 ----
 `npm install --save-dev rollup typescript rollup-plugin-typescript2`
 
-Change the name of `src/index.js` to `src/index.ts`. This makes this a TypeScript file. 
-
-Update `roll.config.js` by changing the `input` file to `src/index.ts`. This now points to the 'new' typescript file.
-
-
-
 ----
 
-Go to package.json and update the 'input' filenames to use their new TypeScript file extensions. Then add the following line after the main and module:
+Go to `package.json` and add the following line after the main and module:
 
 ```JSON
 "types": "esm/index.d.ts",
 ```
 
-Next, modify the 'prepare' (or 'build') script to run the `tsc` compiler so that we get our nifty typings files:
+---
 
-```JSON
-"scripts": {
-    "prepare": "rollup --config && tsc",
-}
-```
+Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
 
-We also need to install a TypeScript plugin for Rollup which will allow us to transpile the TypeScript code into good old JavaScript. You can install with npm in your terminal:
+
+Import the TypeScript plugin at the top of the file:
 
 ```
-npm install --save-dev typescript rollup-plugin-typescript2
+import typescript from 'rollup-plugin-typescript2';
 ```
 
-Then go to rollup.config.js and enter the following into your plugins for both output files:
+Then enter the following into your plugins for both output files:
 
 ```JavaScript
-output: {
+input: {
   ...
-  plugins: [
-    typescript({
-      typescript: require('typescript'),
-    }),
-  ]
+},
+plugins: [
+  typescript({
+    typescript: require('typescript'),
+  }),
+],
+output: {
   ...
 }
 ```
