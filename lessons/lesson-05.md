@@ -28,8 +28,6 @@ A: Numbers are represented as series of 1s and 0s behind the scenes in a 64bit p
 > 0.1000000000000000055511151231257827021181583404541015625 in decimal, or
 > 0x1.999999999999ap-4 in C99 hexfloat notation.
 
-Exercise with calculators and binary math
-
 > You've just stumbled on a number ( 3/10 ) that happens to be easy to represent with the decimal system, but doesn't fit the binary system. It goes both ways (to some small degree) as well: 1/16 is an ugly number in decimal (0.0625), but in binary it looks as neat as a 10,000th does in decimal (0.0001)** - if we were in the habit of using a base-2 number system in our daily lives, you'd even look at that number and instinctively understand you could arrive there by halving something, halving it again, and again and again.
 
 https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
@@ -38,7 +36,9 @@ https://modernweb.com/what-every-javascript-developer-should-know-about-floating
 
 JS Provides two ways of working with numbers. 
 
-- Number - The Number object is a number it represents a numeric value. It has a few properties and a few methods
+- `Number` - The Number object is a number it represents a numeric value. It has a few properties and a few methods
+
+`new Number(37)` This is a thing, and it's different from `37`
 
 Take a look at the properties and methods. 
 
@@ -46,16 +46,16 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ### When something is Not a Number
 
-What is NaN? Where does it appear? 
+What is NaN? Where and when does it appear? 
 
-`Batman example: Array(16).join('wtf' - 1) + ' Batman!'`
+`Array(16).join('wtf' - 1) + ' Batman!'`
 
 Methods that return a number for some numerical input will return `NaN` the input is non-numerical. It is returned when a method on the Math Object fails or when method trying to parse a number fails. 
 
 ```JavaScript
-NaN === NaN;        // false
-Number.NaN === NaN; // false
-isNaN(NaN);         // true
+NaN === NaN;        // false (NaN is the only value NOT equsl to itself)
+Number.NaN === NaN; // false 
+isNaN(NaN);         // true (Use isNaN to check for NaN)
 isNaN(Number.NaN);  // true
 ```
 
@@ -71,30 +71,58 @@ There is only one type of number. There isn't much more to this. Except:
 The **Number** JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the **Number() constructor**. A primitive type object **number** is created using the **Number() function**.
 
 ```JavaScript
-// Create a new Number Object
-var n = new Number(123) // Creates a new Number Object
+const n = new Number(123) // Creates a new Number Object
+const y = new Number(123)
 
-var x = 123 // Creates a new Number primitive
+const x = 123 // Creates a new Number primitive
 
 // These are not equivalent!
-x === n // false
+x === n // false (the primitive is equal to the object reference)
+x !== y // true (not the same reference)
+
+n.valueOf() === x === y.valueOf() // true (apples to apples to apples)
 ```
 
-Use `Number()` to covert a value to a number. 
+Use `Number()` to covert a value to a number. Remember the class constructor is a function!
 
 ```JavaScript
-var a = Number('123')
-var b = 123
+const a = Number('123') // Covert this string to a number
+const b = 123
 
 a === b
 
-var c = Number('z') // NaN (Not a Number)
-var d = Number('234') // 234
+const c = Number('z')   // NaN (Not a Number)
+const d = Number('234') // 234
 ```
 
 Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
 
+```JavaScript
+const a = new Number(3)
+const b = new Number(3)
+
+a !== b // true
+
+a * b // 9
+a + b // 6
+// etc
+```
+
 There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
+
+This is true for all of the primitives:
+
+- `new Boolean('true')` | `Boolean('false')`
+- `new String('Hello')` | `String('Hello')`
+- `new Number('123')` | `Number('456')`
+
+The only advantage to having a primitive wrapped in an object would be if you needed to attach other properties to that value for some reason. But you'd probably be better off making an Object instead. 
+
+```JavaScript 
+const t = new Number(99)
+t.status = 'Not quite a buck yet'
+console.log(t.status) 
+```
 
 ### Numbers and Exponents
 
@@ -110,13 +138,13 @@ Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Java
 The Number object also holds many useful properties. 
 
 - `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with.  
-- Number.MAX_SAFE_INTEGER - The largest safe integer you can work with. You can use larger numbers but math operations may not work as expected. 
-- Number.MAX_VALUE - The maximum mueric value representable in JS. 
-- Number.MIN_SAFE_INTEGER - The smallest safe integer you can work with. 
-- Number.MIN_VALUE - The msallest positive numeric value representable in JS.  
-- Number.NEGATIVE_INFINITY - Represents negative infinity
-- Number.NaN - Not a Number. 
-- Number.POSITIVE_INFINITY - Positive infinity
+- `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. You can use larger numbers but math operations may not work as expected. 
+- `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
+- `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
+- `Number.MIN_VALUE` - The msallest positive numeric value representable in JS.  
+- `Number.NEGATIVE_INFINITY` - Represents negative infinity
+- `Number.NaN` - Not a Number. 
+- `Number.POSITIVE_INFINITY` - Positive infinity
 
 ### Number Methods 
 
@@ -127,33 +155,70 @@ The Number object also holds many useful properties.
 - `Number.parseFloat()` - Converts a value to a float
 - `Number.parseInt()` - Convert a non-numeric value into an int (in a specified base)
 - `Number.prototype.toExponential()`
-- `Number.prototype.toFixed()`
-- `Number.prototype.toLocaleString()`
-- `Number.prototype.toPrecision()`
-- `Number.prototype.toSource()`
+- `Number.prototype.toFixed()` - Returns a string with fixed number of decimal places
+- `Number.prototype.toLocaleString()` - Returns a language sensitive string from the number
+- `Number.prototype.toPrecision()` - Returns a String
 - `Number.prototype.toString()`
 - `Number.prototype.valueOf()`
 
-What's happening there in JS style computeriness (functions as constructor)
+### Math
 
-- Math - 
+The Math object holds all of the properties and functions that handle math operations. 
 
-Properties
 
-- `Math.E`
-- `Math.LN10`
-- `Math.LN2`
-- `Math.LOG10E`
-- `Math.LOG2E`
-- `Math.PI`
-- `Math.SQRT1_2`
-- `Math.SQRT2`
+- **Properties**
+  - `Math.E`
+  - `Math.LN10`
+  - `Math.LN2`
+  - `Math.LOG10E`
+  - `Math.LOG2E`
+  - `Math.PI`
+  - `Math.SQRT1_2`
+  - `Math.SQRT2`
+- **Methods**
+  - `Math.abs()`
+  - `Math.acos()`
+  - `Math.acosh()`
+  - `Math.asin()`
+  - `Math.asinh()`
+  - `Math.atan()`
+  - `Math.atan2()`
+  - `Math.atanh()`
+  - `Math.cbrt()`
+  - `Math.ceil()`
+  - `Math.clz32()`
+  - `Math.cos()`
+  - `Math.cosh()`
+  - `Math.exp()`
+  - `Math.expm1()`
+  - `Math.floor()`
+  - `Math.fround()`
+  - `Math.hypot()`
+  - `Math.imul()`
+  - `Math.log()`
+  - `Math.log10()`
+  - `Math.log1p()`
+  - `Math.log2()`
+  - `Math.max()`
+  - `Math.min()`
+  - `Math.pow()`
+  - `Math.random()`
+  - `Math.round()`
+  - `Math.sign()`
+  - `Math.sin()`
+  - `Math.sinh()`
+  - `Math.sqrt()`
+  - `Math.tan()`
+  - `Math.tanh()`
+  - `Math.trunc()`
 
-https://exercism.io/tracks/javascript/exercises
+Wow that's a lot of Math!
 
 ## Exercise 
 
-Your goal is to define a class that tracks money. Money can be hard to work with and if you make a mistake customers get really angry and or it might cost your company a lot of money. When working with money you want to be very careful. Rounding errors can be costly. 
+Your goal is to define a class that tracks money. Money can be hard to work with and if you make a mistake customers get really angry and or it might cost your company a lot of money. 
+
+When working with money you want to be very careful. Rounding errors can be costly. 
 
 You need to define an object that holds a value in dollars and provides methods to work with currency.
 
@@ -165,7 +230,7 @@ You need to define an object that holds a value in dollars and provides methods 
 Currency class should have the following methods: 
 
 - Initialize with a value
-- Returns formatted value 
+- Returns formatted value
 - implements the following methods
   - `add(n)`
   - `subtract(n)`
@@ -174,7 +239,7 @@ Currency class should have the following methods:
   - `split(n)` - Returns an array of values use this to split a bill. 
     - `new Currency(7).split(3) -> [2.33, 2.33, 2.34]`
 
-Use `Intl.NumberFormat` to format your currency. 
+Use `Intl.NumberFormat` to format your currency in a local language format.  
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
 
@@ -214,8 +279,12 @@ class Thing {
 }
 
 const thing = new Thing(10)
-thing.add(1).multiply(2).subtract(3).divide(4)
-console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 4.75
+thing.add(1)
+  .multiply(2)
+  .subtract(3)
+  .divide(4)
+
+console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
 ```
 
 ## Wrap Up
@@ -227,6 +296,7 @@ console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 4.75
 1. https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
 1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
 1. https://itnext.io/how-to-build-a-money-data-type-in-javascript-7b622beabe00
+1. https://exercism.io/tracks/javascript/exercises
 
 ## Minute-by-Minute [OPTIONAL]
 
