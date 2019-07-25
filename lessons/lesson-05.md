@@ -141,7 +141,7 @@ The Number object also holds many useful properties.
 - `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. You can use larger numbers but math operations may not work as expected. 
 - `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
 - `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
-- `Number.MIN_VALUE` - The msallest positive numeric value representable in JS.  
+- `Number.MIN_VALUE` - The smallest positive numeric value representable in JS.  
 - `Number.NEGATIVE_INFINITY` - Represents negative infinity
 - `Number.NaN` - Not a Number. 
 - `Number.POSITIVE_INFINITY` - Positive infinity
