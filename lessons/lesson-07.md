@@ -4,13 +4,13 @@ Time for another lib! This time you'll make a library that works with Dates. You
 
 ## Why you should know this?
 
-While reusing the skills from the previous classes is not adding new knowledge, you need to practice your currently skills writing more code and tests. 
+While reusing the skills from the previous classes is not adding new knowledge, you need to practice your current skills writing more code and tests. 
 
 ## Learning Objectives (5 min)
 
-1. Define the Date Object and it's important methods
+1. Define the Date Object and its important methods
 1. Use the Date Object to generate dates and times, and format dates and times. 
-1. Construct methods that build and expand the core functionality of Date object
+1. Construct methods that build and expand the core functionality of the Date object
 
 ### Course Progress Tracker
 
@@ -24,11 +24,11 @@ A date is the day of the month or year specified as a number.
 
 In JS this will also include the year and the time. It pinpoints a point in time as a number. 
 
-Dates in JS are represented as the the number of milliseconds since 1970! As such you can define or locate almost any point in time. 
+Dates in JS are represented as the number of milliseconds since 1970! As such you can define or locate almost any point in time. 
 
-UNIX Epoch! What is this? Also known as a timestamp. Its a number that represents the number of seconds since **Thursday, 1 January 1970**. The basic premise that each day takes 86,400 seconds. 
+UNIX Epoch! What is this? Also known as a timestamp. It's a number that represents the number of seconds since **Thursday, 1 January 1970**. The basic premise that each day takes 86,400 seconds. 
 
-Dates before the epoch can be expressed as a negative numbers.
+Dates before the epoch can be expressed as a negative number.
 
 Are there any weird? Plenty, just think of leap years? 
 
@@ -78,11 +78,11 @@ Q: What's the difference?
 
 ## Date methods 
 
-The Date object has many instance methods most are getters and setters. There are few class methods also.
+The Date object has many instance methods most are getters and setters. There are a few class methods also.
 
 ### Getters 
 
-These mostly get at components of a date such as the year, month, day, hours, minutes etc. 
+These mostly get at components of a date such as a year, month, day, hours, minutes, etc. 
 
 - Date Components 
   - `new Date().getFullYear()  // 2019`
@@ -113,10 +113,10 @@ console.log(newDate) // 10 June 2019
 
 ### Class Methods 
 
-Date provides a couple calss methods. 
+Date provides a couple of class methods. 
 
 - `Date.now() // 1564251902406` the ms at the current moment
-- `Date.UTC(year, month, day, hour, min, sec, ms)` creates date from UTC parameters 
+- `Date.UTC(year, month, day, hour, min, sec, ms)` create date from UTC parameters 
 - `Date.parse(string)` creates a date from date string or returns NaN if unable to parse the string. 
 
 ## Timezones 
@@ -150,7 +150,7 @@ var b = new Date(a.getYear(), a.getMonth(), a.getDate() - 7)
 var c = new Date(a.getYear(), a.getMonth(), a.getDate() + 3)
 ```
 
-Here b and c have lost the hours, mins, secs, ms. These could have been inlcuded if they were needed. 
+Here b and c have lost the hours, mins, secs, ms. These could have been included if they were needed. 
 
 **Delta/difference in dates**
 
@@ -170,7 +170,7 @@ const diffDays = diffTime / (1000 * 60 * 60 * 24);
 console.log(diffDays);
 ```
 
-It's probably best to stick with the built in methods over math more often. 
+It's probably best to stick with the built-in methods over math more often. 
 
 ## Activity 
 
