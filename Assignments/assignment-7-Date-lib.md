@@ -2,73 +2,155 @@
 
 ## Description 
 
-Dates are super important. JavaScript provides a thousand and one methods on the date object and all of them are confusing. It's up to you to save the world by writing some date functions!
+Dates are super important. You'll use them often. The goal of this assignment is to become more familiar with the Date object it's methods and how to work with Dates. 
 
--------------------------
-Notes
+## Why Do this assignment? 
 
-Might be best to mimic Moment JS funcitons
-Talk about Chainable methods 
-Immutable concepts - https://gomakethings.com/how-to-handle-immutability-in-javascript/
-
-Challenges 
-format(?) -> 1/2/19
-format(?) -> 01/02/19
-format(?) -> 01/02/2019
-format(?) -> January 2nd 2019
-format(?) -> Jan 2 2019
-format(?) -> 1/2/19 2:08 PM
-format(?) -> 01/02/19 2:08 PM
-format(?) -> 01/02/2019 2:08 PM
-format(?) -> January 2nd 2019 2:08 PM
-format(?) -> Jan 2 2019 2:08 PM
-
-when() -> today, yesterday, x days ago, last year, couple years ago, few years ago
-when() -> tomorrow, next week, next month, next year
-
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
-formatHTML() -> <time datetime="2019-11-02">Nov 2</time>
-
-add() method 
-subtract() method
--------------------------------------
-
-### Why this assignment?
-
-At this point you've 
-
-- Written libraries
-- Published to npm
-- Written tests
-- Incorporated Continuous integration
-- Bundled your library code
-
-With this project you'll do it all again, all at the same all with dates! 
-
-These are important topics, the best way to become an expert is practice. 
+You'll make use the JS Date Object often. Building a library around dates will give you a better understanding of it works and what you can do with it. 
 
 ## Project requirements
 
-Your Date Lib needs to solve the following problems. 
+Your job is to make a class that wraps the Date object. Your class should have a Date it keeps internally. It should be able to instantiate itself with the same parameters that are used with the Date Object. 
 
+**Challenge 1** 
+
+The Date Object can be instantiated with a date string, or with a list of parameter for: year, month, date, hours, mins, secs. 
+
+```JS
+class D {
+	constructor(...args) {
+		this.date = new Date(...args)
+	}
+}
+```
+
+Read about `...args`: https://javascript.info/rest-parameters-spread-operator
+
+tl;dr args is an array with all of the parameters passed to the function/constructor. The `...` (spread operator) deconstructs the array. This allows for a variable number of arguments to be passed. 
+
+You should be able to instantiate this class like this now: 
+
+```JS 
+const d = new D('9/26/1965') // Create a date from a string
+const e = new D(1970, 1, 1, 0, 0, 0)
+```
+
+**Challenge 2**
+
+Your class should provide human readable values for year, month, date, hour, mins, secs. 
+
+```JS
+// Gets the current date with no params
+const d = new D() 
+console.log(d.year()) // 2019
+console.log(d.month()) // July
+console.log(d.day()) // 27
+console.log(d.hours()) // 18
+console.log(d.mins()) // 6
+console.log(d.secs()) // 5
+```
+
+**Challenge 3**
+
+You need a format method that takes a "mask" string. The mask will contain formatting characters which displays various date elements, other characters are displayed unchanged. 
+
+List of formatting characters: 
+
+- 'Y' -> 2019
+- 'y' -> 19
+- 'M' -> July
+- 'm' -> Jul
+- 'D' -> 01
+- 'd' -> 1
+- 'H' -> 05
+- 'h' -> 5
+- 'I' -> 08
+- 'i' -> 8
+- 'S' -> 04
+- 's' -> 4
+
+The `format()` method should provide an acceptable default formatted date with no parameters. 
+
+For example: 
+
+```JS 
+// Make a date with values for Y, M, D etc.
+const d = new D(2017, 0, 2, 3, 4, 5)
+console.log(d.format()) // 2017 January 02
+console.log(d.format('y/m/d')) // 17/Jan/2
+console.log(d.format('H:I:S')) // 03:04:05
+console.log(d.format('h:i:s')) // 3:4:5
+console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
+```
+
+**Challenge 4**
+
+Make a `when()` this should return a human readble description of 'when' a date will occur. 
+
+This method should compare the date owned by your class instance with the current date. 
+
+```JS 
+const d = new D(2019, 0, 2, 3, 4, 5)
+console.log(d.when()) // 6 months ago
+const d = new D(2019, 9, 2, 3, 4, 5)
+console.log(d.when()) // 3 months from now
+const d = new D(2024, 9, 2, 3, 4, 5)
+console.log(d.when()) // 5 years from now
+const d = new D(2019, 6, 30, 3, 4, 5)
+console.log(d.when()) // 3 days from now
+```
+
+**Stretch Challenge**
+
+Do the same for hours mins and seconds! 
+
+- 1 hour from now
+- 3 hours ago
+- 23 mins from now
+- 11 mins ago
+- 23 seconds from now
+- 52 seconds ago
+
+**Challenge 5**
+
+Document your date lib. Do this by writing JS Doc string comments describing each method. 
+
+Output the documentation to your repo or write it to your readme.md file. 
+
+Use: https://documentation.js.org
+
+**Challenge 6**
+
+Publish your date lib to npm. Include the following badges in your readme.md:
+
+- npm version
+- license
+- size
+- GitHub Issues
+
+**Challenge 7**
+
+Add continuous integration. Use Travis-ci and Coveralls. 
+
+Add badges for: 
+
+- Build
+- Coverage
+
+**Challenge 8**
+
+Use Rollup to bundle your date lib. Include both umd and esm bundles. 
+
+**Stretch Challenge**
+
+Use `.toPrimitive()` to allow your Data object to return a String or Number depending on context. 
+
+https://javascript.info/object-toprimitive
 
 
 ### Deliverable
 
-Your Date lib should:
-
-- Solve the problems listed below
-- Published to GitHub
-- Published to npm
-- Uses Continuous Integration
-  - Travis-CI
-  - Coveralls
-- Bundled 
-  - umd
-  - esm
-- Has badges! 
-- Documentation!
-- Link to your GitHub repo in the progress tracker
+After completing the challenges above post a link to your npm package on npm. 
 
 ### Due date
 
