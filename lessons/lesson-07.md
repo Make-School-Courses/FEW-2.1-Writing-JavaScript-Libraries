@@ -1,4 +1,4 @@
-# FEW 2.1 - FEW 2.2 - Date Lib
+# FEW 2.1 - Dates and Date Lib
 
 Time for another lib! This time you'll make a library that works with Dates. You will take everything covered so far: Code, testing, and bundling. 
 
@@ -78,7 +78,7 @@ Q: What's the difference?
 
 ## Date methods 
 
-The Date object has many instance methods most are getters and setters. There are few class methods also. 
+The Date object has many instance methods most are getters and setters. There are few class methods also.
 
 ### Getters 
 
@@ -172,13 +172,9 @@ console.log(diffDays);
 
 It's probably best to stick with the built in methods over math more often. 
 
-## In class Programming Challenges with Dates
+## Activity 
 
-...
 
-## Homework 
-
-...
 
 ## Wrap Up (5 min)
 
@@ -188,7 +184,10 @@ It's probably best to stick with the built in methods over math more often.
 
 ## Additional Resources
 
-1. 
+1. https://javascript.info/rest-parameters-spread-operator
+1. https://javascript.info/date
+1. https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
+1. https://javascript.info/object-toprimitive
 
 ## Minute-by-Minute [OPTIONAL]
 

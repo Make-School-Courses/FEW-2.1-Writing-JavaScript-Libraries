@@ -1,4 +1,4 @@
-# FEW 2.1 - Math Lib
+# FEW 2.1 - Numbers and Math Lib
 
 The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers. 
 
