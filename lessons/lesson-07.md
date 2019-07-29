@@ -75,6 +75,29 @@ Since your birthday.
 
 Q: Is the number accurate? 
 Q: What's the difference? 
+Pair up: and discuss your solutions
+
+Initialize a with Year, month, and date. 
+
+```JS 
+const newYears = new Date(2020, 0, 1)
+// Wed Jan 01 2020 00:00:00 GMT-0800 (PST)
+```
+
+Notice the month starts with a 0 index. 
+
+- 0 - Jan
+- 1 - Feb
+- 2 - Mar
+- 3 - April 
+- 4 - May
+- 5 - June 
+- 6 - July 
+- 7 - Aug
+- 8 - Sept
+- 9 - Oct
+- 10 - Nov
+- 11 - Dec
 
 ## Date methods 
 
@@ -82,7 +105,7 @@ The Date object has many instance methods most are getters and setters. There ar
 
 ### Getters 
 
-These mostly get at components of a date such as a year, month, day, hours, minutes, etc. 
+These mostly get at components of a date such as a year, month, day, hours, minutes, etc. Some format the date in a variety of ways. 
 
 - Date Components 
   - `new Date().getFullYear()  // 2019`
@@ -110,6 +133,50 @@ newDate.setMonth(5)
 console.log(d) // 10 January 2019
 console.log(newDate) // 10 June 2019
 ```
+
+Activity
+
+Pair up and solve this problem: Write a function that given a date returns an array of date objects that are offset by a number of days.
+
+For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days. The output would be date objects representing: 
+
+
+`consecutiveDates(new Date(2019, 0, 1), 4, 3) `
+
+Outputs an array of dates: 
+
+1. 1/1/2019
+2. 1/4/2019
+3. 1/7/2019
+4. 1/10/2019
+
+```JS 
+function consecutiveDates(startDate, repeatCount, daysOffset) {
+  // 
+}
+```
+
+Expand the idea above by supplying an option that sets the unit of time for the offset. Support offset units of: 
+
+- year
+- month
+- day
+
+`consecutiveDates(new Date(2019, 0, 1), 3, 1, 'year')`
+
+Outputs an array dates: 
+
+1. 1/1/2019
+2. 1/1/2020
+3. 1/1/2021
+
+```JS 
+function consecutiveDates(startDate, repeatCount, offset, offsetUnit = 'day') {
+  // 
+}
+```
+
+Show your solutions 
 
 ### Class Methods 
 
