@@ -132,51 +132,7 @@ newDate.setMonth(5)
 
 console.log(d) // 10 January 2019
 console.log(newDate) // 10 June 2019
-```
-
-Activity
-
-Pair up and solve this problem: Write a function that given a date returns an array of date objects that are offset by a number of days.
-
-For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days. The output would be date objects representing: 
-
-
-`consecutiveDates(new Date(2019, 0, 1), 4, 3) `
-
-Outputs an array of dates: 
-
-1. 1/1/2019
-2. 1/4/2019
-3. 1/7/2019
-4. 1/10/2019
-
-```JS 
-function consecutiveDates(startDate, repeatCount, daysOffset) {
-  // 
-}
-```
-
-Expand the idea above by supplying an option that sets the unit of time for the offset. Support offset units of: 
-
-- year
-- month
-- day
-
-`consecutiveDates(new Date(2019, 0, 1), 3, 1, 'year')`
-
-Outputs an array dates: 
-
-1. 1/1/2019
-2. 1/1/2020
-3. 1/1/2021
-
-```JS 
-function consecutiveDates(startDate, repeatCount, offset, offsetUnit = 'day') {
-  // 
-}
-```
-
-Show your solutions 
+``` 
 
 ### Class Methods 
 
@@ -241,7 +197,99 @@ It's probably best to stick with the built-in methods over math more often.
 
 ## Activity 
 
+Pair up your pair will be reponsible for solving some of the problems from the list below. We will spend the first part of the class solving the problems after which each group will present their solutions. 
 
+**Problem 1**
+
+- Schedule future dates - Given a date return a list of dates separated by a time 
+
+Pair up and solve this problem: Write a function that given a date returns an array of date objects that are offset by a number of days.
+
+For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days. The output would be date objects representing: 
+
+
+`consecutiveDates(new Date(2019, 0, 1), 4, 3) `
+
+Outputs an array of dates: 
+
+1. 1/1/2019
+2. 1/4/2019
+3. 1/7/2019
+4. 1/10/2019
+
+```JS 
+function consecutiveDates(startDate, repeatCount, daysOffset) {
+  // 
+}
+```
+
+Expand the idea above by supplying an option that sets the unit of time for the offset. Support offset units of: 
+
+- year
+- month
+- day
+
+`consecutiveDates(new Date(2019, 0, 1), 3, 1, 'year')`
+
+Outputs an array dates: 
+
+1. 1/1/2019
+2. 1/1/2020
+3. 1/1/2021
+
+```JS 
+function consecutiveDates(startDate, repeatCount, offset, offsetUnit = 'day') {
+  // 
+}
+```
+
+**Problem 2** 
+
+Measure execution time. _Using `Date`_ calculate the number of milliseconds used to execute. 
+
+Use a loop that executes a number of times.
+
+```JS
+function wasteTime(n) {
+  let widget = 0
+  for (let i = 0; i < n; i += 1) {
+    widget += Math.atan(Math.random() / Math.PI)
+  }
+}
+```
+
+Stretch make this a generic method that could be included in an project to measure the execution time of any method. 
+
+**Problem 3**
+
+Given an array of dates return an ordered array of dates. 
+
+```JS 
+function orderDates(dates) {
+  // orders the dates 
+  // returns a new array of ordered dates
+}
+```
+
+Stretch: Return an object containing three keys each holding an array of dates. The keys are: 
+
+- past: array of dates that happened before today
+- present: all dates that happen today
+- furture: all of the dates that will occur in the future
+
+**Problem 4**
+
+Problem 1 - 
+
+Given an array of dates find the date that will happen next. That is the one slosest to right now. 
+
+Problem 2 - 
+
+Birthday planner. Write a function that takes a date (your birthday) and a year, and returns the day of the week for that date in that year. 
+
+## Show your solutions
+
+Your group shows their solutions for the problems. 
 
 ## Wrap Up (5 min)
 

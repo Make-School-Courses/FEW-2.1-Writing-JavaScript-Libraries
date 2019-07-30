@@ -102,7 +102,14 @@ console.log(d.when()) // 3 days from now
 
 **Stretch Challenge**
 
-Do the same for hours mins and seconds! 
+Look for edge cases in the `when()` method. When does it not work? 
+
+- Decribe the edge case the problem and what casues it
+- Solve the problem in code
+
+**Stretch Challenge**
+
+Make `when()` work for time hours minutes, seconds. 
 
 - 1 hour from now
 - 3 hours ago
@@ -110,6 +117,18 @@ Do the same for hours mins and seconds!
 - 11 mins ago
 - 23 seconds from now
 - 52 seconds ago
+
+**Stretch Challenge**
+
+Take the challenge above one step further by including both date and time. This is an open ended challenge you can make it as detailed as you care to take it. Feel free to interprept the challenge and make your best judgement as to how it can be implemented. 
+
+Here is some sample output: 
+
+- 2 days three hours from now
+- 3 years 5 months 2 days from now
+- 1 year 4 months 23 days ago
+- 3 hours and 24 minutes from now
+- etc.
 
 **Challenge 5**
 
@@ -146,7 +165,6 @@ Use Rollup to bundle your date lib. Include both umd and esm bundles.
 Use `.toPrimitive()` to allow your Data object to return a String or Number depending on context. 
 
 https://javascript.info/object-toprimitive
-
 
 ### Deliverable
 
