@@ -279,11 +279,11 @@ Stretch: Return an object containing three keys each holding an array of dates. 
 
 **Problem 4**
 
-Problem 1 - 
+Question 1 - 
 
 Given an array of dates find the date that will happen next. That is the one slosest to right now. 
 
-Problem 2 - 
+Question 2 - 
 
 Birthday planner. Write a function that takes a date (your birthday) and a year, and returns the day of the week for that date in that year. 
 
