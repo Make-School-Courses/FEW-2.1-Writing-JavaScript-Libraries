@@ -1,4 +1,4 @@
-# FEW 2.1 - Lesson 8 - Writing in TypeScript
+# FEW 2.1 - Lesson 8 - Writing in TypeScript ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit))
 
 In this class, you will begin writing TypeScript code and learn how to adapt your existing JS code to TypeScript.
 
