@@ -22,7 +22,7 @@ In a statically typed language, variables' types are *static*, meaning that once
 Examples of statically typed languages include Java, C, C++, and Swift.
 
 Q: Can you use static typing in JS
-A: Nope. TypeScript is another separate from JS and must be compiled into vanilla JS to be used. 
+A: Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
 
 ### Q: What is dynamic typing?
 
@@ -43,7 +43,7 @@ Discussion: Write down 3 reasons each for using either a statically typed or dyn
 
 ### Static typing catches errors earlier in program development.
 
-Q: What is happening on each line of code below? 
+Q: What is happening on each line of code below?
 
 ```JavaScript
 const intFuncs = [];

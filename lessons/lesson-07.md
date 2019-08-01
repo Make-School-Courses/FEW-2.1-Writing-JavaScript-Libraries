@@ -39,7 +39,7 @@ Yes! The Date Object like the Number Object is a wrapper around a primitive valu
 Make a new date with `new Date()` this returns a new date which represents the moment in time when the command was executed. 
 
 ```JS 
-var a = new Date()
+const a = new Date()
 ```
 
 Try this in the console: 
@@ -51,6 +51,7 @@ var a = new Date()
 var b = new Date()
 // Subtract one from the other
 b - a // 5009 ms between dates
+console.log(a) // Jul 27 3:45 pm ...
 ```
 
 **Internally a Date is a number in Milliseconds**
@@ -123,7 +124,7 @@ Setters change the value of various components of a date.
   - January === 0
 - `myDate.setMinutes(30)`
 
-_Never mutate s source object always make a copy and mutate that to avoid side effects._
+_Never mutate source object always make a copy and mutate that to avoid side effects._
 
 ```JS
 const d = new Date(2019, 0, 10)
@@ -281,7 +282,7 @@ Stretch: Return an object containing three keys each holding an array of dates. 
 
 Question 1 - 
 
-Given an array of dates find the date that will happen next. That is the one slosest to right now. 
+Given an array of dates find the date that will happen next. That is the one closest to right now. 
 
 Question 2 - 
 
