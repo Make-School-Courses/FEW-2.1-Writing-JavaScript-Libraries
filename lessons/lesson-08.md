@@ -79,7 +79,7 @@ function mystery(x) {
 ```
 
 Now, consider the following questions:
-- What is x? 
+- What is x?
 - What other fields, data, and behavior does x have? How else can I interact with x?
 - How would I find this information?
 
