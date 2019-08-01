@@ -1,4 +1,4 @@
-# FEW 2.1 - Assignment 6 - Bundling 
+# FEW 2.1 - Assignment 8 - Typescript 
 
 ## Description 
 
