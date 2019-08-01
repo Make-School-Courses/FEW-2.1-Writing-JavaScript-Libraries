@@ -12,6 +12,18 @@ TypeScript is becoming more popular, and is extremely useful in large codebases.
 
 So far you have published two libraries: Strings, and Maths. Your goal with this assignment is to pick one of them to refactor into TypeScript, then update your rollup bundle and npm package.
 
+### Getting Started
+
+To get started you'll need to install TypeScript. Follow the instructions in [lesson 8](../lessons/lesson-08.md).
+
+You'll want lint your TypeScript code. It's industry best practice! To do this you will need to install TSLint. Follow the instructions here: 
+
+https://dev.to/robertcoopercode/using-eslint-and-prettier-in-a-typescript-project-53jb
+
+### Refactor your lib
+
+Choose one of your libraries to refactor with TypeScript. The Math lib is probably the best choice. Do the following. 
+
 - Refactor into TypeScript
 - Transpile into JavaScript - you should have a .js file and a .d.ts file
 - Bundle as umd and esm
