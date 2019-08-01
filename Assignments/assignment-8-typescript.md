@@ -31,7 +31,7 @@ Code reviewed by another student.
 
 ### Due date
 
-Class 8
+Class 9
 
 ## Assessing the assignment
 

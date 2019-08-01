@@ -243,7 +243,6 @@ To check your work so far, try running `tsc src/index.ts` and take a look at the
 
 ----
 `npm install --save-dev rollup typescript rollup-plugin-typescript2`
-
 ----
 
 Go to `package.json` and add the following line after the main and module:
