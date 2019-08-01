@@ -15,13 +15,19 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 ## Static vs. Dynamic Typing
 
+### Q: What is a type?
+
+Data types describe the shape of the data that we're expecting.
+
+Examples: string, number, boolean, list, object
+
 ### Q: What is static typing?
 
 In a statically typed language, variables' types are *static*, meaning that once a variable is set to a type, it cannot be changed. Statically typed languages generally check *at compile time* that a variable is being assigned the correct type of data. 
 
 Examples of statically typed languages include Java, C, C++, and Swift.
 
-Q: Can you use static typing in JS
+Q: Can you use static typing in JS?
 A: Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
 
 ### Q: What is dynamic typing?
@@ -51,8 +57,7 @@ const intFuncs = [];
 intFuncs.push((x) => 2 * x);
 intFuncs.push((x) => x * x);
 
-intFuncs.push((x) => x.toString() + x.toString());
-// intFuncs.push((x) => x.toFixed(2)); // ?
+intFuncs.push((x) => x.toFixed(2));
 
 let total = 0;
 intFuncs.forEach((func) => total += func(10));
@@ -200,7 +205,12 @@ let person: { name: string, age: number } = { name: 'Jane', age: 22 };
 We can also define the type ahead of time using an interface:
 
 ```TypeScript
-  // lesson 9?
+interface Person {
+  name: string;
+  age: number;
+}
+
+let person: Person = {name: 'Jane', age: 22}
 ```
 
 ### Interfaces
@@ -239,19 +249,17 @@ declare global {
 
 To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
 
-### Modify package.json & rollup.config.js
+### Modify rollup.config.js
 
 ----
-`npm install --save-dev rollup typescript rollup-plugin-typescript2`
-----
 
-Go to `package.json` and add the following line after the main and module:
+Install the following in order to use TypeScript and the TypeScript Rollup plugin:
 
-```JSON
-"types": "esm/index.d.ts",
+```bash
+npm install --save-dev rollup typescript rollup-plugin-typescript2
 ```
 
----
+----
 
 Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
 
@@ -305,6 +313,14 @@ Add a new file `tsconfig.json` with the following content:
 ```
 
 For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
+
+### Modify package.json
+
+Now we need to tell our library users where to find the TypeScript types. Go to `package.json` and add the following line after the main and module:
+
+```JSON
+"types": "esm/index.d.ts",
+```
 
 Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
 
