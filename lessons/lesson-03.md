@@ -89,7 +89,7 @@ Now that jest is installed, you need a test command. Add this to `package.json`.
 
 ```JSON
 "scripts": {
-        "test": "jest"
+  "test": "jest"
 },
 ```
 
@@ -176,7 +176,7 @@ https://jestjs.io/docs/en/getting-started
 
 ## Testing Fizz Buzz
 
-Your goal is to examine the source code and write some tests. The [sample code](#sample-code) contains these functions. Each function takes some input and returns output. 
+Your goal is to examine the source code and write some tests. The [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test) contains these functions. Each function takes some input and returns output. 
 
 - `isFizzy()`
 - `isBuzzy()`
@@ -267,13 +267,14 @@ Write test for FizzBuzz methods above.
 
 ## Wrap Up
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- Q: Why use unit tests? 
+- Q: What makes a good test?
+- Q: What is Jest?
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. https://github.com/Make-School-Labs/fizz-buzz-test
+1. https://jestjs.io
 
 ## Minute-by-Minute 
 
