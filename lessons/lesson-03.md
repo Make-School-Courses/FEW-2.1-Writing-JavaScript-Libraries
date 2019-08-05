@@ -65,7 +65,7 @@ Heard of Fizz Buzz? Everyone is writing this program but no one is writing tests
 
 Pair with someone **you haven't paired with before**.
 
-The goal of this exercise is to write some tests with Jest that test the functions in the [sample code](#sample-code) provided. The code is at the bottom of this page. 
+The goal of this exercise is to write some tests with Jest that test the functions in the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test).
 
 ## Getting Started Fizz Buzz
 
@@ -73,7 +73,7 @@ The goal of this exercise is to write some tests with Jest that test the functio
 - Navigate the terminal to the directory
 - `npm init -y`
 - `touch index.js` 
-- Get the [sample code](#sample-code) (at the bottom of this page) paste it into `index.js`. 
+- Get the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test)
 
 ## Writing tests with Jest
 
@@ -286,75 +286,3 @@ Write test for FizzBuzz methods above.
 | 1:00        | 0:45      | Pair and write tests      |
 | 1:45        | 0:05      | Wrap up review objectives |
 | TOTAL       | 1:50      | -                         |
-
-
-# Sample Code
-
-```JavaScript
-const FIZZ = 'fizz'
-const BUZZ = 'buzz'
-const FIZZBUZZ = 'fizzbuzz'
-
-/** 
- * Returns true when n is divisible by 3 
- * @param {Number} n
- * @returns {Boolean} fizziness 
- * */
-function isFizzy(n) {
-  return n % 3 === 0
-}
-
-/**
- * Returns true when n is divisible by 5
- * @param {Number} n 
- * @returns {Boolean} buzziness
- */
-function isBuzzy(n) {
-  return n % 5 === 0
-}
-
-/**
- * Returns FIZZ, BUZZ, or FIZZBUZZ when a number is divisible by 3, 5, or both
- * @param {Number} n
- * @returns {String} '', 'FIZZ', 'BUZZ', or 'FIZZBUZZ'
- */
-function fizzyBuzzy(n) {
-  let result = ''
-  if (isFizzy(n)) { result += FIZZ }
-  if (isBuzzy(n)) { result += BUZZ }
-  return result
-}
-
-/**
- * Generates a results object describing a sequence of fizz buzz for count.
- * @param {Number} count 
- * @returns {Object} with properties count, fizz, buzz, and fizzbuzz
- */
-function fizzBuzz(count) {
-  let result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }
-  for (let i = 1; i <= count; i += 1) {
-    const str = fizzyBuzzy(i)
-    switch(str) {
-      case FIZZ: 
-        result.fizz += 1
-        break
-      case BUZZ: 
-        result.buzz += 1
-        break
-      case FIZZBUZZ:
-        result.fizzBuzz += 1
-        break
-    }
-  }
-  return result
-}
-
-module.exports.test = test
-module.exports.isFizzy = isFizzy
-module.exports.isBuzzy = isBuzzy
-module.exports.fizzyBuzzy = fizzyBuzzy
-module.exports.fizzBuzz = fizzBuzz
-module.exports.FIZZ = FIZZ
-module.exports.BUZZ = BUZZ
-module.exports.FIZZBUZZ = FIZZBUZZ
-```
