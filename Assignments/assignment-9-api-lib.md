@@ -1,16 +1,30 @@
-# FEW 2.1 - Assignment Title 
+# FEW 2.1 - API Lib
 
 ## Description 
 
-A short description of your assignment
+People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their jobs easier. 
+
+The goal of this assignment is to create to lib that will simplify, improve and, speed up the workflow of developers using an API. 
+
+You will choose an API to work with and make a lib that you will publish to npm. Your lib should define one or more helper functions or classes that make working with your chosen API easier to work with. 
 
 ### Why this assignment?
 
-A short description that hits home as to why this assignment is important to do. 
+APIs are the backbone of the web. Developers have writing these kinds of libraries for years. You have probably used a few already. By doing this assignment you will expand your abilities in new areas. 
 
 ## Project requirements
 
-Descirbe the requirements of this assignment.
+You will write and publish a library that works with an API. Choose an API from the list or choose one of your own. 
+
+- https://rapidapi.com/ismaelc/api/yoda-speak
+- https://rapidapi.com/stefan.skliarov/api/AccuWeather
+- 
+
+Explore these sites to find APIs
+
+- https://rapidapi.com/
+- https://www.programmableweb.com/
+
 
 ### Deliverable
 
