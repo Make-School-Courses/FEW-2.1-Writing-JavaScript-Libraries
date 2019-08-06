@@ -1,43 +1,66 @@
-# FEW 2.1 - FEW 2.1 - TypeScript Part 2
+# FEW 2.1 - FEW 2.1 - TypeScript Part 2 [[Slides](https://docs.google.com/presentation/d/1UZRdPDroEK1OftxLCZ-lf9Jxkj3UYs-y1vUmjHp1bPI/edit#slide=id.g4cf79cf4e3_0_202)]
 
-Obviously TypeScript needs a second discussion.
-
-## Why you should know this
-
-String typing is an important part of programming. Whether you use in your daily work you should have a strong grasp of the concept, and you may have to use it in the future. 
+Let's continue our work from last week on using TypeScript in an existing (or new) project!
 
 ## Learning Objectives 
 
-1. Review Work and concepts 
-1. Wrapping and API
+1. Recall basic types from last class
+1. Modify an existing code base to use TypeScript
+1. Rewrite tests in TypeScript using Jest
+1. Install and use linting software using eslint-typescript
 
 ### Course Progress Tracker
 
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
-## Initial Exercise 
+## Adding Types to FizzBuzz
 
-...
+If you haven't already, clone the FizzBuzz repository here: <link> 
 
-## 
+Modify the FizzBuzz code _and_ tests to use types. Include at least one class or interface in your implementation.
 
-...
+## Testing using Jest
 
-## Wrap an API
+Instructions adapted from https://basarat.gitbooks.io/typescript/content/docs/testing/jest.html
 
-Why would you wrap an API? 
+Install Jest using npm:
 
-What does that even mean? 
+```bash
+npm i jest @types/jest ts-jest -D
+```
 
-How would you do this? 
+Add a `jest.config.js` file to the root of your project and initialize it with the following:
 
-## Try it out
+```javascript
+module.exports = {
+  "roots": [
+    "<rootDir>/tests"
+  ],
+  "transform": {
+    "^.+\\.tsx?$": "ts-jest"
+  },
+}
+```
 
-Oh no not openweathermap or swapi again! 
+Now you can run `npx jest` to run your tests.
+
+You can also add the following to your `package.json`:
+
+```json
+{
+  "test": "jest"
+}
+```
+
+This allows you to run with `npm t`.
+
+## Linting with typescript-eslint
+
+
 
 ## Homework
 
-API Lib
+No new homework
 
 ## Wrap Up (5 min)
 
