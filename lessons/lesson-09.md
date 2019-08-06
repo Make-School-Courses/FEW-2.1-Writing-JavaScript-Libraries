@@ -56,7 +56,36 @@ This allows you to run with `npm t`.
 
 ## Linting with typescript-eslint
 
+Follow [this tutorial](https://www.npmjs.com/package/eslint-config-airbnb-typescript) on configuring with the Airbnb Style Guide with TypeScript. Follow the instructions for "no React support". You may need to install ESLint plugins if you haven't already.
 
+Next, to get typescript-eslint integration in your VSCode editor, follow [this tutorial](https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75) under "Telling VSCode that ESLint checks our TypeScript":
+
+After installing the ESLint extension in VSCode, go to `Code > Prefrences > Settings` and click the button with `{}` to go to the JSON settings view. Enter the following into the JSON file:
+
+```json
+"eslint.validate": [
+  "javascript",
+  "javascriptreact",
+  {
+    "language": "typescript",
+    "autoFix": true
+  },
+  {
+    "language": "typescriptreact",
+    "autoFix": true
+  }
+]
+```
+
+For more information on configuring eslint, you can read their [User Guide](https://eslint.org/docs/user-guide/configuring). 
+
+For example, if you want eslint to ignore your Jest global variables, you can add the following:
+
+```js
+env: {
+    "jest": true
+}
+```
 
 ## Homework
 
