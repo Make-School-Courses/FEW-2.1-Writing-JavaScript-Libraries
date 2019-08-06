@@ -15,7 +15,7 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 ## Adding Types to FizzBuzz
 
-If you haven't already, clone the FizzBuzz repository here: <link> 
+If you haven't already, clone the FizzBuzz repository here: https://github.com/Make-School-Labs/fizz-buzz-test
 
 Modify the FizzBuzz code _and_ tests to use types. Include at least one class or interface in your implementation.
 
