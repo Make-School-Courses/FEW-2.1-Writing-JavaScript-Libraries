@@ -6,53 +6,30 @@ Explain why students should care to learn the material presented in this class.
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+1. Identify ways that an API you’ve used could be improved
+1. Design and implement classes and interfaces to represent data from an API
+1. Use Promises and Async/Await to utilize parallelism and asynchronous functions
 
 ### Course Progress Tracker
 
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
-## Initial Exercise (15 min)
 
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
+## In Class Activity I
 
-## Overview/TT I (20 min)
+[Worksheet](https://docs.google.com/document/d/1ekflXL5u_MwUpPLbpCya3rqbNUZlZ2rVewTAKsYrlIo/edit)
 
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+## Overview/TT
 
-## In Class Activity I (30 min)
+Promises and Async/Await
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+## In Class Activity II
 
-## Overview/TT II (optional) (20 min)
-
-## In Class Activity II (optional) (30 min)
+[Demo Project](https://github.com/Make-School-Labs/Star-Wars-Api-Wrapper)
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+Homework: [API Library](https://github.com/Make-School-Courses/FEW-2.1-Writing-JavaScript-Libraries/blob/master/Assignments/assignment-9-api-lib.md)
 
 ## Additional Resources
 
