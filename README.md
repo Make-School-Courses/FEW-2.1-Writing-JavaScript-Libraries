@@ -37,7 +37,7 @@ Students by the end of the course will be able to ...
 |  7 |   Tue, July 30   | [Date Libraries](lessons/lesson-07.md)         |
 |  8 |   Thu, August 1  | [TypeScript intro](lessons/lesson-08.md)       |
 |  9 |   Tue, August 6  | [Typescript Part 2](lessons/lesson-09.md)      |
-| 10 |   Thu, August 8  | [](lessons/lesson-10.md) |  
+| 10 |   Thu, August 8  | [API Libraries](lessons/lesson-10.md) |  
 | 11 |   Tue, August 13 | [Final Presentations](lessons/lesson-11.md)    |
 | 12 |   Thu, August 15 | [Final Exam](lessons/lesson-12.md)             |
 
