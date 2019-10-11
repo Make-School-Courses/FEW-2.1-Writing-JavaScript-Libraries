@@ -35,5 +35,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-FEW-2-1.code-workspace
-Lessons/Lesson9.md
+
+node_modules/
+package-lock.json

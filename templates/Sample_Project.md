@@ -1,4 +1,4 @@
-# FEW 2.1 - Assignment Title 
+# Class - Assignment Title 
 
 ## Description 
 
@@ -27,7 +27,5 @@ Detailed description...
 ## Assessing the assignment
 
 [Assignment Name Rubric](./assignment-rubric.md)
-
-
 
 

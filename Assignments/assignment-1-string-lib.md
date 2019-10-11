@@ -8,7 +8,7 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 ## Writing your first library
 
-In your repo create a file named: `index.js`. You'll add code to this file that solves the problems below. 
+In your repo create a file named: `index.js`. You'll add code to this file that solves the problems below.
 
 ## What code to write
 
