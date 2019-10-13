@@ -1,7 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - API Libraries 
+# FEW 2.1 - Lesson 10
 
-([Slides](https://docs.google.com/presentation/d/14t1i4u9oZcwIFAdHm8t_SrAFVUA70cpwmfS_bEJ8ISI/edit))
+<small style="display:block;text-align:center">API Libraries</small>
 
 <!-- Put a link to the slides so that students can find them -->
 

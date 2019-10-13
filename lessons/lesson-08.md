@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 8 - Writing in TypeScript 
+# FEW 2.1 - Lesson 8 
+
+<small style="display:block;text-align:center">Writing in TypeScript</small>
 
 <!-- ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit)) -->
 
@@ -11,18 +13,12 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 <!-- > -->
 
-## Learning Objectives (5 min)
+## Learning Objectives
 
 1. Define static & dynamic typing
 2. Explain the pros & cons of static vs. dynamic typing
 3. Implement functions, classes, & interfaces using TypeScript
 4. Convert existing JS code to TypeScript
-
-<!-- > -->
-
-### Course Progress Tracker
-
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
 <!-- > -->
 
@@ -44,8 +40,11 @@ In a statically typed language, variables' types are *static*, meaning that once
 
 Examples of statically typed languages include Java, C, C++, and Swift.
 
-Q: Can you use static typing in JS?
-A: Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
+<!-- > -->
+
+**Q:** Can you use static typing in JS?
+
+**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
 
 <!-- > -->
 
@@ -58,6 +57,8 @@ let x = 10;
 x = 'hello';
 ```
 
+<!-- > -->
+
 In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
 
 Examples of dynamically typed languages include Python, JavaScript, PHP, and Ruby.
@@ -66,13 +67,13 @@ Examples of dynamically typed languages include Python, JavaScript, PHP, and Rub
 
 ## Why use one or the other?
 
-Discussion: Write down 3 reasons each for using either a statically typed or dynamically typed language.
+**Discussion:** Write down 3 reasons each for using either a statically typed or dynamically typed language.
 
 <!-- > -->
 
 ### Static typing catches errors earlier in program development.
 
-Q: What is happening on each line of code below?
+**Q:** What is happening on each line of code below?
 
 ```JavaScript
 const intFuncs = [];
@@ -85,6 +86,8 @@ intFuncs.push((x) => x.toFixed(2));
 let total = 0;
 intFuncs.forEach((func) => total += func(10));
 ```
+
+<!-- > -->
 
 We catch the bug *at runtime*.
 
@@ -108,10 +111,14 @@ function mystery(x) {
 }
 ```
 
+<!-- > -->
+
 Now, consider the following questions:
 - What is x?
 - What other fields, data, and behavior does x have? How else can I interact with x?
 - How would I find this information?
+
+<!-- > -->
 
 Now, let's take a look at this code with some types added.
 
@@ -167,6 +174,8 @@ sum = null; // OK
 sum = '100'; // Not OK - will result in a compile error
 ```
 
+<!-- > -->
+
 There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
 
 ```TypeScript
@@ -174,11 +183,15 @@ let list1: number[] = [1, 2, 3];
 let list1: Array<number> = [1, 2, 3];
 ```
 
+<!-- > -->
+
 What if we want an array with mixed values of different types? In that case, we can use the 'tuple' type:
 
 ```TypeScript
 let person1: [string, number] = ['Jane', 20];
 ```
+
+<!-- > -->
 
 You can also easily make your own enum type. If you try to print the value of an enum, you'll see that it's actually a number, with the first value defaulting to 0.
 
@@ -192,6 +205,8 @@ console.log(Fruit.Orange); // 1
 console.log(Fruit.Pear); // 2
 ```
 
+<!-- > -->
+
 Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
 
 ```TypeScript
@@ -203,6 +218,8 @@ someValue = [1, 2, 3];
 
 ### Functions & Function Variables
 
+<!-- > -->
+
 We can add types to the parameters and return values of functions:
 
 ```TypeScript
@@ -212,6 +229,8 @@ function add(num1: number, num2: number): number {
 
 add(4, 6);
 ```
+
+<!-- > -->
 
 We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
 
@@ -232,6 +251,8 @@ greet(undefined, 'Jane'); // prints 'Hello, Jane!'
 <!-- > -->
 
 ### Classes & Interfaces
+
+<!-- > -->
 
 In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
 
@@ -290,13 +311,13 @@ declare global {
 }
 ```
 
+<!-- > -->
+
 To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
 
 <!-- > -->
 
 ### Modify rollup.config.js
-
-----
 
 Install the following in order to use TypeScript and the TypeScript Rollup plugin:
 
@@ -304,7 +325,7 @@ Install the following in order to use TypeScript and the TypeScript Rollup plugi
 npm install --save-dev rollup typescript rollup-plugin-typescript2
 ```
 
-----
+<!-- > -->
 
 Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
 
@@ -314,6 +335,8 @@ Import the TypeScript plugin at the top of the file:
 ```
 import typescript from 'rollup-plugin-typescript2';
 ```
+
+<!-- > -->
 
 Then enter the following into your plugins for both output files:
 
@@ -371,6 +394,8 @@ Now we need to tell our library users where to find the TypeScript types. Go to 
 "types": "esm/index.d.ts",
 ```
 
+<!-- > -->
+
 Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
 
 <!-- > -->
@@ -381,7 +406,7 @@ Now running `npm run prepare` should do everything you need to get your files re
 
 <!-- > -->
 
-## Wrap Up (5 min)
+## Wrap Up
 
 - Continue working on your current tutorial
 - Complete reading
@@ -391,7 +416,7 @@ Now running `npm run prepare` should do everything you need to get your files re
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. 
 
 <!-- > -->
 

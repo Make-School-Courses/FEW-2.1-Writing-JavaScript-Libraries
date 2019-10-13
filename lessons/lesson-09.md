@@ -1,7 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 9 - TypeScript Part 2 
+# FEW 2.1 - Lesson 9
 
-[[Slides](https://docs.google.com/presentation/d/1UZRdPDroEK1OftxLCZ-lf9Jxkj3UYs-y1vUmjHp1bPI/edit#slide=id.g4cf79cf4e3_0_202)]
+<small style="display:block;text-align:center">TypeScript Part 2</small>
 
 Let's continue our work from last week on using TypeScript in an existing (or new) project!
 
@@ -17,12 +17,6 @@ Let's continue our work from last week on using TypeScript in an existing (or ne
 1. Modify an existing code base to use TypeScript
 1. Rewrite tests in TypeScript using Jest
 1. Install and use linting software using eslint-typescript
-
-<!-- > -->
-
-### Course Progress Tracker
-
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
 <!-- > -->
 
@@ -44,6 +38,8 @@ Install Jest using npm:
 npm i jest @types/jest ts-jest -D
 ```
 
+<!-- > -->
+
 Add a `jest.config.js` file to the root of your project and initialize it with the following:
 
 ```javascript
@@ -56,6 +52,8 @@ module.exports = {
   },
 }
 ```
+
+<!-- > -->
 
 Now you can run `npx jest` to run your tests.
 
@@ -74,6 +72,8 @@ This allows you to run with `npm t`.
 ## Linting with typescript-eslint
 
 Follow [this tutorial](https://www.npmjs.com/package/eslint-config-airbnb-typescript) on configuring with the Airbnb Style Guide with TypeScript. Follow the instructions for "no React support". You may need to install ESLint plugins if you haven't already.
+
+<!-- > -->
 
 Next, to get typescript-eslint integration in your VSCode editor, follow [this tutorial](https://medium.com/@oliver.grack/using-eslint-with-typescript-and-react-hooks-and-vscode-c583a18f0c75) under "Telling VSCode that ESLint checks our TypeScript":
 
@@ -94,6 +94,8 @@ After installing the ESLint extension in VSCode, go to `Code > Prefrences > Sett
 ]
 ```
 
+<!-- > -->
+
 For more information on configuring eslint, you can read their [User Guide](https://eslint.org/docs/user-guide/configuring). 
 
 For example, if you want eslint to ignore your Jest global variables, you can add the following:
@@ -112,7 +114,7 @@ env: {
 
 <!-- > -->
 
-## Wrap Up (5 min)
+## Wrap Up
 
 - Continue working on your current tutorial
 - Complete reading
@@ -122,7 +124,7 @@ env: {
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. 
 
 <!-- > -->
 
