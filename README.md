@@ -39,7 +39,7 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 **Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
 
 | Class | Date | Topics | Assignment |
-|:-----:|:----:|:------:|:----------:|
+|:------|:-----|:-------|:-----------|
 |  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
 |  2 | Wed, Oct 23 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
 |  3 | Mon, Oct 28 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
