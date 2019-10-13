@@ -431,7 +431,7 @@ Q: What was covered today?
 
 Publish to NPM: https://zellwk.com/blog/publish-to-npm/
 
-<!-- > --> 
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

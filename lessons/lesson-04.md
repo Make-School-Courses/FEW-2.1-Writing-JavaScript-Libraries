@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 4 - Continuous Integration
+# FEW 2.1 - Lesson 4
+
+<small style="display:block;text-align:center">Continuous Integration</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -33,9 +35,9 @@ Read this: https://codeship.com/continuous-integration-essentials
 
 Pair up and answer these questions: 
 
-Q: Do you see any advantages of using CI?
+**Q:** Do you see any advantages of using CI?
 
-Q: Do you see any downsides to CI?
+**Q:** Do you see any downsides to CI?
 
 <!-- > -->
 
@@ -69,7 +71,12 @@ Linting is an automated process that looks at your code and evaluates it for con
 
 As a student **you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
 
-ESLint needs to be installed in two places: _in the project_ through npm and _in your editor_.
+<!-- > -->
+
+ESLint needs to be installed in two places: 
+
+- _in the project_ through npm 
+- _in your editor_.
 
 <!-- > -->
 
@@ -98,6 +105,8 @@ tl;dr
 `npm install eslint --save-dev`
 
 `eslint --init`
+
+<!-- > -->
 
 Choose: 
 
@@ -170,6 +179,8 @@ Add a new file to the root directory of your String Lib project. Name this file:
 
 `.travis.yml`
 
+<!-- > -->
+
 Add the following to this file: 
 
 ```yml
@@ -192,6 +203,8 @@ script:
 - npm run coveralls
 ```
 
+<!-- > -->
+
 This config script uses the latest stable version of node, builds your project from the master branch, install node modules, and then runs your npm test script followed by the coveralls script. 
 
 The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll set this up this in the next step. 
@@ -206,6 +219,8 @@ Coveralls is a service that helps you track code coverage. Code coverage answers
 
 Go to [Coveralls.io](https://coveralls.io)
 
+<!-- > -->
+
 Create an account and login.
 
 Click your account and link your GitHub.
@@ -213,6 +228,8 @@ Click your account and link your GitHub.
 Click Add Repo and add your String Lib Repo to Coveralls.
 
 Click Repos then click the Name of string repo.
+
+<!-- > -->
 
 Add the Coveralls package to your project. 
 
@@ -227,6 +244,8 @@ Add this line to your `package.json`:
   ...
 },
 ```
+
+<!-- > -->
 
 Find the "Coverage" badge. Click the embed button to the upper right. Copy the Markdown text. You can paste this into the README.md in the GitHub Repo of your library. 
 
@@ -270,7 +289,11 @@ Paste the markdown code into your repo.
 
 ## Stretch goals 
 
-Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library. Try these:
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
+
+<!-- > -->
+
+Try these:
 
 - Invent your own utility functions. 
 - Research existing libraries on npm to identify useful functions you can implement. Research these: 

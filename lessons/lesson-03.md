@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 3 - Unit Testing
+# FEW 2.1 - Lesson 3
+
+<small style="display:block;text-align:center">Unit Testing</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -122,11 +124,15 @@ The goal of this exercise is to write some tests with Jest that test the functio
 
 Jest is a framework that you will use as a *dev dependency*. A dev dependency is one that is used for development but _not used in your source code_.
 
+<!-- > -->
+
 Add Jest:
 
 `npm install --save-dev jest`
 
 `--save-dev` creates an entry under `"devDependencies"` in your `package.json`. Look for this right now.
+
+<!-- > -->
 
 Now that jest is installed, you need a test command. Add this to `package.json`. Add/edit `package.json` to look like this:
 
@@ -135,6 +141,8 @@ Now that jest is installed, you need a test command. Add this to `package.json`.
   "test": "jest"
 },
 ```
+
+<!-- > -->
 
 You'll run a test with:
 
@@ -150,6 +158,8 @@ No tests found, exiting with code 1
 
 You haven't written any tests yet so this makes sense.
 
+<!-- > -->
+
 Add a new directory named "tests".
 
 `mkdir tests`
@@ -158,7 +168,11 @@ Now add a new file `tests/test.js`. Your tests will be written here.
 
 `touch tests/test.js`
 
+<!-- > -->
+
 When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console.
+
+<!-- > -->
 
 A test is run by calling:
 
@@ -173,6 +187,8 @@ test('Sanity check', () => {
 
 })
 ```
+
+<!-- > -->
 
 Run your test.
 
@@ -190,6 +206,8 @@ Tests:       1 passed, 1 total
 ...
 ```
 
+<!-- > -->
+
 Looks like 1 test  passed out of a total of 1 test.
 
 What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing.
@@ -201,6 +219,8 @@ test('Sanity check', () => {
   expect(2+2).toBe(5)
 })
 ```
+
+<!-- > -->
 
 Run your test again. The test should *fail* this time.
 
@@ -227,6 +247,8 @@ Your goal is to examine the source code and write some tests. The [Fizz Buzz sam
 - `isBuzzy()`
 - `fizzyBuzzy()`
 - `fizzBuzz()`
+
+<!-- > -->
 
 For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like:
 
@@ -273,6 +295,8 @@ Jest will automate this for you.
 
 `npx jest --coverage`
 
+<!-- > -->
+
 This should provide output similar to: 
 
 ```
@@ -310,6 +334,8 @@ To use your library in your tests you'll need to import it. Tests are run in the
 
 Modify the line above to suit your situation. The name of the var can be anything. The path and name to point to your string lib relative to `test.js`.
 
+<!-- > -->
+
 Note! If your functions are global or they are added to the prototype of a global object you can just use something like:
 
 `require('../index.js')`
@@ -321,12 +347,6 @@ Use the coverage command with Jest to test the coverage of your tests.
 ### Homework
 
 [Assignment 3 - Write Unit Tests](../assignments/assignment-02.md)
-
-<!-- > -->
-
-## Write some tests
-
-Write test for FizzBuzz methods above. 
 
 <!-- > -->
 
