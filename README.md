@@ -51,11 +51,11 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 |  9 | Mon, Nov 18 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
 | 10 | Wed, Nov 20 | [Lesson 10](./lessons/lesson-10.md) | [???](./assignments/assignment-10.md) - Lab |  
 | 11 | Mon, Nov 25 | [Lesson 11](./lessons/lesson-11.md) | [???](./assignments/assignment-11.md) - Lab |
-|  - | Wed, Nov 27 | **NO CLASS** - Thanksgiving | - |
+|  - | Wed, Nov 27 | **NO CLASS** | Thanksgiving |
 | 12 | Mon, Dec 2  | [Lesson 12](./lessons/lesson-12.md) | [???](./assignments/assignment-12.md) - Lab |
 | 13 | Wed, Dec 4  | [Lesson 13](./lessons/lesson-13.md) | [???](./assignments/assignment-13.md) |
-| 14 | Mon, Dec 9  | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) |
-| 15 | Wed, Dec 11 | Final Exam/Presentations  | - |
+| 14 | Mon, Dec 9  | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) - Final Presentations |
+| 15 | Wed, Dec 11 | [Lesson 15](./lessons/lesson-15.md) | [???](./assignments/assignment-15.md) - Final Assessment |
 
 ### Tu/Th Template 
 
