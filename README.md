@@ -40,7 +40,8 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 
 | Class | Date | Topics | Assignment |
 |:-----:|:----:|:------:|:----------:|
-|  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) |
+|  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | 
+[String Lib](./assignments/assignment-01.md) - Write your string lib |
 |  2 | Wed, Oct 23 | [Lesson 2](./lessons/lesson-01.md) | [Publish to npm](./assignments/assignment-01.md) |
 |  3 | Mon, Oct 28 | [Lesson 3](./lessons/lesson-01.md) | [Add Unit Tests](./assignments/assignment-01.md) |
 |  4 | Wed, Oct 30 | [Lesson 4](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) |
