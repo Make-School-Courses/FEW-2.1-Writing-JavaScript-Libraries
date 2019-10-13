@@ -66,52 +66,22 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 
 | Class | Date | Topics | Assignment |
 |:--:|:-----------:|:----------------------------------:|:----------------------------------:|
-|  1 | Tue, Oct 22 | [Lesson 1](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  2 | Thu, Oct 24 | [Lesson 2](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  3 | Tue, Oct 29 | [Lesson 3](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  4 | Thu, Oct 31 | [Lesson 4](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  5 | Tue, Nov 5  | [Lesson 5](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  6 | Thu, Nov 7  | [Lesson 6](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  7 | Tue, Nov 12 | [Lesson 7](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-|  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-| 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  1 | Tue, Oct 22 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
+|  2 | Thu, Oct 24 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
+|  3 | Tue, Oct 29 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
+|  4 | Thu, Oct 31 | [Lesson 4](./lessons/lesson-04.md) | [Continuous Integration](./assignments/assignment-04.md) - Add continuous integration to your string lib |
+|  5 | Tue, Nov 5  | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  6 | Thu, Nov 7  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution (>> 8) |
+|  7 | Tue, Nov 12 | [Lesson 7](./lessons/lesson-07.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib (>> 9) |
+|  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-08.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
+|  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
+| 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-10.md) | [???](./assignments/assignment-10.md) - Lab |
+| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [???](./assignments/assignment-11.md) - Lab |
 |  - | Thu, Nov 28 | **NO CLASS** - Thanksgiving  | - |
-| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
-| 15 | Thu, Dec 12 | Final Exam/Presentations  | - |
-
-## Assignment Schedule
-
-**[INSTRUCTOR NOTE] REPLACE THE BELOW WITH LINKS TO YOUR ASSIGNMENTS, CORRECT DATES, AND SUBMISSION FORM**
-
-| Assignment | Date Assigned | Due Date | Submission Form |
-|:----------:|:-------------:|:--------:|:---------------:|
-| [Link to Assignment](makeschool.com)  |  Tue, Oct 15  |  Tue, Oct 22 | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
-
-## Class Assignments
-
-### Projects
-
-Over the course of the class, you will **write and publish 4 of your own JS libraries on the following topics:**
-
-- Strings
-- Math operations
-- Date Objects
-- API Wrappers
-
-You will implement industry best practices by: 
-
-- Writing unit tests
-- Using a Preprocessor/bundler
-- Publishing to Github
-- Publishing to NPM 
-- Using Continuous Integration 
+| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [???](./assignments/assignment-12.md) - Lab |
+| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [???](./assignments/assignment-13.md) |
+| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) - Final Presentations |
+| 15 | Thu, Dec 12 | [Lesson 15](./lessons/lesson-15.md) | [???](./assignments/assignment-15.md) - Final Assessment |
 
 ## Evaluation
 To pass this course you must meet the following requirements:
