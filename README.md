@@ -43,7 +43,7 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 |  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
 |  2 | Wed, Oct 23 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
 |  3 | Mon, Oct 28 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
-|  4 | Wed, Oct 30 | [Lesson 4](./lessons/lesson-04.md) | [String Lib](./assignments/assignment-04.md) - Add continuous integration to your string lib |
+|  4 | Wed, Oct 30 | [Lesson 4](./lessons/lesson-04.md) | [Continuous Integration](./assignments/assignment-04.md) - Add continuous integration to your string lib |
 |  5 | Mon, Nov 4  | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
 |  6 | Wed, Nov 6  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution (>> 8) |
 |  7 | Mon, Nov 11 | [Lesson 7](./lessons/lesson-07.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib (>> 9) |
