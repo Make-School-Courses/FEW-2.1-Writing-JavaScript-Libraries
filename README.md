@@ -77,7 +77,7 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 |  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
 | 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-10.md) | [???](./assignments/assignment-10.md) - Lab |
 | 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [???](./assignments/assignment-11.md) - Lab |
-|  - | Thu, Nov 28 | **NO CLASS** - Thanksgiving  | - |
+|  - | Wed, Nov 27 | **NO CLASS** | Thanksgiving |
 | 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [???](./assignments/assignment-12.md) - Lab |
 | 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [???](./assignments/assignment-13.md) |
 | 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) - Final Presentations |
