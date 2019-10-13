@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 6 - Bundling Libraries for distribution
+# FEW 2.1 - Lesson 6
+
+<small style="display:block;text-align:center">Bundling Libraries for distribution</small>
 
 This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
 
@@ -52,6 +54,8 @@ function load() { /* does something important */}
 </script>
 ```
 
+<!-- > -->
+
 The module pattern uses scope to solve the problem above. Wrapping code in an anonymous function stores all of the variables and functions in the scope of that function. 
 
 ```JavaScript
@@ -68,6 +72,8 @@ The module pattern uses scope to solve the problem above. Wrapping code in an an
 </script>
 ```
 
+<!-- > -->
+
 This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced module bundles are based on this. 
 
 You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
@@ -83,6 +89,8 @@ There are several tools you can use to bundle your code and several patterns/sta
 - [rollUp.js](https://rollupjs.org/guide/en/)
 
 Rollup seems to be the most modern and up to date choice out of this list. 
+
+<!-- > -->
 
 Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
 
@@ -135,6 +143,8 @@ Install rollup.js
 
 `npm install --save-dev rollup`
 
+<!-- > -->
+
 Create a config file for rollup. Make a new file named `rollup.config.js`. 
 
 ```JavaScript
@@ -150,9 +160,13 @@ export default {
 
 This base config takes an input file from: `src/index.js` and outputs a UMD file `umd/your-module.js`. 
 
+<!-- > -->
+
 When loaded this file will create a global variable named `yourModule`. Remember UMD format is meant to be loaded in the browser. The code is also wrapped in a function following the CommonJS module pattern for use with Node JS. 
 
 Move your source files into a folder named `src` create this folder if you haven't yet. 
+
+<!-- > -->
 
 Rollup will automatically build from the `src` directory. 
 
@@ -162,7 +176,9 @@ Test your work so far.
 
 This should build the UMD module from your source files and save these a folder named `umd`. 
 
-Test your module. 
+<!-- > -->
+
+**Test your module.** 
 
 Make a test file: `example.html`. Import your script with the script tag: 
 
@@ -172,6 +188,8 @@ Notice the path to your library, it points to the `umd` folder at the file named
 
 Write some test code in your test file. Load the text file in the browser. 
 
+<!-- > -->
+
 Examine the source code that was written. It is pretty obscure. Note that it is using one of the module patterns evolved from the IIFE. 
 
 The source code has not been minified. You can minify using Terser.js plugin for Rollup. 
@@ -179,6 +197,8 @@ The source code has not been minified. You can minify using Terser.js plugin for
 Import `Terser.js` plugin for RollUp. 
 
 `npm install --save-dev rollup-plugin-terser`
+
+<!-- > -->
 
 Modify `rollup.config.js`: 
 
@@ -206,6 +226,8 @@ export default [
 ];
 ```
 
+<!-- > -->
+
 Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit from minification. 
 
 Modify `package.json`. We need to make sure that importers of the library get the right file. Set "main" for Node JS environments.
@@ -216,6 +238,8 @@ Modify `package.json`. We need to make sure that importers of the library get th
   ...
 ```
 
+<!-- > -->
+
 Use "module" to designate ES Module.
 
 ```JSON
@@ -223,6 +247,8 @@ Use "module" to designate ES Module.
   "module": "esm/index.js",
   ...
 ```
+
+<!-- > -->
 
 Use "files" to designate which files should be distributed by npm. 
 
@@ -234,6 +260,8 @@ Use "files" to designate which files should be distributed by npm.
   ]
   ...
 ```
+
+<!-- > -->
 
 Add "prepare" script. This script is run by npm each time you install or publish. 
 
@@ -257,17 +285,23 @@ Start here:
 
 `npm pack`
 
+<!-- > -->
+
 This command is like `npm publish` it prepares your files but doesn't send them to the server. Use `pack` to test your work locally. When you're satisfied use `publish` to upload to npm. 
 
 Run your tests
 
 `npm test`
 
+<!-- > -->
+
 If everything is good commit and push to GitHub. 
 
 Check your Status on Travis. 
 
 Check your Coverage on Coveralls.
+
+<!-- > -->
 
 Take a look at your package on npm. Check the version number. 
 
@@ -276,6 +310,8 @@ You can test the Node JS version of the package using the "RunKit" link.
 (I had a problem with this showing an outdated version.)
 
 Create a test project for your package. 
+
+<!-- > -->
 
 Create a new folder and initialize a new npm project. 
 
@@ -297,6 +333,8 @@ Add the script tag.
 </script>
 ```
 
+<!-- > -->
+
 Note the path is pointing to the file in node_modules. You'll need to customize the second script to work with your code. 
 
 Test your work in Node JS. Make a new file `server.js`. 
@@ -308,6 +346,8 @@ console.log(yourModule)
 console.log(yourModule.method())
 ```
 
+<!-- > -->
+
 Again, modify the code here to test your library code. 
 
 Test your code in a React project. 
@@ -315,6 +355,8 @@ Test your code in a React project.
 Create a new React app. 
 
 `npx create-react-app your-module-react-test`
+
+<!-- > -->
 
 Import your module. 
 
@@ -328,6 +370,8 @@ import { yourMethod } from 'your-module'
 console.log(yourMethod())
 ```
 
+<!-- > -->
+
 Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. 
 
 <!-- > -->
@@ -335,6 +379,10 @@ Wow, that's some pretty thorough testing! If you did everything here you've done
 ### Code Coverage
 
 Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration, code coverage is a metric that gives another way to look at the quality and reliability of our code. 
+
+<!-- > -->
+
+**Run Coverage**
 
 `npx jest --coverage`
 
@@ -359,6 +407,8 @@ Ran all test suites.
 ...
 ```
 
+<!-- > -->
+
 Let's read the coverage summary closely. 
 
 - File - Which files were tested? 
@@ -368,6 +418,8 @@ Let's read the coverage summary closely.
 - % Lines - What percentage of executable lines of code have been executed? 
 - Uncovered Line #s - Which lines have not been covered by testing?
   - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the 'src' folder. In the example test.js imports from './lib'.
+
+<!-- > -->
 
 Take a look at your code and figure out: 
 

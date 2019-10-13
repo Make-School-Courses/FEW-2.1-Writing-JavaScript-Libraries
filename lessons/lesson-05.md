@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 5 - Numbers and Math Lib
+# FEW 2.1 - Lesson 5 
+
+<small style="display:block;text-align:center">Numbers and Math Lib</small>
 
 The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
 
@@ -27,13 +29,15 @@ Writing a library is always a good idea. Doing this again in another assignment 
 
 ## Numbers in JS (really its been doing the right thing all along...)
 
-Q: Why 0.1 + 0.2 != 0.3 ?
+**Q:** Why 0.1 + 0.2 != 0.3 ?
 
 0.1 + 0.2 ->  0.30000000000000004
 
 https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
 
-A: Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
+**A:** Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
+
+<!-- > -->
 
 > For 0.1 in the standard binary64 format, the representation can be written exactly as
 > 0.1000000000000000055511151231257827021181583404541015625 in decimal, or
@@ -66,6 +70,8 @@ What is NaN? Where and when does it appear?
 `Array(16).join('wtf' - 1) + ' Batman!'`
 
 Methods that return a number for some numerical input will return `NaN` the input is non-numerical. It is returned when a method on the Math Object fails or when method trying to parse a number fails. 
+
+<!-- > -->
 
 ```JavaScript
 NaN === NaN;        // false (NaN is the only value NOT equsl to itself)
@@ -102,6 +108,8 @@ x !== y // true (not the same reference)
 n.valueOf() === x === y.valueOf() // true (apples to apples to apples)
 ```
 
+<!-- > -->
+
 Use `Number()` to covert a value to a number. Remember the class constructor is a function!
 
 ```JavaScript
@@ -113,6 +121,8 @@ a === b
 const c = Number('z')   // NaN (Not a Number)
 const d = Number('234') // 234
 ```
+
+<!-- > -->
 
 Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
 
@@ -127,6 +137,8 @@ a + b // 6
 // etc
 ```
 
+<!-- > -->
+
 There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
 
 This is true for all of the primitives:
@@ -134,6 +146,8 @@ This is true for all of the primitives:
 - `new Boolean('true')` | `Boolean('false')`
 - `new String('Hello')` | `String('Hello')`
 - `new Number('123')` | `Number('456')`
+
+<!-- > -->
 
 The only advantage to having a primitive wrapped in an object would be if you needed to attach other properties to that value for some reason. But you'd probably be better off making an Object instead. 
 
@@ -147,10 +161,12 @@ console.log(t.status)
 
 ### Numbers and Exponents
 
-`1` === 1
-`1e+1` === 10 -> 1 * 10
-`23e+3` === 23000 -> 23 * 1000
-`44e-2` === 0.44 -> 44 * 0.01
+```JS
+1 === 1
+1e+1 === 10 -> 1 * 10
+23e+3 === 23000 -> 23 * 1000
+44e-2 === 0.44 -> 44 * 0.01
+```
 
 Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
 
@@ -160,14 +176,20 @@ Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Java
 
 The Number object also holds many useful properties. 
 
-- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with.  
-- `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. You can use larger numbers but math operations may not work as expected. 
+- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with.
+
+<!-- > -->
+
+- `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. 
 - `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
 - `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
 - `Number.MIN_VALUE` - The smallest positive numeric value representable in JS.  
+
+<!-- > -->
+
 - `Number.NEGATIVE_INFINITY` - Represents negative infinity
-- `Number.NaN` - Not a Number. 
 - `Number.POSITIVE_INFINITY` - Positive infinity
+- `Number.NaN` - Not a Number. 
 
 <!-- > -->
 
@@ -177,11 +199,17 @@ The Number object also holds many useful properties.
 - `Number.isInteger()` - Determines whether a number is an integer
 - `Number.isNaN()` - Checks if something a number
 - `Number.isSafeInteger()` 
+
+<!-- > -->
+
 - `Number.parseFloat()` - Converts a value to a float
 - `Number.parseInt()` - Convert a non-numeric value into an int (in a specified base)
 - `Number.prototype.toExponential()`
 - `Number.prototype.toFixed()` - Returns a string with fixed number of decimal places
 - `Number.prototype.toLocaleString()` - Returns a language sensitive string from the number
+
+<!-- > -->
+
 - `Number.prototype.toPrecision()` - Returns a String
 - `Number.prototype.toString()`
 - `Number.prototype.valueOf()`
@@ -192,6 +220,7 @@ The Number object also holds many useful properties.
 
 The Math object holds all of the properties and functions that handle math operations. 
 
+<!-- > -->
 
 - **Properties**
   - `Math.E`
@@ -202,6 +231,9 @@ The Math object holds all of the properties and functions that handle math opera
   - `Math.PI`
   - `Math.SQRT1_2`
   - `Math.SQRT2`
+
+<!-- > -->
+
 - **Methods**
   - `Math.abs()`
   - `Math.acos()`
@@ -249,12 +281,18 @@ Your goal is to define a class that tracks money. Money can be hard to work with
 
 When working with money you want to be very careful. Rounding errors can be costly. 
 
+<!-- > -->
+
+**The Problem**
+
 You need to define an object that holds a value in dollars and provides methods to work with currency.
 
 - Write the currency class 
 - Write tests for your methods 
 - Add continuous integration
 - Publish to npm
+
+<!-- > -->
 
 Currency class should have the following methods: 
 
@@ -268,6 +306,8 @@ Currency class should have the following methods:
   - `split(n)` - Returns an array of values use this to split a bill. 
     - `new Currency(7).split(3) -> [2.33, 2.33, 2.34]`
 
+<!-- > -->
+
 Use `Intl.NumberFormat` to format your currency in a local language format.  
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
@@ -279,6 +319,8 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 An object can return itself. Doing this allows you to call other methods by following the last method call with a dot and the new method. 
 
 `me.watch().whip().watch().nayNay()`
+
+<!-- > -->
 
 Each of the methods above need to return `this`. Here is an example: 
 
@@ -328,7 +370,7 @@ console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
 
 ## Wrap Up
 
-- 
+- Review
 
 <!-- > -->
 
