@@ -1,5 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 2 - Publishing JS Libraries
+# FEW 2.1 - Lesson 2 
+
+<small style="display:block;text-align:center">Publishing JS Libraries</small>
 
 In this lesson you will publish your library and share it with the world.
 
@@ -11,9 +13,11 @@ In this lesson you will publish your library and share it with the world.
 
 ## Why?
 
+Get a deeper understanding of npm and it's ecosystem. Contribute to open source.
+
 <!-- > -->
 
-## Learning Objectives (5 min)
+## Learning Objectives
 
 1. Describe, define, and use SEMVer
 1. Create NPM Packages
@@ -23,21 +27,23 @@ In this lesson you will publish your library and share it with the world.
 
 ## What is NPM?
 
-npm is the world’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+World’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
 
 <!-- > -->
 
-NPM organizes code into *packages* (sometimes called *modules*). A package is a directory with one or more files and a file named `package.json` which contains metadata about the package.
+npm organizes code into *packages* (sometimes called *modules*). 
+
+A package is a directory with one or more files and a file named `package.json` which contains metadata about the package.
 
 <!-- > -->
 
-A *dependency* is a package that your project depends on.
+A **_dependency_** is a package that your project depends on.
 
-<!-- > --> 
+<!-- > -->
 
-Each package should contain code that *does one thing* well.
+Each package should contain code that **does one thing** well.
 
-In this way, you can use these shared packages like *building blocks* to easily build large complex projects.
+In this way, you can use these shared packages like **building blocks** to easily build large complex projects.
 
 <!-- > -->
 
@@ -51,41 +57,43 @@ You can publish your packages and use them with all of your projects and share t
 
 NPM is three things: a website, registry, and client.
 
-<!-- > --> 
+<!-- > -->
 
 **The Website**
 
 https://www.npmjs.com 
 
-is the web portal for all things NPM.
+is the web portal for all things npm.
 
-<!-- > --> 
+<!-- > -->
 
-**The registry** is a database of all packages that have been shared via NPM.
+**The registry** is a database of all packages that have been shared via npm.
 
-<!-- > --> 
+<!-- > -->
 
-**The client** is a command line tool used to publish and manage your NPM packages.
+**The client** is a command line tool used to publish and manage your npm packages.
 
-<!-- > --> 
+<!-- > -->
 
-All of the packages you publish can be published from source code hosted on GitHub.com. The published packages each get a page on NPM.com with notes and documentation.
+All of the packages you publish can be published from source code hosted on GitHub.com. 
+
+The published packages each get a page on npm.com with notes and documentation.
 
 https://docs.npmjs.com/about-npm/
 
-<!-- > --> 
+<!-- > -->
 
 ## Getting started with NPM
 
 Follow these instructions to create an account, install npm CLI, and publish a package to the npm registry. 
 
-<!-- > --> 
+<!-- > -->
 
 ### Sign up
 
 Create an account: https://www.npmjs.com/signup
 
-<!-- > --> 
+<!-- > -->
 
 ### Install
 
@@ -93,7 +101,7 @@ You will need to install Node.js and npm. Follow the instructions here if you ha
 
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 
-<!-- > --> 
+<!-- > -->
 
 ### npm init and package.json
 
@@ -107,9 +115,13 @@ The data describes:
 - dependencies
 - and more...
 
-package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has its own dependencies. It's a little like those Russian dolls.
+<!-- > -->
 
-<!-- > --> 
+package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has its own dependencies. 
+
+It's a little like those Russian dolls.
+
+<!-- > -->
 
 ### Make your package
 
@@ -117,15 +129,17 @@ Using Terminal, navigate to the directory containing your String lib. Create a n
 
 `npm init`
 
+<!-- > -->
+
 Answer all the questions to the best of your ability. You can edit these later. Everything you enter here is metadata that describes the package that will eventually be hosted on npm.com. This includes:
 
 - name
 - description
 - version
 
-You can use the default values, shown in (...), by hitting the Enter key when that appears.
+(You can use the default values, shown in (...), by hitting the Enter key when that appears.)
 
-<!-- > --> 
+<!-- > -->
 
 ### Login into npm
 
@@ -139,7 +153,7 @@ You'll need to enter your:
 
 `npm login`
 
-<!-- > --> 
+<!-- > -->
 
 ### Publishing your package
 
@@ -149,8 +163,9 @@ To publish your package use:
 
 The first time you publish, you will need to add `--access=public` to avoid an error. After that, future publications will default to public access.
 
-<!-- > --> 
+<!-- > -->
 
+<aside>
 #### Resolving errors
 
 All packages on npm are public and share the same namespace. The most common error will be a name collision. It might look like:
@@ -163,7 +178,9 @@ Here I tried to publish a package with the name `test-error`. This package alrea
 
 Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
 
-<!-- > --> 
+</aside>
+
+<!-- > -->
 
 ### Publishing in scope
 
@@ -173,7 +190,7 @@ Change the name to `@username/package-name` manually in package.json
 
 Run `npm init --scope=username` instead of `npm init`
 
-<!-- > --> 
+<!-- > -->
 
 ### View your package npm
 
@@ -183,19 +200,21 @@ Log in and click the profile icon in the upper right. Choose "Packages" from the
 
 Your package should appear on the list, pat yourself on the back!
 
+<!-- > -->
+
 Click the name of your package on the list and view it on npm. Notice a few things.
 
 The npm page for a package shows the **text from the README.md** file in the GitHub repo for the package. This means your readme should look good and explain what your library does. This will encourage other developers to use your library.
 
 The version number, last update date, weekly downloads, GitHub repo and more are shown here.
 
-<!-- > --> 
+<!-- > -->
 
 ## Connect your GitHub to npm (optional)
 
 https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry
 
-<!-- > --> 
+<!-- > -->
 
 ## Version numbers and SemVer
 
@@ -205,13 +224,15 @@ All packages on npm are using semver. What's semver? Semver stands for semantic 
 
 The first digit is the **MAJOR** version. You'll update this when you make changes that make a new version **incompatible** with an older version.
 
+<!-- > -->
+
 The second digit is the **MINOR** version. You'll change this when you add **more functionality** but are **still backward compatible**.
 
 The last digit is a **PATCH** version. You'll change this when you make **bug fixes and improvements** that are backward compatible but do not add new features.
 
 <div style="font-size: 3em; text-align: center">MAJOR.MINOR.PATCH</div>
 
-<!-- > --> 
+<!-- > -->
 
 ### Version activities
 
@@ -223,7 +244,7 @@ Read the questions below and figure out the new version numbers
 
 https://semver.org
 
-<!-- > --> 
+<!-- > -->
 
 ## Updating your package
 
@@ -239,11 +260,13 @@ You'll probably see an error:
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/@soggybag%2fjustincase - You cannot publish over the previously published versions: 1.0.2.
 ```
 
+<!-- > -->
+
 Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are the same.
 
 To publish a new version you need to update the version number in package.json.
 
-<!-- > --> 
+<!-- > -->
 
 ### Make a patch, update, and publish
 
@@ -255,7 +278,9 @@ In `package.json` add 1 to the last digit in the version.
 
 If the version was: 1.0.0 change this to 1.0.1
 
-Now run:
+<!-- > -->
+
+**Now run:**
 
 `npm publish`
 
@@ -265,7 +290,7 @@ Look for the changes to the read and check the version number.
 
 Making changes only to the GitHub repo will not show on npm. You'll need to publish a new version.
 
-<!-- > --> 
+<!-- > -->
 
 ## Testing your lib on npm with RunKit
 
@@ -277,7 +302,7 @@ Good thing you wrote that documentation!
 
 Write some code and test your package.
 
-<!-- > --> 
+<!-- > -->
 
 ## Give yourself a badge!
 
@@ -287,13 +312,19 @@ You've probably seen those nifty badges on display on GitHub repos. Take a look 
 
 https://github.com/badges/shields
 
+<!-- > -->
+
 The badges make your repos look legit. That's short for *legitimate*, which means:  
 
 > conforming to recognized principles or accepted rules and standards
 
 Code libraries that conform to rules and standards are more likely to get adopters!
 
+<!-- > -->
+
 These badges show all sorts of information about the repo, the code in the repo and more. Your repo is just getting started so you can't make use of all of these yet.
+
+<!-- > -->
 
 Let's start with a couple of easy badges. Size and version.
 
@@ -319,7 +350,7 @@ Check out your GitHub page and you should see your new badge!
 
 Repeat this again for the version. Try this on your own. Get the npm version number.
 
-<!-- > --> 
+<!-- > -->
 
 ### Update your npm package page
 
@@ -331,7 +362,7 @@ Update the version number of your package. Is this a MAJOR? MINOR? or PATCH?
 
 Visit npm and check out your package.
 
-<!-- > --> 
+<!-- > -->
 
 ## Extend String with prototype
 
@@ -339,9 +370,13 @@ The functions you wrote might take a String as a parameter and return a String. 
 
 An alternative might be to add your methods to the String class through the prototype chain. This is how the built-in String functions work!
 
+<!-- > -->
+
 Q: What is prototype?
 
 A: In JavaScript prototype is a special property all objects have. Objects inherit methods through the prototype. When you call a method on an object, if the method doesn't exist on that object then JavaScript looks for the method on the prototype. By adding a method to an object's prototype all other objects that share the prototype are able to also use the method.
+
+<!-- > -->
 
 For example, all Strings share the same prototype. When you call: `"hello".toUpperCase()` calls `toUpperCase()` on the prototype. 'toUpperCase' is really long, so I'd rather write 'allCaps' to do the same thing.
 
@@ -355,6 +390,8 @@ const str = 'hello world'
 console.log(str.allCaps()) // HELLO WORLD
 ```
 
+<!-- > -->
+
 **Important!**
 
 Inside the allCaps function `this` is the string/object that you called the method on. In this case, it's `str` on the last line above.
@@ -363,7 +400,7 @@ You cannot use an arrow function here! *Arrow functions do not bind this* so thi
 
 Using ES5 functions the value for this is the object the method was called on.
 
-<!-- > --> 
+<!-- > -->
 
 ### Challenge
 
@@ -376,23 +413,23 @@ String.prototype.capitalize = function() {
 }
 ```
 
-<!-- > --> 
-
-## Resources
-
-Publish to NPM: https://zellwk.com/blog/publish-to-npm/
-
-<!-- > --> 
+<!-- > -->
 
 ## Review Objective
 
 Q: What was covered today?
 
-<!-- > --> 
+<!-- > -->
 
 ### Homework
 
 [Assignment 2 - Publish to npm](../assignments/assignment-02.md)
+
+<!-- > -->
+
+## Resources
+
+Publish to NPM: https://zellwk.com/blog/publish-to-npm/
 
 <!-- > --> 
 
