@@ -1,14 +1,31 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Continuous Integration
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project. 
 
+<!-- > -->
+
 Continuous Integration emphasizes merging small changes frequently over merging large changes at the end of the development cycle. 
+
+<!-- > -->
 
 A big piece of CI is automatically running tests and providing feedback on the current state of a code base. 
 
+<!-- > -->
+
 Another use of CI is running tests and providing other feedback as each new addition is integrated into the codebase.
 
+<!-- > -->
+
 In this lesson, you will apply some of these ideas to your code base. 
+
+<!-- > -->
 
 ### Quick Discussion
 
@@ -20,20 +37,28 @@ Q: Do you see any advantages of using CI?
 
 Q: Do you see any downsides to CI?
 
+<!-- > -->
+
 ## Why should you learn about Continuous Integration?
 
 CI is a modern software development *best practice*. You should always be striving to follow best practices in your work and be familiar with what industry considers best practices if you plan to integrate yourself with the industry! 
 
 Using CI will provide automated feedback on the quality of a codebase as each new change is pushed. Feedback is good, automated feedback is even better since it saves you time and energy!
 
+<!-- > -->
+
 ## Learning Objectives
 
 1. Use Linting to improve code quality and catch bugs
 1. Use Continuous Integration to automate testing
 
+<!-- > -->
+
 ## Install ESLint and lint your work!
 
 Linting is not a CI but is related as a part of industry best practices and code quality. We've covered this in other classes but it's important so we will review it again here. 
+
+<!-- > -->
 
 ### Q: Why lint? 
 
@@ -46,13 +71,21 @@ As a student **you should always be using the linter.** Think of every suggestio
 
 ESLint needs to be installed in two places: _in the project_ through npm and _in your editor_.
 
+<!-- > -->
+
 **Q:** Do you consider your self an advanced coder who follows professional best practices?
 
+<!-- > -->
+
 **A:** You have already install installed ESLint, and you do it for every project!
+
+<!-- > -->
 
 ## Activity: Install ESLint
 
 In the next few minutes, we will install and initialize ESLint.
+
+<!-- > -->
 
 ### Install in npm project
 
@@ -74,6 +107,8 @@ Choose:
 - Format JavaScript
 - Install Now Yes
 
+<!-- > -->
+
 ### Install ESLint in Editor
 
 You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
@@ -87,17 +122,23 @@ You may need to close and reopen your project in your editor before the Linter s
 
 **Do this now!** If you haven't already.  
 
+<!-- > -->
+
 ## Pair up and solve linting errors
 
 Pair with a person _you haven't paired with_ before. 
 
 Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
 
+<!-- > -->
+
 ### Discuss the linter suggestions
 
 - **Q:** What suggestions did the linter make that were obviously useful? 
 - **Q:** Did the linter suggest anything that seemed strange or not obvious? 
 - **Q:** Do you think your code is of better quality after?
+
+<!-- > -->
 
 ## Travis CI 
 
@@ -109,6 +150,8 @@ https://docs.travis-ci.com/user/for-beginners/
 
 https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
 
+<!-- > -->
+
 ### Setup Travis-CI 
 
 Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
@@ -116,6 +159,8 @@ Travis-CI connects to your GitHub repos and automatically process files when it 
 [Sign up for Travis](https://travis-ci.com) with GitHub.
 
 Authorize Travis with your GitHub account.
+
+<!-- > -->
 
 #### Add .travis.yml
 
@@ -153,6 +198,8 @@ The `coverall` script you haven't added yet! Coveralls is another service that p
 
 https://docs.travis-ci.com/user/tutorial/
 
+<!-- > -->
+
 ### Coveralls 
 
 Coveralls is a service that helps you track code coverage. Code coverage answers the question: how much of my code is covered by the testing? Essentially it will give you a score telling you how much of your code is covered by the unit tests that exist. 
@@ -187,6 +234,8 @@ https://coveralls.io
 
 https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42
 
+<!-- > -->
+
 ### Give yourself a badge! 
 
 Give yourself a badge or two, you've earned them! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
@@ -195,6 +244,8 @@ Give yourself a badge or two, you've earned them! Both Travis and Coveralls prov
 
 **A:** It will show the status of your software project at a glance. It increases the credibility of your repositories.
 
+<!-- > -->
+
 #### Travis badge 
 
 Go to your repo on Travis. You should see a badge to the left of the GitHub repo name. 
@@ -202,6 +253,8 @@ Go to your repo on Travis. You should see a badge to the left of the GitHub repo
 Click this and choose "Markdown" from the menu.  
 
 Copy the Markdown code from the text box and paste it into your README. 
+
+<!-- > -->
 
 #### Coveralls Badge
 
@@ -212,6 +265,8 @@ It should display a coverage badge near the right side. Click the tiny embed but
 Copy the Markdown code in the text box. 
 
 Paste the markdown code into your repo. 
+
+<!-- > -->
 
 ## Stretch goals 
 
@@ -228,20 +283,30 @@ Version 2 of your library should add some new features. Your goal is to identify
   - https://www.npmjs.com/package/url-parse
   - https://www.npmjs.com/package/magic-string
 
+<!-- > -->
+
+### Homework
+
+[Assignment 4 - Continuous Integration](../assignments/assignment-04.md)
+
+<!-- > -->
+
 ## Additional Resources
 
 - 
 
+<!-- > -->
+
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Introducntion             |
-| 0:05        | 0:05      | Objectives                |
-| 0:10        | 0:30      | Linting                   |
-| 0:40        | 0:10      | BREAK                     |
-| 0:50        | 0:15      | Travis CI                 |
-| 1:05        | 0:15      | Coveralls                 |
-| 1:20        | 0:25      | ** ??? **                 |
+| **Elapsed** | **Time**  | **Activity** |
+| ----------- | --------- | -------------- |
+| 0:00        | 0:05      | Introducntion  |
+| 0:05        | 0:05      | Objectives     |
+| 0:10        | 0:30      | Linting        |
+| 0:40        | 0:10      | BREAK          |
+| 0:50        | 0:15      | Travis CI      |
+| 1:05        | 0:15      | Coveralls      |
+| 1:20        | 0:25      | ** ??? **      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -              |

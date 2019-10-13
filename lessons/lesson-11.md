@@ -1,3 +1,19 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
+# FEW 2.1 - API Libraries 
+
+([Slides](https://docs.google.com/presentation/d/14t1i4u9oZcwIFAdHm8t_SrAFVUA70cpwmfS_bEJ8ISI/edit))
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
+
+
+
+
+
+
 # FEW 2.1 - FEW 2.1 - 
 
 ## Why you should know this or industry application (optional) (5 min)

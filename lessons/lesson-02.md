@@ -1,6 +1,17 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Lesson 2 - Introduction to JS Libraries
 
 In this lesson you will publish your library and share it with the world.
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
+
+## Why?
+
+<!-- > -->
 
 ## Learning Objectives (5 min)
 
@@ -8,57 +19,81 @@ In this lesson you will publish your library and share it with the world.
 1. Create NPM Packages
 1. Publish your NPM package
 
-## Slides 
-
-https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing
-
-### Course Progress Tracker
-
-Update the [progress tracker](https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807)
+<!-- > -->
 
 ## What is NPM?
 
 npm is the world’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
 
+<!-- > -->
+
 NPM organizes code into *packages* (sometimes called *modules*). A package is a directory with one or more files and a file named `package.json` which contains metadata about the package.
 
+<!-- > -->
+
 A *dependency* is a package that your project depends on.
+
+<!-- > --> 
 
 Each package should contain code that *does one thing* well.
 
 In this way, you can use these shared packages like *building blocks* to easily build large complex projects.
 
+<!-- > -->
+
 Packages can be written that work with Node.js on the server side, run on the command line, or can be used in frontend web projects that run in the browser.
 
 You can publish your packages and use them with all of your projects and share them with other developers around the world.
+
+<!-- > -->
 
 ## How does NPM work?
 
 NPM is three things: a website, registry, and client.
 
-https://www.npmjs.com is the web portal for all things NPM.
+<!-- > --> 
 
-The registry is a database of all packages that have been shared via NPM.
+**The Website**
 
-The client is a command line tool used to publish and manage your NPM packages.
+https://www.npmjs.com 
+
+is the web portal for all things NPM.
+
+<!-- > --> 
+
+**The registry** is a database of all packages that have been shared via NPM.
+
+<!-- > --> 
+
+**The client** is a command line tool used to publish and manage your NPM packages.
+
+<!-- > --> 
 
 All of the packages you publish can be published from source code hosted on GitHub.com. The published packages each get a page on NPM.com with notes and documentation.
 
 https://docs.npmjs.com/about-npm/
 
+<!-- > --> 
+
 ## Getting started with NPM
 
 Follow these instructions to create an account, install npm CLI, and publish a package to the npm registry. 
 
+<!-- > --> 
+
 ### Sign up
 
 Create an account: https://www.npmjs.com/signup
+
+<!-- > --> 
 
 ### Install
 
 You will need to install Node.js and npm. Follow the instructions here if you haven't already done this.
 
 https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
+
+<!-- > --> 
 
 ### npm init and package.json
 
@@ -74,6 +109,8 @@ The data describes:
 
 package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has its own dependencies. It's a little like those Russian dolls.
 
+<!-- > --> 
+
 ### Make your package
 
 Using Terminal, navigate to the directory containing your String lib. Create a new package.json file and initialize this directory as an npm package by running:
@@ -88,6 +125,8 @@ Answer all the questions to the best of your ability. You can edit these later. 
 
 You can use the default values, shown in (...), by hitting the Enter key when that appears.
 
+<!-- > --> 
+
 ### Login into npm
 
 We are using the npm CLI you need to log in in the command line.
@@ -100,6 +139,8 @@ You'll need to enter your:
 
 `npm login`
 
+<!-- > --> 
+
 ### Publishing your package
 
 To publish your package use:
@@ -107,6 +148,8 @@ To publish your package use:
 `npm publish`
 
 The first time you publish, you will need to add `--access=public` to avoid an error. After that, future publications will default to public access.
+
+<!-- > --> 
 
 #### Resolving errors
 
@@ -120,6 +163,8 @@ Here I tried to publish a package with the name `test-error`. This package alrea
 
 Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
 
+<!-- > --> 
+
 ### Publishing in scope
 
 To publish to a scope, you can either:
@@ -127,6 +172,8 @@ To publish to a scope, you can either:
 Change the name to `@username/package-name` manually in package.json
 
 Run `npm init --scope=username` instead of `npm init`
+
+<!-- > --> 
 
 ### View your package npm
 
@@ -142,9 +189,13 @@ The npm page for a package shows the **text from the README.md** file in the Git
 
 The version number, last update date, weekly downloads, GitHub repo and more are shown here.
 
+<!-- > --> 
+
 ## Connect your GitHub to npm (optional)
 
 https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry
+
+<!-- > --> 
 
 ## Version numbers and SemVer
 
@@ -160,6 +211,8 @@ The last digit is a **PATCH** version. You'll change this when you make **bug fi
 
 <div style="font-size: 3em; text-align: center">MAJOR.MINOR.PATCH</div>
 
+<!-- > --> 
+
 ### Version activities
 
 Read the questions below and figure out the new version numbers
@@ -169,6 +222,8 @@ Read the questions below and figure out the new version numbers
 - You just updated twizzle(times) again but added a default parameter: twizzle(times = 1)
 
 https://semver.org
+
+<!-- > --> 
 
 ## Updating your package
 
@@ -187,6 +242,8 @@ npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/@soggybag%2fjustincase -
 Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are the same.
 
 To publish a new version you need to update the version number in package.json.
+
+<!-- > --> 
 
 ### Make a patch, update, and publish
 
@@ -208,6 +265,8 @@ Look for the changes to the read and check the version number.
 
 Making changes only to the GitHub repo will not show on npm. You'll need to publish a new version.
 
+<!-- > --> 
+
 ## Testing your lib on npm with RunKit
 
 Visit your library on [npm](https://www.npmjs.com ). Find the "Test with RunKit" button.
@@ -217,6 +276,8 @@ Clicking this opens RunKit. You'll see a code editor on the left and the ReadMe 
 Good thing you wrote that documentation!
 
 Write some code and test your package.
+
+<!-- > --> 
 
 ## Give yourself a badge!
 
@@ -258,6 +319,8 @@ Check out your GitHub page and you should see your new badge!
 
 Repeat this again for the version. Try this on your own. Get the npm version number.
 
+<!-- > --> 
+
 ### Update your npm package page
 
 After you're happy with your GitHub README, update your work on npm.
@@ -267,6 +330,8 @@ Update the version number of your package. Is this a MAJOR? MINOR? or PATCH?
 `npm publish`
 
 Visit npm and check out your package.
+
+<!-- > --> 
 
 ## Extend String with prototype
 
@@ -298,6 +363,8 @@ You cannot use an arrow function here! *Arrow functions do not bind this* so thi
 
 Using ES5 functions the value for this is the object the method was called on.
 
+<!-- > --> 
+
 ### Challenge
 
 Rewrite your string functions so they are all methods of the String object. This means you'll need to add them all to `String.prototype`. Here is a sample:
@@ -309,27 +376,35 @@ String.prototype.capitalize = function() {
 }
 ```
 
+<!-- > --> 
+
 ## Resources
 
 Publish to NPM: https://zellwk.com/blog/publish-to-npm/
+
+<!-- > --> 
 
 ## Review Objective
 
 Q: What was covered today?
 
+<!-- > --> 
+
 ### Homework
 
-[Assignment 1 - String Lib](../assignment-2-string-lib-publish.md)
+[Assignment 2 - Publish to npm](../assignments/assignment-02.md)
+
+<!-- > --> 
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | Getting started with npm  |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:15      | Give yourself a badge     |
-| 1:55        | 0:20      | Code Review               |
-| 1:40        | 0:05      | Wrap up and review        |
-| TOTAL       | 1:50      | -                         |
+| **Elapsed** | **Time**  | **Activity** |
+| ----------- | --------- | ------------ |
+| 0:00        | 0:05      | Objectives   |
+| 0:05        | 0:15      | Overview     |
+| 0:20        | 0:30      | Getting started with npm |
+| 0:50        | 0:10      | BREAK        |
+| 1:00        | 0:15      | Give yourself a badge |
+| 1:55        | 0:20      | Code Review  |
+| 1:40        | 0:05      | Wrap up and review |
+| TOTAL       | 1:50      | -            |

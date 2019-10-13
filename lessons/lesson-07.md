@@ -1,10 +1,19 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Dates and Date Lib
 
 Time for another lib! This time you'll make a library that works with Dates. You will take everything covered so far: Code, testing, and bundling. 
 
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
+
 ## Why you should know this?
 
 While reusing the skills from the previous classes is not adding new knowledge, you need to practice your current skills writing more code and tests. 
+
+<!-- > -->
 
 ## Learning Objectives (5 min)
 
@@ -12,9 +21,13 @@ While reusing the skills from the previous classes is not adding new knowledge, 
 1. Use the Date Object to generate dates and times, and format dates and times. 
 1. Construct methods that build and expand the core functionality of the Date object
 
+<!-- > -->
+
 ### Course Progress Tracker
 
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+
+<!-- > -->
 
 ## UTC and JS Date
 
@@ -100,9 +113,13 @@ Notice the month starts with a 0 index.
 - 10 - Nov
 - 11 - Dec
 
+<!-- > -->
+
 ## Date methods 
 
 The Date object has many instance methods most are getters and setters. There are a few class methods also.
+
+<!-- > -->
 
 ### Getters 
 
@@ -115,6 +132,8 @@ These mostly get at components of a date such as a year, month, day, hours, minu
 - Formatted Dates 
   - `new Date().toLocaleString() // "7/27/2019, 10:15:36 AM"`
   - `new Date().toDateString()   // "Sat Jul 27 2019"`
+
+<!-- > -->
 
 ### Setters 
 
@@ -135,6 +154,8 @@ console.log(d) // 10 January 2019
 console.log(newDate) // 10 June 2019
 ``` 
 
+<!-- > -->
+
 ### Class Methods 
 
 Date provides a couple of class methods. 
@@ -142,6 +163,8 @@ Date provides a couple of class methods.
 - `Date.now() // 1564251902406` the ms at the current moment
 - `Date.UTC(year, month, day, hour, min, sec, ms)` create date from UTC parameters 
 - `Date.parse(string)` creates a date from date string or returns NaN if unable to parse the string. 
+
+<!-- > -->
 
 ## Timezones 
 
@@ -151,6 +174,8 @@ Date provides a couple of class methods.
 By default, almost every date method in JavaScript (except one) gives you a date/time in local time. You only get UTC if you specify UTC.
 
 https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/
+
+<!-- > -->
 
 ## Offset dates
 
@@ -195,6 +220,8 @@ console.log(diffDays);
 ```
 
 It's probably best to stick with the built-in methods over math more often. 
+
+<!-- > -->
 
 ## Activity 
 
@@ -288,9 +315,19 @@ Question 2 -
 
 Birthday planner. Write a function that takes a date (your birthday) and a year, and returns the day of the week for that date in that year. 
 
+<!-- > -->
+
 ## Show your solutions
 
 Your group shows their solutions for the problems. 
+
+<!-- > -->
+
+### Homework
+
+[Assignment 7 - Date Lib](../assignments/assignment-07.md)
+
+<!-- > -->
 
 ## Wrap Up (5 min)
 
@@ -298,12 +335,16 @@ Your group shows their solutions for the problems.
 - Review challenges 
 - Review Homework
 
+<!-- > -->
+
 ## Additional Resources
 
 1. https://javascript.info/rest-parameters-spread-operator
 1. https://javascript.info/date
 1. https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
 1. https://javascript.info/object-toprimitive
+
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

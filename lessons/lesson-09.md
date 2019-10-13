@@ -1,6 +1,15 @@
-# FEW 2.1 - FEW 2.1 - TypeScript Part 2 [[Slides](https://docs.google.com/presentation/d/1UZRdPDroEK1OftxLCZ-lf9Jxkj3UYs-y1vUmjHp1bPI/edit#slide=id.g4cf79cf4e3_0_202)]
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
+# FEW 2.1 - FEW 2.1 - TypeScript Part 2 
+
+[[Slides](https://docs.google.com/presentation/d/1UZRdPDroEK1OftxLCZ-lf9Jxkj3UYs-y1vUmjHp1bPI/edit#slide=id.g4cf79cf4e3_0_202)]
 
 Let's continue our work from last week on using TypeScript in an existing (or new) project!
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 ## Learning Objectives 
 
@@ -9,15 +18,21 @@ Let's continue our work from last week on using TypeScript in an existing (or ne
 1. Rewrite tests in TypeScript using Jest
 1. Install and use linting software using eslint-typescript
 
+<!-- > -->
+
 ### Course Progress Tracker
 
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+
+<!-- > -->
 
 ## Adding Types to FizzBuzz
 
 If you haven't already, clone the FizzBuzz repository here: https://github.com/Make-School-Labs/fizz-buzz-test
 
 Modify the FizzBuzz code _and_ tests to use types. Include at least one class or interface in your implementation.
+
+<!-- > -->
 
 ## Testing using Jest
 
@@ -54,6 +69,8 @@ You can also add the following to your `package.json`:
 
 This allows you to run with `npm t`.
 
+<!-- > -->
+
 ## Linting with typescript-eslint
 
 Follow [this tutorial](https://www.npmjs.com/package/eslint-config-airbnb-typescript) on configuring with the Airbnb Style Guide with TypeScript. Follow the instructions for "no React support". You may need to install ESLint plugins if you haven't already.
@@ -87,9 +104,13 @@ env: {
 }
 ```
 
+<!-- > -->
+
 ## Homework
 
-No new homework
+[Assignment 9 - API Lib](../assignments/assignment-09.md)
+
+<!-- > -->
 
 ## Wrap Up (5 min)
 
@@ -97,9 +118,13 @@ No new homework
 - Complete reading
 - Complete challenges
 
+<!-- > -->
+
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

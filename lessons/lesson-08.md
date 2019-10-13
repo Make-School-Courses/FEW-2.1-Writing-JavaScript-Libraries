@@ -1,6 +1,15 @@
-# FEW 2.1 - Lesson 8 - Writing in TypeScript ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit))
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
+# FEW 2.1 - Lesson 8 - Writing in TypeScript 
+
+<!-- ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit)) -->
 
 In this class, you will begin writing TypeScript code and learn how to adapt your existing JS code to TypeScript.
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 ## Learning Objectives (5 min)
 
@@ -9,17 +18,25 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 3. Implement functions, classes, & interfaces using TypeScript
 4. Convert existing JS code to TypeScript
 
+<!-- > -->
+
 ### Course Progress Tracker
 
 https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
+<!-- > -->
+
 ## Static vs. Dynamic Typing
+
+<!-- > -->
 
 ### Q: What is a type?
 
 Data types describe the shape of the data that we're expecting.
 
 Examples: string, number, boolean, list, object
+
+<!-- > -->
 
 ### Q: What is static typing?
 
@@ -29,6 +46,8 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 
 Q: Can you use static typing in JS?
 A: Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
+
+<!-- > -->
 
 ### Q: What is dynamic typing?
 
@@ -43,9 +62,13 @@ In a dynamically typed language, we do not know *until runtime* what type of dat
 
 Examples of dynamically typed languages include Python, JavaScript, PHP, and Ruby.
 
+<!-- > -->
+
 ## Why use one or the other?
 
 Discussion: Write down 3 reasons each for using either a statically typed or dynamically typed language.
+
+<!-- > -->
 
 ### Static typing catches errors earlier in program development.
 
@@ -68,6 +91,8 @@ We catch the bug *at runtime*.
 ```
 const intFuncs: Array<(x: number) => number> = [];
 ```
+
+<!-- > -->
 
 ### Static typing improves readability.
 
@@ -105,9 +130,13 @@ function mystery(x: Cat) {
 }
 ```
 
+<!-- > -->
+
 ### Static typing can improve your workflow.
 
 Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
+
+<!-- > -->
 
 ### Advantages of dynamic typing
 
@@ -118,7 +147,11 @@ There isn't just one right answer that works in all scenarios; you will need to 
 - It's more tolerant to change: a code refactor will have a smaller area of effect
 - Doesn't require extra compilation step
 
+<!-- > -->
+
 ## Features of TypeScript
+
+<!-- > -->
 
 ### Variables
 
@@ -166,6 +199,8 @@ let someValue: any = 10;
 someValue = [1, 2, 3];
 ```
 
+<!-- > -->
+
 ### Functions & Function Variables
 
 We can add types to the parameters and return values of functions:
@@ -194,6 +229,8 @@ greet('Hola'); // prints 'Hola!'
 greet(undefined, 'Jane'); // prints 'Hello, Jane!'
 ```
 
+<!-- > -->
+
 ### Classes & Interfaces
 
 In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
@@ -213,7 +250,11 @@ interface Person {
 let person: Person = {name: 'Jane', age: 22}
 ```
 
+<!-- > -->
+
 ### Interfaces
+
+<!-- > -->
 
 ## Activity: Get Your Project Up and Running with TypeScript
 
@@ -224,6 +265,8 @@ git clone https://github.com/soggybag/justincase
 ```
 
 Now, we just need to make a few small changes to get it working again!
+
+<!-- > -->
 
 ### Add Types
 
@@ -248,6 +291,8 @@ declare global {
 ```
 
 To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
+
+<!-- > -->
 
 ### Modify rollup.config.js
 
@@ -288,6 +333,8 @@ output: {
 
 Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
 
+<!-- > -->
+
 ### Add tsconfig.json
 
 Add a new file `tsconfig.json` with the following content:
@@ -314,6 +361,8 @@ Add a new file `tsconfig.json` with the following content:
 
 For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
 
+<!-- > -->
+
 ### Modify package.json
 
 Now we need to tell our library users where to find the TypeScript types. Go to `package.json` and add the following line after the main and module:
@@ -324,15 +373,27 @@ Now we need to tell our library users where to find the TypeScript types. Go to 
 
 Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
 
+<!-- > -->
+
+### Homework
+
+[Assignment 8 - Typescript](../assignments/assignment-08.md)
+
+<!-- > -->
+
 ## Wrap Up (5 min)
 
 - Continue working on your current tutorial
 - Complete reading
 - Complete challenges
 
+<!-- > -->
+
 ## Additional Resources
 
 1. Links to additional readings and videos
+
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

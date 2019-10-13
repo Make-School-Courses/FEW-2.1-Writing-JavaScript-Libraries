@@ -1,6 +1,13 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Numbers and Math Lib
 
-The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers. 
+The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 ## Why you should know this
 
@@ -8,11 +15,15 @@ Math and Numbers in JS can be a pain point which many people will complain about
 
 Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
 
+<!-- > -->
+
 ## Learning Objectives
 
 1. Use Math methods
 1. Identify the limits of math and numbers on the computer
 1. Implement Objects that allow for chained method calls
+
+<!-- > -->
 
 ## Numbers in JS (really its been doing the right thing all along...)
 
@@ -32,6 +43,8 @@ A: Numbers are represented as series of 1s and 0s behind the scenes in a 64bit p
 
 https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
 
+<!-- > -->
+
 ## Working with Math
 
 JS Provides two ways of working with numbers. 
@@ -43,6 +56,8 @@ JS Provides two ways of working with numbers.
 Take a look at the properties and methods. 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+<!-- > -->
 
 ### When something is Not a Number
 
@@ -59,12 +74,16 @@ isNaN(NaN);         // true (Use isNaN to check for NaN)
 isNaN(Number.NaN);  // true
 ```
 
+<!-- > -->
+
 ## Number Types 
 
 There is only one type of number. There isn't much more to this. Except: 
 
 - JS only has number (there are no Int, floats, Doubles, etc.)
 - JS Numbers are always floats 
+
+<!-- > -->
 
 ### new Number() vs Number()
 
@@ -124,6 +143,8 @@ t.status = 'Not quite a buck yet'
 console.log(t.status) 
 ```
 
+<!-- > -->
+
 ### Numbers and Exponents
 
 `1` === 1
@@ -132,6 +153,8 @@ console.log(t.status)
 `44e-2` === 0.44 -> 44 * 0.01
 
 Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
+
+<!-- > -->
 
 ### Number Properties
 
@@ -145,6 +168,8 @@ The Number object also holds many useful properties.
 - `Number.NEGATIVE_INFINITY` - Represents negative infinity
 - `Number.NaN` - Not a Number. 
 - `Number.POSITIVE_INFINITY` - Positive infinity
+
+<!-- > -->
 
 ### Number Methods 
 
@@ -160,6 +185,8 @@ The Number object also holds many useful properties.
 - `Number.prototype.toPrecision()` - Returns a String
 - `Number.prototype.toString()`
 - `Number.prototype.valueOf()`
+
+<!-- > -->
 
 ### Math
 
@@ -214,6 +241,8 @@ The Math object holds all of the properties and functions that handle math opera
 
 Wow that's a lot of Math!
 
+<!-- > -->
+
 ## Exercise 
 
 Your goal is to define a class that tracks money. Money can be hard to work with and if you make a mistake customers get really angry and or it might cost your company a lot of money. 
@@ -242,6 +271,8 @@ Currency class should have the following methods:
 Use `Intl.NumberFormat` to format your currency in a local language format.  
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
+
+<!-- > -->
 
 ## Chaining methods
 
@@ -287,9 +318,19 @@ thing.add(1)
 console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
 ```
 
+<!-- > -->
+
+### Homework
+
+[Assignment 5 - Math Lib](../assignments/assignment-05.md)
+
+<!-- > -->
+
 ## Wrap Up
 
 - 
+
+<!-- > -->
 
 ## Additional Resources
 
@@ -297,6 +338,8 @@ console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
 1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
 1. https://itnext.io/how-to-build-a-money-data-type-in-javascript-7b622beabe00
 1. https://exercism.io/tracks/javascript/exercises
+
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

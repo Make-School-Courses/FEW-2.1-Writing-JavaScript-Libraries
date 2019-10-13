@@ -1,5 +1,13 @@
 # FEW 2.1 - Assignment 6 - Bundling 
 
+--- 
+
+Move this to lesson 7
+
+- 
+
+---
+
 ## Description 
 
 The goal of this assignment is to bundle your libraries so they are usable in the browser, Node, and React. 
@@ -10,7 +18,7 @@ This is how professional level code is published. Its also what you need to do t
 
 ## Project requirements
 
-So far you have published two libraries: Strings, and Maths. Your goal with this assignment is to do the following to **each** library. 
+So far you have published two libraries: Strings, and Math. Your goal with this assignment is to do the following to **each** library. 
 
 - Bundle as umd and esm
 - Publish to npm 
@@ -33,7 +41,7 @@ Class 7
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-6-bundling-rubric.md)
+[Assignment Name Rubric](./assignment-06-rubric.md)
 
 
 

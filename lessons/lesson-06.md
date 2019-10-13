@@ -1,6 +1,13 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Bundling Libraries for distribution
 
 This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 ## Why learn how to bundle files? 
 
@@ -10,15 +17,21 @@ Bundling your files allows them to be distributed so they can be used anywhere w
 
 Bundling files also processes your files for different environments. Your files need to be handled differently if they are used in the browser, or in NodeJS, or in a React project. 
 
+<!-- > -->
+
 ## Learning Objectives 
 
 - Describe reasons for bundling files
 - Define UMD and ESM bundles 
 - Use Rollup to bundle your library for distribution
 
+<!-- > -->
+
 ### Bundling 
 
 Bundling is the process of processing and combining files together into a single file. 
+
+<!-- > -->
 
 ### Modules 
 
@@ -59,6 +72,8 @@ This anonymous function is called an IIFE (Immediately Invoked Function Expressi
 
 You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
 
+<!-- > -->
+
 ## Bundling code with Rollup
 
 There are several tools you can use to bundle your code and several patterns/standards that they follow. 
@@ -71,6 +86,8 @@ Rollup seems to be the most modern and up to date choice out of this list.
 
 Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
 
+<!-- > -->
+
 ### Common JS 
 
 CommonJS is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
@@ -80,6 +97,8 @@ const yourCode = require('your-code')
 ...
 yourCode.yourMethod()
 ```
+
+<!-- > -->
 
 ### UMD (Universal Module Definition) 
 
@@ -94,6 +113,8 @@ To wrap up code for use in the script tag in the browser you'll need to make a U
 </script>
 ```
 
+<!-- > -->
+
 ### ES Modules 
 
 ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. These modules are further processed and bundled before they are used. 
@@ -103,6 +124,8 @@ import { yourMethod } from 'your-code'
 ...
 yourMethod()
 ```
+
+<!-- > -->
 
 ## Bundling files with rollup
 
@@ -224,6 +247,8 @@ Add "prepare" script. This script is run by npm each time you install or publish
   ...
 ```
 
+<!-- > -->
+
 ### Testing your work
 
 Pair up with someone you haven't paired with before. The goal will be to test the build system. You'll do this by following the instructions below. 
@@ -305,6 +330,8 @@ console.log(yourMethod())
 
 Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. 
 
+<!-- > -->
+
 ### Code Coverage
 
 Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration, code coverage is a metric that gives another way to look at the quality and reliability of our code. 
@@ -350,6 +377,8 @@ Take a look at your code and figure out:
 
 https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b
 
+<!-- > -->
+
 ### Pair programming 
 
 Take some time to pair program and solve issues with your code. You'll split the time half focussed on one project and half focussed on the other. 
@@ -357,6 +386,8 @@ Take some time to pair program and solve issues with your code. You'll split the
 The goal of this session is to 
 
 Pair up with someone you haven't paired with before. 
+
+<!-- > -->
 
 ## Homework 
 
@@ -368,9 +399,15 @@ Your code should work with:
 - UMD - In the browser
 - ES Module - React with import
 
+[Assignment 6 - Publish to npm](../assignments/assignment-06.md)
+
+<!-- > -->
+
 ## Additional Resources
 
 1. https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+
+<!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 

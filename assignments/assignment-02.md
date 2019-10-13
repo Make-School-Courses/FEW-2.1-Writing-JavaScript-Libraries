@@ -45,4 +45,4 @@ Class 3
 
 ## Assessing the assignment
 
-[Assignment 2 String lib publish](assignment-2-string-lib-publish-rubric.md)
+[Assignment 2 String lib publish](assignment-02-rubric.md)

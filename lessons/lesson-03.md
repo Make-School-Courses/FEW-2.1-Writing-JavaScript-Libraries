@@ -1,6 +1,15 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Lesson 3 - Unit Testing
 
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
+
 Quality code is test passing code. Unit testing is a system that is used to test units of code. Code that passes the test is deemed quality and fit for use. Unit testing is a part of the Agile Methodology.
+
+<!-- > -->
 
 ## Why use unit tests?
 
@@ -12,23 +21,39 @@ Reduces defects when integrating new features.
 
 Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer, you will probably be writing unit tests at some point, so you should learn how to do it.
 
+<!-- > -->
+
 ## Learning Objectives
 
 1. Write Unit tests
 1. Identify what to test
 1. Measure code coverage
 
+<!-- > -->
+
 ## Unit Testing
+
+<!-- > -->
 
 **Q:** What is a unit test?
 
+<!-- > -->
+
 **A:** A unit test is a test of a software system, usually a single function. A unit test most often is testing that the expected output of a function is correct for a given input.
+
+<!-- > -->
 
 **Q:** How do you do a unit test?
 
+<!-- > -->
+
 **A:** Unit tests are run by software and can be automated. In this class, we will use Jest.
 
+<!-- > -->
+
 **Q:** What is Jest?
+
+<!-- > -->
 
 **A:** [Jest](https://jestjs.io) is a JavaScript testing framework that was written by Facebook. It works with:
 
@@ -39,15 +64,27 @@ Professionals use unit tests. If you are planning to get a with a company that e
 - Angular
 - and more
 
+<!-- > -->
+
 **Q:** Why use Jest?
+
+<!-- > -->
 
 **A:** Jest works well with React. If you're building React apps Jest is a good choice. 
 
+<!-- > -->
+
 **Q:** What can you test?
+
+<!-- > -->
 
 **A:** Usually you are testing functions by looking at the output for a given input.
 
+<!-- > -->
+
 **Q:** How do you write a test?
+
+<!-- > -->
 
 **A:** Before writing a test you'll want to think about what you are testing and what you should test for.
 
@@ -59,6 +96,8 @@ Can you think of any edge cases?
 
 What about the capitalizeAll() function what would be a good test? What are the edge cases?
 
+<!-- > -->
+
 ## Testing example
 
 Heard of Fizz Buzz? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands!
@@ -67,6 +106,8 @@ Pair with someone **you haven't paired with before**.
 
 The goal of this exercise is to write some tests with Jest that test the functions in the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test).
 
+<!-- > -->
+
 ## Getting Started Fizz Buzz
 
 - Make a new directory
@@ -74,6 +115,8 @@ The goal of this exercise is to write some tests with Jest that test the functio
 - `npm init -y`
 - `touch index.js` 
 - Get the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test)
+
+<!-- > -->
 
 ## Writing tests with Jest
 
@@ -174,6 +217,8 @@ Fix the test by changing `5` to `4` and run it again. This time the test passes 
 
 https://jestjs.io/docs/en/getting-started
 
+<!-- > -->
+
 ## Testing Fizz Buzz
 
 Your goal is to examine the source code and write some tests. The [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test) contains these functions. Each function takes some input and returns output. 
@@ -194,6 +239,8 @@ test('Test isFizzy', () => {
 })
 ```
 
+<!-- > -->
+
 ### Testing basics 
 
 **[`expect()`](https://jestjs.io/docs/en/expect)**
@@ -206,6 +253,8 @@ Use `expect()` to look at a value. Call one of these methods to check that value
 
 See the link to the docs above for more information. 
 
+<!-- > -->
+
 ## Activity
 
 Write tests for FizzBuzz. Do your best write as many tests as you can. 
@@ -213,6 +262,8 @@ Write tests for FizzBuzz. Do your best write as many tests as you can.
 **Before writing any code.** Discuss with a partner what you are going to test. Describe the test you are going to write. Your partner should think of any edge cases or problems areas. Then switch roles.  
 
 Refer to the [Jest docs](https://jestjs.io/docs/en/getting-started.html) while you work. 
+
+<!-- > -->
 
 ## Checking Coverage
 
@@ -237,6 +288,8 @@ This tells you what % of code statements were covered by the tests. What % of co
 
 Check coverage and identify what has not been tested. 
 
+<!-- > -->
+
 ### Debriefing the tests
 
 Discuss these questions
@@ -246,6 +299,8 @@ Discuss these questions
 - What was difficult to test?
 - How many things did a test have to look at?
 - Are you confident that your tests will catch errors that might arise with any possible input?
+
+<!-- > -->
 
 ## Testing the string functions
 
@@ -261,9 +316,19 @@ Note! If your functions are global or they are added to the prototype of a globa
 
 Use the coverage command with Jest to test the coverage of your tests. 
 
+<!-- > -->
+
+### Homework
+
+[Assignment 3 - Write Unit Tests](../assignments/assignment-02.md)
+
+<!-- > -->
+
 ## Write some tests
 
 Write test for FizzBuzz methods above. 
+
+<!-- > -->
 
 ## Wrap Up
 
@@ -271,10 +336,14 @@ Write test for FizzBuzz methods above.
 - Q: What makes a good test?
 - Q: What is Jest?
 
+<!-- > -->
+
 ## Additional Resources
 
 1. https://github.com/Make-School-Labs/fizz-buzz-test
 1. https://jestjs.io
+
+<!-- > -->
 
 ## Minute-by-Minute 
 

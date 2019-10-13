@@ -1,5 +1,13 @@
 # FEW 2.1 - Assignment 7 - Date Lib
 
+---
+
+Move this up to lesson 8
+Add assignment 9 Add tests
+Add Assignment 10 CI, Bundle, and Publish
+
+---
+
 ## Description 
 
 Dates are super important. You'll use them often. The goal of this assignment is to become more familiar with the Date object it's methods and how to work with Dates. 
@@ -176,7 +184,7 @@ Class 8
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-rubric.md)
+[Assignment Name Rubric](./assignment-07-rubric.md)
 
 
 

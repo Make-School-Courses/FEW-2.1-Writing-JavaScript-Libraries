@@ -1,5 +1,22 @@
 # FEW 2.1 Assignment 1 - String Lib
 
+----
+
+Update list of problems 
+
+- Shorten list 
+  - Make functions more practical
+    - url slug name generator 
+    - camelcaser
+    - kabobcaser
+    - snakecaser
+    - Heading Maker 
+    - capitalizer
+- Add stretch goals 
+
+----
+
+
 The goal of this assignment is to create a JavaScript Library of String functions. 
 
 Create a GitHub Repo for your project and add a link to the project tracker. 
@@ -64,4 +81,4 @@ You will use this assignment in class 2
 
 Your work will be assessed by a rubric. You can self assess your work by looking at the rubric. Wonder what is expected of your work check the rubric. 
 
-[Assignment 1 String Lib Rubic](assignment-1-string-lib-rubric.md)
+[Assignment 1 String Lib Rubic](assignment-01-rubric.md)

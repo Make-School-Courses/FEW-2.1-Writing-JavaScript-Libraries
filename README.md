@@ -27,85 +27,71 @@ Students by the end of the course will be able to ...
 ## Schedule
 
 ---
-### **[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE OCTOBER 18]**
+
+**[INSTRUCTOR NOTE: PLEASE REMOVE THIS BEFORE OCTOBER 18]**
 If you teach **M/W** or **Tu/Th**, please pick from a template below and delete the other one
 
 ---
-### M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
+M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
+
 **Course Dates:** Monday, October 21 – Wednesday, December 11, 2019 (8 weeks)
 
 **Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
 
-| Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Mon, Oct 21             | [Lesson 1] |
-|  2 |   Wed, Oct 23             | [Lesson 2] |
-|  3 |   Mon, Oct 28             | [Lesson 3] |
-|  4 |   Wed, Oct 30             | [Lesson 4] |
-|  5 |   Mon, Nov 4              | [Lesson 5] |
-|  6 |   Wed, Nov 6              | [Lesson 6] |
-|  7 |   Mon, Nov 11             | [Lesson 7] |
-|  8 |   Wed, Nov 13             | [Lesson 8] |
-|  9 |   Mon, Nov 18             | [Lesson 9] |
-| 10 |   Wed, Nov 20             | [Lesson 10] |  
-| 11 |   Mon, Nov 25             | [Lesson 11]|
-|  - |   Wed, Nov 27             | **NO CLASS** - Thanksgiving  |
-| 12 |   Mon, Dec 2              |  [Lesson 12] |
-| 13 |   Wed, Dec 4              | [Lesson 13]  |
-| 14 |   Mon, Dec 9              | [Lesson 14]  |
-| 15 |   Wed, Dec 11             | Final Exam/Presentations  |
-
+| Class | Date | Topics | Assignment |
+|:-----:|:----:|:------:|:----------:|
+|  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) |
+|  2 | Wed, Oct 23 | [Lesson 2](./lessons/lesson-01.md) | [Publish to npm](./assignments/assignment-01.md) |
+|  3 | Mon, Oct 28 | [Lesson 3](./lessons/lesson-01.md) | [Add Unit Tests](./assignments/assignment-01.md) |
+|  4 | Wed, Oct 30 | [Lesson 4](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) |
+|  5 | Mon, Nov 4  | [Lesson 5](./lessons/lesson-01.md) | [Math Lib](./assignments/assignment-01.md) |
+|  6 | Wed, Nov 6  | [Lesson 6](./lessons/lesson-01.md) | [Bundling](./assignments/assignment-01.md) |
+|  7 | Mon, Nov 11 | [Lesson 7](./lessons/lesson-01.md) | [Date Lib](./assignments/assignment-01.md) |
+|  8 | Wed, Nov 13 | [Lesson 8](./lessons/lesson-01.md) | [Typescript](./assignments/assignment-01.md) |
+|  9 | Mon, Nov 18 | [Lesson 9](./lessons/lesson-01.md) | [API Lib](./assignments/assignment-01.md) |
+| 10 | Wed, Nov 20 | [Lesson 10](./lessons/lesson-01.md) | [???](./assignments/assignment-01.md) |  
+| 11 | Mon, Nov 25 | [Lesson 11](./lessons/lesson-01.md) | [???](./assignments/assignment-01.md) |
+|  - | Wed, Nov 27 | **NO CLASS** - Thanksgiving | - |
+| 12 | Mon, Dec 2  | [Lesson 12](./lessons/lesson-01.md) | [???](./assignments/assignment-01.md) |
+| 13 | Wed, Dec 4  | [Lesson 13](./lessons/lesson-01.md) | [???](./assignments/assignment-01.md) |
+| 14 | Mon, Dec 9  | [Lesson 14](./lessons/lesson-01.md) | [???](./assignments/assignment-01.md) |
+| 15 | Wed, Dec 11 | Final Exam/Presentations  | - |
 
 ### Tu/Th Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 **Course Dates:** Tuesday, October 22 – Thursday, December 12, 2019 (8 weeks)
 
 **Class Times:** Tuesday and Thursday at 3:30–5:20pm (15 class sessions)
 
-| Class |          Date          |                 Topics                  |
-|:-----:|:----------------------:|:---------------------------------------:|
-|  1 |   Tue, Oct 22                        | [Lesson 1] |
-|  2 |   Thu, Oct 24                          | [Lesson 2] |
-|  3 |   Tue, Oct 29                      | [Lesson 3] |
-|  4 |   Thu, Oct 31                          | [Lesson 4] |
-|  5 |   Tue, Nov 5                         | [Lesson 5] |
-|  6 |   Thu, Nov 7                            | [Lesson 6] |
-|  7 |   Tue, Nov 12                        | [Lesson 7] |
-|  8 |   Thu, Nov 14                           | [Lesson 8] |
-|  9 |   Tue, Nov 19                          | [Lesson 9] |
-| 10 |   Thu, Nov 21                            | [Lesson 10] |  
-| 11 |   Tue, Nov 26                      | [Lesson 11]|
-| - |   Thu, Nov 28                      | **NO CLASS** - Thanksgiving  |
-| 12 |   Tue, Dec 3                       |  [Lesson 12] |
-| 13 |   Thu, Dec 5                        | [Lesson 13] |
-| 14 |   Tue, Dec 10                         | [Lesson 14]  |
-| 15 |   Thu, Dec 12                         | Final Exam/Presentations  |
-
-
-[Lesson 1]: Lessons/Lesson1.md
-[Lesson 2]: Lessons/Lesson2.md
-[Lesson 3]: Lessons/Lesson3.md
-[Lesson 4]: Lessons/Lesson4.md
-[Lesson 5]: Lessons/Lesson5.md
-[Lesson 6]: Lessons/Lesson6.md
-[Lesson 7]: Lessons/Lesson7.md
-[Lesson 8]: Lessons/Lesson8.md
-[Lesson 9]: Lessons/Lesson9.md
-[Lesson 10]: Lessons/Lesson10.md
-[Lesson 11]: Lessons/Lesson11.md
-[Lesson 12]: Lessons/Lesson12.md
-[Lesson 13]: Lessons/Lesson13.md
-[Lesson 14]: Lessons/Lesson14.md
+| Class | Date | Topics | Assignment |
+|:--:|:-----------:|:----------------------------------:|:----------------------------------:|
+|  1 | Tue, Oct 22 | [Lesson 1](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  2 | Thu, Oct 24 | [Lesson 2](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  3 | Tue, Oct 29 | [Lesson 3](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  4 | Thu, Oct 31 | [Lesson 4](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  5 | Tue, Nov 5  | [Lesson 5](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  6 | Thu, Nov 7  | [Lesson 6](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  7 | Tue, Nov 12 | [Lesson 7](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+| 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+|  - | Thu, Nov 28 | **NO CLASS** - Thanksgiving  | - |
+| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-01.md) | [Assignment 1](./assignments/assignment-01.md) |
+| 15 | Thu, Dec 12 | Final Exam/Presentations  | - |
 
 ## Assignment Schedule
 
-### **[INSTRUCTOR NOTE] REPLACE THE BELOW WITH LINKS TO YOUR ASSIGNMENTS, CORRECT DATES, AND SUBMISSION FORM**
+**[INSTRUCTOR NOTE] REPLACE THE BELOW WITH LINKS TO YOUR ASSIGNMENTS, CORRECT DATES, AND SUBMISSION FORM**
 
-|                        Assignment                         | Date Assigned |   Due Date   |            Submission Form           |
-|:---------------------------------------------------------:|:-------------:|:------------:|:------------------------------------:|
-| [Link to Assignment](makeschool.com)                      |  Tue, Oct 15  |  Tue, Oct 22 | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)                      |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)                      |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
-| [Link to Assignment](makeschool.com)                      |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
+| Assignment | Date Assigned | Due Date | Submission Form |
+|:----------:|:-------------:|:--------:|:---------------:|
+| [Link to Assignment](makeschool.com)  |  Tue, Oct 15  |  Tue, Oct 22 | [Submit Assignment](makeschool.com)  |
+| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
+| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
+| [Link to Assignment](makeschool.com)  |  day, Date    |  day, Date   | [Submit Assignment](makeschool.com)  |
+
 ## Class Assignments
 
 ### Projects

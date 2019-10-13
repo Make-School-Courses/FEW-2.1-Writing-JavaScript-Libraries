@@ -47,7 +47,7 @@ Class 5
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-4-string-lib-ci-rubric.md)
+[Assignment Name Rubric](./assignment-04-rubric.md)
 
 
 

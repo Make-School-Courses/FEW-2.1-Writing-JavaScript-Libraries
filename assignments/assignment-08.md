@@ -1,5 +1,11 @@
 # FEW 2.1 - Assignment 8 - Typescript 
 
+---
+
+Move this to lesson 11
+
+---
+
 ## Description 
 
 The goal of this assignment is to refactor one of your previous libraries into TypeScript and publish it to npm. 
@@ -47,7 +53,7 @@ Class 9
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-8-typescript-rubric.md)
+[Assignment Name Rubric](./assignment-08-rubric.md)
 
 
 

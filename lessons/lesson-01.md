@@ -1,6 +1,13 @@
+<!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Lesson 1 - Introduction to JS Libraries
 
 In this class, you will begin writing the code that will be a JavaScript Library.
+
+<!-- Put a link to the slides so that students can find them -->
+
+➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+
+<!-- > -->
 
 ## Learning Objectives
 
@@ -9,48 +16,95 @@ In this class, you will begin writing the code that will be a JavaScript Library
   - Common use cases
 1. Build a library of string functions/utilities
 1. Use JavaScript String methods
+1. Use prototype to inherit methods
 
-### Course Progress Tracker
-
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+<!-- > --> 
 
 ## JavaScript Libraries
 
-Slides: https://docs.google.com/presentation/d/1JMHlFPjdAM9FLhOU3WsUfBaQyTK-pQ31rnbb3AMM5hc/edit?usp=sharing
+<!-- > --> 
+
+### Why make JavaScript libraries? 
+
+- You'been using npm time to get a closer look
+- Practice your programming skills
+- Industry best practices 
+
+<!-- > --> 
+
+## Q: What is npm?
+
+npm is the world’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+
+<!-- > -->
+
+**NPM has three parts:**
+
+- the website
+- the Command Line Interface (CLI)
+- the registry
+
+<!-- > --> 
+
+Use NPM to host and distribute your software frameworks and libraries as “packages”. 
+
+<!-- > --> 
 
 ### Q: What are libraries?
 
-A library of code is like a library of books. Imagine each book as a block of code. Unlike a traditional library that contains books on every topic, software libraries contain code that is focused in a single area.
+<!-- > -->
 
-Libraries of code like the public library make the code available to anyone who wants to use it. Unlike the public library, your JavaScript library can be checked out as many times as there are projects that might need to use it.
+- A library is a collection of code. 
+- Written in such a way that it can be used in any application. 
+- Libraries are best when they do one thing. 
 
-Libraries are portable. Books can be checked out from the public library. Anyone of your software projects can "check out" code libraries.  
+<!-- > -->
+
+- You don’t want to write the same thing again.
+- Sharing code helps the community build applications faster.
+- DRY!
+
+<!-- > -->
+
+Code that has a very specific use case - **probably not**
+Code that has general uses - **probably!**
+“I wish this was built in…” - **write a library**
+
+<!-- > -->
 
 ### Q: Why make a library?
 
+<!-- > -->
+
 By putting the code in a library you are making it portable and packaging it in a form that is easily shared.
+
+<!-- > -->
 
 You're also taking DRY to the next level! The code in a library can be shared across multiple projects, and when change, updates, and bug fixes are made they can all be made in a single location.
 
+<!-- > -->
+
 ### Q: When to make a library?
 
-Any time you find you are writing the same code in more than one project. When you have code that you want to share with other people.
+<!-- > -->
 
-You've already been using libraries of code in any of the projects that you have built using NPM.
+Any time you find you are writing the same code in more than one project. 
 
-### Q: What's NPM?
+When you have code that you want to share with other people.
 
-Node Package Manager is the world's largest software registry. It's like a library of code where you check out code like books!
+<!-- > -->
 
 ### Q: What will I make in this class?
 
+<!-- > -->
+
 You will write several libraries. The libraries you write will be smaller and focus on utility functions at first. Think of the code in each of the libraries written in this class as an interview question.
+
+<!-- > -->
 
 Much of the code we write here has already been written. Normally we wouldn't want to reinvent the wheel, but the goal of this class is learning how to write code and how to turn it into libraries. From that perspective, recreating code that already exists is a great learning experience.
 
-### Let's look at  some existing libraries
-
-## Exploring Libraries
+<!-- > --> 
 
 ### Q: What kinds of libraries are people making in 2019?
 
@@ -60,9 +114,13 @@ https://tutorialzine.com/2019/04/10-interesting-javascript-and-css-libraries-for
 
 Discussion: What did you find on that list?
 
+<!-- > --> 
+
 ### Q: What kinds of libraries have you used in past projects?
 
 Discuss with your pair...
+
+<!-- > -->
 
 ### Q: What about utility libraries?
 
@@ -71,6 +129,8 @@ Pair and look at the link below. It's a list of utility libraries.
 https://blog.bitsrc.io/11-javascript-utility-libraries-you-should-know-in-2018-3646fb31ade
 
 Discussion: What do you see there? What are these libraries good for?
+
+<!-- > -->
 
 ### Q: What kind of code do you see?
 
@@ -88,6 +148,11 @@ Look for each of these things as you explore the repos below.
 - [fill-range](https://github.com/jonschlinkert/fill-range/blob/master/index.js)
 - [Lodash](https://github.com/lodash/lodash) is the most popular package on NPM.
 
+<!-- .slide: data-background="#087CB8" -->
+## [**10m**] BREAK
+
+<!-- > --> 
+
 ## Writing your first library
 
 The goal of the first homework assignment is to write a simple library.
@@ -95,6 +160,8 @@ The goal of the first homework assignment is to write a simple library.
 Why write a simple library? If we keep it simple you will be able to do a good job and get it finished before the next class.
 
 Why write a library at all? Remember all of the advantages of storing code in a central location. While it might not seem to add too much to your workflow today, this is how professionals handle code.
+
+<!-- > --> 
 
 ### String functions
 
@@ -118,25 +185,36 @@ Arrays can help you solve other problems. Try making the first letter of each wo
 - String.toUpperCase()
 - Array.join()
 
-### Homework
+<!-- > -->
 
-[Assignment 1 - String Lib](../Assignments/assignment-1-string-lib.md)
+Add your new methods to the prototype. 
 
-## Wrap up
+This makes the methods available to all instances of that class.
 
-### Review Objective
+```js
+String.prototype.capitalize = function() {
+   return this.charAt(0).toUpperCase() + this.slice(1)
+}
 
-Q: What was covered today?
+“Hello world”.capitalize() -> “Hello world”
+```
 
+<!-- > --> 
 
-## Minute-by-Minute [OPTIONAL]
+## Homework
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:45      | Exploring Libraries       |
-| 1:05        | 0:10      | BREAK                     |
-| 1:15        | 0:40      | Writing your first library|
-| 1:55        | 0:40      | Wrap up and review        |
-| TOTAL       | 2:00      |                           |
+[Assignment 1 - String Lib](../assignments/assignment-01.md)
+
+<!-- > -->
+
+## Wrap Up (5 min)
+
+- Continue working on your current tutorial
+- Complete reading
+- Complete challenges
+
+<!-- > -->
+
+## Additional Resources
+
+1. Links to additional readings and videos

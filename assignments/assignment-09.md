@@ -1,5 +1,13 @@
 # FEW 2.1 - API Lib
 
+---
+
+- This needs an example project to model on
+- Move to lesson 12 Due class 14 bundled and published 
+- Maybe this needs more time
+
+---
+
 ## Description 
 
 People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their jobs easier. 
@@ -31,7 +39,7 @@ Explore these sites to find other APIs
 - https://rapidapi.com/
 - https://www.programmableweb.com/
 
-Your goal is to simplify using your chosen API. This can be done in a few ways. Use any or all of the ideas below, or come up with your own ideas. 
+Your goal is to simplify using your chosen API. This can be done in a few ways. Use any or all of the ideas below, or come up with your own ideas.
 
 - Make an object that holds the configuration data for the API. Give the object methods that handle standard requests and or organize parameters that are passed to the API. 
 - Organize and improve on the return data from your API. A JSON repsonse from an API might long and complex. Your code can read the response and return a more organized response. 
@@ -50,7 +58,7 @@ Class 12
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-9-api-lib-rubric.md)
+[Assignment Name Rubric](./assignment-09-rubric.md)
 
 
 

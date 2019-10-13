@@ -1,5 +1,14 @@
 # FEW 2.1 - Assignment 5 - Math Lib
 
+---
+
+- Sorten list of function
+  - Choose more practical functions for required items
+  - Add more stretch goals 
+- Add assignment 6 - Publish Math Lib and add CI
+
+---
+
 ## Description 
 
 The goal of this assignment is to practice everything you learned so far in lessons 1 through 4 and practice those skills making another library! 
@@ -76,7 +85,7 @@ Class 6
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-5-Math-lib-rubric.md)
+[Assignment Name Rubric](./assignment-05-rubric.md)
 
 
 

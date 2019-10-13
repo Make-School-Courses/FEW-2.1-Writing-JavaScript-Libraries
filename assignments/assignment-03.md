@@ -46,7 +46,7 @@ Class 4
 
 ## Assessing the assignment
 
-[Assignment Name Rubric](./assignment-3-string-lib-test-rubric.md)
+[Assignment Name Rubric](./assignment-03-rubric.md)
 
 
 
