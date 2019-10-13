@@ -38,24 +38,24 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 
 **Class Times:** Monday and Wednesday at 3:30–5:20pm (14 class sessions)
 
-| Class | Date | Topics | Assignment |
+| Class | Date | Topics | Assignment | 
 |:------|:-----|:-------|:-----------|
 |  1 | Mon, Oct 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
 |  2 | Wed, Oct 23 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
 |  3 | Mon, Oct 28 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
 |  4 | Wed, Oct 30 | [Lesson 4](./lessons/lesson-04.md) | [Continuous Integration](./assignments/assignment-04.md) - Add continuous integration to your string lib |
-|  5 | Mon, Nov 4  | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
-|  6 | Wed, Nov 6  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution (>> 8) |
-|  7 | Mon, Nov 11 | [Lesson 7](./lessons/lesson-07.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib (>> 9) |
-|  8 | Wed, Nov 13 | [Lesson 8](./lessons/lesson-08.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
-|  9 | Mon, Nov 18 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
-| 10 | Wed, Nov 20 | [Lesson 10](./lessons/lesson-10.md) | [???](./assignments/assignment-10.md) - Lab |  
-| 11 | Mon, Nov 25 | [Lesson 11](./lessons/lesson-11.md) | [???](./assignments/assignment-11.md) - Lab |
+|  5 | Mon, Nov 4  | [Lesson 5](./lessons/lesson-05.md) | [String Lib](./assignments/assignment-10.md) - Lab |
+|  6 | Wed, Nov 6  | [Lesson 6](./lessons/lesson-06.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  7 | Mon, Nov 11 | [Lesson 7](./lessons/lesson-07.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
+|  8 | Wed, Nov 13 | [Lesson 8](./lessons/lesson-08.md) | [Math Lib](./assignments/assignment-11.md) - Lab |
+|  9 | Mon, Nov 18 | [Lesson 9](./lessons/lesson-09.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib |
+| 10 | Wed, Nov 20 | [Lesson 10](./lessons/lesson-10.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |  
+| 11 | Mon, Nov 25 | [Lesson 11](./lessons/lesson-11.md) | [Typescript](./assignments/assignment-12.md) - Lab |
 |  - | Wed, Nov 27 | **NO CLASS** | Thanksgiving |
-| 12 | Mon, Dec 2  | [Lesson 12](./lessons/lesson-12.md) | [???](./assignments/assignment-12.md) - Lab |
-| 13 | Wed, Dec 4  | [Lesson 13](./lessons/lesson-13.md) | [???](./assignments/assignment-13.md) |
-| 14 | Mon, Dec 9  | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) - Final Presentations |
-| 15 | Wed, Dec 11 | [Lesson 15](./lessons/lesson-15.md) | [???](./assignments/assignment-15.md) - Final Assessment |
+| 12 | Mon, Dec 2  | [Lesson 12](./lessons/lesson-12.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
+| 13 | Wed, Dec 4  | [Lesson 13](./lessons/lesson-13.md) | [API Lib](./assignments/assignment-13.md) - Lab |
+| 14 | Mon, Dec 9  | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-14.md) - Final Presentations |
+| 15 | Wed, Dec 11 | [Lesson 15](./lessons/lesson-15.md) | [Assessment](./assignments/assignment-15.md) - Final Assessment |
 
 ### Tu/Th Template 
 
@@ -70,18 +70,18 @@ M/W Template **[PLEASE REMOVE THIS HEADER BEFORE OCTOBER 18]**
 |  2 | Thu, Oct 24 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
 |  3 | Tue, Oct 29 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
 |  4 | Thu, Oct 31 | [Lesson 4](./lessons/lesson-04.md) | [Continuous Integration](./assignments/assignment-04.md) - Add continuous integration to your string lib |
-|  5 | Tue, Nov 5  | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
-|  6 | Thu, Nov 7  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution (>> 8) |
-|  7 | Tue, Nov 12 | [Lesson 7](./lessons/lesson-07.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib (>> 9) |
-|  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-08.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
-|  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
-| 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-10.md) | [???](./assignments/assignment-10.md) - Lab |
-| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [???](./assignments/assignment-11.md) - Lab |
+|  5 | Tue, Nov 5  | [Lesson 5](./lessons/lesson-05.md) | [String Lib](./assignments/assignment-10.md) - Lab |
+|  6 | Thu, Nov 7  | [Lesson 6](./lessons/lesson-06.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  7 | Tue, Nov 12 | [Lesson 7](./lessons/lesson-07.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
+|  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-08.md) | [Math Lib](./assignments/assignment-11.md) - Lab |
+|  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-09.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib |
+| 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-10.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
+| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [Typescript](./assignments/assignment-12.md) - Lab |
 |  - | Wed, Nov 27 | **NO CLASS** | Thanksgiving |
-| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [???](./assignments/assignment-12.md) - Lab |
-| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [???](./assignments/assignment-13.md) |
-| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [???](./assignments/assignment-14.md) - Final Presentations |
-| 15 | Thu, Dec 12 | [Lesson 15](./lessons/lesson-15.md) | [???](./assignments/assignment-15.md) - Final Assessment |
+| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
+| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [API Lib](./assignments/assignment-13.md) - Lab |
+| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-14.md) - Final Presentations |
+| 15 | Thu, Dec 12 | [Lesson 15](./lessons/lesson-15.md) | [Assessment](./assignments/assignment-15.md) - Final Assessment |
 
 ## Evaluation
 To pass this course you must meet the following requirements:
