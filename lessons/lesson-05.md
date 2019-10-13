@@ -1,5 +1,5 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Numbers and Math Lib
+# FEW 2.1 - Lesson 5 - Numbers and Math Lib
 
 The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
 

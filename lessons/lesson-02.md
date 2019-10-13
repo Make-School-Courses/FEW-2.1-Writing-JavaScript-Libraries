@@ -1,5 +1,5 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 2 - Introduction to JS Libraries
+# FEW 2.1 - Lesson 2 - Publishing JS Libraries
 
 In this lesson you will publish your library and share it with the world.
 

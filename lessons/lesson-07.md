@@ -1,5 +1,5 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Dates and Date Lib
+# FEW 2.1 - Lesson 7 - Dates and Date Lib
 
 Time for another lib! This time you'll make a library that works with Dates. You will take everything covered so far: Code, testing, and bundling. 
 

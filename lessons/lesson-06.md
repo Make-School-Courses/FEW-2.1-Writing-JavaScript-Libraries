@@ -1,5 +1,5 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Bundling Libraries for distribution
+# FEW 2.1 - Lesson 6 - Bundling Libraries for distribution
 
 This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
 

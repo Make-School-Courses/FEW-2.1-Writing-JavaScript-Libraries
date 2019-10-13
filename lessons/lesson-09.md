@@ -1,5 +1,5 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - FEW 2.1 - TypeScript Part 2 
+# FEW 2.1 - Lesson 9 - TypeScript Part 2 
 
 [[Slides](https://docs.google.com/presentation/d/1UZRdPDroEK1OftxLCZ-lf9Jxkj3UYs-y1vUmjHp1bPI/edit#slide=id.g4cf79cf4e3_0_202)]
 
