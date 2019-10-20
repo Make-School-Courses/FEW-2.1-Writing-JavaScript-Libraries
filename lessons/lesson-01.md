@@ -94,7 +94,7 @@ By putting the code in a library you are making it **portable** and packaging it
 
 You're also **taking DRY to the next level!** 
 
-The code in a library can be shared across multiple projects, and  changes, and bug fixes can all be made in a single location.
+The code in a library can be **shared across multiple projects**, and  changes, and bug fixes can all be made in a single location.
 
 <!-- > -->
 
