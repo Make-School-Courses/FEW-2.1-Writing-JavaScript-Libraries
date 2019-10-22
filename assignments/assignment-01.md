@@ -26,6 +26,7 @@ JavaScript provides many methods to manipulate strings already but it doesn't do
     - 3) (Advanced) Use a regular expression. 
 - **Challenge 2** `allCaps()` - makes all characters uppercase. (this is the same as [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase))
   - Example: `foo bar` -> `FOO BAR`
+  - Strategy: Make a new function that uses `str.toUpperCase()`. You can make an alias with a shorter easier to remember name.  
 - **Challenge 3** `capitalizeWords()` - makes the first character of each word uppercase. Imagine that each word is separated by a space. 
   - Example: `do all the things` -> `Do All The Things`
     - Advanced: `capitalizeHeadline()` - capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from
