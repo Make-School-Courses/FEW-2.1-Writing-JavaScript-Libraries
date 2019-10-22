@@ -194,25 +194,53 @@ Strings are one of, if not the most common data type you might work with. JavaSc
 
 <!-- > -->
 
-**Uppercase the first letter of a word**
+**Uppercase the first letter of a word with an array**
 
-1. Split the string into an array of letters
-1. Uppercase the first element
-1. Join the elements in the array into a string
+1. Split the string into an array of characters with [`String.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+1. Uppercase the first element with [`String.toUpperCase()`]()
+1. Join the elements in the array into a string with [`Array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+1. Return the result
 
-- [`String.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [`String.toUpperCase()`]()
-- [`Array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+<!-- > -->
+
+**Uppercase first letter with String methods**
+
+1. Get the first letter: `sourceStr[0]`
+1. Convert to uppercase with: [`String.toUpperCase()`]()
+1. Get all the characters after the first [`sourceString.slice(1)`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+1. Combine the two and return the result
+
+<!-- > -->
+
+**Your turn**
+
+How would you uppercase the **first letter of each word** in a string? 
+
+- Whats' your strategy? 
+- Which methods will you use? 
+- Pseudo Code...
 
 <!-- > -->
 
 **Prototype**
 
-Use the `prototype` to share methods by all members of a class.
+Use the `prototype` to share methods by all instances of a class.
+
+For example give all strings a new method. 
 
 <!-- > -->
 
-Why use the prototype? 
+Ever wonder why the docs show: 
+
+`String.prototype.slice()`
+
+Looks like `slice()` is a property of `String.prototype`
+
+You can add new methods to `prototype`
+
+<!-- > -->
+
+**Without prototype**
 
 You could write a function that takes a string as a parameter and returns a string: 
 
@@ -221,12 +249,12 @@ function capitalize(str) {
    return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-const results = capitalize("hello") // "Hello"
+const results = capitalize("hello") // returns "Hello"
 ```
 
 <!-- > -->
 
-Add your new methods to the `prototype`.
+**Here the method is added to `prototype`**
 
 This makes the methods available to all instances of that class.
 
@@ -235,8 +263,20 @@ String.prototype.capitalize = function() {
    return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
-const result = "hello".capitalize() // "Hello"
+const result = "hello".capitalize() // returns "Hello"
 ```
+
+<!-- > -->
+
+What's the difference between
+
+`const results = capitalize("hello") // "Hello"`
+
+and 
+
+`const result = "hello".capitalize() // "Hello"`
+
+What are the pros and cons of each? 
 
 <!-- > -->
 
@@ -257,4 +297,12 @@ const result = "hello".capitalize() // "Hello"
 
 ## Additional Resources
 
-1. 
+- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Useful_string_methods
+- https://www.sitepoint.com/15-javascript-string-functions/
+- [JS String Method references](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- JS Libraries
+  - https://tutorialzine.com/2019/04/10-interesting-javascript-and-css-libraries-for-april-2019
+  - https://blog.bitsrc.io/11-javascript-utility-libraries-you-should-know-in-2018-3646fb31ade
+  - https://github.com/jonschlinkert/has-values
+  - https://github.com/jonschlinkert/fill-range/blob/master/index.js
+- Lodashhttps://github.com/lodash/lodash
