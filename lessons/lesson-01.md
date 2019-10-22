@@ -3,10 +3,6 @@
 
 <small style="display:block;text-align:center">Introduction to JS Libraries</small>
 
-<aside>
-In this class, you will begin writing the code that will be a JavaScript Library.
-</aside>
-
 <!-- Put a link to the slides so that students can find them -->
 
 ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
@@ -40,6 +36,8 @@ In this class, you will begin writing the code that will be a JavaScript Library
 
 ## Q: What is npm?
 
+<!-- > -->
+
 npm is the world’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
 
 <!-- > -->
@@ -54,29 +52,23 @@ npm is the world’s largest software registry. Open source developers from ever
 
 Use **npm** to host and distribute your software frameworks and libraries as “packages”. 
 
+This class you will write a library. Next class you will publish your library to npm.
+
 <!-- > -->
 
 ### Q: What are libraries?
 
 <!-- > -->
 
-**What are Libraries?**
-
 - A library is a collection of code. 
 - Written to be used in any application. 
-- Libraries are best when they do one thing. 
-
-<!-- > -->
-
-**Why write a library?**
-
-- You don’t want to write the same thing again.
-- Sharing code helps the community build applications faster.
-- DRY!
+- Best when they handle a single task. 
 
 <!-- > -->
 
 **When to write a library?**
+
+<!-- > -->
 
 - Code that has a _very specific use case_ - **probably not**
 - Code that _has general uses_ - **probably!**
@@ -94,6 +86,8 @@ By putting the code in a library you are making it **portable** and packaging it
 
 You're also **taking DRY to the next level!** 
 
+<!-- > -->
+
 The code in a library can be **shared across multiple projects**, and  changes, and bug fixes can all be made in a single location.
 
 <!-- > -->
@@ -103,6 +97,8 @@ The code in a library can be **shared across multiple projects**, and  changes, 
 <!-- > -->
 
 Any time you find you are writing the same code in more than one project. 
+
+<!-- > -->
 
 When you have code that you want to share with other people.
 
@@ -114,7 +110,9 @@ When you have code that you want to share with other people.
 
 You will write several libraries. The libraries you write will be smaller and focus on utility functions at first. 
 
-Think of the code in each of the libraries written in this class as an interview question.
+<!-- > -->
+
+Think of the code in each of the libraries written in this class as a practice interview question.
 
 <!-- > -->
 
@@ -123,6 +121,8 @@ Much of the code we write here has already been written. Normally we wouldn't wa
 <!-- > -->
 
 ### Q: What kinds of libraries are people making in 2019?
+
+<!-- > -->
 
 Here is a list of libraries that you may have used before. Pair up and take a look at the list at the link below and discuss what's there.
 
@@ -134,13 +134,11 @@ https://tutorialzine.com/2019/04/10-interesting-javascript-and-css-libraries-for
 
 ### Q: What kinds of libraries have you used in past projects?
 
-**Discuss** with your pair...
+<div>Pair and <strong>Discuss</strong></div> 
 
 <!-- > -->
 
 ### Q: What about utility libraries?
-
-Pair and look at the link below. It's a list of utility libraries.
 
 https://blog.bitsrc.io/11-javascript-utility-libraries-you-should-know-in-2018-3646fb31ade
 
@@ -196,24 +194,39 @@ Strings are one of, if not the most common data type you might work with. JavaSc
 
 <!-- > -->
 
-The problems outlined in the homework can be solved in many different ways. Here are a few ideas to get you started.
+**Uppercase the first letter of a word**
 
-- String.charAt()
-- String.toUpperCase()
+1. Split the string into an array of letters
+1. Uppercase the first element
+1. Join the elements in the array into a string
 
-<!-- > -->
-
-Use these to make the first letter of a string uppercase.
-
-Arrays can help you solve other problems. Try making the first letter of each word in a String uppercase. Assume that each word is separated by a " ". Use these functions:
-
-- String.split()
-- String.toUpperCase()
-- Array.join()
+- [`String.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [`String.toUpperCase()`]()
+- [`Array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 
 <!-- > -->
 
-Add your new methods to the prototype. 
+**Prototype**
+
+Use the `prototype` to share methods by all members of a class.
+
+<!-- > -->
+
+Why use the prototype? 
+
+You could write a function that takes a string as a parameter and returns a string: 
+
+```js
+function capitalize(str) {
+   return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+const results = capitalize("hello") // "Hello"
+```
+
+<!-- > -->
+
+Add your new methods to the `prototype`.
 
 This makes the methods available to all instances of that class.
 
@@ -222,22 +235,23 @@ String.prototype.capitalize = function() {
    return this.charAt(0).toUpperCase() + this.slice(1)
 }
 
-“Hello world”.capitalize() -> “Hello world”
+const result = "hello".capitalize() // "Hello"
 ```
 
 <!-- > -->
 
 ## Homework
 
-[Assignment 1 - String Lib](../assignments/assignment-01.md)
+<div><a href="../assignments/assignment-01.md">Assignment 1 - String Lib</div>
 
 <!-- > -->
 
-## Wrap Up (5 min)
+## Wrap Up
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- What is a library? 
+- Why write a library? 
+- What is the `prototype`?
+- Why add methods to the `prototype`?
 
 <!-- > -->
 
