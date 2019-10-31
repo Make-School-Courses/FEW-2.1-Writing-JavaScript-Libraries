@@ -305,4 +305,4 @@ What are the pros and cons of each?
   - https://blog.bitsrc.io/11-javascript-utility-libraries-you-should-know-in-2018-3646fb31ade
   - https://github.com/jonschlinkert/has-values
   - https://github.com/jonschlinkert/fill-range/blob/master/index.js
-- Lodashhttps://github.com/lodash/lodash
+- https://github.com/lodash/lodash

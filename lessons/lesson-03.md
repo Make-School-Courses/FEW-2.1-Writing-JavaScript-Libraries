@@ -5,23 +5,37 @@
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+➡️ [**Slides**](/Syllabus-Template/Slides/lesson1.html ':ignore')
 
 <!-- > -->
 
-Quality code is test passing code. Unit testing is a system that is used to test units of code. Code that passes the test is deemed quality and fit for use. Unit testing is a part of the Agile Methodology.
+**Quality code** is test passing code. 
+
+Unit testing is a system that is used to test **units of code**. 
+
+Code that passes the test is **deemed quality** and fit for use. 
+
+Unit testing is a part of the **Agile Methodology**.
 
 <!-- > -->
 
 ## Why use unit tests?
 
-Improves code quality by exposing edge cases and finding bugs.
+<!-- > -->
 
-Spots bugs earlier. Using tests will bring bugs to light before you publish your app.
+**Improves code quality** by exposing edge cases and finding bugs.
 
-Reduces defects when integrating new features.
+<!-- > -->
 
-Professionals use unit tests. If you are planning to get a with a company that employs more than a single developer, you will probably be writing unit tests at some point, so you should learn how to do it.
+**Spots bugs earlier.** Using tests will bring bugs to light before you publish your app.
+
+<!-- > -->
+
+**Reduces defects** when integrating new features.
+
+<!-- > -->
+
+**Professionals use unit tests.** If you are planning to get a job with a company that employs more than a single developer, you will probably be writing unit tests at some point.
 
 <!-- > -->
 
@@ -41,15 +55,19 @@ Professionals use unit tests. If you are planning to get a with a company that e
 
 <!-- > -->
 
-**A:** A unit test is a test of a software system, usually a single function. A unit test most often is testing that the expected output of a function is correct for a given input.
+**A:** A unit test is a test of a software system, _usually a single function._ 
+
+**A unit test most often is testing the expected output of a function is correct for a given input.**
 
 <!-- > -->
 
-**Q:** How do you do a unit test?
+**Q:** How do you unit test?
 
 <!-- > -->
 
-**A:** Unit tests are run by software and can be automated. In this class, we will use Jest.
+**A:** Unit tests are run by software. 
+
+In this class, we will use [Jest](https://jestjs.io).
 
 <!-- > -->
 
@@ -59,28 +77,23 @@ Professionals use unit tests. If you are planning to get a with a company that e
 
 **A:** [Jest](https://jestjs.io) is a JavaScript testing framework that was written by Facebook. It works with:
 
+- JavaScript
 - TypeScript
 - Node
 - React
 - Vue
 - Angular
-- and more
+- and more ...
 
 <!-- > -->
 
-**Q:** Why use Jest?
+**Q:** Why Jest?
 
 <!-- > -->
 
-**A:** Jest works well with React. If you're building React apps Jest is a good choice. 
+**A:** Jest works well with React. 
 
-<!-- > -->
-
-**Q:** What can you test?
-
-<!-- > -->
-
-**A:** Usually you are testing functions by looking at the output for a given input.
+If you're building React apps Jest is a good choice. 
 
 <!-- > -->
 
@@ -88,49 +101,55 @@ Professionals use unit tests. If you are planning to get a with a company that e
 
 <!-- > -->
 
-**A:** Before writing a test you'll want to think about what you are testing and what you should test for.
+**A:** Before writing a test you'll want to think about what you are testing and what the test will consider passing.
 
-For example, you wrote a function that uppercased the first letter of a string. You might expect the input to be:
+<!-- > -->
 
-widget -> Widget
+For example, you wrote a function that uppercases the first letter of a string. 
 
-Can you think of any edge cases?
+Your unit test might expect the following input and output:
 
-What about the capitalizeAll() function what would be a good test? What are the edge cases?
+<div><code>widget -> Widget</code></div>
 
 <!-- > -->
 
 ## Testing example
 
-Heard of Fizz Buzz? Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands!
+<!-- > -->
+
+**Heard of Fizz Buzz?** Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands!
+
+<!-- > -->
 
 Pair with someone **you haven't paired with before**.
 
 The goal of this exercise is to write some tests with Jest that test the functions in the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test).
 
+Download this repo now
+
 <!-- > -->
 
 ## Getting Started Fizz Buzz
 
-- Make a new directory
 - Navigate the terminal to the directory
 - `npm init -y`
 - `touch index.js` 
-- Get the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test)
 
 <!-- > -->
 
 ## Writing tests with Jest
 
-Jest is a framework that you will use as a *dev dependency*. A dev dependency is one that is used for development but _not used in your source code_.
+Jest is a framework that you will use as a *dev dependency*. 
+
+A dev dependency is one that is used for development but _not used in your source code_.
 
 <!-- > -->
 
 Add Jest:
 
-`npm install --save-dev jest`
+- `npm install --save-dev jest`
 
-`--save-dev` creates an entry under `"devDependencies"` in your `package.json`. Look for this right now.
+`--save-dev` creates an entry under - `"devDependencies"` in your `package.json`. Look for this right now.
 
 <!-- > -->
 
@@ -162,25 +181,31 @@ You haven't written any tests yet so this makes sense.
 
 Add a new directory named "tests".
 
-`mkdir tests`
+- `mkdir tests`
 
 Now add a new file `tests/test.js`. Your tests will be written here.  
 
-`touch tests/test.js`
+- `touch tests/test.js`
 
 <!-- > -->
 
-When you run Jest it will look for any files with `test.js` in the name and run any test code found there. Jest logs the results of all tests to the console.
+When you run Jest it will look for any files with `test.js` in the name and run any test code found there. 
+
+Jest logs the results of all tests to the console.
 
 <!-- > -->
 
 A test is run by calling:
 
-`test(desc, callback)`
+```JavaScript
+test(desc, callback)
+```
 
 You supply two parameters a *description string* and a *callback function*.
 
-Open `test.js` in your editor and write a test. Add the following  code to `test.js`:
+<!-- > -->
+
+Open `test.js` and write a test:
 
 ```JavaScript
 test('Sanity check', () => {
@@ -206,11 +231,15 @@ Tests:       1 passed, 1 total
 ...
 ```
 
-<!-- > -->
-
 Looks like 1 test  passed out of a total of 1 test.
 
-What did we test? Nothing. The callback function will register an error if any code executed inside it *throws an error*, otherwise the test is passing.
+<!-- > -->
+
+What did we test? 
+
+Nothing. The callback function will register an error **only** if any code executed inside it *throws an error*, otherwise the test is passing.
+
+<!-- > -->
 
 Add the following inside the callback.
 
@@ -232,6 +261,8 @@ Tests:       1 failed, 1 total
 ```
 
 `expect().toBe()` is an assertion. An assertion is you expressing the answer you are expecting to get. *Here you are saying you expect `2+2` to be `5`*. Expecting `2+2` to `5` is insane so the assertion fails.
+
+<!-- > -->
 
 Fix the test by changing `5` to `4` and run it again. This time the test passes since no error was thrown.
 
@@ -279,9 +310,26 @@ See the link to the docs above for more information.
 
 ## Activity
 
-Write tests for FizzBuzz. Do your best write as many tests as you can. 
+**Before writing any code.** Discuss with a partner what you are going to test. 
 
-**Before writing any code.** Discuss with a partner what you are going to test. Describe the test you are going to write. Your partner should think of any edge cases or problems areas. Then switch roles.  
+Describe the test you are going to write. Your partner should think of any edge cases or problems areas. Switch roles for each test you write.
+
+Write tests for FizzBuzz. Write a test for each function.
+
+<!-- > -->
+
+Import fizzbuzz functions from `fizzbuzz.js` with require: 
+
+`const fb = require('../fizzbuzz')`
+
+From here you can all of any of the fizzbuzz methods on `fb` for example: 
+
+- `fb.isFizzy(n)`
+- `fb.isBuzzy(n)`
+- `fb.fizzBuzz(n)`
+- etc ...
+
+<!-- > -->
 
 Refer to the [Jest docs](https://jestjs.io/docs/en/getting-started.html) while you work. 
 
@@ -339,6 +387,8 @@ Modify the line above to suit your situation. The name of the var can be anythin
 Note! If your functions are global or they are added to the prototype of a global object you can just use something like:
 
 `require('../index.js')`
+
+<!-- > -->
 
 Use the coverage command with Jest to test the coverage of your tests. 
 

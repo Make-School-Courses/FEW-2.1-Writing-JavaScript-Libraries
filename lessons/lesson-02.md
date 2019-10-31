@@ -27,13 +27,17 @@ Get a deeper understanding of npm and it's ecosystem. Contribute to open source.
 
 ## What is NPM?
 
-World’s largest software registry. Open source developers from every continent use npm to share and borrow packages, and many organizations use npm to manage private development as well.
+<div>Node Package Manager</div>
+
+<div>So what's a Package?</div>
 
 <!-- > -->
 
-npm organizes code into *packages* (sometimes called *modules*). 
+npm organizes code into *packages* (sometimes called *modules*).
 
-A package is a directory with one or more files and a file named `package.json` which contains metadata about the package.
+<!-- > -->
+
+**A package is a directory with one or more files** and a file named `package.json` which contains metadata about the package.
 
 <!-- > -->
 
@@ -47,7 +51,7 @@ In this way, you can use these shared packages like **building blocks** to easil
 
 <!-- > -->
 
-Packages can be written that work with Node.js on the server side, run on the command line, or can be used in frontend web projects that run in the browser.
+Packages can be written that work with **Node.js** on the server side, run on the **command line**, or can be used in a **web page**.
 
 You can publish your packages and use them with all of your projects and share them with other developers around the world.
 
@@ -55,23 +59,27 @@ You can publish your packages and use them with all of your projects and share t
 
 ## How does NPM work?
 
-NPM is three things: a website, registry, and client.
+<div>NPM is three things: a <strong>website</strong>, <strong>registry</strong>, and <strong>client</strong>.</div>
 
 <!-- > -->
 
-**The Website**
+### The Website
 
-https://www.npmjs.com 
+<div style="">https://www.npmjs.com</div> 
 
-is the web portal for all things npm.
-
-<!-- > -->
-
-**The registry** is a database of all packages that have been shared via npm.
+<div>is the web portal for all things npm.</div>
 
 <!-- > -->
 
-**The client** is a command line tool used to publish and manage your npm packages.
+### The registry
+
+<div>is a database of all packages that have been shared via npm.</div>
+
+<!-- > -->
+
+### The client
+
+<div>is a command line tool used to publish and manage your npm packages.</div>
 
 <!-- > -->
 
@@ -159,13 +167,12 @@ You'll need to enter your:
 
 To publish your package use:
 
-`npm publish`
+`npm publish --access=public`
 
 The first time you publish, you will need to add `--access=public` to avoid an error. After that, future publications will default to public access.
 
 <!-- > -->
 
-<aside>
 #### Resolving errors
 
 All packages on npm are public and share the same namespace. The most common error will be a name collision. It might look like:
@@ -174,11 +181,13 @@ All packages on npm are public and share the same namespace. The most common err
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/test-error - You do not have permission to publish "test-error". Are you logged in as the correct user?
 ```
 
-Here I tried to publish a package with the name `test-error`. This package already exists. Hint: **Search for it on npm**. If you're having trouble finding a name test your name ideas by searching for the names on npm.
+Here I tried to publish a package with the name `test-error`. This package already exists. Hint: **Search for it on npm** before publishing.
 
-Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
+<!-- > -->
 
-</aside>
+Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. 
+
+To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
 
 <!-- > -->
 
@@ -198,13 +207,13 @@ Visit https://www.npmjs.com
 
 Log in and click the profile icon in the upper right. Choose "Packages" from the menu. This should show the list of packages you have published.
 
-Your package should appear on the list, pat yourself on the back!
+Your package should appear on the list, **pat yourself on the back!**
 
 <!-- > -->
 
 Click the name of your package on the list and view it on npm. Notice a few things.
 
-The npm page for a package shows the **text from the README.md** file in the GitHub repo for the package. This means your readme should look good and explain what your library does. This will encourage other developers to use your library.
+The npm page for a package shows the **text from the README.md** file in the GitHub repo for the package. Your readme should look good and document what your library. This will encourage other developers to use your library.
 
 The version number, last update date, weekly downloads, GitHub repo and more are shown here.
 
@@ -222,13 +231,42 @@ All packages on npm are using semver. What's semver? Semver stands for semantic 
 
 `1.0.0` or `1.0.16` or `2.1.18`
 
+<!-- > -->
+
+<div style="font-size:2em">
+  <strong>16</strong>.10.2
+</div>
+
 The first digit is the **MAJOR** version. You'll update this when you make changes that make a new version **incompatible** with an older version.
+
+<div style="font-size: 2em; text-align: center"><strong>MAJOR</strong>.MINOR.PATCH</div>
 
 <!-- > -->
 
+<div style="font-size:2em">
+  16.<strong>10</strong>.2
+</div>
+
+
 The second digit is the **MINOR** version. You'll change this when you add **more functionality** but are **still backward compatible**.
 
+<div style="font-size: 2em; text-align: center">MAJOR.<strong>MINOR</strong>.PATCH</div>
+
+<!-- > -->
+
+<div style="font-size:2em">
+  16.10.<strong>2</strong>
+</div>
+
 The last digit is a **PATCH** version. You'll change this when you make **bug fixes and improvements** that are backward compatible but do not add new features.
+
+<div style="font-size: 2em; text-align: center">MAJOR.MINOR.<strong>PATCH</strong></div>
+
+<!-- > -->
+
+<div style="font-size:2em">
+  16.10.2
+</div>
 
 <div style="font-size: 3em; text-align: center">MAJOR.MINOR.PATCH</div>
 
@@ -238,9 +276,9 @@ The last digit is a **PATCH** version. You'll change this when you make **bug fi
 
 Read the questions below and figure out the new version numbers
 
-- You just changed the read on version 3.1.0
-- You just fixed a problem with the twizzle() function, a public API, it now requires a number: twizzle(times), previous version: 12.11.10
-- You just updated twizzle(times) again but added a default parameter: twizzle(times = 1)
+- You just **edited** the readme on version 3.1.0
+- You just fixed a problem with the `twizzle()` function, a public API, it now **requires** a number: twizzle(times), previous version: 12.11.10
+- You just updated `twizzle(times)` again but added a default parameter: `twizzle(times = 1)`
 
 https://semver.org
 
@@ -264,15 +302,17 @@ npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/@soggybag%2fjustincase -
 
 Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are the same.
 
-To publish a new version you need to update the version number in package.json.
+**To publish a new version you need to update the version number in package.json.**
 
 <!-- > -->
 
 ### Make a patch, update, and publish
 
-Try that for yourself. Make a small change to your library, or just imagine that you did. Edit the README.md to improve the description.
+Try that for yourself. Edit the README.md to improve the description.
 
-Let's make this a PATCH. This change is just an improvement, you didn't change any of the method names or parameters, so the API has stayed the same. You also didn't add any new features.
+Call it a PATCH. 
+
+<small>This change is just an improvement, you didn't change any of the method names or parameters, so the API has stayed the same. You also didn't add any new features.</small>
 
 In `package.json` add 1 to the last digit in the version.
 
@@ -288,7 +328,9 @@ Check your package on [npm](https://www.npmjs.com ).
 
 Look for the changes to the read and check the version number.
 
+<Small>
 Making changes only to the GitHub repo will not show on npm. You'll need to publish a new version.
+</small>
 
 <!-- > -->
 
@@ -311,6 +353,8 @@ Great work, you deserve a badge!
 You've probably seen those nifty badges on display on GitHub repos. Take a look at:
 
 https://github.com/badges/shields
+
+![IXVf2.png](images/IXVf2.png)
 
 <!-- > -->
 
@@ -338,6 +382,8 @@ Click the link to the right of npm bundle size. It looks like:
 
 `/bundlephobia/:format/:packageName.svg`
 
+<!-- > -->
+
 Now select the format: min, and type your package name into the field. If you have scoped your package include your @username like this: `@username/packagename`.
 
 Choose "Copy Markdown" from the menu at the bottom.
@@ -348,7 +394,11 @@ Commit and push this to GitHub.
 
 Check out your GitHub page and you should see your new badge!
 
-Repeat this again for the version. Try this on your own. Get the npm version number.
+<!-- > -->
+
+Repeat this again for the version. Try this on your own. 
+
+Get the npm version number.
 
 <!-- > -->
 
@@ -423,7 +473,9 @@ Q: What was covered today?
 
 ### Homework
 
-[Assignment 2 - Publish to npm](../assignments/assignment-02.md)
+<div>
+<a href="../assignments/assignment-02.md">Assignment 2 - Publish to npm</a>
+</div>
 
 <!-- > -->
 
