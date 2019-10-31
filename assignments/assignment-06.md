@@ -2,9 +2,12 @@
 
 --- 
 
-Move this to lesson 7
+Add testing 
+Add CI
 
 - 
+
+Move this to lesson 7
 
 ---
 
