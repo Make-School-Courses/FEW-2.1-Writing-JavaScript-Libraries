@@ -47,8 +47,11 @@ This creates a few problems.
 // my-code.js
 function load() { /* does something important */}
 // 
+```
+
+```JavaScript
 <script src="my-code.js"></script>
-// -------------------------------
+
 <script>
   function load() {} // accidentally overwrites important code 
 </script>
@@ -64,7 +67,9 @@ The module pattern uses scope to solve the problem above. Wrapping code in an an
   // Code safely scoped to function
   function load() { /* does something important */}
 })() // Immediately executes the function above
+```
 
+```JavaScript
 <script src="my-code.js"></script>
 // ---------------------------------------
 <script>
@@ -74,9 +79,11 @@ The module pattern uses scope to solve the problem above. Wrapping code in an an
 
 <!-- > -->
 
-This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced module bundles are based on this. 
+This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced patterns are based on this. 
 
-You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
+You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). 
+
+While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
 
 <!-- > -->
 
@@ -92,13 +99,15 @@ Rollup seems to be the most modern and up to date choice out of this list.
 
 <!-- > -->
 
-Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! Rollup will bundle to files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
+Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! 
+
+Rollup will bundle files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
 
 <!-- > -->
 
 ### Common JS 
 
-CommonJS is the pattern used with Node JS projects. To use the code in a library you've written with Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
+**CommonJS is the pattern used with Node JS projects.** To use the code in a library you've written for Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
 
 ```JavaScript
 const yourCode = require('your-code')
@@ -110,7 +119,7 @@ yourCode.yourMethod()
 
 ### UMD (Universal Module Definition) 
 
-To wrap up code for use in the script tag in the browser you'll need to make a UMD module. A UMD module be imported via the script tag and imported with `require()` in a Node JS environment. 
+**UMD is used for code used in a script tag in the browser.** A UMD module be imported via the script tag _and can be imported with `require()` in a Node JS environment._ 
 
 ```JavaScript
 <script src="your-code.js"></script>
@@ -125,13 +134,25 @@ To wrap up code for use in the script tag in the browser you'll need to make a U
 
 ### ES Modules 
 
-ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. These modules are further processed and bundled before they are used. 
+**ES Modules are used with ES6 Import from syntax.** ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. 
 
 ```JavaScript
 import { yourMethod } from 'your-code'
 ...
 yourMethod()
 ```
+
+These modules might be further processed with babel before they are used. 
+
+<!-- > -->
+
+## Recap: Modules
+
+- Modules are used to make code compatible across different environments. 
+- There are several different module formats
+  - CommonJS
+  - UMD 
+  - ES
 
 <!-- > -->
 
@@ -142,6 +163,10 @@ Follow the instructions below to bundle your project with rollup.js.
 Install rollup.js 
 
 `npm install --save-dev rollup`
+
+or 
+
+`npm install --global rollup`
 
 <!-- > -->
 
@@ -158,6 +183,8 @@ export default {
 };
 ```
 
+**You will change the `input`, `output.file`, and  `output.name` to match your files.**
+
 This base config takes an input file from: `src/index.js` and outputs a UMD file `umd/your-module.js`. 
 
 <!-- > -->
@@ -168,13 +195,27 @@ Move your source files into a folder named `src` create this folder if you haven
 
 <!-- > -->
 
-Rollup will automatically build from the `src` directory. 
-
 Test your work so far. 
 
 `npx rollup --config`
 
 This should build the UMD module from your source files and save these a folder named `umd`. 
+
+Rollup should have created `umd/your-module.js`. Take a look at this file. it contains the boiler plate code that manages your module/bundle. 
+
+<!-- > -->
+
+If you saw a warning: `(!) Generated an empty bundle` you need to export code from  `src/index.js`. For example 
+
+```JS 
+function getWeather() {
+  ...
+}
+
+export { getWeather }
+// or 
+export default getWeather
+```
 
 <!-- > -->
 

@@ -1,16 +1,5 @@
 # FEW 2.1 - Assignment 6 - Bundling 
 
---- 
-
-Add testing 
-Add CI
-
-- 
-
-Move this to lesson 7
-
----
-
 ## Description 
 
 The goal of this assignment is to bundle your libraries so they are usable in the browser, Node, and React. 
