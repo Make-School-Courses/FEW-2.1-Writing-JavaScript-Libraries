@@ -302,8 +302,6 @@ Use "files" to designate which files should be distributed by npm.
   ...
 ```
 
-
-
 <!-- > -->
 
 Add "prepare" script. This script is run by npm each time you install or publish. 
