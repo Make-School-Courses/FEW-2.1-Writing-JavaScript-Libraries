@@ -31,6 +31,10 @@ https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXc
 
 <!-- > -->
 
+Open this Repl: https://repl.it/@MitchellHudson/date-object
+
+<!-- > -->
+
 ## UTC and JS Date
 
 <!-- > -->
@@ -236,7 +240,7 @@ An offset date tells you the time between two dates, the distance to a future or
 ```JS
 const date = new Date() // Get today 7/27 (or any date)
 const startDate = new Date(date) // copy the date
-const dueDate = new Date(date) // copy the date
+const dueDate = new Date(date)   // copy the date
 
 // Start date have been 7 days ago
 startDate.setDate(date.getDate() - 7) // 7/20

@@ -50,9 +50,9 @@ Your class should provide human readable values for year, month, date, hour, min
 ```JS
 // Gets the current date with no params
 const d = new D() 
-console.log(d.year()) // 2019
-console.log(d.month()) // July
-console.log(d.day()) // 27
+console.log(d.year())  // 2019 fullYear
+console.log(d.month()) // July 6
+console.log(d.day())   // 27
 console.log(d.hours()) // 18
 console.log(d.mins()) // 6
 console.log(d.secs()) // 5

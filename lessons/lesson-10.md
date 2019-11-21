@@ -11,14 +11,6 @@
 
 
 
-
-
-
-
-
-
-
-
 ## Why you should know this or industry application (optional) (5 min)
 
 Explain why students should care to learn the material presented in this class.

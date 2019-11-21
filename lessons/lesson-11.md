@@ -10,10 +10,6 @@
 <!-- > -->
 
 
-
-
-
-
 # FEW 2.1 - FEW 2.1 - 
 
 ## Why you should know this or industry application (optional) (5 min)
