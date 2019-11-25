@@ -1,13 +1,5 @@
 # FEW 2.1 - API Lib
 
----
-
-- This needs an example project to model on
-- Move to lesson 12 Due class 14 bundled and published 
-- Maybe this needs more time
-
----
-
 ## Description 
 
 People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their jobs easier. 

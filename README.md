@@ -40,12 +40,12 @@ Students by the end of the course will be able to ...
 |  8 | Thu, Nov 14 | [Lesson 8](./lessons/lesson-08.md) | [Math Lib](./assignments/assignment-11.md) - Lab |
 |  9 | Tue, Nov 19 | [Lesson 9](./lessons/lesson-09.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib |
 | 10 | Thu, Nov 21 | [Lesson 10](./lessons/lesson-10.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
-| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [Typescript](./assignments/assignment-12.md) - Lab |
+| 11 | Tue, Nov 26 | [Lesson 11](./lessons/lesson-11.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
 |  - | Wed, Nov 27 | **NO CLASS** | Thanksgiving |
-| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
-| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [API Lib](./assignments/assignment-13.md) - Lab |
-| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-14.md) - Final Presentations |
-| 15 | Thu, Dec 12 | [Lesson 15](./lessons/lesson-15.md) | [Assessment](./assignments/assignment-15.md) - Final Assessment |
+| 12 | Tue, Dec 3  | [Lesson 12](./lessons/lesson-12.md) | [API Lib](./assignments/assignment-09.md) - API Lib Lab |
+| 13 | Thu, Dec 5  | [Lesson 13](./lessons/lesson-13.md) | [API Lib](./assignments/assignment-09.md) - API Lib LabLab |
+| 14 | Tue, Dec 10 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations |
+| 15 | Thu, Dec 12 | [Lesson 15](./lessons/lesson-15.md) | [Assessment](./assignments/assignment-11.md) - Final Assessment |
 
 ## Evaluation
 To pass this course you must meet the following requirements:
