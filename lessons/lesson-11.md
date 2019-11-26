@@ -10,38 +10,24 @@
 <!-- > -->
 
 
-# FEW 2.1 - FEW 2.1 - 
+# FEW 2.1 - FEW 2.1 - API Lib
+
+The goal for this assignment is to make an Lib that works with an API. 
 
 ## Why you should know this or industry application (optional) (5 min)
 
-Explain why students should care to learn the material presented in this class.
+APIs are a big part of the web/JS ecosystem. You've probably worked with APIs before, and should expect to work with APIs in the future. Wrapping your code in a library will take your coding skills up a level. 
 
 ## Learning Objectives (5 min)
 
-1. Identify and describe
-1. Define
-1. Design
-1. Implement
+1. Describe APIs
+1. Use an API
+1. Use fetch, Promise, and async/await
+1. Categorize code: developer vs Library
 
-### Course Progress Tracker
+## Test Platform
 
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
-
-## Initial Exercise (15 min)
-
-- Funny comic
-- Prime the Pump (e.g. think and jot, think pair share, etc)
-- Productivity Tip/Tool
-- Review of current event (e.g. tech news relevant to your track/topic)
-- Quiz on homework or topic(s) of past class
-- Concept Test
-
-## Overview/TT I (20 min)
-
-- Why learn this?
-- Industry examples of usage
-- Best practices
-- Personal anecdote
+At the beginning you wouldn't use an API. Here you will use a 
 
 ## In Class Activity I (30 min)
 
