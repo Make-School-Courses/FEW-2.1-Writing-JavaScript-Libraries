@@ -27,34 +27,62 @@ APIs are a big part of the web/JS ecosystem. You've probably worked with APIs be
 
 ## Test Platform
 
-At the beginning you wouldn't use an API. Here you will use a 
+At the beginning you wouldn't use an API. Take a look at this repo: 
 
-## In Class Activity I (30 min)
+https://github.com/Make-School-Labs/weather-api
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+The code here is a simple app that loads weather data. 
 
-## Overview/TT II (optional) (20 min)
+### Pair up and examine the code
 
-## In Class Activity II (optional) (30 min)
+- What do you see
+- Categorize the code in the project
+- What here could be put into a lib?
+
+## Making getWeather() work anywhere
+
+To make the getWeather() function work with any code you need to extract the parts of the code that tie it elements that are unique to this app. 
+
+### Callback
+
+Use a callback to decouple getWeather().
+
+Implement a callback. 
+
+- What are the advantages of using a callback? 
+
+## Promise 
+
+getWeather() can return a Promise. 
+
+Implement getWeather() with a Promise.
+
+- What are the advantages of using Promise? 
+
+### async await
+
+async/await provides another option for writing your code. 
+
+Implement getWeather() with async/await. 
+
+- What are the advantages of using async/await?
 
 ## Wrap Up (5 min)
 
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- Review
+  - callbacks
+  - Promise
+  - async/await
+  - After class 
+    - Start the API Lib
 
 ## Additional Resources
 
-1. Links to additional readings and videos
+1. 
+
+## After Class 
+
+[API Lib Assignment](../assignments/assignment-09.md)
 
 ## Minute-by-Minute [OPTIONAL]
 
