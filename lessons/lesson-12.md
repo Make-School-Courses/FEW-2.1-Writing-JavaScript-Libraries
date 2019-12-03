@@ -14,4 +14,9 @@
 - Check in: Where are you in your API Lib?
 - What are your blockers? 
 
+## Make a Plan
 
+- Make a list of the things that need to be done
+  - Break down large things into smaller things
+  - Turn it into todo items
+  - 
