@@ -19,4 +19,6 @@
 - Make a list of the things that need to be done
   - Break down large things into smaller things
   - Turn it into todo items
-  - 
+  - Schedule your work
+
+- Update Progress tracker*

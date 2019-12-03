@@ -33,6 +33,18 @@ Explore these sites to find other APIs
 
 Your goal is to simplify using your chosen API. This can be done in a few ways. Use any or all of the ideas below, or come up with your own ideas.
 
+### Follow these steps
+
+Following these steps will make your easiest while also illustrating why your would want to make a library of code. 
+
+- Make a simple project uses your chosen API. This should be a simple project, it can just be an HTML file with some JS. 
+- Decouple the API code. Find the things that connect your project code with the API code. The code that handles the API should be able to take in any information that that it needs as parameters. 
+- Move the API code into it's own file. 
+
+Follow the tutorial here: https://www.youtube.com/playlist?list=PLoN_ejT35AEjGBv8nfv4GDszPvltjwmgL
+
+### Stretch Challenges 
+
 - Make an object that holds the configuration data for the API. Give the object methods that handle standard requests and or organize parameters that are passed to the API. 
 - Organize and improve on the return data from your API. A JSON repsonse from an API might long and complex. Your code can read the response and return a more organized response. 
 - Create a system built around the API. This could handle calling the API repeatedly over a time period for example. 
