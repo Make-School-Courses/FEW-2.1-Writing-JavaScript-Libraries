@@ -38,6 +38,10 @@ Your goal is to simplify using your chosen API. This can be done in a few ways. 
 - Create a system built around the API. This could handle calling the API repeatedly over a time period for example. 
 - Your code can handle errors more gracefully. 
 
+## Working in steps 
+
+Following these steps will help you complete this project.
+
 ### Deliverable
 
 A GitHub link to your API project source code. 
@@ -51,7 +55,3 @@ Class 12
 ## Assessing the assignment
 
 [Assignment Name Rubric](./assignment-09-rubric.md)
-
-
-
-
