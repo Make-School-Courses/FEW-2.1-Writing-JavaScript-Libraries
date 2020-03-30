@@ -43,11 +43,11 @@ JavaScript provides many methods to manipulate strings already but it doesn't do
     - Advanced: Remove special characters from the string. For example: `"Hello World!"` -> `"hello-world"` (notice the ! is removed)
   - Strategies: 
     - 1) You need to remove all of the white space follow the challenge above. If you use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) you shopuld have an array of strings you use [`str.toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) and [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) with a '-'.
-    - Advanced use [`str.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) to remove special characters (~!@#$% etc.) from the string before joining. 
+    - Advanced use [`str.replace()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) to remove special characters (~!@#$% etc.) from the string before joining. 
 - **Challenge 6** `snakeCase()` - Removes extra space and replaces spaces with an underscore "_", and makes all characters lowercase. 
   - Example:` "  what the    heck   "` -> `"what_the_heck"`
   - Strategies: 
-    - 1) Follow the example above and use the '_' instead of the '-'.
+    - 1) Follow the `kabobcase()` example above and use the '_' in place of '-'.
 - **Challenge 7** `camelCase()` - Lowercases the first character of the first word. Then uppercases the first character of all other words, and removes all spaces. 
   - Example: `Camel Case` -> `camelCase`
   - Strategies: 
