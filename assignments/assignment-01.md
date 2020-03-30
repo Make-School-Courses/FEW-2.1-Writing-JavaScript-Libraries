@@ -61,7 +61,9 @@ Your completed work is your Github repo and the files in it. Post the link to yo
 
 ## Due
 
-You will use this assignment in class 2
+Class 4 - April 8
+
+Mark your progress in the class [Progress Tracker](https://docs.google.com/spreadsheets/d/1AcrDA3QnL4Vet2XThzITj67MblcY9PQ9ZZWEbHru2f8/edit?usp=sharing) and post a link to your GitHub repo in the Repos tab. 
 
 ## Assessment
 
