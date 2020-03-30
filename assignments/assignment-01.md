@@ -18,7 +18,7 @@ JavaScript has a built in String Object/Class that has many methods built into i
 
 JavaScript provides many methods to manipulate strings already but it doesn't do some of the things that we might want to do. It's your job to write functions that solve the problems below. 
 
-- **Challenge 1** `capitalize()` - makes the first character of a given string uppercase. 
+- **Challenge 1** `capitalize()` - makes the first character of a given string uppercase.
   - Example: hello world -> Hello world
   - Strategies:
     - 1) Use [`str.substring()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) to get the first character and [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to convert that character to an uppercase character. Then concatenate the uppcase first character with the the original string starting from the second character. 

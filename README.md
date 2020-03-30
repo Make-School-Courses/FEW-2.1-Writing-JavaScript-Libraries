@@ -8,9 +8,9 @@
 
 This course focuses on creating and publishing frontend libraries in JavaScript. Students will learn JavaScript testing, functional programming, module patterns, and basic build systems through creating and publishing NPM libraries. Unit testing is introduced and applied. The course emphasizes problem abstraction and writing code that solves general problems.
 
-## Why should take this class?
+## Who should take this class?
 
-This class will give opportunity to pra tice JavaScript, writing unit tests, learn how npm works and continuous integration work.
+This class will give opportunity to practice JavaScript, writing unit tests, learn how npm works and continuous integration work.
 
 Take this class if you want to further your understanding of the JavaScript language and surrounding ecosystem. 
 
