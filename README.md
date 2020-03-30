@@ -1,8 +1,8 @@
 # FEW 2.1
 
 | Course Section | Instructor | Slack Channel | Course Website | Instructor 1-on-1 |
-| :---: | :---: | :---: | :---: | :---: |
-| A | **@mitchell** | `#few-2-1-js-libs` | [make.sc/few2.1](https://make.sc/few2.1) | [Virtual Office](https://make.sc/mitchell-zoom) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| A | **@mitchell** | `#few-2-1-js-libs` | [make.sc/few2.1](https://make.sc/few2.1) | [Virtual Office](https://make.sc/mitchell-zoom) | [Tracker](https://docs.google.com/spreadsheets/d/1AcrDA3QnL4Vet2XThzITj67MblcY9PQ9ZZWEbHru2f8/edit?usp=sharing) |
 
 ## Course Description
 
