@@ -396,7 +396,7 @@ Use the coverage command with Jest to test the coverage of your tests.
 
 ### Homework
 
-[Assignment 3 - Write Unit Tests](../assignments/assignment-02.md)
+[Add Unit Tests](./assignments/assignment-03.md)
 
 <!-- > -->
 

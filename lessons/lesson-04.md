@@ -310,7 +310,7 @@ Try these:
 
 ### Homework
 
-[Assignment 4 - Continuous Integration](../assignments/assignment-04.md)
+[Continuous Integration](./assignments/assignment-04.md)
 
 <!-- > -->
 

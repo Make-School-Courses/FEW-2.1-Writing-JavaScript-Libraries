@@ -282,7 +282,7 @@ What are the pros and cons of each?
 
 ## Homework
 
-<div><a href="../assignments/assignment-01.md">Assignment 1 - String Lib</div>
+- [String Lib](./assignments/assignment-01.md)
 
 <!-- > -->
 

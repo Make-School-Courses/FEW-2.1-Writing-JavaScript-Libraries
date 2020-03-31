@@ -57,7 +57,13 @@ These functions should all take a string as input and return a string as output.
 
 ## Deliverable 
 
-Your completed work is your Github repo and the files in it. Post the link to your work in the progress tracker
+Your completed work is your Github repo and the files in it. Post the link to your work in the progress tracker. 
+
+You will use this project for future assignments that wil include: 
+
+- Publishing to npm
+- Writing unit tests
+
 
 ## Due
 

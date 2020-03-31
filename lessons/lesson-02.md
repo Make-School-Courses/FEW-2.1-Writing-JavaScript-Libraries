@@ -473,9 +473,8 @@ Q: What was covered today?
 
 ### Homework
 
-<div>
-<a href="../assignments/assignment-02.md">Assignment 2 - Publish to npm</a>
-</div>
+- [String Lib](./assignments/assignment-01.md)
+- [Publish to npm](./assignments/assignment-02.md)
 
 <!-- > -->
 

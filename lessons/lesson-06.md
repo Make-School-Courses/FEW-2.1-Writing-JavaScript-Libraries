@@ -484,15 +484,7 @@ Pair up with someone you haven't paired with before.
 
 ## Homework 
 
-Your goal is to bundle your lib and publish an updated version to npm. 
-
-Your code should work with: 
-
-- Common JS - Node JS 
-- UMD - In the browser
-- ES Module - React with import
-
-[Assignment 6 - Publish to npm](../assignments/assignment-06.md)
+[Math Lib](./assignments/assignment-05.md)
 
 <!-- > -->
 

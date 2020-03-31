@@ -38,6 +38,11 @@ https://www.freecodecamp.org/news/a-beginners-guide-to-testing-implement-these-q
   - "hello" -> "HELLO", "WORLD" -> "WORLD", "" -> "", "foo bar" -> "FOO BAR", "What!" -> "WHAT!" 
 - capitalizeWords()
   - What to test? Test any series of strings with spaces. Test the empty string. 
+    - Test a string with one word
+    - Test a string with two or more words
+    - Test the empty string
+    - Test a string with uppercased words (these shouldn't change)
+  - "hello" -> "Hello", "WORLD" -> "WORLD", "" -> "", "foo bar" -> "Foo Bar"
 - oddCaps()
 - evenCaps()
 - removeExtraSpaces()

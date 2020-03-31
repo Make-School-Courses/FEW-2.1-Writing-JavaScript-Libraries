@@ -364,7 +364,7 @@ console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
 
 ### Homework
 
-[Assignment 5 - Math Lib](../assignments/assignment-05.md)
+- 
 
 <!-- > -->
 
