@@ -3,17 +3,28 @@
 
 <small style="display:block;text-align:center">Publishing JS Libraries</small>
 
+<!-- > -->
+
+## Minute-by-Minute [OPTIONAL]
+
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:05 | 0:05 | [Objectives](#learning-objectives) Lecture |
+| 0:15 | 0:10 | [What is npm?](#what-is-npm) Lecture |
+| 0:45 | 0:30 | [Publish packages to npm](#publish-packages-to-npm) Lab |
+| 1:00 | 0:15 | [Semver](#version-numbers-and-semver) Dicussion |
+| 1:10 | 0:10 | BREAK |
+| 1:25 | 0:15 | [Updating your package](#updating-your-package) Activity |
+| 1:55 | 0:30 | [Give yourself a badge](#give-yourself-a-badge) Lecture/Activity |
+| 2:35 | 0:40 | Code Review |
+| 2:40 | 0:05 | Review Objectives |
+| 2:45 | 0:05 | Review Homework |
+
 In this lesson you will publish your library and share it with the world.
 
 <!-- Put a link to the slides so that students can find them -->
 
 ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
-
-<!-- > -->
-
-## Why?
-
-Get a deeper understanding of npm and it's ecosystem. Contribute to open source.
 
 <!-- > -->
 
@@ -25,7 +36,13 @@ Get a deeper understanding of npm and it's ecosystem. Contribute to open source.
 
 <!-- > -->
 
-## What is NPM?
+## Why?
+
+Get a deeper understanding of npm and it's ecosystem. Contribute to open source.
+
+<!-- > -->
+
+## What is npm?
 
 <div>Node Package Manager</div>
 
@@ -37,17 +54,19 @@ npm organizes code into *packages* (sometimes called *modules*).
 
 <!-- > -->
 
-**A package is a directory with one or more files** and a file named `package.json` which contains metadata about the package.
+**A package is a directory with one or more files**. 
+
+And, a file named `package.json` which contains metadata about the package.
 
 <!-- > -->
 
-A **_dependency_** is a package that your project depends on.
+A **_dependency_** is a package that your project (or another package) depends on.
 
 <!-- > -->
 
-Each package should contain code that **does one thing** well.
+A package should contain code that **does one thing** well.
 
-In this way, you can use these shared packages like **building blocks** to easily build large complex projects.
+In this way, you can use these shared packages like **building blocks** to build large complex projects.
 
 <!-- > -->
 
@@ -91,9 +110,11 @@ https://docs.npmjs.com/about-npm/
 
 <!-- > -->
 
-## Getting started with NPM
+## Publish packages to npm
 
-Follow these instructions to create an account, install npm CLI, and publish a package to the npm registry. 
+Follow these instructions to create an account, install npm CLI, and publish a package to the npm registry.
+
+You should publish your String Library to npm following the steps below. 
 
 <!-- > -->
 
@@ -125,17 +146,19 @@ The data describes:
 
 <!-- > -->
 
-package.json is also a manifest listing all of the dependencies a package may require. One package may depend on another which in turn has its own dependencies. 
+package.json is also a manifest listing all of the dependencies a package may require. 
 
-It's a little like those Russian dolls.
+One package may depend on another which in turn has its own dependencies. (It's a little like those Russian dolls.)
 
 <!-- > -->
 
 ### Make your package
 
-Using Terminal, navigate to the directory containing your String lib. Create a new package.json file and initialize this directory as an npm package by running:
+Using Terminal, navigate to the directory containing your String lib. Run the command:
 
 `npm init`
+
+This should create a new `package.json` in the current directory. 
 
 <!-- > -->
 
@@ -145,7 +168,7 @@ Answer all the questions to the best of your ability. You can edit these later. 
 - description
 - version
 
-(You can use the default values, shown in (...), by hitting the Enter key when that appears.)
+(You can use the default values, shown in (...), by hitting the Enter key when it appears.)
 
 <!-- > -->
 
@@ -175,19 +198,21 @@ The first time you publish, you will need to add `--access=public` to avoid an e
 
 #### Resolving errors
 
-All packages on npm are public and share the same namespace. The most common error will be a name collision. It might look like:
+All packages on npm are public and share the same _namespace_. The most common error will be a _name collision_. It might look like:
 
 ```
 npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/test-error - You do not have permission to publish "test-error". Are you logged in as the correct user?
 ```
 
-Here I tried to publish a package with the name `test-error`. This package already exists. Hint: **Search for it on npm** before publishing.
+Here I tried to publish a package with the name `test-error`. This package already exists. Hint: **Search for a name on npm** before publishing.
 
 <!-- > -->
 
 Another option is to publish to a scope. This puts all of the packages under the scope of your username and you can use any name. 
 
-To publish unders scope prefix your package name with `@` and your npm user name. For example: `@soggybag/really-cool-package`
+To publish under a scope prefix your package name with `@` and your npm user name. For example: 
+
+`@soggybag/really-cool-package`
 
 <!-- > -->
 
@@ -219,7 +244,9 @@ The version number, last update date, weekly downloads, GitHub repo and more are
 
 <!-- > -->
 
-## Connect your GitHub to npm (optional)
+## Connect your GitHub to npm
+
+Connecting your npm package to the GitHub source code is a good idea.
 
 https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry
 
@@ -482,17 +509,4 @@ Q: What was covered today?
 
 Publish to NPM: https://zellwk.com/blog/publish-to-npm/
 
-<!-- > -->
 
-## Minute-by-Minute [OPTIONAL]
-
-| **Elapsed** | **Time**  | **Activity** |
-| ----------- | --------- | ------------ |
-| 0:00        | 0:05      | Objectives   |
-| 0:05        | 0:15      | Overview     |
-| 0:20        | 0:30      | Getting started with npm |
-| 0:50        | 0:10      | BREAK        |
-| 1:00        | 0:15      | Give yourself a badge |
-| 1:55        | 0:20      | Code Review  |
-| 1:40        | 0:05      | Wrap up and review |
-| TOTAL       | 1:50      | -            |
