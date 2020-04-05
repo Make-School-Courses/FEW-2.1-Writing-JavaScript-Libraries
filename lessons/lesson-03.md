@@ -3,23 +3,41 @@
 
 <small style="display:block;text-align:center">Unit Testing</small>
 
+<!-- > -->
+
+## Minute-by-Minute 
+
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:10 | 0:10 | [Overview](#overview) (Lecture) |
+| 0:05 | 0:15 | [Learning Objectives](#learning-objectives) (Lecture) |
+| 0:10 | 0:25 | [Unit Testing](#unit-testing) (Discussion) |
+| 0:15 | 0:40 | [Testing Example](#testing-example) (Demo/setup) |
+| 1:00 | 1:40 | [Testing Fizz Buzz](#testing-fizz-buzz) (Activity) |
+| 0:10 | 1:50 | BREAK |
+| 0:15 | 2:05 | Discuss Testing |
+| 0:30 | 2:35 | Start Homework |
+| 0:10 | 2:45 | Wrap up |
+
 <!-- Put a link to the slides so that students can find them -->
 
 ➡️ [**Slides**](/Syllabus-Template/Slides/lesson1.html ':ignore')
 
 <!-- > -->
 
+## Overview
+
 **Quality code** is test passing code. 
 
-Unit testing is a system that is used to test **units of code**. 
+Unit testing is used to test **units of code**. 
 
-Code that passes the test is **deemed quality** and fit for use. 
+Code that passes the test is **deemed quality** and fit for publication. 
 
 Unit testing is a part of the **Agile Methodology**.
 
 <!-- > -->
 
-## Why use unit tests?
+### Why use unit tests?
 
 <!-- > -->
 
@@ -41,8 +59,11 @@ Unit testing is a part of the **Agile Methodology**.
 
 ## Learning Objectives
 
-1. Write Unit tests
+By the end of this lesson you should by able to: 
+
+1. Define unit testing
 1. Identify what to test
+1. Write Unit tests
 1. Measure code coverage
 
 <!-- > -->
@@ -57,7 +78,7 @@ Unit testing is a part of the **Agile Methodology**.
 
 **A:** A unit test is a test of a software system, _usually a single function._ 
 
-**A unit test most often is testing the expected output of a function is correct for a given input.**
+**Important! A unit test is most often testing the expected output of a function is correct for a given input.**
 
 <!-- > -->
 
@@ -91,7 +112,7 @@ In this class, we will use [Jest](https://jestjs.io).
 
 <!-- > -->
 
-**A:** Jest works well with React. 
+**A:** It's it's straight forward to use and Jest works well with React. 
 
 If you're building React apps Jest is a good choice. 
 
@@ -119,25 +140,31 @@ Your unit test might expect the following input and output:
 
 **Heard of Fizz Buzz?** Everyone is writing this program but no one is writing tests! There are so many faulty FizzBuzz applications in the world we could have a major problem on our hands!
 
+If you haven't heard of FizzBuzz take a quick read.
+
+https://en.wikipedia.org/wiki/Fizz_buzz
+https://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/
+https://wiki.c2.com/?FizzBuzzTest
+https://blog.codinghorror.com/why-cant-programmers-program/
+
 <!-- > -->
 
 Pair with someone **you haven't paired with before**.
 
 The goal of this exercise is to write some tests with Jest that test the functions in the [Fizz Buzz sample code](https://github.com/Make-School-Labs/fizz-buzz-test).
 
-Download this repo now
+**Download this repo now.** Download the repo as a zip file and unzip it.
 
 <!-- > -->
 
-## Getting Started Fizz Buzz
+### Getting Started Fizz Buzz
 
 - Navigate the terminal to the directory
-- `npm init -y`
-- `touch index.js` 
+- `npm init -y` 
 
 <!-- > -->
 
-## Writing tests with Jest
+### Writing tests with Jest
 
 Jest is a framework that you will use as a *dev dependency*. 
 
@@ -235,7 +262,7 @@ Looks like 1 test  passed out of a total of 1 test.
 
 <!-- > -->
 
-What did we test? 
+**What did you test?**
 
 Nothing. The callback function will register an error **only** if any code executed inside it *throws an error*, otherwise the test is passing.
 
@@ -260,6 +287,8 @@ Tests:       1 failed, 1 total
 ...
 ```
 
+### Assertions
+
 `expect().toBe()` is an assertion. An assertion is you expressing the answer you are expecting to get. *Here you are saying you expect `2+2` to be `5`*. Expecting `2+2` to `5` is insane so the assertion fails.
 
 <!-- > -->
@@ -281,6 +310,33 @@ Your goal is to examine the source code and write some tests. The [Fizz Buzz sam
 
 <!-- > -->
 
+You'll need to import these methods into your `test.js`. The example code is set up for a Node. Use require at the top of the file:
+
+`const fb = require('../fizzbuzz')`
+
+All of the methods exported from `fizzbuzz.js` will be on the `fb` object. For example: 
+
+`fb.fizzBuzz(16)`
+
+<!-- > -->
+
+The fizzbuzz package/module has 3 constants, and 4 methods. You should test them all!
+
+Constants: 
+
+- `FIZZ`
+- `BUZZ`
+- `FIZZBUZZ`
+
+Methods: 
+
+- `isFizzy(n: Number)`
+- `isBuzzy(n: Number)`
+- `fizzBuzzy(n: Number)`
+- `fizzBuzz(n: Number)`
+
+<!-- > -->
+
 For example, the `isFizzy()` function takes a number and returns true if that number is divisible by 3. The test for this might look like:
 
 ```JavaScript
@@ -290,6 +346,23 @@ test('Test isFizzy', () => {
   expect(tests.isFizzy(4)).toBe(false)
   expect(tests.isFizzy(6)).toBe(true)
 })
+```
+
+<!-- > -->
+
+Use `expect(x).toBe(y)` to compare the value of x and y.
+
+`expect(99).toBe(99)` passes
+
+`expect(99).toBe(100)` throws an error
+
+
+```JS 
+function getAnswer() {
+  return 42
+}
+...
+expect(getAnswer()).tobe(42) // passes
 ```
 
 <!-- > -->
@@ -413,16 +486,4 @@ Use the coverage command with Jest to test the coverage of your tests.
 1. https://github.com/Make-School-Labs/fizz-buzz-test
 1. https://jestjs.io
 
-<!-- > -->
 
-## Minute-by-Minute 
-
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | Writing Tests with Jest   |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | Pair and write tests      |
-| 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
