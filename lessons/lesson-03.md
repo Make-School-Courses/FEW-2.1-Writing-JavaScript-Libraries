@@ -142,10 +142,10 @@ Your unit test might expect the following input and output:
 
 If you haven't heard of FizzBuzz take a quick read.
 
-https://en.wikipedia.org/wiki/Fizz_buzz
-https://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/
-https://wiki.c2.com/?FizzBuzzTest
-https://blog.codinghorror.com/why-cant-programmers-program/
+- https://en.wikipedia.org/wiki/Fizz_buzz
+- https://www.tomdalling.com/blog/software-design/fizzbuzz-in-too-much-detail/
+- https://wiki.c2.com/?FizzBuzzTest
+- https://blog.codinghorror.com/why-cant-programmers-program/
 
 <!-- > -->
 
