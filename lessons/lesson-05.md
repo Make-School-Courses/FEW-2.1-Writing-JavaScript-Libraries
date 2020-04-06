@@ -55,7 +55,7 @@ JS Provides two ways of working with numbers.
 
 - `Number` - The Number object is a number it represents a numeric value. It has a few properties and a few methods
 
-`new Number(37)` This is a thing, and it's different from `37`
+`const answer = new Number(42)` This is a thing, and it's different from `const answer = 42`
 
 Take a look at the properties and methods. 
 
@@ -73,12 +73,18 @@ Methods that return a number for some numerical input will return `NaN` the inpu
 
 <!-- > -->
 
+Check for NaN.
+
 ```JavaScript
-NaN === NaN;        // false (NaN is the only value NOT equsl to itself)
+NaN === NaN;        // false - NaN is the only value NOT equal to itself
 Number.NaN === NaN; // false 
-isNaN(NaN);         // true (Use isNaN to check for NaN)
+isNaN(NaN);         // true - Use isNaN() to check for NaN
 isNaN(Number.NaN);  // true
 ```
+
+Use `parseFloat(value)` to convert a value to a float. 
+
+Use `parseInt(value)` to convert a value to an integer. 
 
 <!-- > -->
 
@@ -87,7 +93,9 @@ isNaN(Number.NaN);  // true
 There is only one type of number. There isn't much more to this. Except: 
 
 - JS only has number (there are no Int, floats, Doubles, etc.)
-- JS Numbers are always floats 
+- JS Numbers are always floats
+
+Use `Number.isInteger(value)` to check if a value is an integer. 
 
 <!-- > -->
 
@@ -121,6 +129,8 @@ a === b
 const c = Number('z')   // NaN (Not a Number)
 const d = Number('234') // 234
 ```
+
+While `Number()` works to create a number from a string `parseInt()` and `parseFloat()` are better choices usually.
 
 <!-- > -->
 

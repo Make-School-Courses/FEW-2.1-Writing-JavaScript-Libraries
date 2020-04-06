@@ -9,7 +9,7 @@
 
 <!-- > -->
 
-Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project. 
+Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project.
 
 <!-- > -->
 
