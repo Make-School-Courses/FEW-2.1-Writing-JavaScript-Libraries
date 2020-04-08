@@ -22,9 +22,11 @@ Your project should also now include continuous integration by connecting it wit
 
 Your README should be updated to show badges showing test coverage and build status. 
 
-## Stretch goals 
+## Stretch goals
 
-Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library. Try these:
+**Stretch Goal** - 
+
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
 
 - Invent your own utility functions. 
 - Research existing libraries on npm to identify useful functions you can implement. Research these: 
@@ -37,13 +39,19 @@ Version 2 of your library should add some new features. Your goal is to identify
   - https://www.npmjs.com/package/url-parse
   - https://www.npmjs.com/package/magic-string
 
+**Stretch Goal** - 
+
+Use CodeClimate to analyze and give your code a report card: https://codeclimate.com/dashboard 
+
+Note! Code Climate is free for open source projects!
+
 ### Deliverable
 
-Your GitHub Repo updated with new badges showing the status from Travis and Coveralls.  
+Your GitHub Repo updated with new badges showing the status from Travis and Coveralls.
 
 ### Due date
 
-Class 5
+Class 5 - Mon, April 13
 
 ## Assessing the assignment
 
