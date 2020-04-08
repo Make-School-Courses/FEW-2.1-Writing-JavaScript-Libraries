@@ -88,6 +88,61 @@ ESLint needs to be installed in two places:
 
 <!-- > -->
 
+### Install in npm project
+
+Follow the instruction here: 
+
+https://eslint.org/docs/user-guide/getting-started
+
+tl;dr
+
+`npm install eslint --save-dev`
+
+`eslint --init`
+
+<!-- > -->
+
+Choose: 
+
+- Use a popular Styleguide
+- Airbnb style guide 
+- Use React No
+- Format JavaScript
+- Install Now Yes
+
+<!-- > -->
+
+### Install ESLint in Editor
+
+You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
+
+1. Go to Settings Extensions/Plugins
+1. Add a new Extension/Plugin
+1. Search ESLint
+1. Install 
+
+You may need to close and reopen your project in your editor before the Linter starts registering errors. 
+
+**Do this now!** If you haven't already.  
+
+<!-- > -->
+
+## Pair up and solve linting errors
+
+Pair with a person _you haven't paired with_ before. 
+
+Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
+
+<!-- > -->
+
+### Discuss the linter suggestions
+
+- **Q:** What suggestions did the linter make that were obviously useful? 
+- **Q:** Did the linter suggest anything that seemed strange or not obvious? 
+- **Q:** Do you think your code is of better quality after?
+
+<!-- > -->
+
 ## Travis CI 
 
 [Travis CI](https://travis-ci.com) is a Continuous Integration platform. It automates building and testing your software projects. 
@@ -220,9 +275,9 @@ Go to Coveralls. Visit the page for the repo you were working on.
 
 It should display a coverage badge near the right side. Click the tiny embed button up and to the right of the badge. 
 
-Copy the Markdown code in the text box.
+Copy the Markdown code in the text box. 
 
-Paste the markdown code into your repo.
+Paste the markdown code into your repo. 
 
 <!-- > -->
 
