@@ -281,13 +281,11 @@ Paste the markdown code into your repo.
 
 <!-- > -->
 
-## Stretch goals 
+## Stretch goals
+
+**Stretch Goal** - 
 
 Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
-
-<!-- > -->
-
-Try these:
 
 - Invent your own utility functions. 
 - Research existing libraries on npm to identify useful functions you can implement. Research these: 
@@ -300,7 +298,12 @@ Try these:
   - https://www.npmjs.com/package/url-parse
   - https://www.npmjs.com/package/magic-string
 
-<!-- > -->
+**Stretch Goal** - 
+
+Use CodeClimate to analyze and give your code a report card: https://codeclimate.com/dashboard 
+
+Note! Code Climate is free for open source projects! 
+
 
 ### Homework
 
