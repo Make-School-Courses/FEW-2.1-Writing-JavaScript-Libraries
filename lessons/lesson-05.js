@@ -168,3 +168,8 @@ console.log(bb.increment()) // 1
 
 
 console.log(Math.E, Math.LN10, Math.LN2, Math.LOG10E, Math.LOG2E, Math.PI, Math.SQRT1_2, Math.SQRT2)
+
+console.log(Number.MAX_SAFE_INTEGER)
+console.log(Number.MIN_SAFE_INTEGER)
+console.log(Number.MAX_SAFE_INTEGER.toString(2))
+console.log(Number.MAX_SAFE_INTEGER.toString(2).length)

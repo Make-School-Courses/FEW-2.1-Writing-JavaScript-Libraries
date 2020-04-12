@@ -16,7 +16,7 @@ Create a new repo on GitHub to host your code.
 
 The code you write should be a set of functions that solve the problems below. 
 
-All of your code should be unit tested. 
+All of your code should be unit tested.
 
 Add continuous Integration. Your repo should be connected to Travis CI and code coverage. 
 
@@ -35,39 +35,55 @@ Your README should also include some professional documentation. This will inclu
   - Example: `Number.goldenRatio // 1.61803398875`
   - Strategy: `Number.prototype = 1.61803398875`
   - Stretch: Calculate the golden ratio with math
-- **Challenge 2** Number Methods: round, floor, ceil - These method already exists, your job is to make a method that does the same thing. Rather than `Math.round(x)` your method will work like this: `x.round()`. 
+- **Challenge 2** Number Methods: round, floor, ceil - These functions already exist on the Math Object, your job is to make a method on Number that does the same thing. Rather than `Math.round(x)` your method will work like this: `x.round()` or `(1.99).round()`. 
   - `round()` - `x = 9.99` - `x.round()` -> 10  
   - `floor()` - `x = 9.99` - `x.floor()` -> 9
   - `ceil()` - `x = 1.03` - `x.ceil()` -> 2
 - **Challenge 3** `pad(x, y)` - pads Number with `x` 0s before, and `y` 0s after. 
-  - Example: `34.801.pad(4,4)` -> 0034.8010
+  - Example: `34.801.pad(4,4)` -> 0034.8010 (notice the 0s added ont he left and right sides)
 - **Challenge 4** `degToRad(n)` - I'm surprised this function is not included with JS.
   - Example: `degToRad(45)` -> `0.785`
   - Strategy: Write a function that takes a number and returns the results of this formula: `deg * (Math.PI / 180)`
   - Stretch Goal: Check for invalid input. If the value input is not a number or is not included the function should throw and error.  
 - **Challenge 5** `radToDeg(deg)` - Covert radians to degrees.
   - Example: `radToDeg(0.785)` -> `44.977`
-  - Strategy: Write a function that takes a number and returns calculation from this formula: `radians * (180/pi)`
+  - Strategy: Write a function that takes a number and returns calculation from this formula: `radians * (180 / Math.PI)`
   - Stretch Goal: Check for invalid input. If the value input is not a number or is not included the function should throw and error.  
 - **Challenge 6** `toDollars(amount)` - Formatting money is a common task for software projects. A function could save you time in the future. The goal of this function is to take a numeric value and return a string beginning with a '$' and rounded to two decimal places. 
   - Example: `toDollars(3.9)` -> `$3.90` (Note: pads with a 0)
   - Strategy: The `Number.toFixed(n)` method will do most of the work for you!
   - Stretch Goals: Create a currency formatting function that simplifies the use of: [`Intl.NumberFormat`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat)
     - `intFormat(amount, countryCode, style)`
+  - Stretch Goal: Add the Money Class to your Library (from the in class exercise).
 - **Challenge 7** `tax(rate)` - Returns the tax amount
 - Example: `tax(rate)` - returns the amount with tax
 - **Challenge 8** `interest(total, year, rate)` - Write a function that calculates the interest over time. 
   - Example: https://stackoverflow.com/questions/28325001/how-to-calculate-interest-javascript
 - **Challenge 9** `mortage(principal, numberOfPayments, interestRate)`.
   - Example: https://stackoverflow.com/questions/17101442/how-to-calculate-mortgage-in-javascrip 
-- **Challenge 10** `intToHex(int)` -> #332211 
+- **Challenge 10 - Stretch** `intToHex(int)` -> #332211 
   - Example: https://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hexadecimal-in-javascript
-- **Challenge 11** Random functions 
+- **Challenge 11 - Stretch** Random functions 
   - `random(n)` - returns an integer from 0 to n - 1
-  - `randomRange(min, max)` - returns an integer between min and max
-  - `randomColor()` - Returns a random hex color
+  - `randomRange(min, max)` - returns an integer from min to max.
+  - `randomHexColor()` - Returns a random hex color
+  - `randomRGBColor()` - Returns a random hex color
 
-### Stretch 
+### Super Stretch Goal
+
+If all of the above challenegs were too easy try this. The idea is create Class that represents a really big number. 
+
+Funny thing is the largest number you can handle in JS is: `9007199254740991`, I've scored more points in some of my favorite video games. That's: 
+
+> nine quadrillion seven trillion one hundred ninety-nine billion two hundred fifty-four million seven hundred forty thousand nine hundred ninety-one
+
+Or `11111111111111111111111111111111111111111111111111111` in binary!
+
+The smallest is: `-9007199254740991` by the way. These numbers are the `Number.MAX_SAFE_INTEGER` and `Number.MIN_SAFE_INTEGER`. They are the largest numbers that are safe for doing math operations. 
+
+It's possible you may need to deal with numbers larger than this. Think about data science, science, space travel, and the best video games these all need really big numbers! 
+
+How will you deal with super ginormous? You'll use a string. Strings can have an alomost unlimited number of characters. 
 
 - BigInt - Is class that tracks extra large integer values. I hear these are great for Incremental games. BigInt holds a large number as a string. It provides methods that perform math operation. 
   - `new BigInt(value = 0)` - Initialize with a value or 0. 
@@ -84,7 +100,7 @@ Include a link to your new repo in the course [progress tracker](https://docs.go
 
 ### Due date
 
-Class 6 
+Class 7 - Mon, April 20 
 
 ## Assessing the assignment
 

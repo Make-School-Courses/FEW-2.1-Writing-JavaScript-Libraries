@@ -40,8 +40,8 @@ Students by the end of the course will be able to ...
 |  2 | Wed, April 1 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
 |  3 | Mon, April 6 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
 |  4 | Wed, April 8 | [Lesson 4](./lessons/lesson-04.md) | [Continuous Integration](./assignments/assignment-04.md) - Add continuous integration to your string lib |
-|  5 | Mon, April 13 | [Lesson 5](./lessons/lesson-05.md) | Lab |
-|  6 | Wed, April 15 | [Lesson 6](./lessons/lesson-06.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  5 | Mon, April 13 | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  6 | Wed, April 15 | [Lesson 6](./lessons/lesson-06.md) | - |
 |  7 | Mon, April 20 | [Lesson 7](./lessons/lesson-07.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
 |  8 | Wed, April 22 | [Lesson 8](./lessons/lesson-08.md) | Lab |
 |  9 | Mon, April 27 | [Lesson 9](./lessons/lesson-09.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib |
