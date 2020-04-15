@@ -45,7 +45,7 @@ This creates a few problems.
 
 ```JavaScript
 // my-code.js
-function load() { /* does something important */}
+function load() { /* does something super important */}
 // 
 ```
 
@@ -53,7 +53,7 @@ function load() { /* does something important */}
 <script src="my-code.js"></script>
 
 <script>
-  function load() {} // accidentally overwrites important code 
+  function load() {} // accidentally overwrites super important code 
 </script>
 ```
 
@@ -87,6 +87,18 @@ While understanding how to write modules could be useful these days you'd be mor
 
 <!-- > -->
 
+Why does this work? 
+
+```JS
+(function() {
+
+  // Code inside is scoped to this function block
+
+})() // <-- Immediately runs this function
+```
+
+<!-- > -->
+
 ## Bundling code with Rollup
 
 There are several tools you can use to bundle your code and several patterns/standards that they follow. 
@@ -102,6 +114,59 @@ Rollup seems to be the most modern and up to date choice out of this list.
 Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! 
 
 Rollup will bundle files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
+
+<!-- > -->
+
+What types of different environements will your code be run in? 
+
+- Browser
+- Node
+
+The Browser has an engine that runs your JS code. Node is an environment that runs your JS code. While they they both use JS they are different. 
+
+<!-- > -->
+
+**What's the difference?**
+
+With node you're scripting the server. Imagine a single computer where you have control over the configuration. 
+
+With browser imagine millions of mysterious computers where you have no control over configuration. 
+
+<!-- > -->
+
+The **browser** uses the script tag:
+
+`<script src="somefile.js"></script>`
+
+Newer ES6 JS syntax uses **ES Modules** Syntax:
+
+`import package from 'module-name'`
+
+Node.js uses **CommonJS**:
+
+`const package = require('module-name')`
+
+<!-- > -->
+
+**That's too many options what should I do?** 😱
+
+If you're working in Node.js use Common JS with `require()`
+
+If you're writing code for the browser you'll need to support older browsers that don't support the ES Modules. This means you need to support both the script tag and ES Modules.
+
+<!-- > -->
+
+**But what if my library could be used in both Node and the Browser?**
+
+You need to support both all three: CommonJS, ES, Modules, and Script tag. 
+
+<!-- > -->
+
+**There's a tool for that!**
+
+UMD (Universal Module Definition) supports both `<script>` tag and `require()`
+
+There are several tools that will bundle your JS files into compatiple formats. 
 
 <!-- > -->
 
@@ -163,10 +228,6 @@ Follow the instructions below to bundle your project with rollup.js.
 Install rollup.js 
 
 `npm install --save-dev rollup`
-
-or 
-
-`npm install --global rollup`
 
 <!-- > -->
 

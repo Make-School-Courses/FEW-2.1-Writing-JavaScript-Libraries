@@ -173,3 +173,57 @@ console.log(Number.MAX_SAFE_INTEGER)
 console.log(Number.MIN_SAFE_INTEGER)
 console.log(Number.MAX_SAFE_INTEGER.toString(2))
 console.log(Number.MAX_SAFE_INTEGER.toString(2).length)
+
+const pennies = [6.66, 6.66, 6.66]
+
+const valueLeftOver = 2
+
+while(valueLeftOver > 0) {
+  pennies[i] += 0.01
+  valueLeftOver -= 1
+}
+
+for (var i = 0; i < valueLeftOver; i += 1) {
+  pennies[i] += 0.01
+}
+
+pennies[0] += 0.01 // 
+pennies[1] += 0.01
+
+// [6.67, 6.67, 6.66]
+
+
+
+
+
+class Num {
+  
+}
+
+Num.round = function(n) {
+  return Math.round(n)
+}
+
+Num.round(9.44) // 9
+
+// ----------------------------
+
+Number.prototype.round = function() {
+  return Math.round(this)
+}
+
+(9.44).round() // 9
+
+// -------
+
+Math.round(9.44)
+
+// ---------------------
+
+function round(n) {
+  return Math.round(n)
+}
+
+import { round } from './AliMath'
+
+round(9.44)
