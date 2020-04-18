@@ -1,16 +1,8 @@
 # FEW 2.1 - Assignment 7 - Date Lib
 
----
-
-Move this up to lesson 8
-Add assignment 9 Add tests
-Add Assignment 10 CI, Bundle, and Publish
-
----
-
 ## Description 
 
-Dates are super important. You'll use them often. The goal of this assignment is to become more familiar with the Date object it's methods and how to work with Dates. 
+Dates are super important. You'll use them often. The goal of this assignment is to create a library that handles date operations. 
 
 ## Why Do this assignment? 
 
@@ -18,7 +10,7 @@ You'll make use the JS Date Object often. Building a library around dates will g
 
 ## Project requirements
 
-Your job is to make a class that wraps the Date object. Your class should have a Date it keeps internally. It should be able to instantiate itself with the same parameters that are used with the Date Object. 
+Your job is to make a class that _wraps the Date object_. Your class should have a Date it keeps internally. It should be able to instantiate itself with the same parameters that are used with the Date Object. 
 
 **Challenge 1** 
 
@@ -34,7 +26,7 @@ class D {
 
 Read about `...args`: https://javascript.info/rest-parameters-spread-operator
 
-tl;dr args is an array with all of the parameters passed to the function/constructor. The `...` (spread operator) deconstructs the array. This allows for a variable number of arguments to be passed. 
+tl;dr args is an array with all of the parameters passed to a function. The `...` (spread operator) deconstructs the array. This allows for a variable number of arguments to be passed.
 
 You should be able to instantiate this class like this now: 
 
@@ -43,9 +35,11 @@ const d = new D('9/26/1965') // Create a date from a string
 const e = new D(1970, 1, 1, 0, 0, 0)
 ```
 
+Notice this works with any number of arguments. 
+
 **Challenge 2**
 
-Your class should provide human readable values for year, month, date, hour, mins, secs. 
+Your class should provide human readable values for year, month, date, hour, mins, secs.
 
 ```JS
 // Gets the current date with no params
@@ -54,8 +48,8 @@ console.log(d.year())  // 2019 fullYear
 console.log(d.month()) // July 6
 console.log(d.day())   // 27
 console.log(d.hours()) // 18
-console.log(d.mins()) // 6
-console.log(d.secs()) // 5
+console.log(d.mins())  // 6
+console.log(d.secs())  // 5
 ```
 
 **Challenge 3**
@@ -84,10 +78,10 @@ For example:
 ```JS 
 // Make a date with values for Y, M, D etc.
 const d = new D(2017, 0, 2, 3, 4, 5)
-console.log(d.format()) // 2017 January 02
-console.log(d.format('y/m/d')) // 17/Jan/2
-console.log(d.format('H:I:S')) // 03:04:05
-console.log(d.format('h:i:s')) // 3:4:5
+console.log(d.format())              // 2017 January 02
+console.log(d.format('y/m/d'))       // 17/Jan/2
+console.log(d.format('H:I:S'))       // 03:04:05
+console.log(d.format('h:i:s'))       // 3:4:5
 console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
 ```
 
@@ -106,13 +100,15 @@ const d = new D(2024, 9, 2, 3, 4, 5)
 console.log(d.when()) // 5 years from now
 const d = new D(2019, 6, 30, 3, 4, 5)
 console.log(d.when()) // 3 days from now
+const d = new D()
+console.log(d.when()) // today
 ```
 
 **Stretch Challenge**
 
 Look for edge cases in the `when()` method. When does it not work? 
 
-- Decribe the edge case the problem and what casues it
+- Decribe the edge case, the problem, and what casues it
 - Solve the problem in code
 
 **Stretch Challenge**
@@ -128,7 +124,7 @@ Make `when()` work for time hours minutes, seconds.
 
 **Stretch Challenge**
 
-Take the challenge above one step further by including both date and time. This is an open ended challenge you can make it as detailed as you care to take it. Feel free to interprept the challenge and make your best judgement as to how it can be implemented. 
+Take the challenge above one step further by including both date and time. This is an open ended challenge you can make it as detailed as you care to take it. Feel free to interprept the challenge and make your best judgement as to how it can be implemented.
 
 Here is some sample output: 
 
@@ -180,7 +176,7 @@ After completing the challenges above post a link to your npm package on npm.
 
 ### Due date
 
-Class 8
+Class 9 - Mon, April 27
 
 ## Assessing the assignment
 
