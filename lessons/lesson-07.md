@@ -3,6 +3,8 @@
 
 <small style="display:block;text-align:center">Dates and Date Lib</small>
 
+<!-- > -->
+
 Time for another lib! This time you'll make a library that works with Dates. You will take everything covered so far: Code, testing, and bundling. 
 
 <!-- Put a link to the slides so that students can find them -->
@@ -13,7 +15,9 @@ Time for another lib! This time you'll make a library that works with Dates. You
 
 ## Why you should know this?
 
-While reusing the skills from the previous classes is not adding new knowledge, you need to practice your current skills writing more code and tests. 
+Practice is the best way to solidify your skills and knowledge.
+
+Working with dates will expand your knowledge of JS. 
 
 <!-- > -->
 
@@ -22,12 +26,6 @@ While reusing the skills from the previous classes is not adding new knowledge, 
 1. Define the Date Object and its important methods
 1. Use the Date Object to generate dates and times, and format dates and times. 
 1. Construct methods that build and expand the core functionality of the Date object
-
-<!-- > -->
-
-### Course Progress Tracker
-
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
 
 <!-- > -->
 
@@ -47,15 +45,19 @@ A date is the day of the month or year specified as a number.
 
 <!-- > -->
 
-In JS this will also include the year and the time. It pinpoints a point in time as a number. 
+In JS this will also include the year and the time. 
+
+It pinpoints a point in time down to a millisecond as a number. 
 
 <!-- > -->
 
-Dates in JS are represented as the number of milliseconds since 1970! As such you can define or locate almost any point in time. 
+Dates in JS are represented as the number of milliseconds since 1970
 
 <!-- > -->
 
-UNIX Epoch! What is this? Also known as a timestamp. It's a number that represents the number of seconds since **Thursday, 1 January 1970**. The basic premise that each day takes 86,400 seconds. 
+**UNIX Epoch**
+
+What is this? Also known as a timestamp. It's a number that represents the number of seconds since **Thursday, 1 January 1970**. The premise is that each day takes 86,400 seconds. 
 
 <!-- > -->
 
@@ -75,7 +77,9 @@ Can you do Math with this stuff?
 
 <!-- > -->
 
-Yes! The Date Object like the Number Object is a wrapper around a primitive value. JS will convert it to a number when needed. 
+Yes! The Date Object, like the Number Object, is a wrapper around a primitive value. 
+
+JS will convert a date to a number when needed. 
 
 <!-- > -->
 
@@ -169,14 +173,14 @@ These mostly get at components of a date such as a year, month, day, hours, minu
 
 - Date Components 
   - `new Date().getFullYear()  // 2019`
-  - `new Date().getMonth()     // 6`
-  - `new Date().getHours()     // 10`
+  - `new Date().getMonth()     // 6` July
+  - `new Date().getHours()     // 10` 10 AM
 
 <!-- > -->
 
 - Formatted Dates 
-  - `new Date().toLocaleString() // "7/27/2019, 10:15:36 AM"`
-  - `new Date().toDateString()   // "Sat Jul 27 2019"`
+  - `new Date().toLocaleString()` 7/27/2019, 10:15:36 AM
+  - `new Date().toDateString()` Sat Jul 27 2019
 
 <!-- > -->
 
@@ -199,7 +203,7 @@ _Never mutate source object always make a copy and mutate that to avoid side eff
 
 ```JS
 const d = new Date(2019, 0, 10)
-const newDate = new Date(d)
+const newDate = new Date(d) // Make a new Date from a date
 newDate.setMonth(5)
 
 console.log(d) // 10 January 2019
@@ -212,6 +216,8 @@ console.log(newDate) // 10 June 2019
 
 Date provides a couple of class methods. 
 
+****: Class methods are methods that Quick refresherare called from the class (class methods are not called from an instance)
+
 <!-- > -->
 
 - `Date.now() // 1564251902406` the ms at the current moment
@@ -222,7 +228,7 @@ Date provides a couple of class methods.
 
 ## Timezones 
 
-- Local time refers to the timezone your computer is in.
+- Local time refers to the timezone set on your computer.
 - UTC is synonymous with Greenwich Mean Time (GMT) in practice.
 
 By default, almost every date method in JavaScript (except one) gives you a date/time in local time. You only get UTC if you specify UTC.
@@ -289,18 +295,19 @@ It's probably best to stick with the built-in methods over math.
 
 ## Activity 
 
-Pair up your pair will be reponsible for solving some of the problems from the list below. We will spend the first part of the class solving the problems after which each group will present their solutions. 
+Pair up, you and your pair will be reponsible for solving the problems from the list below. 
+
+We will spend the first part of the class solving the problems after which each group will present their solutions. 
 
 <!-- > -->
 
-**Problem 1**
+**Problem 1** Schedule future dates
 
-- Schedule future dates - Given a date return a list of dates separated by a time 
+Given a date return a list of dates separated by a time.
 
-Pair up and solve this problem: Write a function that given a date returns an array of date objects that are offset by a number of days.
+Write a function that given a date returns an array of date objects that are offset by a number of days.
 
-For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days. The output would be date objects representing: 
-
+For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days.
 
 `consecutiveDates(new Date(2019, 0, 1), 4, 3) `
 
@@ -345,9 +352,9 @@ function consecutiveDates(startDate, repeatCount, offset, offsetUnit = 'day') {
 
 <!-- > -->
 
-**Problem 2** 
+**Problem 2** Measure execution time
 
-Measure execution time. _Using `Date`_ calculate the number of milliseconds used to execute. 
+_Using `Date`_ calculate the number of milliseconds used to execute. 
 
 Use a loop that executes a number of times.
 
@@ -366,7 +373,7 @@ Stretch make this a generic method that could be included in an project to measu
 
 <!-- > -->
 
-**Problem 3**
+**Problem 3** Order dates
 
 Given an array of dates return an ordered array of dates. 
 
@@ -387,15 +394,19 @@ Stretch: Return an object containing three keys each holding an array of dates. 
 
 <!-- > -->
 
-**Problem 4**
+**Problem 4** What's next?
 
-Question 1 - 
+Given an array of dates find the date that will happen next. You need to find the date that is closest to now but not before. 
 
-Given an array of dates find the date that will happen next. That is the one closest to right now. 
-
-Question 2 - 
+**Problem 5** When's your birthday?
 
 Birthday planner. Write a function that takes a date (your birthday) and a year, and returns the day of the week for that date in that year. 
+
+For example: 
+
+```JS
+new Date(2020, 8, 26).getDay() // 6 - Lucky me my birthday is Saturday!
+```
 
 <!-- > -->
 
