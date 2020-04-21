@@ -52,24 +52,39 @@ console.log(d.mins())  // 6
 console.log(d.secs())  // 5
 ```
 
+Stretch goal: Use a getter for each of these. Using a getter each of themethods could be accessed as a property rather than y calling the method. For example: `d.month` instead of `d.month()`.
+
+```JS
+// Gets the current date with no params
+const d = new D() 
+console.log(d.year)  // 2019 fullYear
+console.log(d.month) // July 6
+console.log(d.day)   // 27
+console.log(d.hours) // 18
+console.log(d.mins)  // 6
+console.log(d.secs)  // 5
+```
+
+Read about getters here: https://javascript.info/property-accessors
+
 **Challenge 3**
 
 You need a format method that takes a "mask" string. The mask will contain formatting characters which displays various date elements, other characters are displayed unchanged. 
 
 List of formatting characters: 
 
-- 'Y' -> 2019
-- 'y' -> 19
-- 'M' -> July
-- 'm' -> Jul
-- 'D' -> 01
-- 'd' -> 1
-- 'H' -> 05
-- 'h' -> 5
-- 'I' -> 08
-- 'i' -> 8
-- 'S' -> 04
-- 's' -> 4
+- 'Y' -> 2019 (Year full)
+- 'y' -> 19 (Year short)
+- 'M' -> July (Month full)
+- 'm' -> Jul (Month short)
+- 'D' -> 01 (date padded)
+- 'd' -> 1 (date)
+- 'H' -> 05 (Hours padded)
+- 'h' -> 5 (Hours)
+- 'I' -> 08 (Minutes padded)
+- 'i' -> 8 (Minutes)
+- 'S' -> 04 (Seconds padded)
+- 's' -> 4 (Seconds)
 
 The `format()` method should provide an acceptable default formatted date with no parameters. 
 
@@ -84,6 +99,15 @@ console.log(d.format('H:I:S'))       // 03:04:05
 console.log(d.format('h:i:s'))       // 3:4:5
 console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
 ```
+
+Stretch goal - It would be goo if we could support more features here. Formatting dates is a very common task. There are a few things missing from the list above. 
+
+Each of the things below need a character to represent them.
+
+- day of the week
+	- day of week full - Monday, Tuesday, Wednesday...
+	- day of the week short - Mon, Tue, Wed...
+- The ordinal suffix. This is the st, th that follows a number. For example, 1st, 2nd, 3rd, 4th, 5th 6th, 7th, 8th 9th etc. 
 
 **Challenge 4**
 
