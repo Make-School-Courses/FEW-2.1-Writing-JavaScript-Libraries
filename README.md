@@ -44,11 +44,11 @@ Students by the end of the course will be able to ...
 |  6 | Wed, April 15 | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
 |  7 | Mon, April 20 | [Lesson 7](./lessons/lesson-07.md) | [Date Lib](./assignments/assignment-07.md) - Write your date lib |
 |  8 | Wed, April 22 | [Lesson 8](./lessons/lesson-08.md) | Lab |
-|  9 | Mon, April 27 | [Lesson 9](./lessons/lesson-09.md) | Lab |
-| 10 | Wed, April 29 | [Lesson 10](./lessons/lesson-10.md) | [Typescript](./assignments/assignment-08.md) - Apply Typescript to lib? (or use TS with date lib) |
-| 11 | Mon, May 4 | [Lesson 11](./lessons/lesson-11.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
-| 12 | Wed, May 6  | [Lesson 12](./lessons/lesson-12.md) | [API Lib](./assignments/assignment-09.md) - API Lib Lab |
-| 13 | Thu, May 11 | [Lesson 13](./lessons/lesson-13.md) | [API Lib](./assignments/assignment-09.md) - API Lib LabLab |
+|  9 | Mon, April 27 | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
+| 10 | Wed, April 29 | [Lesson 10](./lessons/lesson-10.md) | - |
+| 11 | Mon, May 4 | [Lesson 11](./lessons/lesson-11.md) | - |
+| 12 | Wed, May 6  | [Lesson 12](./lessons/lesson-12.md) | - |
+| 13 | Thu, May 11 | [Lesson 13](./lessons/lesson-13.md) | Final Assessment |
 | 14 | Tue, May 13 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations |
 
 ## Evaluation
