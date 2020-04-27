@@ -53,15 +53,15 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
 
 ```JavaScript
-let x = 10;
-x = 'hello';
+let x = 10;  // Number
+x = 'hello'; // String
 ```
 
 <!-- > -->
 
 In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
 
-Examples of dynamically typed languages include Python, JavaScript, PHP, and Ruby.
+Examples of dynamically typed languages include Python, **JavaScript**, PHP, and Ruby.
 
 <!-- > -->
 
@@ -76,7 +76,7 @@ Examples of dynamically typed languages include Python, JavaScript, PHP, and Rub
 **Q:** What is happening on each line of code below?
 
 ```JavaScript
-const intFuncs = [];
+const intFuncs = []; // [number]
 
 intFuncs.push((x) => 2 * x);
 intFuncs.push((x) => x * x);
@@ -97,7 +97,7 @@ const intFuncs: Array<(x: number) => number> = [];
 
 <!-- > -->
 
-### Static typing improves readability.
+### Static typing improves readability
 
 Consider this code:
 
@@ -139,7 +139,7 @@ function mystery(x: Cat) {
 
 <!-- > -->
 
-### Static typing can improve your workflow.
+### Static typing can improve your workflow
 
 Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
 
@@ -165,6 +165,7 @@ There isn't just one right answer that works in all scenarios; you will need to 
 The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
 
 ```TypeScript
+let y = 88;
 let sum: number = 10;
 const title: string = 'hello';
 let done: boolean = false;
@@ -172,6 +173,7 @@ let done: boolean = false;
 sum = undefined; // OK
 sum = null; // OK
 sum = '100'; // Not OK - will result in a compile error
+Math.round(title) // Compile error
 ```
 
 <!-- > -->
@@ -200,9 +202,9 @@ enum Fruit { Apple, Orange, Pear };
 
 let f: Fruit = Fruit.Pear;
 
-console.log(Fruit.Apple); // 0
+console.log(Fruit.Apple);  // 0
 console.log(Fruit.Orange); // 1
-console.log(Fruit.Pear); // 2
+console.log(Fruit.Pear);   // 2
 ```
 
 <!-- > -->
@@ -228,6 +230,7 @@ function add(num1: number, num2: number): number {
 }
 
 add(4, 6);
+add('2', 7); // Compile Error
 ```
 
 <!-- > -->
@@ -266,6 +269,7 @@ We can also define the type ahead of time using an interface:
 interface Person {
   name: string;
   age: number;
+  greet(message: string): string;
 }
 
 let person: Person = {name: 'Jane', age: 22}
@@ -273,17 +277,43 @@ let person: Person = {name: 'Jane', age: 22}
 
 <!-- > -->
 
+## Activity: Getting started with Typescript
+
+Take a look at this 5 min tutorial from the source. Take 5 mins and do the tutorial. 
+
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+
+<!-- > -->
+
+- What did you see in the tutorial? 
+- What was different about using typescript than using?
+- Did you see anything new? 
+
+<!-- > -->
+
 ### Interfaces
+
+> **Interface**
+> a point where two systems, subjects, organizations, etc. meet and interact.
+
+This can be a USB cable, your keyboard, the button in your favorite app. 
+
+An interface in programming is where one piece of program connects to and interacts with another piece. This happens in a few places: 
+
+- Objects - Anything with properties and methods require the interfacing system to know the the property and method names. 
+- Functions - expect parameters and return values, this is how you interact with them and is their interface.
+
+<!-- > -->
+
+
 
 <!-- > -->
 
 ## Activity: Get Your Project Up and Running with TypeScript
 
-Let's try out what we learned by modifying an existing project with TypeScript. Go ahead and clone the `justincase` NPM library:
+Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your library. You can add it to one of the libraries you have published or to a library you are currently working on. 
 
-```
-git clone https://github.com/soggybag/justincase
-```
+The example below uses the String library. 
 
 Now, we just need to make a few small changes to get it working again!
 

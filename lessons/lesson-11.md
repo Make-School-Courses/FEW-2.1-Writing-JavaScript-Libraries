@@ -78,7 +78,7 @@ Implement getWeather() with async/await.
 
 ## Additional Resources
 
-1. 
+1.
 
 ## After Class 
 

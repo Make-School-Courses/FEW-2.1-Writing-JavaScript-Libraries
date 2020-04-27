@@ -1,9 +1,9 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Lesson 9
 
-<small style="display:block;text-align:center">TypeScript Part 2</small>
+<small style="display:block;text-align:center">API Lib</small>
 
-Let's continue our work from last week on using TypeScript in an existing (or new) project!
+The last Library you will work on is a library that works with an API. APIs are used everywhere and are an important part of the ecosystem. Libraries that make working with APIs easier are an important part of the ecosystem. 
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -13,45 +13,158 @@ Let's continue our work from last week on using TypeScript in an existing (or ne
 
 ## Learning Objectives 
 
-1. Recall basic types from last class
-1. Modify an existing code base to use TypeScript
-1. Rewrite tests in TypeScript using Jest
-1. Install and use linting software using eslint-typescript
+1. Describe and define callback functions
+1. Use callback functions
+1. Describe Promise it's uses and states
+1. Use Promise in Aynchronous code 
+1. Describe uses and functions of `aysnc` and `await`
+1. Use `aysnch` and `await` to handle asynchronous calls
 
 <!-- > -->
 
-## Adding Types to FizzBuzz
+## What's a callback? 
 
-If you haven't already, clone the FizzBuzz repository here: https://github.com/Make-School-Labs/fizz-buzz-test
+Implement a function with a callback. 
 
-Modify the FizzBuzz code _and_ tests to use types. Include at least one class or interface in your implementation.
-
-<!-- > -->
-
-## Testing using Jest
-
-Instructions adapted from https://basarat.gitbooks.io/typescript/content/docs/testing/jest.html
-
-Install Jest using npm:
-
-```bash
-npm i jest @types/jest ts-jest -D
-```
-
-<!-- > -->
-
-Add a `jest.config.js` file to the root of your project and initialize it with the following:
-
-```javascript
-module.exports = {
-  "roots": [
-    "<rootDir>/tests"
-  ],
-  "transform": {
-    "^.+\\.tsx?$": "ts-jest"
-  },
+```JS 
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
 }
 ```
+
+<!-- > -->
+
+How would you use this? 
+
+```JS 
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
+}
+
+getWeather(handleWeather)
+
+function handleWeather() {
+  // Something happens here after the weather data is loaded. 
+}
+```
+
+<!-- > -->
+
+Or use an inline function. 
+
+```JS 
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
+}
+
+getWeather(function () {
+  // something happens here after the weather data is loaded
+})
+
+// Do the same thing with an arrow function
+getWeather(() => {
+  // something happens here after the weather data is loaded
+})
+
+```
+
+<!-- > -->
+
+Might be good if it had some parameters. 
+
+```JS 
+function getWeather(callBack, apikey, units) {
+  // Gets the weather with apikey and units...
+  // Calls the callback
+
+  callback()
+}
+```
+
+<!-- > -->
+
+How do we get data from a callback? Pass it as a parameter!
+
+```JS 
+function getWeather(callBack, apikey, units) {
+  // loads json with apikey and units
+  callback(json) // passes json to callback
+}
+
+getWeather(function (data) { // receives json here!
+  // do stuff with data received from callback
+})
+```
+
+<!-- > -->
+
+What if there is an error? Add an error callback! 
+
+This is how most JS methods handled errors before promises. Many systems still use this arranegment. 
+
+```JS 
+function getWeather(apikey, units, onSuccess, onError) {
+  fetch(...)
+    .then((data) => {
+      onSuccess(data)
+    })
+    .catch((error) => {
+      onError(error)
+    })
+}
+
+getWeather('myapikey', 'metric', function (data) { // receives json here!
+  // do stuff with data received from callback
+}, function(err) {
+  // something went wrong
+})
+```
+
+<!-- > -->
+
+Or write all of that in separate functions. 
+
+```JS 
+function getWeather(apikey, units, onSuccess, onError) {
+  fetch(...)
+    .then((data) => {
+      onSuccess(data)
+    })
+    .catch((error) => {
+      onError(error)
+    })
+}
+
+getWeather('myapikey', 'metric', handleData, handleError)
+
+function handleData(data) { // receives json here!
+  // do stuff with data received from callback
+}
+
+function handleError(err) {
+  // something went wrong
+}
+```
+
+<!-- > -->
+
+## Using a callback with an API
+
+<!-- > -->
+
+Start with some no frills code. Start here: 
+
+https://github.com/Make-School-Labs/weather-api
+
+<!-- > -->
+
+
 
 <!-- > -->
 

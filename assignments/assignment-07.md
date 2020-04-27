@@ -137,7 +137,7 @@ Look for edge cases in the `when()` method. When does it not work?
 
 **Stretch Challenge**
 
-Make `when()` work for time hours minutes, seconds. 
+Make `when()` work for time hours minutes, seconds.
 
 - 1 hour from now
 - 3 hours ago
