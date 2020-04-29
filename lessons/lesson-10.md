@@ -29,10 +29,7 @@ For a long time JS stored all code in the same global pool of code. The problem 
 
 Modules provide a system that allows creates scope based on files. It also allows variables/bindings to be exported or imported from other modules. 
 
-The ES6 module syntax of `import` and `from` are usable in most browsers today.
-
-- Resuablity - Modules maximize reusablity and DRY code. 
-- Scope - Code defined in a module stays in that module unless it's exported. 
+Take a look through this article for an overview of modules: https://javascript.info/modules-intro
 
 Use the exercise below to explore modules and practice coding.  
 
@@ -45,6 +42,8 @@ https://github.com/soggybag/swapi-helper
 ## Additional Resources
 
 1. https://github.com/soggybag/swapi-helper
+1. https://javascript.info/modules-intro
+
 <!-- 
 ## Minute-by-Minute [OPTIONAL]
 
