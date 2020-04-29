@@ -1,7 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
 # FEW 2.1 - Lesson 10
 
-<small style="display:block;text-align:center">API Libraries</small>
+<small style="display:block;text-align:center">API Libraries and Modules</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -9,43 +9,43 @@
 
 <!-- > -->
 
+## Why you should know this?
 
+- Modules are an important part of development
+- Modules are used by Node as a core function
+- Modules are new to the browser expect them to be used a lot in the future
 
-## Why you should know this or industry application (optional) (5 min)
+## Learning Objectives 
 
-Explain why students should care to learn the material presented in this class.
+1. Define your own modules
+1. Use Modules to develop an application
+1. Describe modules and usage and mechanics
 
-## Learning Objectives (5 min)
+## What are modules? 
 
-1. Identify ways that an API you’ve used could be improved
-1. Design and implement classes and interfaces to represent data from an API
-1. Use Promises and Async/Await to utilize parallelism and asynchronous functions
+Modules provide system for organizing your code into logical groups or libraries. 
 
-### Course Progress Tracker
+For a long time JS stored all code in the same global pool of code. The problem is variables defined in one file were accessible in any other file. Defining an identifier in one file meant you might overwrite it another script you were linking to. 
 
-https://docs.google.com/spreadsheets/d/1o-43DQx161lJKnmALW6NxnERggGn4lP5GOgCjDXcZBo/edit#gid=1955777807
+Modules provide a system that allows creates scope based on files. It also allows variables/bindings to be exported or imported from other modules. 
 
+The ES6 module syntax of `import` and `from` are usable in most browsers today.
 
-## In Class Activity I
+- Resuablity - Modules maximize reusablity and DRY code. 
+- Scope - Code defined in a module stays in that module unless it's exported. 
 
-[Worksheet](https://docs.google.com/document/d/1ekflXL5u_MwUpPLbpCya3rqbNUZlZ2rVewTAKsYrlIo/edit)
+Use the exercise below to explore modules and practice coding.  
 
-## Overview/TT
+## Exercise 
 
-Promises and Async/Await
+Imagine this as an interview problem. The starter code is in the repo liked below. Download or clone the repo and follow the instructions in the readme. 
 
-## In Class Activity II
-
-[Demo Project](https://github.com/Make-School-Labs/Star-Wars-Api-Wrapper)
-
-## Wrap Up (5 min)
-
-Homework: [API Library](https://github.com/Make-School-Courses/FEW-2.1-Writing-JavaScript-Libraries/blob/master/Assignments/assignment-9-api-lib.md)
+https://github.com/soggybag/swapi-helper
 
 ## Additional Resources
 
-1. Links to additional readings and videos
-
+1. https://github.com/soggybag/swapi-helper
+<!-- 
 ## Minute-by-Minute [OPTIONAL]
 
 | **Elapsed** | **Time**  | **Activity**              |
@@ -56,4 +56,4 @@ Homework: [API Library](https://github.com/Make-School-Courses/FEW-2.1-Writing-J
 | 0:50        | 0:10      | BREAK                     |
 | 1:00        | 0:45      | In Class Activity II      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -                         | -->
