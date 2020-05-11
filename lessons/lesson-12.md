@@ -21,4 +21,4 @@
   - Turn it into todo items
   - Schedule your work
 
-- Update Progress tracker*
+- Update Progress tracker

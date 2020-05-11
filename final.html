@@ -10,20 +10,19 @@
   <!-- Content -->
 </div>
 
-
 <script>
 function displayData({ id, user_name, first_name, last_name, company_name, loan, rate, date }) {
   return `
     <div data-id="${id}">
       <ul>
         <li>
-            <!-- 1) User name needs uppercase -->
+          <!-- 1) User name needs uppercase -->
           <p>${user_name}</p>
           <!-- 2) first and Last name should be first letter uppercase -->
           <p>${first_name+ " " +last_name}</p>
         </li>
         <li>
-            <!-- 3) Company Name should be title/heading case -->
+          <!-- 3) Company Name should be title/heading case -->
           <h1>${company_name}</h1>
           <!-- 4) slug/kabobcase company name -->
           <p>${company_name}</p>
