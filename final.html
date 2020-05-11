@@ -16,20 +16,20 @@ function displayData({ id, user_name, first_name, last_name, company_name, loan,
     <div data-id="${id}">
       <ul>
         <li>
-          <!-- 1) User name needs uppercase -->
+          <!-- 1) User name needs uppercase -> HELLO WORLD -->
           <p>${user_name}</p>
-          <!-- 2) first and Last name should be first letter uppercase -->
+          <!-- 2) first and Last name should be first letter uppercase -> Foo Bar -->
           <p>${first_name+ " " +last_name}</p>
         </li>
         <li>
-          <!-- 3) Company Name should be title/heading case -->
+          <!-- 3) Company Name should be title/heading case -> The Winter of Discontent -->
           <h1>${company_name}</h1>
-          <!-- 4) slug/kabobcase company name -->
+          <!-- 4) slug/kabobcase company name -> the-winter-of-discontent -->
           <p>${company_name}</p>
         </li>
-        <!-- 5) format loan amount as dollars -->
+        <!-- 5) format loan amount as dollars -> $00.00 -->
         <li>Loan amount: ${loan}</li>
-        <!-- 6) Calculate tax amount from rate and loan -->
+        <!-- 6) Calculate tax amount from rate and loan rate * loan formatted as $ -->
         <li>Tax amount: ${rate + " " + loan}</li>
         
         <li>
@@ -40,10 +40,10 @@ function displayData({ id, user_name, first_name, last_name, company_name, loan,
           <p>${new Date() + " " + date}</p>
         </li>
         
-        <!-- 9) Calculate the interest on loan by finding the number of years between now 
-        and the date supplied. Use rate as the interest rate. --> 
+        <!-- 9) --> 
         <li>Your interest is: ${rate + " " + loan + " " + date}</li>
-      </ul>
+      </ul>Calculate the interest on loan by finding the number of years between now 
+        and the date supplied. Use rate as the interest rate. 
     </div>
   `
 }
