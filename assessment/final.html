@@ -17,7 +17,7 @@ function displayData({ id, user_name, first_name, last_name, company_name, loan,
       <ul>
         <li>
           <!-- 1) User name needs uppercase -> HELLO WORLD -->
-          <p>${user_name}</p>
+          <p>${user_name.toUpperCase()}</p>
           <!-- 2) first and Last name should be first letter uppercase -> Foo Bar -->
           <p>${first_name+ " " +last_name}</p>
         </li>
