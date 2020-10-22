@@ -18,22 +18,22 @@ JavaScript has a built in String Object/Class that has many methods built into i
 
 JavaScript provides many methods to manipulate strings already but it doesn't do some of the things that we might want to do. It's your job to write functions that solve the problems below. 
 
-- **Challenge 1** `capitalize()` - makes the first character of a given string uppercase.
-  - Example: hello world -> Hello world
-  - Strategies:
-    - 1) Use [`str.substring()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) to get the first character and [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to convert that character to an uppercase character. Then concatenate the uppcase first character with the the original string starting from the second character. 
-    - 2) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to convert the string into an array of characters, upper case the first element of the array with [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase), and then join the array with [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
-    - 3) (Advanced) Use a regular expression. 
+- **Challenge 1** `capitalize()` - makes the **first character** of a given string uppercase.
+    - Example: **h**ello world -> **H**ello world
+    - Strategies:
+        - 1) Use [`str.substring()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring) to get the first character and [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to convert that character to an uppercase character. Then concatenate the uppcase first character with the the original string starting from the second character. 
+        - 2) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to convert the string into an array of characters, upper case the first element of the array with [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase), and then join the array with [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+        - 3) (Advanced) Use a regular expression. 
 - **Challenge 2** `allCaps()` - makes all characters uppercase. (this is the same as [`str.toUppercase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase))
-  - Example: `foo bar` -> `FOO BAR`
-  - Strategy: Make a new function that uses `str.toUpperCase()`. You can make an alias with a shorter easier to remember name.  
+    - Example: foo bar -> FOO BAR
+    - Strategy: Make a new function that uses `str.toUpperCase()`. You can make an alias with a shorter easier to remember name.  
 - **Challenge 3** `capitalizeWords()` - makes the first character of each word uppercase. Imagine that each word is separated by a space. 
-  - Example: `do all the things` -> `Do All The Things`
-    - Advanced: `capitalizeHeadline()` - capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from
-      - Example: `the most foo in bar` -> `The Most Foo in Bar`
-  - Strategies: 
-    - 1) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and split on a ' ' space. Use your `capitalize()`, loop through all of the elements (you can use `array.map()` here) and use your `capitalize()` function from challenge 1 on each element, last [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) all of the elements into a single string. 
-    - 2) (advanced) Use a regular expression. 
+    - Example: **d**o **a**ll **t**he **t**hings -> **D**o **A**ll **T**he **T**hings
+    - Advanced: `capitalizeHeadline()` - capitalizes all of the words except the words: the, in, a, an, and, but, for, at, by, from unless one of these words is the first word of the string!
+    - Example: **t**he **m**ost **f**oo in **b**ar -> **T**he **M**ost **F**oo *in* **B**ar
+    - Strategies: 
+        - 1) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and split on a ' ' space. Use your `capitalize()`, loop through all of the elements (you can use `array.map()` here) and use your `capitalize()` function from challenge 1 on each element, last [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) all of the elements into a single string. 
+        - 2) (advanced) Use a regular expression. 
 - **Challenge 4** `removeExtraSpaces()` - Removes all spaces from the beginning and end of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it is replaced by a single space. 
   - Example: `"   Hello    world!   "` -> `"Hello world!"`
   - Strategies: 
@@ -52,6 +52,11 @@ JavaScript provides many methods to manipulate strings already but it doesn't do
   - Example: `Camel Case` -> `camelCase`
   - Strategies: 
     - 1) Use the ideas from `capitalizeWords()` function you wrote earlier. [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) the string on the ' ' to get and array of words. Then loop starting on index 1 (you could use `array.map()`) and capitalize each word (use your function for this) then [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) on the '' (empty string).
+- ** Challenge 8 ** `shift()` this method will take the first character of a string and move to the end of a string: 
+  - Example: Hello World -> ello WorldH
+  - Strategies: Use `String.slice()`
+  - Advanced: Include an optional second parameter that sets the number of characters to shift. 
+  - Example: shift('foo bar', 3) -> ' barfoo'
 
 These functions should all take a string as input and return a string as output. 
 
@@ -75,4 +80,11 @@ Mark your progress in the class [Progress Tracker](https://docs.google.com/sprea
 
 Your work will be assessed by a rubric. You can self assess your work by looking at the rubric. Wonder what is expected of your work check the rubric. 
 
-[Assignment 1 String Lib Rubic](assignment-01-rubric.md)
+# FEW 2.1 - Assignment 1 - String Lib - Rubric
+
+| Expectations | Does not meet | Meets | Exceeds |
+|:-------------|:--------------|:------|:--------|
+| **_Completion_** | < 100% of functions written | All functions written | Includes all stretch functions, comments, and documentation |
+| **_Quality_** | Code is sloppy and/or throws errors | Code is well written with no errors | Considers edge cases |
+| **_Comprehension_** | Can't explain the code written | Can explain the code | Could write the code again from scratch |
+| **_Work ethic_** | Few massive commits | Commits outline progress, for example a commit for each challenge as it is completed | Commit messages are clearly describe what was changed |
