@@ -52,7 +52,7 @@ JavaScript provides many methods to manipulate strings already but it doesn't do
   - Example: `Camel Case` -> `camelCase`
   - Strategies: 
     - 1) Use the ideas from `capitalizeWords()` function you wrote earlier. [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) the string on the ' ' to get and array of words. Then loop starting on index 1 (you could use `array.map()`) and capitalize each word (use your function for this) then [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) on the '' (empty string).
-- ** Challenge 8 ** `shift()` this method will take the first character of a string and move to the end of a string: 
+- **Challenge 8** `shift()` this method will take the first character of a string and move to the end of a string: 
   - Example: Hello World -> ello WorldH
   - Strategies: Use `String.slice()`
   - Advanced: Include an optional second parameter that sets the number of characters to shift. 
