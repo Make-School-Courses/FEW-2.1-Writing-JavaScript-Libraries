@@ -24,7 +24,7 @@ In this lesson you will publish your library and share it with the world.
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+➡️ [**Slides**](https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing)
 
 <!-- > -->
 
