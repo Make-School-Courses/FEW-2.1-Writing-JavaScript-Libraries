@@ -41,7 +41,7 @@ What's a Date?
 
 <!-- > -->
 
-A date is the day of the month or year specified as a number. 
+A date is the day of the month and year specified as a number. 
 
 <!-- > -->
 

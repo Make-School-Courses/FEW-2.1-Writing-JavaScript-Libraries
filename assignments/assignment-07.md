@@ -1,4 +1,4 @@
-# FEW 2.1 - Assignment 7 - Date Lib
+# FEW 2.1 - Date Library
 
 ## Description 
 
