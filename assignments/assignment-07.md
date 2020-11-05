@@ -2,11 +2,11 @@
 
 ## Description 
 
-Dates are super important. You'll use them often. The goal of this assignment is to create a library that handles date operations. 
+Dates are super important. You'll use them often. The goal of this assignment is to create a library that handles date operations in a better and more intuitive way than the built in Date Object. 
 
 ## Why Do this assignment? 
 
-You'll make use the JS Date Object often. Building a library around dates will give you a better understanding of it works and what you can do with it. 
+You'll make use the JS Date Object often. Building a library around dates will give you a better understanding of it works and what you can do with it.
 
 ## Project requirements
 
@@ -14,7 +14,9 @@ Your job is to make a class that _wraps the Date object_. Your class should have
 
 **Challenge 1** 
 
-The Date Object can be instantiated with a date string, or with a list of parameter for: year, month, date, hours, mins, secs. 
+The Date Object can be instantiated with a date string, with a list of parameter for: year, month, date, hours, mins, secs, or with another Date object. 
+
+To do this you'll create a class that holds a Date object as a property. You class needs to accept a variable number of parameters and be able to pass these parameters to Date object it initializes.
 
 ```JS
 class D {
@@ -31,15 +33,19 @@ tl;dr args is an array with all of the parameters passed to a function. The `...
 You should be able to instantiate this class like this now: 
 
 ```JS 
-const d = new D('9/26/1965') // Create a date from a string
+// Create a date from a string (single parameter)
+const d = new D('9/26/1965') 
+// Create a date from some numbers (list of parameters)
 const e = new D(1970, 1, 1, 0, 0, 0)
 ```
 
-Notice this works with any number of arguments. 
+This should work with any number of arguments. 
 
 **Challenge 2**
 
-Your class should provide human readable values for year, month, date, hour, mins, secs.
+Your class should provide human readable values for year, month, date, hour, mins, secs. 
+
+The built in Date provides the month and day of the week starting with 0, and it doesn't provide a string for the day of the week or month which is inconvenient. 
 
 ```JS
 // Gets the current date with no params
@@ -52,7 +58,7 @@ console.log(d.mins())  // 6
 console.log(d.secs())  // 5
 ```
 
-Stretch goal: Use a getter for each of these. Using a getter each of themethods could be accessed as a property rather than y calling the method. For example: `d.month` instead of `d.month()`.
+Stretch goal: Use a getter for each of these. Using a getter each of the methods could be accessed as a property rather than y calling the method. For example: `d.month` instead of `d.month()`.
 
 ```JS
 // Gets the current date with no params
@@ -65,11 +71,16 @@ console.log(d.mins)  // 6
 console.log(d.secs)  // 5
 ```
 
-Read about getters here: https://javascript.info/property-accessors
+Read about getters here: 
+
+- https://javascript.info/property-accessors
+- https://coryrylan.com/blog/javascript-es6-class-syntax
 
 **Challenge 3**
 
 You need a format method that takes a "mask" string. The mask will contain formatting characters which displays various date elements, other characters are displayed unchanged. 
+
+The built in Date object has some limited formatting options. You're library will offer a more flexible solution. 
 
 List of formatting characters: 
 
@@ -100,7 +111,19 @@ console.log(d.format('h:i:s'))       // 3:4:5
 console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
 ```
 
-Stretch goal - It would be goo if we could support more features here. Formatting dates is a very common task. There are a few things missing from the list above. 
+Notice the "mask" string provided replaces each of the special characters with a component of the date. If the character is not recognized than it is printed. 
+
+```JS
+console.log(d.format('y/m/d'))       // 17/Jan/2
+```
+
+In the example above `y` is replaced with short year, and the '/' is printed. The same applies to the rest of the string.
+
+Take a look at how moment JS handles date andf time formatting: 
+
+- https://momentjs.com/docs/#/parsing/string-format/
+
+Stretch goal - It would be good if we could support more features here. Formatting dates is a very common task. There are a few things missing from the list above.
 
 Each of the things below need a character to represent them.
 
@@ -112,6 +135,8 @@ Each of the things below need a character to represent them.
 **Challenge 4**
 
 Make a `when()` this should return a human readble description of 'when' a date will occur. 
+
+This is a common way to display relative dates you see this is apps you use every daye. 
 
 This method should compare the date owned by your class instance with the current date. 
 
@@ -127,6 +152,10 @@ console.log(d.when()) // 3 days from now
 const d = new D()
 console.log(d.when()) // today
 ```
+
+Take a look at how moment.js handles this: 
+
+- https://momentjs.com/docs/#/displaying/fromnow/
 
 **Stretch Challenge**
 
@@ -165,6 +194,23 @@ Document your date lib. Do this by writing JS Doc string comments describing eac
 Output the documentation to your repo or write it to your readme.md file. 
 
 Use: https://documentation.js.org
+
+JS Docs is a format for writing documentation in comments along side your code. Using this format your comments can be turned into web pages automatically. 
+
+JS Docs follow the format: 
+
+```JS
+/** 
+ * hello
+ * @returns String 'Hello World'
+ */
+
+function hello() {
+	return 'Hello World'
+}
+```
+
+JS Doc comments begin with 
 
 **Challenge 6**
 
