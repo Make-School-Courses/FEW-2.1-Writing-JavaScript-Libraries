@@ -45,8 +45,6 @@ Class 3
 
 ## Assessing the assignment
 
-# FEW 2.1 - Assignment 2 - Publish String Lib to npm Rubric
-
 | Expectations | Does not meet              | Meets                 | Exceeds                          |
 |:-------------|:---------------------------|:----------------------|:---------------------------------|
 | Completion   | Latest version not published | Latest version published with badges | Has relevant badges beyond version and size |

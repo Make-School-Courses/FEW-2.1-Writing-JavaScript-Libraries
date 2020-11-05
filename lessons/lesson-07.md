@@ -1,11 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 7 
+# FEW 2.1 - Lesson 4
 
-<small style="display:block;text-align:center">Dates and Date Lib</small>
-
-<!-- > -->
-
-Time for another lib! This time you'll make a library that works with Dates. You will take everything covered so far: Code, testing, and bundling. 
+<small style="display:block;text-align:center">Continuous Integration</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -13,440 +9,324 @@ Time for another lib! This time you'll make a library that works with Dates. You
 
 <!-- > -->
 
-## Why you should know this?
+Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project.
 
-Practice is the best way to solidify your skills and knowledge.
+<!-- > -->
 
-Working with dates will expand your knowledge of JS. 
+Continuous Integration emphasizes merging small changes frequently over merging large changes at the end of the development cycle. 
+
+<!-- > -->
+
+A big piece of CI is automatically running tests and providing feedback on the current state of a code base. 
+
+<!-- > -->
+
+Another use of CI is running tests and providing other feedback as each new addition is integrated into the codebase.
+
+<!-- > -->
+
+In this lesson, you will apply some of these ideas to your code base. 
+
+<!-- > -->
+
+### Quick Discussion
+
+Read this: https://codeship.com/continuous-integration-essentials
+
+Pair up and answer these questions: 
+
+**Q:** Do you see any advantages of using CI?
+
+**Q:** Do you see any downsides to CI?
+
+<!-- > -->
+
+## Why should you learn about Continuous Integration?
+
+CI is a modern software development *best practice*. You should always be striving to follow best practices in your work and be familiar with what industry considers best practices if you plan to integrate yourself with the industry! 
+
+Using CI will provide automated feedback on the quality of a codebase as each new change is pushed. Feedback is good, automated feedback is even better since it saves you time and energy!
 
 <!-- > -->
 
 ## Learning Objectives
 
-1. Define the Date Object and its important methods
-1. Use the Date Object to generate dates and times, and format dates and times. 
-1. Construct methods that build and expand the core functionality of the Date object
+1. Use Linting to improve code quality and catch bugs
+1. Use Continuous Integration to automate testing
 
 <!-- > -->
 
-Open this Repl: https://repl.it/@MitchellHudson/date-object
+## Install ESLint and lint your work!
+
+Linting is not a CI but is related as a part of industry best practices and code quality. We've covered this in other classes but it's important so we will review it again here. 
 
 <!-- > -->
 
-## UTC and JS Date
+### Q: Why lint? 
+
+Linting is an automated process that looks at your code and evaluates it for consistent style and quality. This has two effects on your work.
+
+- When working in a team it ensures that everyone on the team is coding with a **consistent style**. 
+- **Catches errors** and questionable coding structures before they get merged into a larger code base. 
+
+As a student **you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
 
 <!-- > -->
 
-What's a Date? 
+ESLint needs to be installed in two places: 
+
+- _in the project_ through npm 
+- _in your editor_.
 
 <!-- > -->
 
-A date is the day of the month or year specified as a number. 
+**Q:** Do you consider your self an advanced coder who follows professional best practices?
 
 <!-- > -->
 
-In JS this will also include the year and the time. 
-
-It pinpoints a point in time down to a millisecond as a number. 
+**A:** You have already install installed ESLint, and you do it for every project!
 
 <!-- > -->
 
-Dates in JS are represented as the number of milliseconds since 1970
+### Install in npm project
+
+Follow the instruction here: 
+
+https://eslint.org/docs/user-guide/getting-started
+
+tl;dr
+
+`npm install eslint --save-dev`
+
+`eslint --init`
 
 <!-- > -->
 
-**UNIX Epoch**
+Choose: 
 
-What is this? Also known as a timestamp. It's a number that represents the number of seconds since **Thursday, 1 January 1970**. The premise is that each day takes 86,400 seconds. 
-
-<!-- > -->
-
-Dates before the epoch can be expressed as a negative number.
-
-<!-- > -->
-
-Are there any weird things about dates in JS?
+- Use a popular Styleguide
+- Airbnb style guide 
+- Use React No
+- Format JavaScript
+- Install Now Yes
 
 <!-- > -->
 
-Plenty, just think of leap years?
+### Install ESLint in Editor
+
+You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
+
+1. Go to Settings Extensions/Plugins
+1. Add a new Extension/Plugin
+1. Search ESLint
+1. Install 
+
+You may need to close and reopen your project in your editor before the Linter starts registering errors. 
+
+**Do this now!** If you haven't already.  
 
 <!-- > -->
 
-Can you do Math with this stuff? 
+## Pair up and solve linting errors
+
+Pair with a person _you haven't paired with_ before. 
+
+Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
 
 <!-- > -->
 
-Yes! The Date Object, like the Number Object, is a wrapper around a primitive value. 
+### Discuss the linter suggestions
 
-JS will convert a date to a number when needed. 
-
-<!-- > -->
-
-Make a new date with `new Date()` this returns a new date which represents the moment in time when the command was executed. 
-
-```JS 
-const a = new Date()
-```
-
-Try this in the console: 
-
-```JS
-// Make a date object
-var a = new Date()
-// Make another Date object
-var b = new Date()
-// Subtract one from the other
-b - a // 5009 ms between dates
-console.log(a) // Jul 27 3:45 pm ...
-```
+- **Q:** What suggestions did the linter make that were obviously useful? 
+- **Q:** Did the linter suggest anything that seemed strange or not obvious? 
+- **Q:** Do you think your code is of better quality after?
 
 <!-- > -->
 
-**Internally a Date is a number in Milliseconds**
+## Travis CI 
 
-Try this with your birthday. You can initialize a date with almost any human readable date string. For example: 
+[Travis CI](https://travis-ci.com) is a Continuous Integration platform. It automates building and testing your software projects. 
 
-```JS 
-var age = new Date('9/26/65')
-var now = new Date()
-console.log(now - age) // 1698830617401
-```
+Follow the instructions here: 
 
-<!-- > -->
+https://docs.travis-ci.com/user/for-beginners/
 
-Challenge: Find the number of:
-
-- seconds
-- minutes
-- hours
-- days 
-- years
-
-Since your birthday. 
+https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
 
 <!-- > -->
 
-- **Q:** Is the number accurate? 
-- **Q:** What's the difference? 
-- **Pair up:** and discuss your solutions
+### Setup Travis-CI 
+
+Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
+
+[Sign up for Travis](https://travis-ci.com) with GitHub.
+
+Authorize Travis with your GitHub account.
 
 <!-- > -->
 
-Initialize a with Year, month, and date. 
+#### Add .travis.yml
 
-```JS 
-const newYears = new Date(2020, 0, 1)
-// Wed Jan 01 2020 00:00:00 GMT-0800 (PST)
-```
+Travis uses a config file to describe how it should work with the files in your repos. 
 
-Notice the month starts with a 0 index. 
+Add a new file to the root directory of your String Lib project. Name this file:
 
-```
-0 - Jan
-1 - Feb
-2 - Mar
-3 - April 
-4 - May
-5 - June 
-6 - July 
-7 - Aug
-8 - Sept
-9 - Oct
-10 - Nov
-11 - Dec
-```
+`.travis.yml`
 
 <!-- > -->
 
-## Date methods 
+Add the following to this file: 
 
-The Date object has many instance methods most are getters and setters. There are a few class methods also.
-
-<!-- > -->
-
-### Getters 
-
-These mostly get at components of a date such as a year, month, day, hours, minutes, etc. Some format the date in a variety of ways. 
-
-<!-- > -->
-
-- Date Components 
-  - `new Date().getFullYear()  // 2019`
-  - `new Date().getMonth()     // 6` July
-  - `new Date().getHours()     // 10` 10 AM
-
-<!-- > -->
-
-- Formatted Dates 
-  - `new Date().toLocaleString()` 7/27/2019, 10:15:36 AM
-  - `new Date().toDateString()` Sat Jul 27 2019
-
-<!-- > -->
-
-### Setters 
-
-Setters change the value of various components of a date. 
-
-<!-- > -->
-
-- `myDate.setMonth(6)` Sets the month to July
-  - January === 0
-
-<!-- > -->
-
-- `myDate.setMinutes(30)`
-
-<!-- > -->
-
-_Never mutate source object always make a copy and mutate that to avoid side effects._
-
-```JS
-const d = new Date(2019, 0, 10)
-const newDate = new Date(d) // Make a new Date from a date
-newDate.setMonth(5)
-
-console.log(d) // 10 January 2019
-console.log(newDate) // 10 June 2019
-``` 
-
-<!-- > -->
-
-### Class Methods 
-
-Date provides a couple of class methods. 
-
-****: Class methods are methods that Quick refresherare called from the class (class methods are not called from an instance)
-
-<!-- > -->
-
-- `Date.now() // 1564251902406` the ms at the current moment
-- `Date.UTC(year, month, day, hour, min, sec, ms)` create date from UTC parameters 
-- `Date.parse(string)` creates a date from date string or returns NaN if unable to parse the string. 
-
-<!-- > -->
-
-## Timezones 
-
-- Local time refers to the timezone set on your computer.
-- UTC is synonymous with Greenwich Mean Time (GMT) in practice.
-
-By default, almost every date method in JavaScript (except one) gives you a date/time in local time. You only get UTC if you specify UTC.
-
-https://css-tricks.com/everything-you-need-to-know-about-date-in-javascript/
-
-<!-- > -->
-
-## Offset dates
-
-An offset date tells you the time between two dates, the distance to a future or past date. 
-
-<!-- > -->
-
-```JS
-const date = new Date() // Get today 7/27 (or any date)
-const startDate = new Date(date) // copy the date
-const dueDate = new Date(date)   // copy the date
-
-// Start date have been 7 days ago
-startDate.setDate(date.getDate() - 7) // 7/20
-
-// Due date is 3 days from now
-dueDate.setDate(date.getDate() + 3) // 7/30
+```yml
+sudo: false
+language: node_js
+node_js:
+- stable
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm update
+install:
+- npm install
+script:
+- npm test
+- npm run coveralls
 ```
 
 <!-- > -->
 
-Here is an alternate approach
+This config script uses the latest stable version of node, builds your project from the master branch, install node modules, and then runs your npm test script followed by the coveralls script. 
 
-```JS 
-var a = new Date()
-var b = new Date(a.getYear(), a.getMonth(), a.getDate() - 7)
-var c = new Date(a.getYear(), a.getMonth(), a.getDate() + 3)
-```
+The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll set this up this in the next step. 
 
-Here b and c have lost the hours, mins, secs, ms. These could have been included if they were needed. 
+https://docs.travis-ci.com/user/tutorial/
 
 <!-- > -->
 
-**Delta/difference in dates**
+### Coveralls 
 
-```JS
-a.getDate() - b.getDate() // 7
-a - b // 59958877622077
-```
+Coveralls is a service that helps you track code coverage. Code coverage answers the question: how much of my code is covered by the testing? Essentially it will give you a score telling you how much of your code is covered by the unit tests that exist. 
 
-<!-- > -->
-
-You can also do the math! 
-
-```JS
-const date1 = new Date('7/13/2019');
-const date2 = new Date('7/15/2019');
-// const diffTime = Math.abs(date2.getTime() - date1.getTime());
-const diffTime = date2 - date1;
-const diffDays = diffTime / (1000 * 60 * 60 * 24); 
-console.log(diffDays);
-```
-
-It's probably best to stick with the built-in methods over math. 
+Go to [Coveralls.io](https://coveralls.io)
 
 <!-- > -->
 
-## Activity 
+Create an account and login.
 
-Pair up, you and your pair will be reponsible for solving the problems from the list below. 
+Click your account and link your GitHub.
 
-We will spend the first part of the class solving the problems after which each group will present their solutions. 
+Click Add Repo and add your String Lib Repo to Coveralls.
 
-<!-- > -->
-
-**Problem 1** Schedule future dates
-
-Given a date return a list of dates separated by a time.
-
-Write a function that given a date returns an array of date objects that are offset by a number of days.
-
-For example given a start date of 1/1/2019, repeat count of 4, and an interval of 3 days.
-
-`consecutiveDates(new Date(2019, 0, 1), 4, 3) `
+Click Repos then click the Name of string repo.
 
 <!-- > -->
 
-Outputs an array of dates: 
+Add the Coveralls package to your project. 
 
-1. 1/1/2019
-2. 1/4/2019
-3. 1/7/2019
-4. 1/10/2019
+`npm install coveralls --save-dev`
 
-```JS 
-function consecutiveDates(startDate, repeatCount, daysOffset) {
-  // 
-}
+Add this line to your `package.json`:
+
+```JSON
+"scripts": {
+  ...
+  "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+  ...
+},
 ```
 
 <!-- > -->
 
-Expand the idea above by supplying an option that sets the unit of time for the offset. Support offset units of: 
+Find the "Coverage" badge. Click the embed button to the upper right. Copy the Markdown text. You can paste this into the README.md in the GitHub Repo of your library. 
 
-- year
-- month
-- day
+https://coveralls.io
 
-`consecutiveDates(new Date(2019, 0, 1), 3, 1, 'year')`
+https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42
 
 <!-- > -->
 
-Outputs an array dates: 
+### Give yourself a badge! 
 
-1. 1/1/2019
-2. 1/1/2020
-3. 1/1/2021
+Give yourself a badge or two, you've earned them! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
 
-```JS 
-function consecutiveDates(startDate, repeatCount, offset, offsetUnit = 'day') {
-  // 
-}
-```
+**Q:** Why add these badges? 
+
+**A:** It will show the status of your software project at a glance. It increases the credibility of your repositories.
 
 <!-- > -->
 
-**Problem 2** Measure execution time
+#### Travis badge 
 
-_Using `Date`_ calculate the number of milliseconds used to execute. 
+Go to your repo on Travis. You should see a badge to the left of the GitHub repo name. 
 
-Use a loop that executes a number of times.
+Click this and choose "Markdown" from the menu.  
 
-```JS
-function wasteTime(n) {
-  let widget = 0
-  for (let i = 0; i < n; i += 1) {
-    widget += Math.atan(Math.random() / Math.PI)
-  }
-}
-```
+Copy the Markdown code from the text box and paste it into your README. 
 
 <!-- > -->
 
-Stretch make this a generic method that could be included in an project to measure the execution time of any method. 
+#### Coveralls Badge
+
+Go to Coveralls. Visit the page for the repo you were working on. 
+
+It should display a coverage badge near the right side. Click the tiny embed button up and to the right of the badge. 
+
+Copy the Markdown code in the text box. 
+
+Paste the markdown code into your repo. 
 
 <!-- > -->
 
-**Problem 3** Order dates
+## Stretch goals
 
-Given an array of dates return an ordered array of dates. 
+**Stretch Goal** - 
 
-```JS 
-function orderDates(dates) {
-  // orders the dates 
-  // returns a new array of ordered dates
-}
-```
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
 
-<!-- > -->
+- Invent your own utility functions. 
+- Research existing libraries on npm to identify useful functions you can implement. Research these: 
+  - https://www.npmjs.com/package/string
+  - https://www.npmjs.com/package/query-string
+  - https://www.npmjs.com/package/chalk
+  - https://www.npmjs.com/package/validator
+  - https://www.npmjs.com/package/camelcase
+  - https://www.npmjs.com/package/crypto-random-string
+  - https://www.npmjs.com/package/url-parse
+  - https://www.npmjs.com/package/magic-string
 
-Stretch: Return an object containing three keys each holding an array of dates. The keys are: 
+**Stretch Goal** - 
 
-- past: array of dates that happened before today
-- present: all dates that happen today
-- furture: all of the dates that will occur in the future
+Use CodeClimate to analyze and give your code a report card: https://codeclimate.com/dashboard 
 
-<!-- > -->
+Note! Code Climate is free for open source projects! 
 
-**Problem 4** What's next?
-
-Given an array of dates find the date that will happen next. You need to find the date that is closest to now but not before. 
-
-**Problem 5** When's your birthday?
-
-Birthday planner. Write a function that takes a date (your birthday) and a year, and returns the day of the week for that date in that year. 
-
-For example: 
-
-```JS
-new Date(2020, 8, 26).getDay() // 6 - Lucky me my birthday is Saturday!
-```
-
-<!-- > -->
-
-## Show your solutions
-
-Your group shows their solutions for the problems. 
-
-<!-- > -->
 
 ### Homework
 
-[Assignment 7 - Date Lib](../assignments/assignment-07.md)
-
-<!-- > -->
-
-## Wrap Up
-
-- Review Dates
-- Review challenges 
-- Review Homework
+[Continuous Integration](./assignments/assignment-04.md)
 
 <!-- > -->
 
 ## Additional Resources
 
-1. https://javascript.info/rest-parameters-spread-operator
-1. https://javascript.info/date
-1. https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date
-1. https://javascript.info/object-toprimitive
+- 
 
 <!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
+| **Elapsed** | **Time**  | **Activity** |
+| ----------- | --------- | -------------- |
+| 0:00        | 0:05      | Introducntion  |
+| 0:05        | 0:05      | Objectives     |
+| 0:10        | 0:30      | Linting        |
+| 0:40        | 0:10      | BREAK          |
+| 0:50        | 0:15      | Travis CI      |
+| 1:05        | 0:15      | Coveralls      |
+| 1:20        | 0:25      | ** ??? **      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -              |
