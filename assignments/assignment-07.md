@@ -12,6 +12,8 @@ You'll make use the JS Date Object often. Building a library around dates will g
 
 Your job is to make a class that _wraps the Date object_. Your class should have a Date it keeps internally. It should be able to instantiate itself with the same parameters that are used with the Date Object. 
 
+Your date library should inlcude unit tests for all of it's functions. Writing these as you work might be a good idea. 
+
 **Challenge 1** 
 
 The Date Object can be instantiated with a date string, with a list of parameter for: year, month, date, hours, mins, secs, or with another Date object. 
@@ -242,11 +244,11 @@ https://javascript.info/object-toprimitive
 
 ### Deliverable
 
-After completing the challenges above post a link to your npm package on npm. 
+After completing the challenges above post a link to your npm package on npm.
 
 ### Due date
 
-Class 9 - Mon, April 27
+Class 6 - Nov 12
 
 ## Assessing the assignment
 
