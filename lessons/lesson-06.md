@@ -1,9 +1,11 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 6
+# FEW 2.1 - Lesson 5 
 
-<small style="display:block;text-align:center">Bundling Libraries for distribution</small>
+<small style="display:block;text-align:center">Numbers and Math Lib</small>
 
-This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
+<!-- > -->
+
+The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -11,559 +13,575 @@ This class session covers the concept of bundling. This is the process of combin
 
 <!-- > -->
 
-## Why learn how to bundle files? 
+## Learning Objectives
 
-All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
-
-Bundling your files allows them to be distributed so they can be used anywhere without extra work. 
-
-Bundling files also processes your files for different environments. Your files need to be handled differently if they are used in the browser, or in NodeJS, or in a React project. 
+1. Use Math methods
+1. Identify the limits of math and numbers on the computer
+1. Implement Objects that allow for chained method calls
 
 <!-- > -->
 
-## Learning Objectives 
-
-- Describe reasons for bundling files
-- Define UMD and ESM bundles 
-- Use Rollup to bundle your library for distribution
+## Why you should know this
 
 <!-- > -->
 
-### Bundling 
+Math and Numbers in JS can be a pain point. 
 
-Bundling is the process of processing and combining files together into a single file. 
-
-<!-- > -->
-
-### Modules 
-
-Modules are the concept of separating code into different scopes and making it available to your program. 
-
-In the browser all code is global. A variable defined in one file is available in another file. 
-
-This creates a few problems. 
-
-```JavaScript
-// my-code.js
-function load() { /* does something super important */}
-// 
-```
-
-```JavaScript
-<script src="my-code.js"></script>
-
-<script>
-  function load() {} // accidentally overwrites super important code 
-</script>
-```
+Understanding how math and numbers work in JS will give you deeper insights into the language, it will help you at interviews and in your own work. 
 
 <!-- > -->
 
-The module pattern uses scope to solve the problem above. Wrapping code in an anonymous function stores all of the variables and functions in the scope of that function. 
-
-```JavaScript
-// my-code.js
-(function() {
-  // Code safely scoped to function
-  function load() { /* does something important */}
-})() // Immediately executes the function above
-```
-
-```JavaScript
-<script src="my-code.js"></script>
-// ---------------------------------------
-<script>
-  function load() {} // global scoped 
-</script>
-```
+Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
 
 <!-- > -->
 
-This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced patterns are based on this. 
-
-You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). 
-
-While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
+## Working with numbers
 
 <!-- > -->
 
-Why does this work? 
+Numbers in JS are just what you would expect in your everyday use. 
+
+They can be whole numbers or decimal. 
+
+`42` or `3.14`
+
+These are all the same thing in JS. 
+
+### Common Problems
+
+<!-- > -->
+
+#### Numbers and Computers
+
+**Q:** Why 0.1 + 0.2 != 0.3 ?
+
+0.1 + 0.2 ->  0.30000000000000004
+
+https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
+
+**A:** Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
+
+<!-- > -->
+
+> For 0.1 in the standard binary64 format, the representation can be written exactly as
+> 0.1000000000000000055511151231257827021181583404541015625 in decimal, or
+> 0x1.999999999999ap-4 in C99 hexfloat notation.
+
+<!-- > -->
+
+> You've just stumbled on a number ( 3/10 ) that happens to be easy to represent with the decimal system, but doesn't fit the binary system. It goes both ways (to some small degree) as well: 1/16 is an ugly number in decimal (0.0625), but in binary it looks as neat as a 10,000th does in decimal (0.0001)** - if we were in the habit of using a base-2 number system in our daily lives, you'd even look at that number and instinctively understand you could arrive there by halving something, halving it again, and again and again.
+
+https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
+
+<!-- > -->
+
+### Convert strings to Numbers
+
+<!-- > -->
+
+Convert strings to numbers. When does this happen?
+
+- JSON
+- Form inputs
+
+<!-- > -->
+
+Convert strings to numbers with `parseInt()` or `parseFloat()`: 
 
 ```JS
-(function() {
-
-  // Code inside is scoped to this function block
-
-})() // <-- Immediately runs this function
+const tax = parseFloat('0.85') // 0.85
+const selected = '2'
+const index = parseInt(selected) // 2
 ```
 
 <!-- > -->
 
-## Bundling code with Rollup
+#### What could go wrong?
 
-There are several tools you can use to bundle your code and several patterns/standards that they follow. 
-
-- [Common.js](http://www.commonjs.org)
-- [Require.js](https://requirejs.org)
-- [rollUp.js](https://rollupjs.org/guide/en/)
-
-Rollup seems to be the most modern and up to date choice out of this list. 
+<div>When is a number not a number? 🤔</div>
 
 <!-- > -->
 
-Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! 
-
-Rollup will bundle files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
-
-<!-- > -->
-
-What types of different environements will your code be run in? 
-
-- Browser
-- Node
-
-The Browser has an engine that runs your JS code. Node is an environment that runs your JS code. While they they both use JS they are different. 
-
-<!-- > -->
-
-**What's the difference?**
-
-With node you're scripting the server. Imagine a single computer where you have control over the configuration. 
-
-With browser imagine millions of mysterious computers where you have no control over configuration. 
-
-<!-- > -->
-
-The **browser** uses the script tag:
-
-`<script src="somefile.js"></script>`
-
-Newer ES6 JS syntax uses **ES Modules** Syntax:
-
-`import package from 'module-name'`
-
-Node.js uses **CommonJS**:
-
-`const package = require('module-name')`
-
-<!-- > -->
-
-**That's too many options what should I do?** 😱
-
-If you're working in Node.js use Common JS with `require()`
-
-If you're writing code for the browser you'll need to support older browsers that don't support the ES Modules. This means you need to support both the script tag and ES Modules.
-
-<!-- > -->
-
-**But what if my library could be used in both Node and the Browser?**
-
-You need to support both all three: CommonJS, ES, Modules, and Script tag. 
-
-<!-- > -->
-
-**There's a tool for that!**
-
-UMD (Universal Module Definition) supports both `<script>` tag and `require()`
-
-There are several tools that will bundle your JS files into compatiple formats. 
-
-<!-- > -->
-
-### Common JS 
-
-**CommonJS is the pattern used with Node JS projects.** To use the code in a library you've written for Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
-
-```JavaScript
-const yourCode = require('your-code')
-...
-yourCode.yourMethod()
-```
-
-<!-- > -->
-
-### UMD (Universal Module Definition) 
-
-**UMD is used for code used in a script tag in the browser.** A UMD module be imported via the script tag _and can be imported with `require()` in a Node JS environment._ 
-
-```JavaScript
-<script src="your-code.js"></script>
-<script>
-  ...
-  yourCode.method()
-  ...
-</script>
-```
-
-<!-- > -->
-
-### ES Modules 
-
-**ES Modules are used with ES6 Import from syntax.** ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. 
-
-```JavaScript
-import { yourMethod } from 'your-code'
-...
-yourMethod()
-```
-
-These modules might be further processed with babel before they are used. 
-
-<!-- > -->
-
-## Recap: Modules
-
-- Modules are used to make code compatible across different environments. 
-- There are several different module formats
-  - CommonJS
-  - UMD 
-  - ES
-
-<!-- > -->
-
-## Bundling files with rollup
-
-Follow the instructions below to bundle your project with rollup.js.
-
-Install rollup.js 
-
-`npm install --save-dev rollup`
-
-<!-- > -->
-
-Create a config file for rollup. Make a new file named `rollup.config.js`. 
-
-```JavaScript
-export default {
-  input: 'src/index.js',
-  output: {
-    file: 'umd/your-module.js',
-    format: 'umd',
-    name: 'yourModule'
-  }
-};
-```
-
-**You will change the `input`, `output.file`, and  `output.name` to match your files.**
-
-This base config takes an input file from: `src/index.js` and outputs a UMD file `umd/your-module.js`. 
-
-<!-- > -->
-
-When loaded this file will create a global variable named `yourModule`. Remember UMD format is meant to be loaded in the browser. The code is also wrapped in a function following the CommonJS module pattern for use with Node JS. 
-
-Move your source files into a folder named `src` create this folder if you haven't yet. 
-
-<!-- > -->
-
-Test your work so far. 
-
-`npx rollup --config`
-
-This should build the UMD module from your source files and save these a folder named `umd`. 
-
-Rollup should have created `umd/your-module.js`. Take a look at this file. it contains the boiler plate code that manages your module/bundle. 
-
-<!-- > -->
-
-If you saw a warning: `(!) Generated an empty bundle` you need to export code from  `src/index.js`. For example 
+If `parseFloat()` can't convert your string to a number you get `NaN` (Not a Number). 
 
 ```JS 
-function getWeather() {
+console.log(parseFloat('0.85%')) // 0.85
+console.log(parseFloat('Tax 0.85%')) // NaN
+```
+
+<!-- > -->
+
+The same applies to `parseInt()`. 
+
+```JS 
+console.log(parseInt('100px'))   // 100
+console.log(parseInt('0.85%'))   // 0
+console.log(parseInt('f00'))     // NaN
+console.log(parseInt('f00', 16)) // 3840
+console.log(parseInt('ff', 16))  // 255
+```
+
+<!-- > -->
+
+Okay so if `NaN` is showing up every once in a while you'll need to check for it. 
+
+<!-- > -->
+
+### Check for NaN
+
+<!-- > -->
+
+Great JS trivia:
+
+```JavaScript
+NaN === NaN;        // false - NaN is the only value NOT equal to itself
+Number.NaN === NaN; // false 
+isNaN(NaN);         // true - Use isNaN() to check for NaN
+isNaN(Number.NaN);  // true
+```
+
+<!-- > -->
+
+In practical terms you're probably doing something like this: 
+
+```JS 
+function getTax(d, r) {
+  const dollars = parseFloat(d)
+  const rate = parseFloat(r)
+  if (isNaN(dollars) || isNaN(rate)) {
+    return 0
+  }
   ...
 }
+```
 
-export { getWeather }
-// or 
-export default getWeather
+If the values passed to this function were not numbers you can't calculate the tax or the function could throw an error. 
+
+The same applies to integers.
+
+<!-- > -->
+
+What happens here:
+
+`Array(16).join('wtf' - 1) + ' Batman!'`
+
+<!-- > -->
+
+### Convert Numbers to Strings
+
+<!-- > -->
+
+This happens all the time. Any time you display a number it was probably converted to a string in the process. 
+
+Most often you're not doing anything at all and just letting the conversion happen. 
+
+Sometimes you need a little control over the conversion. 
+
+<!-- > -->
+
+Use `.toString()` to convert to a base: 
+
+```JS 
+const a = (255).toString(); // "255" (default is radix 10)
+const b = (255).toString(2); // "11111111" (radix 2, i.e. binary)
+const c = (255).toString(16); // "ff" (radix 16, i.e. hexadecimal)
+const d = (1.1).toString(2)
 ```
 
 <!-- > -->
 
-**Test your module.** 
+This would be good for makes hex colors: 
 
-Make a test file: `example.html`. Import your script with the script tag: 
-
-`<script src="./umd/just-in-case.js"></script>`
-
-Notice the path to your library, it points to the `umd` folder at the file named in your config file.
-
-Write some test code in your test file. Load the text file in the browser. 
-
-<!-- > -->
-
-Examine the source code that was written. It is pretty obscure. Note that it is using one of the module patterns evolved from the IIFE. 
-
-The source code has not been minified. You can minify using Terser.js plugin for Rollup. 
-
-Import `Terser.js` plugin for RollUp. 
-
-`npm install --save-dev rollup-plugin-terser`
-
-<!-- > -->
-
-Modify `rollup.config.js`: 
-
-```JavaScript
-import { terser } from 'rollup-plugin-terser';
-
-export default [
-  {
-    input: 'src/index.js',
-    plugins: [terser()],
-    output: {
-        file: 'umd/your-module.js',
-        format: 'umd',
-        name: 'yourModule',
-        esModule: false
-    }
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'esm/index.js',
-      format: 'esm'
-    }
-  }
-];
+```JS
+const red = (123).toString(16); 
+const green = (87).toString(16); 
+const blue = (255).toString(16);
+console.log('#'+red+green+blue) // #7b57ff
 ```
 
 <!-- > -->
 
-Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit from minification. 
+This works backwards:
 
-Modify `package.json`. We need to make sure that importers of the library get the right file. Set "main" for Node JS environments.
-
-```JSON
-  ...
-  "main": "umd/jus-in-case.js",
-  ...
+```JS 
+console.log((0x7b).toString(10)) // 123
 ```
 
 <!-- > -->
 
-Use "module" to designate ES Module.
+More often you'll want to round to a foxed number of decimals:
 
-```JSON
-  ...
-  "module": "esm/index.js",
-  ...
+```JS 
+const dollars = 87.67
+const tax = 8.5
+const total = (dollars * tax / 100).toFixed(2) // 7.45
 ```
 
 <!-- > -->
 
-Use "files" to designate which files should be distributed by npm. 
+### Exponents
 
-```JSON
-  ...
-  "files": [
-    "esm/*",
-    "emd/*"
-  ]
-  ...
+<!-- > -->
+
+Numbers written with an exponent.
+
+```JS
+1 === 1
+1e+1 === 10 -> 1 * 10
+23e+3 === 23000 -> 23 * 1000
+44e-2 === 0.44 -> 44 * 0.01
 ```
 
+Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
+
 <!-- > -->
 
-Add "prepare" script. This script is run by npm each time you install or publish. 
+### Number Methods  
 
-```jSON
-  ...
-  "scripts: {
-    ...
-    "prepare": "rollup --config",
-    ...
-  }
-  ...
+<!-- > -->
+
+Don't ask why... 
+
+```JS
+const two = new Number(2)
 ```
 
-<!-- > -->
-
-### Testing your work
-
-Pair up with someone you haven't paired with before. The goal will be to test the build system. You'll do this by following the instructions below. 
-
-Start here: 
-
-`npm pack`
+Is a thing
 
 <!-- > -->
 
-This command is like `npm publish` it prepares your files but doesn't send them to the server. Use `pack` to test your work locally. When you're satisfied use `publish` to upload to npm. 
+These are not the same thing: 
 
-Run your tests
-
-`npm test`
-
-<!-- > -->
-
-If everything is good commit and push to GitHub. 
-
-Check your Status on Travis. 
-
-Check your Coverage on Coveralls.
-
-<!-- > -->
-
-Take a look at your package on npm. Check the version number. 
-
-You can test the Node JS version of the package using the "RunKit" link.
-
-(I had a problem with this showing an outdated version.)
-
-Create a test project for your package. 
-
-<!-- > -->
-
-Create a new folder and initialize a new npm project. 
-
-`npm init -y`
-
-Import your package. 
-
-`npm i your-module`
-
-Make an HTML file to test in browser 'example.html'.
-
-Add the script tag. 
-
-```HTML
-<script src="./node_modules/your-module/umd/your-module.js"></script>
-<script>
- console.log(yourModule)
- console.log(yourModule.method())
-</script>
+```JS
+const two = new Number(2)
+const too = 2
+two !== too
 ```
 
-<!-- > -->
-
-Note the path is pointing to the file in node_modules. You'll need to customize the second script to work with your code. 
-
-Test your work in Node JS. Make a new file `server.js`. 
-
-```JavaScript
-const yourModule = require('your-module')
-
-console.log(yourModule)
-console.log(yourModule.method())
-```
+And it makes sense in a weird Computer Science way...
 
 <!-- > -->
 
-Again, modify the code here to test your library code. 
+## Math
 
-Test your code in a React project. 
-
-Create a new React app. 
-
-`npx create-react-app your-module-react-test`
+The Math object holds all of the properties and functions that handle math operations. 
 
 <!-- > -->
 
-Import your module. 
+**Properties**
 
-`npm i your-module`
+`Math.E`
+`Math.LN10`
+`Math.LN2`
+`Math.LOG10E`
+`Math.LOG2E`
+`Math.PI`
+`Math.SQRT1_2`
+`Math.SQRT2`
 
-Write some test code in `App.js`
-
-```JavaScript
-import { yourMethod } from 'your-module'
-
-console.log(yourMethod())
-```
-
-<!-- > -->
-
-Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. 
+2.718281828459045, 2.302585092994046, 0.6931471805599453, 0.4342944819032518 1.4426950408889634, 3.141592653589793, 0.7071067811865476, 1.414213562373095
 
 <!-- > -->
 
-### Code Coverage
+**Methods**
 
-Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration, code coverage is a metric that gives another way to look at the quality and reliability of our code. 
+`Math.abs()`
+`Math.acos()`
+`Math.acosh()`
+`Math.asin()`
+`Math.asinh()`
+`Math.atan()`
+`Math.atan2()`
+`Math.atanh()`
+`Math.cbrt()`
+`Math.ceil()`
+`Math.clz32()`
+`Math.cos()`
+`Math.cosh()`
+`Math.exp()`
+`Math.expm1()`
+`Math.floor()`
+`Math.fround()`
+`Math.hypot()`
+`Math.imul()`
+`Math.log()`
+`Math.log10()`
+`Math.log1p()`
+`Math.log2()`
+`Math.max()`
+`Math.min()`
+`Math.pow()`
+`Math.random()`
+`Math.round()`
+`Math.sign()`
+`Math.sin()`
+`Math.sinh()`
+`Math.sqrt()`
+`Math.tan()`
+`Math.tanh()`
+`Math.trunc()`
 
-<!-- > -->
-
-**Run Coverage**
-
-`npx jest --coverage`
-
-You should see something like this: 
-
-```
-...
-  console.log lib/index.js:14
-    index.js
-
-----------|----------|----------|----------|----------|-------------------|
-File      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
-----------|----------|----------|----------|----------|-------------------|
-All files |    73.33 |    36.36 |    61.54 |     69.7 |                   |
- index.js |    73.33 |    36.36 |    61.54 |     69.7 |... 26,34,51,56,61 |
-----------|----------|----------|----------|----------|-------------------|
-Test Suites: 1 passed, 1 total
-Tests:       4 passed, 4 total
-Snapshots:   0 total
-Time:        1.583s
-Ran all test suites.
-...
-```
-
-<!-- > -->
-
-Let's read the coverage summary closely. 
-
-- File - Which files were tested? 
-- % Stmts - What percentage of statements in the program have been executed? 
-- % Branch - Has each branch in a control structure been executed? 
-- % Func - What percentage of functions have been executed? 
-- % Lines - What percentage of executable lines of code have been executed? 
-- Uncovered Line #s - Which lines have not been covered by testing?
-  - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the 'src' folder. In the example test.js imports from './lib'.
+Wow that's a lot of Math!
 
 <!-- > -->
 
-Take a look at your code and figure out: 
+## Exercise
 
-- What hasn't been tested
-- Which branches haven't been executed
-- Functions that have been tested
-
-https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b
+<div><em>Treat this like an onsite interview question.</em></div> 
 
 <!-- > -->
 
-### Pair programming 
+Your goal is to define a class that tracks money. 
 
-Take some time to pair program and solve issues with your code. You'll split the time half focussed on one project and half focussed on the other. 
-
-The goal of this session is to 
-
-Pair up with someone you haven't paired with before. 
+Money can be hard to work with if you make a mistake customers get really angry or it might cost your company a lot of money.
 
 <!-- > -->
 
-## Homework 
+**The Problem**
 
-[Math Lib](./assignments/assignment-05.md)
+You need to define a Class/Object that holds a value in dollars and provides methods to work with currency.
+
+- Write the Money class 
+- Write tests for your methods
+
+<!-- > -->
+
+Currency class should have the following methods:
+
+- Initialize with a value
+- Returns formatted value
+- implements the following methods
+  - `add(n)`
+  - `subtract(n)`
+  - `multiply(n)`
+  - `divide(n)`
+  - `split(n)` - Returns an array of values, use this to split a bill. 
+    - `new Currency(7).split(3) -> [2.33, 2.33, 2.34]`
+
+<!-- > -->
+
+Use `Intl.NumberFormat` to format your currency in a local language format.  
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
+
+<!-- > -->
+
+### Homework
+
+- Math Lib
+
+<!-- > -->
+
+## Wrap Up
+
+- Review
 
 <!-- > -->
 
 ## Additional Resources
 
-1. https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+1. https://javascript.info/number
+1. https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
+1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
+1. https://itnext.io/how-to-build-a-money-data-type-in-javascript-7b622beabe00
+1. https://exercism.io/tracks/javascript/exercises
 
 <!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | Bundle files with RollUp  |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | Code Coverage pair and test |
-| 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:00 | 0:05 | [Objectives](#learning-objectives) |
+| 0:10 | 0:05 | [Overview](#why-you-should-know-this) |
+| 0:20 | 0:10 | [Working with numbers](#working-with-numbers) |
+| 0:30 | 0:10 | [Math Object](#math) |
+| 1:30 | 1:00 | [Exercise](#exercise) |
+| 1:40 | 0:10 | Break |
+| 2:40 | 1:00 | [Homework](#homework) |
+| 2:45 | 0:05 | [Wrap up](#wrap-up) |
 
+<!-- > -->
+
+<!-- Number has a few class methods and many instance methods. Here are two useful
+
+- `Number.prototype.toFixed()` - Returns a string with fixed number of decimal places
+- `Number.prototype.toLocaleString()` - Returns a language sensitive string from the number -->
+
+<!-- > -->
+
+<!-- JS Provides two ways of working with numbers. 
+
+- `Number` - The Number object is a number it represents a numeric value. It has a few properties and a few methods
+
+`const answer = new Number(42)` This is a thing, and it's different from `const answer = 42`
+
+Take a look at the properties and methods. 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number -->
+
+<!-- > -->
+
+<!-- ### When something is Not a Number
+
+What is NaN? Where and when does it appear? 
+
+`Array(16).join('wtf' - 1) + ' Batman!'`
+
+Methods that return a number for some numerical input will return `NaN` the input is non-numerical. It is returned when a method on the Math Object fails or when method trying to parse a number fails. -->
+
+<!-- > -->
+
+<!-- ## Number Types 
+
+There is only one type of number. There isn't much more to this. Except: 
+
+- JS only has number (there are no Int, floats, Doubles, etc.)
+- JS Numbers are always floats
+
+Use `Number.isInteger(value)` to check if a value is an integer.  -->
+
+<!-- > -->
+<!-- 
+### new Number() vs Number()
+
+The **Number** JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the **Number() constructor**. A primitive type object **number** is created using the **Number() function**.
+
+```JavaScript
+const n = new Number(123) // Creates a new Number Object
+const y = new Number(123)
+
+const x = 123 // Creates a new Number primitive
+
+// These are not equivalent!
+x === n // false (the primitive is equal to the object reference)
+x !== y // true (not the same reference)
+
+n.valueOf() === x === y.valueOf() // true (apples to apples to apples)
+``` -->
+
+<!-- > -->
+
+<!-- Use `Number()` to covert a value to a number. Remember the class constructor is a function!
+
+```JavaScript
+const a = Number('123') // Covert this string to a number
+const b = 123
+
+a === b
+
+const c = Number('z')   // NaN (Not a Number)
+const d = Number('234') // 234
+```
+
+While `Number()` works to create a number from a string `parseInt()` and `parseFloat()` are better choices usually. -->
+
+<!-- > -->
+
+<!-- Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
+
+```JavaScript
+const a = new Number(3)
+const b = new Number(3)
+
+a !== b // true
+
+a * b // 9
+a + b // 6
+// etc
+``` -->
+
+<!-- > -->
+
+<!-- There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
+
+This is true for all of the primitives:
+
+- `new Boolean('true')` | `Boolean('false')`
+- `new String('Hello')` | `String('Hello')`
+- `new Number('123')` | `Number('456')` -->
+
+<!-- > -->
+
+<!-- The only advantage to having a primitive wrapped in an object would be if you needed to attach other properties to that value for some reason. But you'd probably be better off making an Object instead. 
+
+```JavaScript 
+const t = new Number(99)
+t.status = 'Not quite a buck yet'
+console.log(t.status)  
+``` -->
+
+<!-- > -->
+
+<!-- ### Number Properties
+
+The Number object also holds many useful properties. 
+
+- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with. -->
+
+<!-- > -->
+
+<!-- - `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. 
+- `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
+- `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
+- `Number.MIN_VALUE` - The smallest positive numeric value representable in JS.   -->
+
+<!-- > -->
+
+<!-- - `Number.NEGATIVE_INFINITY` - Represents negative infinity
+- `Number.POSITIVE_INFINITY` - Positive infinity
+- `Number.NaN` - Not a Number.  -->
+
+<!-- > -->
+
+<!-- - `Number.prototype.toPrecision()` - Returns a String
+- `Number.prototype.toString()`
+- `Number.prototype.valueOf()` -->
+
+<!-- > -->
+
+<!-- ## Chaining methods
+
+An object can return itself. Doing this allows you to call other methods by following the last method call with a dot and the new method. 
+
+`me.watch().whip().watch().nayNay()` -->
+
+<!-- > -->
+
+<!-- Each of the methods above need to return `this`. Here is an example: 
+
+```JavaScript
+class Thing {
+  constructor(value = 0) {
+    this.value = value
+  }
+
+  multiply(n) {
+    this.value *= n
+    return this
+  }
+
+  add(n) {
+    this.value += n
+    return this
+  }
+
+  divide(n) {
+    this.value /= n
+    return this
+  }
+
+  subtract(n) {
+    this.value -= n
+    return this
+  }
+}
+
+const thing = new Thing(10)
+thing.add(1)
+  .multiply(2)
+  .subtract(3)
+  .divide(4)
+
+console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
+``` -->

@@ -1,9 +1,11 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 9
+# FEW 2.1 - Lesson 8 
 
-<small style="display:block;text-align:center">API Lib</small>
+<small style="display:block;text-align:center">Writing in TypeScript</small>
 
-The last Library you will work on is a library that works with an API. APIs are used everywhere and are an important part of the ecosystem. Libraries that make working with APIs easier are an important part of the ecosystem. 
+<!-- ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit)) -->
+
+In this class, you will begin writing TypeScript code and learn how to adapt your existing JS code to TypeScript.
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -11,316 +13,426 @@ The last Library you will work on is a library that works with an API. APIs are 
 
 <!-- > -->
 
-## Learning Objectives 
+## Learning Objectives
 
-1. Describe and define callback functions
-1. Use callback functions
-1. Describe Promise it's uses and states
-1. Use Promise in Aynchronous code 
-1. Describe uses and functions of `aysnc` and `await`
-1. Use `aysnch` and `await` to handle asynchronous calls
+1. Define static & dynamic typing
+2. Explain the pros & cons of static vs. dynamic typing
+3. Implement functions, classes, & interfaces using TypeScript
+4. Convert existing JS code to TypeScript
 
 <!-- > -->
 
-## What's a callback? 
+## Static vs. Dynamic Typing
 
-Implement a function with a callback. 
+<!-- > -->
 
-```JS 
-function getWeather(callBack) {
-  // gets the weather data...
-  // Then executes the callback function
-  callback()
+### Q: What is a type?
+
+Data types describe the shape of the data that we're expecting.
+
+Examples: string, number, boolean, list, object
+
+<!-- > -->
+
+### Q: What is static typing?
+
+In a statically typed language, variables' types are *static*, meaning that once a variable is set to a type, it cannot be changed. Statically typed languages generally check *at compile time* that a variable is being assigned the correct type of data. 
+
+Examples of statically typed languages include Java, C, C++, and Swift.
+
+<!-- > -->
+
+**Q:** Can you use static typing in JS?
+
+**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
+
+<!-- > -->
+
+### Q: What is dynamic typing?
+
+In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
+
+```JavaScript
+let x = 10;  // Number
+x = 'hello'; // String
+```
+
+<!-- > -->
+
+In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
+
+Examples of dynamically typed languages include Python, **JavaScript**, PHP, and Ruby.
+
+<!-- > -->
+
+## Why use one or the other?
+
+**Discussion:** Write down 3 reasons each for using either a statically typed or dynamically typed language.
+
+<!-- > -->
+
+### Static typing catches errors earlier in program development.
+
+**Q:** What is happening on each line of code below?
+
+```JavaScript
+const intFuncs = []; // [number]
+
+intFuncs.push((x) => 2 * x);
+intFuncs.push((x) => x * x);
+
+intFuncs.push((x) => x.toFixed(2));
+
+let total = 0;
+intFuncs.forEach((func) => total += func(10));
+```
+
+<!-- > -->
+
+We catch the bug *at runtime*.
+
+```
+const intFuncs: Array<(x: number) => number> = [];
+```
+
+<!-- > -->
+
+### Static typing improves readability
+
+Consider this code:
+
+```JavaScript
+function mystery(x) {
+  if (x.powerLevel <= 100) {
+    x.leave();
+  } else {
+    x.display();
+  }
 }
 ```
 
 <!-- > -->
 
-How would you use this? 
+Now, consider the following questions:
+- What is x?
+- What other fields, data, and behavior does x have? How else can I interact with x?
+- How would I find this information?
 
-```JS 
-function getWeather(callBack) {
-  // gets the weather data...
-  // Then executes the callback function
-  callback()
+<!-- > -->
+
+Now, let's take a look at this code with some types added.
+
+```TypeScript
+class Cat {
+  powerLevel: number;
+  personality: string;
+  appearance: string;
+  photo: Image;
+  leave(): void {...}
+  display(): void {...}
 }
 
-getWeather(handleWeather)
-
-function handleWeather() {
-  // Something happens here after the weather data is loaded. 
+function mystery(x: Cat) {
+  ...
 }
 ```
 
 <!-- > -->
 
-Or use an inline function. 
+### Static typing can improve your workflow
 
-```JS 
-function getWeather(callBack) {
-  // gets the weather data...
-  // Then executes the callback function
-  callback()
-}
+Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
 
-getWeather(function () {
-  // something happens here after the weather data is loaded
-})
+<!-- > -->
 
-// Do the same thing with an arrow function
-getWeather(() => {
-  // something happens here after the weather data is loaded
-})
+### Advantages of dynamic typing
 
+There isn't just one right answer that works in all scenarios; you will need to decide which style is right for your project. Here are some pros of dynamic typing to consider:
+
+- It's faster to write, thus might be better for scripting
+- It's more succinct
+- It's more tolerant to change: a code refactor will have a smaller area of effect
+- Doesn't require extra compilation step
+
+<!-- > -->
+
+## Features of TypeScript
+
+<!-- > -->
+
+### Variables
+
+The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
+
+```TypeScript
+let y = 88;
+let sum: number = 10;
+const title: string = 'hello';
+let done: boolean = false;
+
+sum = undefined; // OK
+sum = null; // OK
+sum = '100'; // Not OK - will result in a compile error
+Math.round(title) // Compile error
 ```
 
 <!-- > -->
 
-Might be good if it had some parameters. 
+There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
 
-```JS 
-function getWeather(callBack, apikey, units) {
-  // Gets the weather with apikey and units...
-  // Calls the callback
+```TypeScript
+let list1: number[] = [1, 2, 3];
+let list1: Array<number> = [1, 2, 3];
+```
 
-  callback()
+<!-- > -->
+
+What if we want an array with mixed values of different types? In that case, we can use the 'tuple' type:
+
+```TypeScript
+let person1: [string, number] = ['Jane', 20];
+```
+
+<!-- > -->
+
+You can also easily make your own enum type. If you try to print the value of an enum, you'll see that it's actually a number, with the first value defaulting to 0.
+
+```TypeScript
+enum Fruit { Apple, Orange, Pear };
+
+let f: Fruit = Fruit.Pear;
+
+console.log(Fruit.Apple);  // 0
+console.log(Fruit.Orange); // 1
+console.log(Fruit.Pear);   // 2
+```
+
+<!-- > -->
+
+Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
+
+```TypeScript
+let someValue: any = 10;
+someValue = [1, 2, 3];
+```
+
+<!-- > -->
+
+### Functions & Function Variables
+
+<!-- > -->
+
+We can add types to the parameters and return values of functions:
+
+```TypeScript
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+add(4, 6);
+add('2', 7); // Compile Error
+```
+
+<!-- > -->
+
+We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
+
+```TypeScript
+function greet(greeting = 'Hello', person?: string) {
+  if (person) {
+    console.log(`${greeting}, ${person}!`);
+  } else {
+    console.log(`${greeting}!`);
+  }
+}
+
+greet(); // prints 'Hello!'
+greet('Hola'); // prints 'Hola!'
+greet(undefined, 'Jane'); // prints 'Hello, Jane!'
+```
+
+<!-- > -->
+
+### Classes & Interfaces
+
+<!-- > -->
+
+In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
+
+```TypeScript
+let person: { name: string, age: number } = { name: 'Jane', age: 22 };
+```
+
+We can also define the type ahead of time using an interface:
+
+```TypeScript
+interface Person {
+  name: string;
+  age: number;
+  greet(message: string): string;
+}
+
+let person: Person = {name: 'Jane', age: 22}
+```
+
+<!-- > -->
+
+## Activity: Getting started with Typescript
+
+Take a look at this 5 min tutorial from the source. Take 5 mins and do the tutorial. 
+
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+
+<!-- > -->
+
+- What did you see in the tutorial? 
+- What was different about using typescript than using?
+- Did you see anything new? 
+
+<!-- > -->
+
+### Interfaces
+
+> **Interface**
+> a point where two systems, subjects, organizations, etc. meet and interact.
+
+This can be a USB cable, your keyboard, the button in your favorite app. 
+
+An interface in programming is where one piece of program connects to and interacts with another piece. This happens in a few places: 
+
+- Objects - Anything with properties and methods require the interfacing system to know the the property and method names. 
+- Functions - expect parameters and return values, this is how you interact with them and is their interface.
+
+<!-- > -->
+
+
+
+<!-- > -->
+
+## Activity: Get Your Project Up and Running with TypeScript
+
+Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your library. You can add it to one of the libraries you have published or to a library you are currently working on. 
+
+The example below uses the String library. 
+
+Now, we just need to make a few small changes to get it working again!
+
+<!-- > -->
+
+### Add Types
+
+Rename the files to use a TypeScript extension (e.g. `index.js` to `index.ts`), and modify the functions to use types.
+
+To get the string prototype functions to compile, you will need to add the following interface definition to `index.js`:
+
+```TypeScript
+declare global {
+  interface String {
+    capitalize(): string;
+    capitalizeAll(): string;
+    allCaps(): string;
+    oddCaps(): string;
+    evenCaps(): string;
+    kabobCase(): string;
+    snakeCase(): string;
+    stripSpaces(): string;
+    stripExtraSpaces(): string;
+  }
 }
 ```
 
 <!-- > -->
 
-How do we get data from a callback? Pass it as a parameter!
+To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
 
-```JS 
-function getWeather(callBack, apikey, units) {
-  // loads json with apikey and units
-  callback(json) // passes json to callback
-}
+<!-- > -->
 
-getWeather(function (data) { // receives json here!
-  // do stuff with data received from callback
-})
+### Modify rollup.config.js
+
+Install the following in order to use TypeScript and the TypeScript Rollup plugin:
+
+```bash
+npm install --save-dev rollup typescript rollup-plugin-typescript2
 ```
 
 <!-- > -->
 
-What if there is an error? Add an error callback! 
+Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
 
-This is how most JS methods handled errors before promises. Many systems still use this arranegment. 
 
-```JS 
-function getWeather(apikey, units, onSuccess, onError) {
-  fetch(...)
-    .then((data) => {
-      onSuccess(data)
-    })
-    .catch((error) => {
-      onError(error)
-    })
-}
+Import the TypeScript plugin at the top of the file:
 
-getWeather('myapikey', 'metric', function (data) { // receives json here!
-  // do stuff with data received from callback
-}, function(err) {
-  // something went wrong
-})
+```
+import typescript from 'rollup-plugin-typescript2';
 ```
 
 <!-- > -->
 
-Or write all of that in separate functions. 
+Then enter the following into your plugins for both output files:
 
-```JS 
-function getWeather(apikey, units, onSuccess, onError) {
-  fetch(...)
-    .then((data) => {
-      onSuccess(data)
-    })
-    .catch((error) => {
-      onError(error)
-    })
-}
-
-getWeather('myapikey', 'metric', handleData, handleError)
-
-function handleData(data) { // receives json here!
-  // do stuff with data received from callback
-}
-
-function handleError(err) {
-  // something went wrong
+```JavaScript
+input: {
+  ...
+},
+plugins: [
+  typescript({
+    typescript: require('typescript'),
+  }),
+],
+output: {
+  ...
 }
 ```
 
-<!-- > -->
-
-## Using a callback with an API
+Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
 
 <!-- > -->
 
-Start with some no frills code. Start here: 
+### Add tsconfig.json
 
-https://github.com/Make-School-Labs/weather-api
+Add a new file `tsconfig.json` with the following content:
 
-<!-- > -->
-
-## Here are a few ideas
-
-<!-- > -->
-
-Set up some callbacks. You'll need one for success and one for error. 
-
-```JS
-// -------------------------------------------------------------------
-// Use a callback to handle data and errors. This is old school and 
-// is the basis for all of the other examples here. 
-function getWeather(zip, apiKey, success, error) {
-  const units = 'imperial'
-  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-  console.log('**** getWeather ****')
-  fetch(path)
-    .then(res => res.json())
-    .then(json => success(json))
-    .catch(err => error(err))
-}
 ```
-
-Externally you would use the function above like this: 
-
-```JS 
-getWeather('94010', 'mykey', onSuccess, onError)
-
-function onSuccess(json) { ... }
-
-function onError(err) { ... }
-```
-
-<!-- > -->
-
-Your code could return a Promise. Simplest would be to return 
-
-```JS 
-// -------------------------------------------------------------------
-// Use a promise to handle data and errors
-function getWeatherPromise(zip, apiKey) {
-  const units = 'imperial'
-  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-  // Return a Promise 
-  return fetch(path).then(res => res.json())
-}
-```
-
-Externally uou would use the code above like this: 
-
-```JS 
-getWeatherPromise('94102', 'mykey')
-  .then(onSuccess)
-  .catch(onError)
-
-function onSuccess(json) { ... }
-
-function onError(err) { ... }
-```
-
-<!-- > -->
-
-```JS
-async function getWeatherAsync(zip, apiKey) {
-  const units = 'imperial'
-  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-  
-  // Await each of these Promises to resolve 
-  // (await only works inside functions marked async)
-  const res = await fetch(path) // waits for the promise to resolve
-  const json = await res.json() // waits for the promise to resolve
-
-  return json
-}
-```
-
-This works exactly the same as the previous example and would be called the same from outside. 
-
-```JS 
-getWeatherPromise('94102', 'mykey') // async function returns a Promise!
-  .then(onSuccess)
-  .catch(onError)
-
-function onSuccess(json) { ... }
-
-function onError(err) { ... }
-```
-
-## Improving the Experience
-
-The current data from OpenWeatherMap is really hard to parse.
-
-- Has multiple levels of data stored
-- Some of the keys use the same names
-- Some of the keys are confusing
-
-You can improve on this. 
-
-
-Currently OpenWeatherMap is returning something that looks like this: 
-
-```JS
 {
-  base: "stations",
-  clouds: {all: 75},
-  cod: 200,
-  coord: {lon: -122.48, lat: 37.76},
-  dt: 1588021159,
-  id: 0,
-  main: {
-    feels_like: 47.68
-    humidity: 55
-    pressure: 1021
-    temp: 62.76
-    temp_max: 66.2
-    temp_min: 57.99
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./esm",
+    "outDir": "./esm",
+    "module": "es6",
+    "target": "es5",
+    "noImplicitAny": true,
+    "moduleResolution": "node"
   },
-  name: "San Francisco",
-  sys: {type: 1, id: 5817, country: "US", sunrise: 1587993483, sunset: 1588042595},
-  timezone: -25200,
-  visibility: 16093,
-  weather: [
-    {id: 803, main: "Clouds", description: "broken clouds", icon: "04d"}
+  "include": [
+    "src/**/*"
   ],
-  wind: {speed: 25.28, deg: 270}
+  "exclude": [
+    "node_modules"
+  ]
 }
 ```
 
-That's really hard to grasp. What's the difference between `main` and `weather`? Main has the temperature but weather has the description of the weather conditions. Main really seems to be about the temp and air pressure. 
-
-Why is weather an array with only one value? Everything else is objects.
-
-You could improve on this, developers would thank you. 
+For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
 
 <!-- > -->
 
-```JS
-async function getWeatherAsync(zip, apiKey) {
-  const units = 'imperial'
-  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
-  
-  const res = await fetch(path) 
-  const json = await res.json() 
+### Modify package.json
 
-  // Get all of the relavant info 
-  const { base, clouds, cod, coord, dt, id, main, name, sys, timezone, visibility, weather, wind } = json
-  const { temp, pressure, humidity, temp_max, temp_min } = main
-  const { description, icon } = weather[0]
-  // Reformat the object that is returned
-  return { temp, pressure, humidity, temp_min, temp_max, clouds, cod, visibility, wind, description, icon }
-}
+Now we need to tell our library users where to find the TypeScript types. Go to `package.json` and add the following line after the main and module:
 
+```JSON
+"types": "esm/index.d.ts",
 ```
 
 <!-- > -->
 
-## Homework
+Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
 
-- See the main page for the schedule of assignments.
+<!-- > -->
+
+### Homework
+
+[Assignment 8 - Typescript](../assignments/assignment-08.md)
 
 <!-- > -->
 

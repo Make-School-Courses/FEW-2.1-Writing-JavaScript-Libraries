@@ -1,587 +1,180 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 5 
+# FEW 2.1 - Date Lab
 
-<small style="display:block;text-align:center">Numbers and Math Lib</small>
-
-<!-- > -->
-
-The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
+<small style="display:block;text-align:center">API Libraries</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+<!-- ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
 <!-- > -->
 
-## Learning Objectives
+## Why you should know this or industry application (optional) (5 min)
 
-1. Use Math methods
-1. Identify the limits of math and numbers on the computer
-1. Implement Objects that allow for chained method calls
+Dates are important they appear in one form or another in almost every application you might create and they are a core part of programming. 
 
-<!-- > -->
+## Learning Objectives (5 min)
 
-## Why you should know this
+1. 
 
-<!-- > -->
+## Date review
 
-Math and Numbers in JS can be a pain point. 
+- What is a date?
+- What is the Unix Epoch?
+- What is UTC? 
+- What is minimum unit of time in a JS Date?
+- Which of these is correct?	
+	- `new Date()`
+	- `new Date(0)`
+	- `new Date('9/26/65')`
+	- `new Date(1983, 09, 31)`
 
-Understanding how math and numbers work in JS will give you deeper insights into the language, it will help you at interviews and in your own work. 
 
-<!-- > -->
+## Composition 
 
-Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
+The goal of the current assignment is to create a class that manages a date. It will provide helper methods that make it easier to work with dates. 
 
-<!-- > -->
-
-## Working with numbers
-
-<!-- > -->
-
-Numbers in JS are just what you would expect in your everyday use. 
-
-They can be whole numbers or decimal. 
-
-`42` or `3.14`
-
-These are all the same thing in JS. 
-
-### Common Problems
-
-<!-- > -->
-
-#### Numbers and Computers
-
-**Q:** Why 0.1 + 0.2 != 0.3 ?
-
-0.1 + 0.2 ->  0.30000000000000004
-
-https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
-
-**A:** Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
-
-<!-- > -->
-
-> For 0.1 in the standard binary64 format, the representation can be written exactly as
-> 0.1000000000000000055511151231257827021181583404541015625 in decimal, or
-> 0x1.999999999999ap-4 in C99 hexfloat notation.
-
-<!-- > -->
-
-> You've just stumbled on a number ( 3/10 ) that happens to be easy to represent with the decimal system, but doesn't fit the binary system. It goes both ways (to some small degree) as well: 1/16 is an ugly number in decimal (0.0625), but in binary it looks as neat as a 10,000th does in decimal (0.0001)** - if we were in the habit of using a base-2 number system in our daily lives, you'd even look at that number and instinctively understand you could arrive there by halving something, halving it again, and again and again.
-
-https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
-
-<!-- > -->
-
-### Convert strings to Numbers
-
-<!-- > -->
-
-Convert strings to numbers. When does this happen?
-
-- JSON
-- Form inputs
-
-<!-- > -->
-
-Convert strings to numbers with `parseInt()` or `parseFloat()`: 
+You can call your class anything you like. For the examples I'm calling my class `D`.
 
 ```JS
-const tax = parseFloat('0.85') // 0.85
-const selected = '2'
-const index = parseInt(selected) // 2
-```
+class D {
 
-<!-- > -->
-
-#### What could go wrong?
-
-<div>When is a number not a number? 🤔</div>
-
-<!-- > -->
-
-If `parseFloat()` can't convert your string to a number you get `NaN` (Not a Number). 
-
-```JS 
-console.log(parseFloat('0.85%')) // 0.85
-console.log(parseFloat('Tax 0.85%')) // NaN
-```
-
-<!-- > -->
-
-The same applies to `parseInt()`. 
-
-```JS 
-console.log(parseInt('100px'))   // 100
-console.log(parseInt('0.85%'))   // 0
-console.log(parseInt('f00'))     // NaN
-console.log(parseInt('f00', 16)) // 3840
-console.log(parseInt('ff', 16))  // 255
-```
-
-<!-- > -->
-
-Okay so if `NaN` is showing up every once in a while you'll need to check for it. 
-
-<!-- > -->
-
-### Check for NaN
-
-<!-- > -->
-
-Great JS trivia:
-
-```JavaScript
-NaN === NaN;        // false - NaN is the only value NOT equal to itself
-Number.NaN === NaN; // false 
-isNaN(NaN);         // true - Use isNaN() to check for NaN
-isNaN(Number.NaN);  // true
-```
-
-<!-- > -->
-
-In practical terms you're probably doing something like this: 
-
-```JS 
-function getTax(d, r) {
-  const dollars = parseFloat(d)
-  const rate = parseFloat(r)
-  if (isNaN(dollars) || isNaN(rate)) {
-    return 0
-  }
-  ...
 }
 ```
 
-If the values passed to this function were not numbers you can't calculate the tax or the function could throw an error. 
+## args
 
-The same applies to integers.
+It would be nice if our custom date class could be initialized in the same way that the built in Date class can be initialized. The built in Date class if you recall can be initialized with a variable number of arguments of different types. 
 
-<!-- > -->
-
-What happens here:
-
-`Array(16).join('wtf' - 1) + ' Batman!'`
-
-<!-- > -->
-
-### Convert Numbers to Strings
-
-<!-- > -->
-
-This happens all the time. Any time you display a number it was probably converted to a string in the process. 
-
-Most often you're not doing anything at all and just letting the conversion happen. 
-
-Sometimes you need a little control over the conversion. 
-
-<!-- > -->
-
-Use `.toString()` to convert to a base: 
-
-```JS 
-const a = (255).toString(); // "255" (default is radix 10)
-const b = (255).toString(2); // "11111111" (radix 2, i.e. binary)
-const c = (255).toString(16); // "ff" (radix 16, i.e. hexadecimal)
-const d = (1.1).toString(2)
-```
-
-<!-- > -->
-
-This would be good for makes hex colors: 
+You'll solve this problem like this: 
 
 ```JS
-const red = (123).toString(16); 
-const green = (87).toString(16); 
-const blue = (255).toString(16);
-console.log('#'+red+green+blue) // #7b57ff
+class D {
+	constructor(...args) {
+		this.date = new Date(...args)
+	}
+}
 ```
 
-<!-- > -->
+Here our custom date class stores a date in a property, and initializes that date with all of the arguments passed. 
 
-This works backwards:
+The `args` is an array of all arguments supplied to the constructor. 
 
-```JS 
-console.log((0x7b).toString(10)) // 123
-```
+This technique allows you to create functions that take a variable number of parameters. 
 
-<!-- > -->
+## Human Readable values 
 
-More often you'll want to round to a foxed number of decimals:
+Your class should provide human readable values for components of date. 
 
-```JS 
-const dollars = 87.67
-const tax = 8.5
-const total = (dollars * tax / 100).toFixed(2) // 7.45
-```
+JS Date provides these methods: 
 
-<!-- > -->
+- date.getFullYear() - Returns a number like 2020
+- date.getMonth() - Returns a number 0 to 11. This is index of the month starting at 0.
+- date.getDate() - Returns a number like 1 to 31. This is a calendar date. 
+- date.getDay() - Returns a number 0 to 6. This is 0 indexed day of the week. Sun to Sat. 
 
-### Exponents
+The goal is to create some helper methods that return human readable forms of these. 
 
-<!-- > -->
+- D.year() - 2020
+- D.yr() - 20
+- D.month() - November
+- D.mon() - Nov
+- D.day() - Tuesday
+- D.dy() - Tue
+- D.date() - 10 (date on the calendar)
 
-Numbers written with an exponent.
+
+**Year** 
+
+To get the year you can use `getFullYear()`. To get the short year you'll need to get last two digits of the full year. You could do this by converting to a string and getting the last two characters with `substr()`. 
+
+**Month**
+
+The month should return a human readable month. To make this work you'll need an array of the months. Use `getMonth()` to get the index of the month in your array. 
+
+Follow this same idea for the short month. 
+
+## Date format
+
+You're date lib really needs a good formatter. The format function will use the idea of a 'mask'. The mask is a string that describes the date. Your format function will replace special characters with components of the date. See the homework description for more details. 
+
+The general solution is to create a string by looping over each character in the mask string. With each iteration look at the current character or the mask string if it matches one of the special characters append the date component otherwise append the character. 
+
+For example, image the mask string is: 'y/m/d'
+
+1. 'y' -> replace with the short year '20'
+2. '/' -> not special append it '20/'
+3. 'm' -> replace with the short month '20/Nov'
+4. '/' -> not special append it '20/Nov/'
+5. 'd' -> replace with the date '20/Nov/10'
+
+Use the helper methods you created earlier rather than reproducing code that generates the short year etc. 
+
+## When method 
+
+The when method will require you to look at a date and provide a human readable string describing relative time between dates. It should return something like: '1 year ago' or 'three weeks from now'. 
+
+To get started you'll need to compare two dates. Find the difference in year. Here are a few ideas. 
+
+Get the difference in years by numbers. Alternatively you could get the years and subtract. 
 
 ```JS
-1 === 1
-1e+1 === 10 -> 1 * 10
-23e+3 === 23000 -> 23 * 1000
-44e-2 === 0.44 -> 44 * 0.01
+const a = new Date(1965, 8, 26)
+const b = new Date()
+const c = new Date(b - a)
+console.log(c / 1000 / 60 / 60 / 24 / 365.25)
+// 55.12536939092326
+console.log(b.getFullYear() - a.getFullYear())
+// 55
 ```
 
-Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
+You can use these same ideas to calculate the difference in months and days. 
 
-<!-- > -->
+Once you've got the differnece you can start putting together the relative date string. 
 
-### Number Methods  
+The best tactic to is to calculate the difference in months. 
 
-<!-- > -->
+From here you can ask if the difference in years is more than 1 your description should read: 'x years ago' or 'x years from now'. 
 
-Don't ask why... 
+The same goes for months and days. 
 
-```JS
-const two = new Number(2)
-```
 
-Is a thing
 
-<!-- > -->
+## In Class Activity I (30 min)
 
-These are not the same thing: 
+- I do, We do, You do
+- Reading & Discussion Questions in small groups
+- Draw a picture/diagram
+- Complete Challenges solo or in pair
+- Q&A about tutorials
+- Pair up and code review
+- Pair program
+- Formative assessment
+- Form into groups
+- etc (get creative :D)
 
-```JS
-const two = new Number(2)
-const too = 2
-two !== too
-```
+## Overview/TT II (optional) (20 min)
 
-And it makes sense in a weird Computer Science way...
+## In Class Activity II (optional) (30 min)
 
-<!-- > -->
+## Wrap Up (5 min)
 
-## Math
-
-The Math object holds all of the properties and functions that handle math operations. 
-
-<!-- > -->
-
-**Properties**
-
-`Math.E`
-`Math.LN10`
-`Math.LN2`
-`Math.LOG10E`
-`Math.LOG2E`
-`Math.PI`
-`Math.SQRT1_2`
-`Math.SQRT2`
-
-2.718281828459045, 2.302585092994046, 0.6931471805599453, 0.4342944819032518 1.4426950408889634, 3.141592653589793, 0.7071067811865476, 1.414213562373095
-
-<!-- > -->
-
-**Methods**
-
-`Math.abs()`
-`Math.acos()`
-`Math.acosh()`
-`Math.asin()`
-`Math.asinh()`
-`Math.atan()`
-`Math.atan2()`
-`Math.atanh()`
-`Math.cbrt()`
-`Math.ceil()`
-`Math.clz32()`
-`Math.cos()`
-`Math.cosh()`
-`Math.exp()`
-`Math.expm1()`
-`Math.floor()`
-`Math.fround()`
-`Math.hypot()`
-`Math.imul()`
-`Math.log()`
-`Math.log10()`
-`Math.log1p()`
-`Math.log2()`
-`Math.max()`
-`Math.min()`
-`Math.pow()`
-`Math.random()`
-`Math.round()`
-`Math.sign()`
-`Math.sin()`
-`Math.sinh()`
-`Math.sqrt()`
-`Math.tan()`
-`Math.tanh()`
-`Math.trunc()`
-
-Wow that's a lot of Math!
-
-<!-- > -->
-
-## Exercise
-
-<div><em>Treat this like an onsite interview question.</em></div> 
-
-<!-- > -->
-
-Your goal is to define a class that tracks money. 
-
-Money can be hard to work with if you make a mistake customers get really angry or it might cost your company a lot of money.
-
-<!-- > -->
-
-**The Problem**
-
-You need to define a Class/Object that holds a value in dollars and provides methods to work with currency.
-
-- Write the Money class 
-- Write tests for your methods
-
-<!-- > -->
-
-Currency class should have the following methods:
-
-- Initialize with a value
-- Returns formatted value
-- implements the following methods
-  - `add(n)`
-  - `subtract(n)`
-  - `multiply(n)`
-  - `divide(n)`
-  - `split(n)` - Returns an array of values, use this to split a bill. 
-    - `new Currency(7).split(3) -> [2.33, 2.33, 2.34]`
-
-<!-- > -->
-
-Use `Intl.NumberFormat` to format your currency in a local language format.  
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
-
-<!-- > -->
-
-### Homework
-
-- Math Lib
-
-<!-- > -->
-
-## Wrap Up
-
-- Review
-
-<!-- > -->
+- Continue working on your current tutorial
+- Complete reading
+- Complete challenges
 
 ## Additional Resources
 
-1. https://javascript.info/number
-1. https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
-1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
-1. https://itnext.io/how-to-build-a-money-data-type-in-javascript-7b622beabe00
-1. https://exercism.io/tracks/javascript/exercises
-
-<!-- > -->
+1. Links to additional readings and videos
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time** | **Activity** |
-| ----------- | -------- | ------------ |
-| 0:00 | 0:05 | [Objectives](#learning-objectives) |
-| 0:10 | 0:05 | [Overview](#why-you-should-know-this) |
-| 0:20 | 0:10 | [Working with numbers](#working-with-numbers) |
-| 0:30 | 0:10 | [Math Object](#math) |
-| 1:30 | 1:00 | [Exercise](#exercise) |
-| 1:40 | 0:10 | Break |
-| 2:40 | 1:00 | [Homework](#homework) |
-| 2:45 | 0:05 | [Wrap up](#wrap-up) |
-
-<!-- > -->
-
-<!-- Number has a few class methods and many instance methods. Here are two useful
-
-- `Number.prototype.toFixed()` - Returns a string with fixed number of decimal places
-- `Number.prototype.toLocaleString()` - Returns a language sensitive string from the number -->
-
-<!-- > -->
-
-<!-- JS Provides two ways of working with numbers. 
-
-- `Number` - The Number object is a number it represents a numeric value. It has a few properties and a few methods
-
-`const answer = new Number(42)` This is a thing, and it's different from `const answer = 42`
-
-Take a look at the properties and methods. 
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number -->
-
-<!-- > -->
-
-<!-- ### When something is Not a Number
-
-What is NaN? Where and when does it appear? 
-
-`Array(16).join('wtf' - 1) + ' Batman!'`
-
-Methods that return a number for some numerical input will return `NaN` the input is non-numerical. It is returned when a method on the Math Object fails or when method trying to parse a number fails. -->
-
-<!-- > -->
-
-<!-- ## Number Types 
-
-There is only one type of number. There isn't much more to this. Except: 
-
-- JS only has number (there are no Int, floats, Doubles, etc.)
-- JS Numbers are always floats
-
-Use `Number.isInteger(value)` to check if a value is an integer.  -->
-
-<!-- > -->
-<!-- 
-### new Number() vs Number()
-
-The **Number** JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the **Number() constructor**. A primitive type object **number** is created using the **Number() function**.
-
-```JavaScript
-const n = new Number(123) // Creates a new Number Object
-const y = new Number(123)
-
-const x = 123 // Creates a new Number primitive
-
-// These are not equivalent!
-x === n // false (the primitive is equal to the object reference)
-x !== y // true (not the same reference)
-
-n.valueOf() === x === y.valueOf() // true (apples to apples to apples)
-``` -->
-
-<!-- > -->
-
-<!-- Use `Number()` to covert a value to a number. Remember the class constructor is a function!
-
-```JavaScript
-const a = Number('123') // Covert this string to a number
-const b = 123
-
-a === b
-
-const c = Number('z')   // NaN (Not a Number)
-const d = Number('234') // 234
-```
-
-While `Number()` works to create a number from a string `parseInt()` and `parseFloat()` are better choices usually. -->
-
-<!-- > -->
-
-<!-- Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
-
-```JavaScript
-const a = new Number(3)
-const b = new Number(3)
-
-a !== b // true
-
-a * b // 9
-a + b // 6
-// etc
-``` -->
-
-<!-- > -->
-
-<!-- There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
-
-This is true for all of the primitives:
-
-- `new Boolean('true')` | `Boolean('false')`
-- `new String('Hello')` | `String('Hello')`
-- `new Number('123')` | `Number('456')` -->
-
-<!-- > -->
-
-<!-- The only advantage to having a primitive wrapped in an object would be if you needed to attach other properties to that value for some reason. But you'd probably be better off making an Object instead. 
-
-```JavaScript 
-const t = new Number(99)
-t.status = 'Not quite a buck yet'
-console.log(t.status)  
-``` -->
-
-<!-- > -->
-
-<!-- ### Number Properties
-
-The Number object also holds many useful properties. 
-
-- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with. -->
-
-<!-- > -->
-
-<!-- - `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. 
-- `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
-- `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
-- `Number.MIN_VALUE` - The smallest positive numeric value representable in JS.   -->
-
-<!-- > -->
-
-<!-- - `Number.NEGATIVE_INFINITY` - Represents negative infinity
-- `Number.POSITIVE_INFINITY` - Positive infinity
-- `Number.NaN` - Not a Number.  -->
-
-<!-- > -->
-
-<!-- - `Number.prototype.toPrecision()` - Returns a String
-- `Number.prototype.toString()`
-- `Number.prototype.valueOf()` -->
-
-<!-- > -->
-
-<!-- ## Chaining methods
-
-An object can return itself. Doing this allows you to call other methods by following the last method call with a dot and the new method. 
-
-`me.watch().whip().watch().nayNay()` -->
-
-<!-- > -->
-
-<!-- Each of the methods above need to return `this`. Here is an example: 
-
-```JavaScript
-class Thing {
-  constructor(value = 0) {
-    this.value = value
-  }
-
-  multiply(n) {
-    this.value *= n
-    return this
-  }
-
-  add(n) {
-    this.value += n
-    return this
-  }
-
-  divide(n) {
-    this.value /= n
-    return this
-  }
-
-  subtract(n) {
-    this.value -= n
-    return this
-  }
-}
-
-const thing = new Thing(10)
-thing.add(1)
-  .multiply(2)
-  .subtract(3)
-  .divide(4)
-
-console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
-``` -->
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:30      | In Class Activity I       |
+| 0:50        | 0:10      | BREAK                     |
+| 1:00        | 0:45      | In Class Activity II      |
+| 1:45        | 0:05      | Wrap up review objectives |
+| TOTAL       | 1:50      | -                         |
