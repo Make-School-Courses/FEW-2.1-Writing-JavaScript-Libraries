@@ -122,8 +122,11 @@ Get the difference in years by numbers. Alternatively you could get the years an
 const a = new Date(1965, 8, 26)
 const b = new Date()
 const c = new Date(b - a)
+// Calculate the year mathematically
 console.log(c / 1000 / 60 / 60 / 24 / 365.25)
 // 55.12536939092326
+
+// Get the numeric year
 console.log(b.getFullYear() - a.getFullYear())
 // 55
 ```
@@ -132,49 +135,31 @@ You can use these same ideas to calculate the difference in months and days.
 
 Once you've got the differnece you can start putting together the relative date string. 
 
-The best tactic to is to calculate the difference in months. 
+The best tactic to is to calculate the difference in months. From here you can check if the total months is more than 12 and reply with "years ago." If the total months is less than 12 you can reply with "months ago." 
 
-From here you can ask if the difference in years is more than 1 your description should read: 'x years ago' or 'x years from now'. 
+Here is a rough idea of calculating the difference in months. 
 
-The same goes for months and days. 
+```JS
+const a = new Date(2019, 8, 26)
+const b = new Date()
+const dy = (b.getFullYear() - a.getFullYear())
+const dm = b.getMonth() - a.getMonth()
+const totalmonths = dy * 12 + dm
+console.log(dy, dm) // 1 year, 2 months
+console.log(totalmonths) // 14 months
+```
 
+You can calculate the total days between two dates like this: 
 
+```JS
+const dd = (b - a) / 86400 / 1000
+console.log(dd)
+```
 
-## In Class Activity I (30 min)
+Get the difference between the dates and divide by one day or 86400 seconds then divide by milliseconds. 
 
-- I do, We do, You do
-- Reading & Discussion Questions in small groups
-- Draw a picture/diagram
-- Complete Challenges solo or in pair
-- Q&A about tutorials
-- Pair up and code review
-- Pair program
-- Formative assessment
-- Form into groups
-- etc (get creative :D)
+## After class 
 
-## Overview/TT II (optional) (20 min)
+Continue the current assignment.
 
-## In Class Activity II (optional) (30 min)
-
-## Wrap Up (5 min)
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
-
-## Additional Resources
-
-1. Links to additional readings and videos
-
-## Minute-by-Minute [OPTIONAL]
-
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
-| 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+[Assignment 7 - Date Lib](../assignments/assignment-07.md)
