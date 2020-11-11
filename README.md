@@ -47,7 +47,7 @@ Students by the end of the course will be able to ...
 |  3 |  Thu, Oct 29  | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
 |  - |  Tue, Nov 3              | **Vote! - Civic Responsibility Break** |
 |  4 |  Thu, Nov 5 | [Lesson 4](./lessons/lesson-04.md) | [Date Lib](./assignments/assignment-07.md) |
-|  5 |  Tue, Nov 10  | [Lesson 5](./lessons/lesson-05.md) | [Math Lib](./assignments/assignment-05.md) - Write math lib |
+|  5 |  Tue, Nov 10  | [Lesson 5](./lessons/lesson-05.md) | - |
 |  6 |  Thu, Nov 12  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
 |  7 |  Tue, Nov 17  | [Lesson 7](./lessons/lesson-07.md) | [Continuous Integration](./assignments/assignment-04.md) |
 |  8 |  Thu, Nov 19  | [Lesson 8](./lessons/lesson-08.md) | Lab |

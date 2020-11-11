@@ -50,10 +50,13 @@ You'll solve this problem like this:
 
 ```JS
 class D {
-	constructor(...args) {
+	constructor(...args) { 
 		this.date = new Date(...args)
 	}
 }
+// new D(1978, 0, 1)
+// new D()
+// new D('Sept. 1, 1979')
 ```
 
 Here our custom date class stores a date in a property, and initializes that date with all of the arguments passed. 
@@ -68,20 +71,20 @@ Your class should provide human readable values for components of date.
 
 JS Date provides these methods: 
 
-- date.getFullYear() - Returns a number like 2020
-- date.getMonth() - Returns a number 0 to 11. This is index of the month starting at 0.
-- date.getDate() - Returns a number like 1 to 31. This is a calendar date. 
-- date.getDay() - Returns a number 0 to 6. This is 0 indexed day of the week. Sun to Sat. 
+- `date.getFullYear()` - Returns a number like 2020
+- `date.getMonth()` - Returns a number 0 to 11. This is index of the month starting at 0.
+- `date.getDate()` - Returns a number like 1 to 31. This is a calendar date. 
+- `date.getDay()` - Returns a number 0 to 6. This is 0 indexed day of the week. Sun to Sat. 
 
 The goal is to create some helper methods that return human readable forms of these. 
 
-- D.year() - 2020
-- D.yr() - 20
-- D.month() - November
-- D.mon() - Nov
-- D.day() - Tuesday
-- D.dy() - Tue
-- D.date() - 10 (date on the calendar)
+- `D.year()` - 2019
+- `D.yr()` - 19
+- `D.month()` - November
+- `D.mon()` - Nov
+- `D.day()` - Tuesday
+- `D.dy()` - Tue
+- `D.date()` - 10 (date on the calendar)
 
 
 **Year** 
@@ -102,6 +105,8 @@ The general solution is to create a string by looping over each character in the
 
 For example, image the mask string is: 'y/m/d'
 
+`D.format('y/m/d') // 20/Nov/10`
+
 1. 'y' -> replace with the short year '20'
 2. '/' -> not special append it '20/'
 3. 'm' -> replace with the short month '20/Nov'
@@ -119,6 +124,7 @@ To get started you'll need to compare two dates. Find the difference in year. He
 Get the difference in years by numbers. Alternatively you could get the years and subtract. 
 
 ```JS
+// D.when(date) // 
 const a = new Date(1965, 8, 26)
 const b = new Date()
 const c = new Date(b - a)
@@ -152,6 +158,7 @@ console.log(totalmonths) // 14 months
 You can calculate the total days between two dates like this: 
 
 ```JS
+// 86400 = 60 * 60 * 24
 const dd = (b - a) / 86400 / 1000
 console.log(dd)
 ```
