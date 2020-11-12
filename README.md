@@ -48,10 +48,10 @@ Students by the end of the course will be able to ...
 |  - |  Tue, Nov 3              | **Vote! - Civic Responsibility Break** |
 |  4 |  Thu, Nov 5 | [Lesson 4](./lessons/lesson-04.md) | [Date Lib](./assignments/assignment-07.md) |
 |  5 |  Tue, Nov 10  | [Lesson 5](./lessons/lesson-05.md) | - |
-|  6 |  Thu, Nov 12  | [Lesson 6](./lessons/lesson-06.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
+|  6 |  Thu, Nov 12  | [Lesson 6](./lessons/lesson-06.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
 |  7 |  Tue, Nov 17  | [Lesson 7](./lessons/lesson-07.md) | [Continuous Integration](./assignments/assignment-04.md) |
 |  8 |  Thu, Nov 19  | [Lesson 8](./lessons/lesson-08.md) | Lab |
-|  9 |  Tue, Nov 24  | [Lesson 9](./lessons/lesson-09.md) | [API Lib](./assignments/assignment-09.md) - Start API Lib |
+|  9 |  Tue, Nov 24  | [Lesson 9](./lessons/lesson-09.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
 |  - |  Thu, Nov 26               | **Holiday- Thanksgiving** |
 | 10 |  Tue, Dec 1   | [Lesson 10](./lessons/lesson-10.md) | - |
 | 11 |  Thu, Dec 3   | [Lesson 11](./lessons/lesson-11.md) | - |
