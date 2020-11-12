@@ -2,7 +2,7 @@
 
 ## Description 
 
-People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their jobs easier. 
+People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their applications work. 
 
 The goal of this assignment is to create to lib that will simplify, improve and, speed up the workflow of developers using an API. 
 
@@ -10,13 +10,13 @@ You will choose an API to work with and make a lib that you will publish to npm.
 
 ### Why this assignment?
 
-APIs are the backbone of the web. Developers have writing these kinds of libraries for years. You have probably used a few already. By doing this assignment you will expand your abilities in new areas. 
+APIs are the backbone of the web. Developers have writing these kinds of libraries for years. You have probably used a few already. By doing this assignment you will expand your abilities in new areas as you look at the code that implements API transactions. 
 
 ## Project requirements
 
 You will write and publish a library that works with an API. Choose an API from the list or choose one of your own. 
 
-Keep in mind that you are not building a product. You are building a tool that facilitates the use of the API you choose. The tool should make development easier and faster. 
+**Keep in mind that you are not building a product. You are building a tool that facilitates the use of the API you choose. The tool should make development easier and faster.**
 
 - [Yoda Speak](https://rapidapi.com/ismaelc/api/yoda-speak)
 - [AccuWeather](https://rapidapi.com/stefan.skliarov/api/AccuWeather)
@@ -35,24 +35,20 @@ Your goal is to simplify using your chosen API. This can be done in a few ways. 
 
 ### Follow these steps
 
-Following these steps will make your easiest while also illustrating why your would want to make a library of code. 
+Following these steps will make your easiest while also illustrating why you would want to make a library of code. 
 
-- Make a simple project uses your chosen API. This should be a simple project, it can just be an HTML file with some JS. 
-- Decouple the API code. Find the things that connect your project code with the API code. The code that handles the API should be able to take in any information that that it needs as parameters. 
-- Move the API code into it's own file. 
+- **Make a simple project** that uses your chosen API. This should be a simple project, it can just be an HTML file with some JS. 
+- **Decouple the API code.** Find the things that connect your project code with the API code. The code that handles the API should be able to take in any information that that it needs as parameters. 
+- **Move the API code into it's own file.** 
 
 Follow the tutorial here: https://www.youtube.com/playlist?list=PLoN_ejT35AEjGBv8nfv4GDszPvltjwmgL
 
 ### Stretch Challenges 
 
-- Make an object that holds the configuration data for the API. Give the object methods that handle standard requests and or organize parameters that are passed to the API. 
-- Organize and improve on the return data from your API. A JSON repsonse from an API might long and complex. Your code can read the response and return a more organized response. 
+- Make an object that holds the configuration data for the API. Give the object methods that handle standard requests and or organize parameters that are passed to the API.
+- Organize and improve on the return data from your API. A JSON repsonse from an API might long and complex. Your code can read the response and return a more organized response.
 - Create a system built around the API. This could handle calling the API repeatedly over a time period for example. 
-- Your code can handle errors more gracefully. 
-
-## Working in steps 
-
-Following these steps will help you complete this project.
+- Your code can handle errors more gracefully.
 
 ### Deliverable
 
@@ -62,7 +58,7 @@ Your code should be built and published to npm.
 
 ### Due date
 
-Class 12
+Class 12 - Tues Dec. 8
 
 ## Assessing the assignment
 
