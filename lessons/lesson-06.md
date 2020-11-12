@@ -1,587 +1,434 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 5 
+# FEW 2.1 - API Lib
 
-<small style="display:block;text-align:center">Numbers and Math Lib</small>
+<small style="display:block;text-align:center">API Lib</small>
 
-<!-- > -->
-
-The goal of this lesson is to look at JS and see how it handles Math and Numbers and create a library that works with numbers.
+The last Library you will work on is a library that works with an API. APIs are used everywhere and are an important part of the ecosystem. Libraries that make working with APIs easier are an important part of the ecosystem. 
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+<!-- ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
 <!-- > -->
 
-## Learning Objectives
+## Learning Objectives 
 
-1. Use Math methods
-1. Identify the limits of math and numbers on the computer
-1. Implement Objects that allow for chained method calls
-
-<!-- > -->
-
-## Why you should know this
-
-<!-- > -->
-
-Math and Numbers in JS can be a pain point. 
-
-Understanding how math and numbers work in JS will give you deeper insights into the language, it will help you at interviews and in your own work. 
+1. Describe and define callback functions
+1. Use callback functions
+1. Describe Promise it's uses and states
+1. Use Promise in Aynchronous code 
+1. Describe uses and functions of `aysnc` and `await`
+1. Use `aysnch` and `await` to handle asynchronous calls
 
 <!-- > -->
 
-Writing a library is always a good idea. Doing this again in another assignment will solidify your knowledge by giving you the chance to practice your skills and put professional best practices into use. 
+## What's a callback? 
 
-<!-- > -->
+A callback is a function that invoked by another function. A callback is often used with asynchronous actions like handling network requests. 
 
-## Working with numbers
+Some examples of callbacks: 
 
-<!-- > -->
+- `setInterval()` and `setTimeOut()` use a callback to run code after time period is over. 
+- `map()`, `filter()`, and `reduce()` use a callback to execute code with each iteration. 
+- `addEventListener()` uses a callback to run code when an event occurs. 
 
-Numbers in JS are just what you would expect in your everyday use. 
+In practical terms a callback is a function passed to another function or Object as an argument. 
 
-They can be whole numbers or decimal. 
-
-`42` or `3.14`
-
-These are all the same thing in JS. 
-
-### Common Problems
-
-<!-- > -->
-
-#### Numbers and Computers
-
-**Q:** Why 0.1 + 0.2 != 0.3 ?
-
-0.1 + 0.2 ->  0.30000000000000004
-
-https://stackoverflow.com/questions/588004/is-floating-point-math-broken/588014#588014
-
-**A:** Numbers are represented as series of 1s and 0s behind the scenes in a 64bit package.
-
-<!-- > -->
-
-> For 0.1 in the standard binary64 format, the representation can be written exactly as
-> 0.1000000000000000055511151231257827021181583404541015625 in decimal, or
-> 0x1.999999999999ap-4 in C99 hexfloat notation.
-
-<!-- > -->
-
-> You've just stumbled on a number ( 3/10 ) that happens to be easy to represent with the decimal system, but doesn't fit the binary system. It goes both ways (to some small degree) as well: 1/16 is an ugly number in decimal (0.0625), but in binary it looks as neat as a 10,000th does in decimal (0.0001)** - if we were in the habit of using a base-2 number system in our daily lives, you'd even look at that number and instinctively understand you could arrive there by halving something, halving it again, and again and again.
-
-https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
-
-<!-- > -->
-
-### Convert strings to Numbers
-
-<!-- > -->
-
-Convert strings to numbers. When does this happen?
-
-- JSON
-- Form inputs
-
-<!-- > -->
-
-Convert strings to numbers with `parseInt()` or `parseFloat()`: 
+In javascript a function is value and can be assigned or passed around your code just like any other type of value. 
 
 ```JS
-const tax = parseFloat('0.85') // 0.85
-const selected = '2'
-const index = parseInt(selected) // 2
+// doStuff is a function
+function doStuff(a,b) { 
+  // Hi I'm doStuff
+  // ...
+}
+
+// doStuff can be assigned to variables: 
+const doesIt = doStuff
+
+// Passed as a parameter (it's a callback here)
+setTimeout(doStuff, 1000)
+
+[1,2,3,4].map(doStuff)
 ```
 
-<!-- > -->
+### Implement a function with a callback. 
 
-#### What could go wrong?
-
-<div>When is a number not a number? 🤔</div>
-
-<!-- > -->
-
-If `parseFloat()` can't convert your string to a number you get `NaN` (Not a Number). 
+Imagine you have worked with the OpenWeatherMap API. The next step is to take the code that fetches the weather and put it into a form that can be used anywhere in ann application. 
 
 ```JS 
-console.log(parseFloat('0.85%')) // 0.85
-console.log(parseFloat('Tax 0.85%')) // NaN
-```
-
-<!-- > -->
-
-The same applies to `parseInt()`. 
-
-```JS 
-console.log(parseInt('100px'))   // 100
-console.log(parseInt('0.85%'))   // 0
-console.log(parseInt('f00'))     // NaN
-console.log(parseInt('f00', 16)) // 3840
-console.log(parseInt('ff', 16))  // 255
-```
-
-<!-- > -->
-
-Okay so if `NaN` is showing up every once in a while you'll need to check for it. 
-
-<!-- > -->
-
-### Check for NaN
-
-<!-- > -->
-
-Great JS trivia:
-
-```JavaScript
-NaN === NaN;        // false - NaN is the only value NOT equal to itself
-Number.NaN === NaN; // false 
-isNaN(NaN);         // true - Use isNaN() to check for NaN
-isNaN(Number.NaN);  // true
-```
-
-<!-- > -->
-
-In practical terms you're probably doing something like this: 
-
-```JS 
-function getTax(d, r) {
-  const dollars = parseFloat(d)
-  const rate = parseFloat(r)
-  if (isNaN(dollars) || isNaN(rate)) {
-    return 0
-  }
-  ...
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
 }
 ```
 
-If the values passed to this function were not numbers you can't calculate the tax or the function could throw an error. 
-
-The same applies to integers.
+Notice `callback` is the name of a parameter variable and this function is invoked on the last line. 
 
 <!-- > -->
 
-What happens here:
-
-`Array(16).join('wtf' - 1) + ' Batman!'`
-
-<!-- > -->
-
-### Convert Numbers to Strings
-
-<!-- > -->
-
-This happens all the time. Any time you display a number it was probably converted to a string in the process. 
-
-Most often you're not doing anything at all and just letting the conversion happen. 
-
-Sometimes you need a little control over the conversion. 
-
-<!-- > -->
-
-Use `.toString()` to convert to a base: 
+How would you use this? 
 
 ```JS 
-const a = (255).toString(); // "255" (default is radix 10)
-const b = (255).toString(2); // "11111111" (radix 2, i.e. binary)
-const c = (255).toString(16); // "ff" (radix 16, i.e. hexadecimal)
-const d = (1.1).toString(2)
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
+}
+
+getWeather(handleWeather)
+
+function handleWeather() {
+  // Something happens here after the weather data is loaded. 
+}
 ```
+
+Here `handleWeather` is a function that is passed to `getWeather` and is executed as `callback` there. 
 
 <!-- > -->
 
-This would be good for makes hex colors: 
-
-```JS
-const red = (123).toString(16); 
-const green = (87).toString(16); 
-const blue = (255).toString(16);
-console.log('#'+red+green+blue) // #7b57ff
-```
-
-<!-- > -->
-
-This works backwards:
+Or use an inline/anonymous function. 
 
 ```JS 
-console.log((0x7b).toString(10)) // 123
+function getWeather(callBack) {
+  // gets the weather data...
+  // Then executes the callback function
+  callback()
+}
+
+getWeather(function () {
+  // something happens here after the weather data is loaded
+})
+
+// Do the same thing with an arrow function
+getWeather(() => {
+  // something happens here after the weather data is loaded
+})
+
 ```
 
 <!-- > -->
 
-More often you'll want to round to a foxed number of decimals:
+Might be good if it had some parameters. 
 
 ```JS 
-const dollars = 87.67
-const tax = 8.5
-const total = (dollars * tax / 100).toFixed(2) // 7.45
+function getWeather(callBack, apikey, units) {
+  // Gets the weather with apikey and units...
+  // Calls the callback
+
+  callback()
+}
 ```
 
 <!-- > -->
 
-### Exponents
+How do we get data from a callback? Pass it as a parameter!
+
+```JS 
+function getWeather(callBack, apikey, units) {
+  // loads json with apikey and units
+  callback(json) // passes json to callback
+}
+
+getWeather(function (data) { // receives json here!
+  // do stuff with data received from callback
+})
+```
 
 <!-- > -->
 
-Numbers written with an exponent.
+What if there is an error? Add an error callback! 
+
+This is how most JS methods handled errors before promises. Many systems still use this arranegment. 
+
+```JS 
+function getWeather(apikey, units, onSuccess, onError) {
+  fetch(...)
+    .then((data) => {
+      onSuccess(data)
+    })
+    .catch((error) => {
+      onError(error)
+    })
+}
+
+getWeather('myapikey', 'metric', function (data) { // receives json here!
+  // do stuff with data received from callback
+}, function(err) {
+  // something went wrong
+})
+```
+
+<!-- > -->
+
+Or write all of that in separate functions. 
+
+```JS 
+function getWeather(apikey, units, onSuccess, onError) {
+  fetch(...)
+    .then((data) => {
+      onSuccess(data)
+    })
+    .catch((error) => {
+      onError(error)
+    })
+}
+
+getWeather('myapikey', 'metric', handleData, handleError)
+
+function handleData(data) { // receives json here!
+  // do stuff with data received from callback
+}
+
+function handleError(err) {
+  // something went wrong
+}
+```
+
+The core idea presented above is that of passing a function to another function like you would pass other values like strings and numbers and executing that function inside the receiving function. 
+
+## Promise
+
+Promise is an object in JavaScript that is used to handle asynchronous actions. A Promise works with callbacks you can think of Promise as managing the success and error callbacks. 
+
+```JS 
+function getWeather() {
+  // Fetch returns a Promise
+  return fetch(...) // Return the Promise
+}
+
+getWeather() // Call then() and catch() on the Promise 
+  .then((data) => {
+    onSuccess(data)
+  })
+  .catch((error) => {
+    onError(error)
+  })
+
+function handleData(data) { ... }
+
+function handleError(err) { ... }
+```
+
+The `Promise.then()` and `Promise.catch()` methods take the callbacks you used earlier and the Promise decides which to execute.
+
+### async and await
+
+The `async` and `await` keywords are used to handle Promise. 
+
+Any function that that begins with `async` will return a Promise, even if you don't explicitly return a promise in the code block.
+
+The `await` key word can only be used inside of an `async` function. Use it to resolve a Promise. 
+
+```JS 
+async function getWeather() {
+  const res = await fetch() // code stops here and waits for promise to resolve
+  const json = await res.json() // waits here for promise to resolve
+  return json // Returns json wrapped in a promise!
+}
+
+getWeather().then(json => ...)
+```
+
+<!-- > -->
+
+## Using a callback with an API
+
+The following examples are more detailed and turn the previouse examples into actual code. 
+
+<!-- > -->
+
+Start with some no frills code. Start here: 
+
+https://github.com/Make-School-Labs/weather-api
+
+<!-- > -->
+
+## Here are a few ideas
+
+Workign with the code above apply the following ideas. 
+
+<!-- > -->
+
+Set up some callbacks. You'll need one for success and one for error. 
 
 ```JS
-1 === 1
-1e+1 === 10 -> 1 * 10
-23e+3 === 23000 -> 23 * 1000
-44e-2 === 0.44 -> 44 * 0.01
+// -------------------------------------------------------------------
+// Use a callback to handle data and errors. This is old school and 
+// is the basis for all of the other examples here. 
+function getWeather(zip, apiKey, success, error) {
+  const units = 'imperial'
+  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
+  console.log('**** getWeather ****')
+  fetch(path)
+    .then(res => res.json())
+    .then(json => success(json))
+    .catch(err => error(err))
+}
 ```
 
-Scientific notation and numbers: http://www.java2s.com/Tutorials/Javascript/Javascript_Tutorial/Data_Type/How_to_write_Scientific_notation_literal_in_Javascript.htm
+Externally you would use the function above like this: 
+
+```JS 
+getWeather('94010', 'mykey', onSuccess, onError)
+
+function onSuccess(json) { ... }
+
+function onError(err) { ... }
+```
 
 <!-- > -->
 
-### Number Methods  
+Your code could return a Promise. Simplest would be to return 
+
+```JS 
+// -------------------------------------------------------------------
+// Use a promise to handle data and errors
+function getWeatherPromise(zip, apiKey) {
+  const units = 'imperial'
+  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
+  // Return a Promise 
+  return fetch(path).then(res => res.json())
+}
+```
+
+Externally uou would use the code above like this: 
+
+```JS 
+getWeatherPromise('94102', 'mykey')
+  .then(onSuccess)
+  .catch(onError)
+
+function onSuccess(json) { ... }
+
+function onError(err) { ... }
+```
 
 <!-- > -->
-
-Don't ask why... 
 
 ```JS
-const two = new Number(2)
+async function getWeatherAsync(zip, apiKey) {
+  const units = 'imperial'
+  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
+  
+  // Await each of these Promises to resolve 
+  // (await only works inside functions marked async)
+  const res = await fetch(path) // waits for the promise to resolve
+  const json = await res.json() // waits for the promise to resolve
+
+  return json
+}
 ```
 
-Is a thing
+This works exactly the same as the previous example and would be called the same from outside. 
 
-<!-- > -->
+```JS 
+getWeatherPromise('94102', 'mykey') // async function returns a Promise!
+  .then(onSuccess)
+  .catch(onError)
 
-These are not the same thing: 
+function onSuccess(json) { ... }
+
+function onError(err) { ... }
+```
+
+## Improving the Experience
+
+The current data from OpenWeatherMap is really hard to parse.
+
+- Has multiple levels of data stored
+- Some of the keys use the same names
+- Some of the keys are confusing
+
+You can improve on this. 
+
+
+Currently OpenWeatherMap is returning something that looks like this: 
 
 ```JS
-const two = new Number(2)
-const too = 2
-two !== too
+{
+  base: "stations",
+  clouds: {all: 75},
+  cod: 200,
+  coord: {lon: -122.48, lat: 37.76},
+  dt: 1588021159,
+  id: 0,
+  main: {
+    feels_like: 47.68
+    humidity: 55
+    pressure: 1021
+    temp: 62.76
+    temp_max: 66.2
+    temp_min: 57.99
+  },
+  name: "San Francisco",
+  sys: {type: 1, id: 5817, country: "US", sunrise: 1587993483, sunset: 1588042595},
+  timezone: -25200,
+  visibility: 16093,
+  weather: [
+    {id: 803, main: "Clouds", description: "broken clouds", icon: "04d"}
+  ],
+  wind: {speed: 25.28, deg: 270}
+}
 ```
 
-And it makes sense in a weird Computer Science way...
+That's really hard to grasp. What's the difference between `main` and `weather`? Main has the temperature but weather has the description of the weather conditions. Main really seems to be about the temp and air pressure. 
+
+Why is weather an array with only one value? Everything else is objects.
+
+You could improve on this, developers would thank you. 
 
 <!-- > -->
 
-## Math
+```JS
+async function getWeatherAsync(zip, apiKey) {
+  const units = 'imperial'
+  const path = `https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}&units=${units}`
+  
+  const res = await fetch(path) 
+  const json = await res.json() 
 
-The Math object holds all of the properties and functions that handle math operations. 
+  // Get all of the relavant info 
+  const { base, clouds, cod, coord, dt, id, main, name, sys, timezone, visibility, weather, wind } = json
+  const { temp, pressure, humidity, temp_max, temp_min } = main
+  const { description, icon } = weather[0]
+  // Reformat the object that is returned
+  return { temp, pressure, humidity, temp_min, temp_max, clouds, cod, visibility, wind, description, icon }
+}
 
-<!-- > -->
-
-**Properties**
-
-`Math.E`
-`Math.LN10`
-`Math.LN2`
-`Math.LOG10E`
-`Math.LOG2E`
-`Math.PI`
-`Math.SQRT1_2`
-`Math.SQRT2`
-
-2.718281828459045, 2.302585092994046, 0.6931471805599453, 0.4342944819032518 1.4426950408889634, 3.141592653589793, 0.7071067811865476, 1.414213562373095
-
-<!-- > -->
-
-**Methods**
-
-`Math.abs()`
-`Math.acos()`
-`Math.acosh()`
-`Math.asin()`
-`Math.asinh()`
-`Math.atan()`
-`Math.atan2()`
-`Math.atanh()`
-`Math.cbrt()`
-`Math.ceil()`
-`Math.clz32()`
-`Math.cos()`
-`Math.cosh()`
-`Math.exp()`
-`Math.expm1()`
-`Math.floor()`
-`Math.fround()`
-`Math.hypot()`
-`Math.imul()`
-`Math.log()`
-`Math.log10()`
-`Math.log1p()`
-`Math.log2()`
-`Math.max()`
-`Math.min()`
-`Math.pow()`
-`Math.random()`
-`Math.round()`
-`Math.sign()`
-`Math.sin()`
-`Math.sinh()`
-`Math.sqrt()`
-`Math.tan()`
-`Math.tanh()`
-`Math.trunc()`
-
-Wow that's a lot of Math!
+```
 
 <!-- > -->
 
-## Exercise
+## Homework
 
-<div><em>Treat this like an onsite interview question.</em></div> 
-
-<!-- > -->
-
-Your goal is to define a class that tracks money. 
-
-Money can be hard to work with if you make a mistake customers get really angry or it might cost your company a lot of money.
-
-<!-- > -->
-
-**The Problem**
-
-You need to define a Class/Object that holds a value in dollars and provides methods to work with currency.
-
-- Write the Money class 
-- Write tests for your methods
-
-<!-- > -->
-
-Currency class should have the following methods:
-
-- Initialize with a value
-- Returns formatted value
-- implements the following methods
-  - `add(n)`
-  - `subtract(n)`
-  - `multiply(n)`
-  - `divide(n)`
-  - `split(n)` - Returns an array of values, use this to split a bill. 
-    - `new Currency(7).split(3) -> [2.33, 2.33, 2.34]`
-
-<!-- > -->
-
-Use `Intl.NumberFormat` to format your currency in a local language format.  
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
-
-<!-- > -->
-
-### Homework
-
-- Math Lib
+- See the main page for the schedule of assignments.
 
 <!-- > -->
 
 ## Wrap Up
 
-- Review
+- Continue working on your current tutorial
+- Complete reading
+- Complete challenges
 
 <!-- > -->
 
 ## Additional Resources
 
-1. https://javascript.info/number
-1. https://modernweb.com/what-every-javascript-developer-should-know-about-floating-points/
-1. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NumberFormat
-1. https://itnext.io/how-to-build-a-money-data-type-in-javascript-7b622beabe00
-1. https://exercism.io/tracks/javascript/exercises
+1. 
 
 <!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time** | **Activity** |
-| ----------- | -------- | ------------ |
-| 0:00 | 0:05 | [Objectives](#learning-objectives) |
-| 0:10 | 0:05 | [Overview](#why-you-should-know-this) |
-| 0:20 | 0:10 | [Working with numbers](#working-with-numbers) |
-| 0:30 | 0:10 | [Math Object](#math) |
-| 1:30 | 1:00 | [Exercise](#exercise) |
-| 1:40 | 0:10 | Break |
-| 2:40 | 1:00 | [Homework](#homework) |
-| 2:45 | 0:05 | [Wrap up](#wrap-up) |
-
-<!-- > -->
-
-<!-- Number has a few class methods and many instance methods. Here are two useful
-
-- `Number.prototype.toFixed()` - Returns a string with fixed number of decimal places
-- `Number.prototype.toLocaleString()` - Returns a language sensitive string from the number -->
-
-<!-- > -->
-
-<!-- JS Provides two ways of working with numbers. 
-
-- `Number` - The Number object is a number it represents a numeric value. It has a few properties and a few methods
-
-`const answer = new Number(42)` This is a thing, and it's different from `const answer = 42`
-
-Take a look at the properties and methods. 
-
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number -->
-
-<!-- > -->
-
-<!-- ### When something is Not a Number
-
-What is NaN? Where and when does it appear? 
-
-`Array(16).join('wtf' - 1) + ' Batman!'`
-
-Methods that return a number for some numerical input will return `NaN` the input is non-numerical. It is returned when a method on the Math Object fails or when method trying to parse a number fails. -->
-
-<!-- > -->
-
-<!-- ## Number Types 
-
-There is only one type of number. There isn't much more to this. Except: 
-
-- JS only has number (there are no Int, floats, Doubles, etc.)
-- JS Numbers are always floats
-
-Use `Number.isInteger(value)` to check if a value is an integer.  -->
-
-<!-- > -->
-<!-- 
-### new Number() vs Number()
-
-The **Number** JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the **Number() constructor**. A primitive type object **number** is created using the **Number() function**.
-
-```JavaScript
-const n = new Number(123) // Creates a new Number Object
-const y = new Number(123)
-
-const x = 123 // Creates a new Number primitive
-
-// These are not equivalent!
-x === n // false (the primitive is equal to the object reference)
-x !== y // true (not the same reference)
-
-n.valueOf() === x === y.valueOf() // true (apples to apples to apples)
-``` -->
-
-<!-- > -->
-
-<!-- Use `Number()` to covert a value to a number. Remember the class constructor is a function!
-
-```JavaScript
-const a = Number('123') // Covert this string to a number
-const b = 123
-
-a === b
-
-const c = Number('z')   // NaN (Not a Number)
-const d = Number('234') // 234
-```
-
-While `Number()` works to create a number from a string `parseInt()` and `parseFloat()` are better choices usually. -->
-
-<!-- > -->
-
-<!-- Using `new Number(value)` wraps value in an object that gets converted to a number primitive when needed. 
-
-```JavaScript
-const a = new Number(3)
-const b = new Number(3)
-
-a !== b // true
-
-a * b // 9
-a + b // 6
-// etc
-``` -->
-
-<!-- > -->
-
-<!-- There are very few cases where you would use `new Number()`. `Number()` on the other hand gets frequent use. In other words, a value wrapped in the Number Object is not very useful. Converting a value to a number is a common operation. 
-
-This is true for all of the primitives:
-
-- `new Boolean('true')` | `Boolean('false')`
-- `new String('Hello')` | `String('Hello')`
-- `new Number('123')` | `Number('456')` -->
-
-<!-- > -->
-
-<!-- The only advantage to having a primitive wrapped in an object would be if you needed to attach other properties to that value for some reason. But you'd probably be better off making an Object instead. 
-
-```JavaScript 
-const t = new Number(99)
-t.status = 'Not quite a buck yet'
-console.log(t.status)  
-``` -->
-
-<!-- > -->
-
-<!-- ### Number Properties
-
-The Number object also holds many useful properties. 
-
-- `Number.EPSILON` - The difference between 1 and the smallest floating point number greater than 1. Basically the smallest number you can work with. -->
-
-<!-- > -->
-
-<!-- - `Number.MAX_SAFE_INTEGER` - The largest safe integer you can work with. 
-- `Number.MAX_VALUE` - The maximum mueric value representable in JS. 
-- `Number.MIN_SAFE_INTEGER` - The smallest safe integer you can work with. 
-- `Number.MIN_VALUE` - The smallest positive numeric value representable in JS.   -->
-
-<!-- > -->
-
-<!-- - `Number.NEGATIVE_INFINITY` - Represents negative infinity
-- `Number.POSITIVE_INFINITY` - Positive infinity
-- `Number.NaN` - Not a Number.  -->
-
-<!-- > -->
-
-<!-- - `Number.prototype.toPrecision()` - Returns a String
-- `Number.prototype.toString()`
-- `Number.prototype.valueOf()` -->
-
-<!-- > -->
-
-<!-- ## Chaining methods
-
-An object can return itself. Doing this allows you to call other methods by following the last method call with a dot and the new method. 
-
-`me.watch().whip().watch().nayNay()` -->
-
-<!-- > -->
-
-<!-- Each of the methods above need to return `this`. Here is an example: 
-
-```JavaScript
-class Thing {
-  constructor(value = 0) {
-    this.value = value
-  }
-
-  multiply(n) {
-    this.value *= n
-    return this
-  }
-
-  add(n) {
-    this.value += n
-    return this
-  }
-
-  divide(n) {
-    this.value /= n
-    return this
-  }
-
-  subtract(n) {
-    this.value -= n
-    return this
-  }
-}
-
-const thing = new Thing(10)
-thing.add(1)
-  .multiply(2)
-  .subtract(3)
-  .divide(4)
-
-console.log((((10 + 1) * 2) - 3) / 4, thing.value) // 4.75 = 4.75
-``` -->
+| **Elapsed** | **Time**  | **Activity**              |
+| ----------- | --------- | ------------------------- |
+| 0:00        | 0:05      | Objectives                |
+| 0:05        | 0:15      | Overview                  |
+| 0:20        | 0:30      | In Class Activity I       |
+| 0:50        | 0:10      | BREAK                     |
+| 1:00        | 0:45      | In Class Activity II      |
+| 1:45        | 0:05      | Wrap up review objectives |
+| TOTAL       | 1:50      | -                         |

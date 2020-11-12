@@ -1,11 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 8 
+# FEW 2.1 - Lesson 4
 
-<small style="display:block;text-align:center">Writing in TypeScript</small>
-
-<!-- ([slides](https://docs.google.com/presentation/d/1ovt7YeAfqaiN8duWjwhYxldTwvca382QTHYyBUFZZ_8/edit)) -->
-
-In this class, you will begin writing TypeScript code and learn how to adapt your existing JS code to TypeScript.
+<small style="display:block;text-align:center">Continuous Integration</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -13,451 +9,324 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 <!-- > -->
 
+Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project.
+
+<!-- > -->
+
+Continuous Integration emphasizes merging small changes frequently over merging large changes at the end of the development cycle. 
+
+<!-- > -->
+
+A big piece of CI is automatically running tests and providing feedback on the current state of a code base. 
+
+<!-- > -->
+
+Another use of CI is running tests and providing other feedback as each new addition is integrated into the codebase.
+
+<!-- > -->
+
+In this lesson, you will apply some of these ideas to your code base. 
+
+<!-- > -->
+
+### Quick Discussion
+
+Read this: https://codeship.com/continuous-integration-essentials
+
+Pair up and answer these questions: 
+
+**Q:** Do you see any advantages of using CI?
+
+**Q:** Do you see any downsides to CI?
+
+<!-- > -->
+
+## Why should you learn about Continuous Integration?
+
+CI is a modern software development *best practice*. You should always be striving to follow best practices in your work and be familiar with what industry considers best practices if you plan to integrate yourself with the industry! 
+
+Using CI will provide automated feedback on the quality of a codebase as each new change is pushed. Feedback is good, automated feedback is even better since it saves you time and energy!
+
+<!-- > -->
+
 ## Learning Objectives
 
-1. Define static & dynamic typing
-2. Explain the pros & cons of static vs. dynamic typing
-3. Implement functions, classes, & interfaces using TypeScript
-4. Convert existing JS code to TypeScript
+1. Use Linting to improve code quality and catch bugs
+1. Use Continuous Integration to automate testing
 
 <!-- > -->
 
-## Static vs. Dynamic Typing
+## Install ESLint and lint your work!
+
+Linting is not a CI but is related as a part of industry best practices and code quality. We've covered this in other classes but it's important so we will review it again here. 
 
 <!-- > -->
 
-### Q: What is a type?
+### Q: Why lint? 
 
-Data types describe the shape of the data that we're expecting.
+Linting is an automated process that looks at your code and evaluates it for consistent style and quality. This has two effects on your work.
 
-Examples: string, number, boolean, list, object
+- When working in a team it ensures that everyone on the team is coding with a **consistent style**. 
+- **Catches errors** and questionable coding structures before they get merged into a larger code base. 
 
-<!-- > -->
-
-### Q: What is static typing?
-
-In a statically typed language, variables' types are *static*, meaning that once a variable is set to a type, it cannot be changed. Statically typed languages generally check *at compile time* that a variable is being assigned the correct type of data. 
-
-Examples of statically typed languages include Java, C, C++, and Swift.
+As a student **you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
 
 <!-- > -->
 
-**Q:** Can you use static typing in JS?
+ESLint needs to be installed in two places: 
 
-**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
+- _in the project_ through npm 
+- _in your editor_.
 
 <!-- > -->
 
-### Q: What is dynamic typing?
+**Q:** Do you consider your self an advanced coder who follows professional best practices?
 
-In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
+<!-- > -->
 
-```JavaScript
-let x = 10;  // Number
-x = 'hello'; // String
+**A:** You have already install installed ESLint, and you do it for every project!
+
+<!-- > -->
+
+### Install in npm project
+
+Follow the instruction here: 
+
+https://eslint.org/docs/user-guide/getting-started
+
+tl;dr
+
+`npm install eslint --save-dev`
+
+`eslint --init`
+
+<!-- > -->
+
+Choose: 
+
+- Use a popular Styleguide
+- Airbnb style guide 
+- Use React No
+- Format JavaScript
+- Install Now Yes
+
+<!-- > -->
+
+### Install ESLint in Editor
+
+You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
+
+1. Go to Settings Extensions/Plugins
+1. Add a new Extension/Plugin
+1. Search ESLint
+1. Install 
+
+You may need to close and reopen your project in your editor before the Linter starts registering errors. 
+
+**Do this now!** If you haven't already.  
+
+<!-- > -->
+
+## Pair up and solve linting errors
+
+Pair with a person _you haven't paired with_ before. 
+
+Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
+
+<!-- > -->
+
+### Discuss the linter suggestions
+
+- **Q:** What suggestions did the linter make that were obviously useful? 
+- **Q:** Did the linter suggest anything that seemed strange or not obvious? 
+- **Q:** Do you think your code is of better quality after?
+
+<!-- > -->
+
+## Travis CI 
+
+[Travis CI](https://travis-ci.com) is a Continuous Integration platform. It automates building and testing your software projects. 
+
+Follow the instructions here: 
+
+https://docs.travis-ci.com/user/for-beginners/
+
+https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
+
+<!-- > -->
+
+### Setup Travis-CI 
+
+Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
+
+[Sign up for Travis](https://travis-ci.com) with GitHub.
+
+Authorize Travis with your GitHub account.
+
+<!-- > -->
+
+#### Add .travis.yml
+
+Travis uses a config file to describe how it should work with the files in your repos. 
+
+Add a new file to the root directory of your String Lib project. Name this file:
+
+`.travis.yml`
+
+<!-- > -->
+
+Add the following to this file: 
+
+```yml
+sudo: false
+language: node_js
+node_js:
+- stable
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm update
+install:
+- npm install
+script:
+- npm test
+- npm run coveralls
 ```
 
 <!-- > -->
 
-In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
+This config script uses the latest stable version of node, builds your project from the master branch, install node modules, and then runs your npm test script followed by the coveralls script. 
 
-Examples of dynamically typed languages include Python, **JavaScript**, PHP, and Ruby.
+The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll set this up this in the next step. 
 
-<!-- > -->
-
-## Why use one or the other?
-
-**Discussion:** Write down 3 reasons each for using either a statically typed or dynamically typed language.
+https://docs.travis-ci.com/user/tutorial/
 
 <!-- > -->
 
-### Static typing catches errors earlier in program development.
+### Coveralls 
 
-**Q:** What is happening on each line of code below?
+Coveralls is a service that helps you track code coverage. Code coverage answers the question: how much of my code is covered by the testing? Essentially it will give you a score telling you how much of your code is covered by the unit tests that exist. 
 
-```JavaScript
-const intFuncs = []; // [number]
-
-intFuncs.push((x) => 2 * x);
-intFuncs.push((x) => x * x);
-
-intFuncs.push((x) => x.toFixed(2));
-
-let total = 0;
-intFuncs.forEach((func) => total += func(10));
-```
+Go to [Coveralls.io](https://coveralls.io)
 
 <!-- > -->
 
-We catch the bug *at runtime*.
+Create an account and login.
 
-```
-const intFuncs: Array<(x: number) => number> = [];
-```
+Click your account and link your GitHub.
 
-<!-- > -->
+Click Add Repo and add your String Lib Repo to Coveralls.
 
-### Static typing improves readability
-
-Consider this code:
-
-```JavaScript
-function mystery(x) {
-  if (x.powerLevel <= 100) {
-    x.leave();
-  } else {
-    x.display();
-  }
-}
-```
+Click Repos then click the Name of string repo.
 
 <!-- > -->
 
-Now, consider the following questions:
-- What is x?
-- What other fields, data, and behavior does x have? How else can I interact with x?
-- How would I find this information?
+Add the Coveralls package to your project. 
 
-<!-- > -->
+`npm install coveralls --save-dev`
 
-Now, let's take a look at this code with some types added.
-
-```TypeScript
-class Cat {
-  powerLevel: number;
-  personality: string;
-  appearance: string;
-  photo: Image;
-  leave(): void {...}
-  display(): void {...}
-}
-
-function mystery(x: Cat) {
-  ...
-}
-```
-
-<!-- > -->
-
-### Static typing can improve your workflow
-
-Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
-
-<!-- > -->
-
-### Advantages of dynamic typing
-
-There isn't just one right answer that works in all scenarios; you will need to decide which style is right for your project. Here are some pros of dynamic typing to consider:
-
-- It's faster to write, thus might be better for scripting
-- It's more succinct
-- It's more tolerant to change: a code refactor will have a smaller area of effect
-- Doesn't require extra compilation step
-
-<!-- > -->
-
-## Features of TypeScript
-
-<!-- > -->
-
-### Variables
-
-The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
-
-```TypeScript
-let y = 88;
-let sum: number = 10;
-const title: string = 'hello';
-let done: boolean = false;
-
-sum = undefined; // OK
-sum = null; // OK
-sum = '100'; // Not OK - will result in a compile error
-Math.round(title) // Compile error
-```
-
-<!-- > -->
-
-There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
-
-```TypeScript
-let list1: number[] = [1, 2, 3];
-let list1: Array<number> = [1, 2, 3];
-```
-
-<!-- > -->
-
-What if we want an array with mixed values of different types? In that case, we can use the 'tuple' type:
-
-```TypeScript
-let person1: [string, number] = ['Jane', 20];
-```
-
-<!-- > -->
-
-You can also easily make your own enum type. If you try to print the value of an enum, you'll see that it's actually a number, with the first value defaulting to 0.
-
-```TypeScript
-enum Fruit { Apple, Orange, Pear };
-
-let f: Fruit = Fruit.Pear;
-
-console.log(Fruit.Apple);  // 0
-console.log(Fruit.Orange); // 1
-console.log(Fruit.Pear);   // 2
-```
-
-<!-- > -->
-
-Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
-
-```TypeScript
-let someValue: any = 10;
-someValue = [1, 2, 3];
-```
-
-<!-- > -->
-
-### Functions & Function Variables
-
-<!-- > -->
-
-We can add types to the parameters and return values of functions:
-
-```TypeScript
-function add(num1: number, num2: number): number {
-  return num1 + num2;
-}
-
-add(4, 6);
-add('2', 7); // Compile Error
-```
-
-<!-- > -->
-
-We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
-
-```TypeScript
-function greet(greeting = 'Hello', person?: string) {
-  if (person) {
-    console.log(`${greeting}, ${person}!`);
-  } else {
-    console.log(`${greeting}!`);
-  }
-}
-
-greet(); // prints 'Hello!'
-greet('Hola'); // prints 'Hola!'
-greet(undefined, 'Jane'); // prints 'Hello, Jane!'
-```
-
-<!-- > -->
-
-### Classes & Interfaces
-
-<!-- > -->
-
-In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
-
-```TypeScript
-let person: { name: string, age: number } = { name: 'Jane', age: 22 };
-```
-
-We can also define the type ahead of time using an interface:
-
-```TypeScript
-interface Person {
-  name: string;
-  age: number;
-  greet(message: string): string;
-}
-
-let person: Person = {name: 'Jane', age: 22}
-```
-
-<!-- > -->
-
-## Activity: Getting started with Typescript
-
-Take a look at this 5 min tutorial from the source. Take 5 mins and do the tutorial. 
-
-https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
-
-<!-- > -->
-
-- What did you see in the tutorial? 
-- What was different about using typescript than using?
-- Did you see anything new? 
-
-<!-- > -->
-
-### Interfaces
-
-> **Interface**
-> a point where two systems, subjects, organizations, etc. meet and interact.
-
-This can be a USB cable, your keyboard, the button in your favorite app. 
-
-An interface in programming is where one piece of program connects to and interacts with another piece. This happens in a few places: 
-
-- Objects - Anything with properties and methods require the interfacing system to know the the property and method names. 
-- Functions - expect parameters and return values, this is how you interact with them and is their interface.
-
-<!-- > -->
-
-
-
-<!-- > -->
-
-## Activity: Get Your Project Up and Running with TypeScript
-
-Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your library. You can add it to one of the libraries you have published or to a library you are currently working on. 
-
-The example below uses the String library. 
-
-Now, we just need to make a few small changes to get it working again!
-
-<!-- > -->
-
-### Add Types
-
-Rename the files to use a TypeScript extension (e.g. `index.js` to `index.ts`), and modify the functions to use types.
-
-To get the string prototype functions to compile, you will need to add the following interface definition to `index.js`:
-
-```TypeScript
-declare global {
-  interface String {
-    capitalize(): string;
-    capitalizeAll(): string;
-    allCaps(): string;
-    oddCaps(): string;
-    evenCaps(): string;
-    kabobCase(): string;
-    snakeCase(): string;
-    stripSpaces(): string;
-    stripExtraSpaces(): string;
-  }
-}
-```
-
-<!-- > -->
-
-To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
-
-<!-- > -->
-
-### Modify rollup.config.js
-
-Install the following in order to use TypeScript and the TypeScript Rollup plugin:
-
-```bash
-npm install --save-dev rollup typescript rollup-plugin-typescript2
-```
-
-<!-- > -->
-
-Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
-
-
-Import the TypeScript plugin at the top of the file:
-
-```
-import typescript from 'rollup-plugin-typescript2';
-```
-
-<!-- > -->
-
-Then enter the following into your plugins for both output files:
-
-```JavaScript
-input: {
-  ...
-},
-plugins: [
-  typescript({
-    typescript: require('typescript'),
-  }),
-],
-output: {
-  ...
-}
-```
-
-Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
-
-<!-- > -->
-
-### Add tsconfig.json
-
-Add a new file `tsconfig.json` with the following content:
-
-```
-{
-  "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "./esm",
-    "outDir": "./esm",
-    "module": "es6",
-    "target": "es5",
-    "noImplicitAny": true,
-    "moduleResolution": "node"
-  },
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
-}
-```
-
-For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
-
-<!-- > -->
-
-### Modify package.json
-
-Now we need to tell our library users where to find the TypeScript types. Go to `package.json` and add the following line after the main and module:
+Add this line to your `package.json`:
 
 ```JSON
-"types": "esm/index.d.ts",
+"scripts": {
+  ...
+  "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+  ...
+},
 ```
 
 <!-- > -->
 
-Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
+Find the "Coverage" badge. Click the embed button to the upper right. Copy the Markdown text. You can paste this into the README.md in the GitHub Repo of your library. 
+
+https://coveralls.io
+
+https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42
 
 <!-- > -->
+
+### Give yourself a badge! 
+
+Give yourself a badge or two, you've earned them! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
+
+**Q:** Why add these badges? 
+
+**A:** It will show the status of your software project at a glance. It increases the credibility of your repositories.
+
+<!-- > -->
+
+#### Travis badge 
+
+Go to your repo on Travis. You should see a badge to the left of the GitHub repo name. 
+
+Click this and choose "Markdown" from the menu.  
+
+Copy the Markdown code from the text box and paste it into your README. 
+
+<!-- > -->
+
+#### Coveralls Badge
+
+Go to Coveralls. Visit the page for the repo you were working on. 
+
+It should display a coverage badge near the right side. Click the tiny embed button up and to the right of the badge. 
+
+Copy the Markdown code in the text box. 
+
+Paste the markdown code into your repo. 
+
+<!-- > -->
+
+## Stretch goals
+
+**Stretch Goal** - 
+
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
+
+- Invent your own utility functions. 
+- Research existing libraries on npm to identify useful functions you can implement. Research these: 
+  - https://www.npmjs.com/package/string
+  - https://www.npmjs.com/package/query-string
+  - https://www.npmjs.com/package/chalk
+  - https://www.npmjs.com/package/validator
+  - https://www.npmjs.com/package/camelcase
+  - https://www.npmjs.com/package/crypto-random-string
+  - https://www.npmjs.com/package/url-parse
+  - https://www.npmjs.com/package/magic-string
+
+**Stretch Goal** - 
+
+Use CodeClimate to analyze and give your code a report card: https://codeclimate.com/dashboard 
+
+Note! Code Climate is free for open source projects! 
+
 
 ### Homework
 
-[Assignment 8 - Typescript](../assignments/assignment-08.md)
-
-<!-- > -->
-
-## Wrap Up
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+[Continuous Integration](./assignments/assignment-04.md)
 
 <!-- > -->
 
 ## Additional Resources
 
-1. 
+- 
 
 <!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | In Class Activity I       |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | In Class Activity II      |
+| **Elapsed** | **Time**  | **Activity** |
+| ----------- | --------- | -------------- |
+| 0:00        | 0:05      | Introducntion  |
+| 0:05        | 0:05      | Objectives     |
+| 0:10        | 0:30      | Linting        |
+| 0:40        | 0:10      | BREAK          |
+| 0:50        | 0:15      | Travis CI      |
+| 1:05        | 0:15      | Coveralls      |
+| 1:20        | 0:25      | ** ??? **      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -              |
