@@ -1,8 +1,8 @@
 # FEW 2.1
 
 | Course Section | Instructor | Slack Channel | Course Website | Instructor 1-on-1 | Tracker |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| A | **@mitchell** | `#few-2-1-js-libs` | [make.sc/few2.1](https://make.sc/few2.1) | [Virtual Office](https://make.sc/mitchell-zoom) | [Tracker](https://docs.google.com/spreadsheets/d/1AcrDA3QnL4Vet2XThzITj67MblcY9PQ9ZZWEbHru2f8/edit?usp=sharing) |
+| :---: | :---: | :---: | :---: | :---: |
+| A | **@mitchell** | `#few-2-1-js-libs` | [make.sc/few2.1](https://make.sc/few2.1) | [Virtual Office](https://make.sc/mitchell-zoom) |
 
 ## Course Description
 
@@ -60,14 +60,18 @@ Students by the end of the course will be able to ...
 
 <!-- | 14 | Tue, May 13 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations | -->
 
+## Projects
+
+- String Library 
+- Date Library 
+- API Library 
+- Continuous Integration
+
 ## Evaluation
+
 To pass this course you must meet the following requirements:
 
-- Pass 70% projects according to the associated project rubric
-- Pass the final summative assessment according to the rubric as specified in this class
-    - This will be further explained in the [study guide](study-guide.md)
-- Actively participate in class and abide by the attendance policy
-- Make up all classwork from all absences
+- Achieve a passing score according to the rubric on each of the [projects](#projects) listed above.
 
 ##  Information Resources
 
