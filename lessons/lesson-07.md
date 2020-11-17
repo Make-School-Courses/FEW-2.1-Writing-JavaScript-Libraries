@@ -366,12 +366,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 <!-- > -->
 
-### Homework
-
-- Math Lib
-
-<!-- > -->
-
 ## Wrap Up
 
 - Review
