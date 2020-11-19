@@ -51,7 +51,7 @@ Students by the end of the course will be able to ...
 |  6 |  Thu, Nov 12  | [Lesson 6](./lessons/lesson-06.md) | [API Lib](./assignments/assignment-09.md) |
 |  7 |  Tue, Nov 17  | [Lesson 7](./lessons/lesson-07.md) | Lab |
 |  8 |  Thu, Nov 19  | [Lesson 8](./lessons/lesson-08.md) | [Continuous Integration](./assignments/assignment-04.md) |
-|  9 |  Tue, Nov 24  | [Lesson 9](./lessons/lesson-09.md) | [Bundling](./assignments/assignment-06.md) - Bundle your libs for distribution |
+|  9 |  Tue, Nov 24  | [Lesson 9](./lessons/lesson-09.md) | [Bundling code for distribution](./assignments/assignment-06.md) |
 |  - |  Thu, Nov 26               | **Holiday- Thanksgiving** |
 | 10 |  Tue, Dec 1   | [Lesson 10](./lessons/lesson-10.md) | - |
 | 11 |  Thu, Dec 3   | [Lesson 11](./lessons/lesson-11.md) | - |
