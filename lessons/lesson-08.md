@@ -1,9 +1,7 @@
 <!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 8
+# FEW 2.1 - Lesson 4
 
-<small style="display:block;text-align:center">Bundling Libraries for distribution</small>
-
-This class session covers the concept of bundling. This is the process of combining files and processing them for use and distribution. 
+<small style="display:block;text-align:center">Continuous Integration</small>
 
 <!-- Put a link to the slides so that students can find them -->
 
@@ -11,559 +9,324 @@ This class session covers the concept of bundling. This is the process of combin
 
 <!-- > -->
 
-## Why learn how to bundle files? 
-
-All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
-
-Bundling your files allows them to be distributed so they can be used anywhere without extra work. 
-
-Bundling files also processes your files for different environments. Your files need to be handled differently if they are used in the browser, or in NodeJS, or in a React project. 
+Continuous Integration (CI) is the term for automated processes that continuously integrate changes into a software project.
 
 <!-- > -->
 
-## Learning Objectives 
-
-- Describe reasons for bundling files
-- Define UMD and ESM bundles 
-- Use Rollup to bundle your library for distribution
+Continuous Integration emphasizes merging small changes frequently over merging large changes at the end of the development cycle. 
 
 <!-- > -->
 
-### Bundling 
-
-Bundling is the process of processing and combining files together into a single file. 
+A big piece of CI is automatically running tests and providing feedback on the current state of a code base. 
 
 <!-- > -->
 
-### Modules 
-
-Modules are the concept of separating code into different scopes and making it available to your program. 
-
-In the browser all code is global. A variable defined in one file is available in another file. 
-
-This creates a few problems. 
-
-```JavaScript
-// my-code.js
-function load() { /* does something super important */}
-// 
-```
-
-```JavaScript
-<script src="my-code.js"></script>
-
-<script>
-  function load() {} // accidentally overwrites super important code 
-</script>
-```
+Another use of CI is running tests and providing other feedback as each new addition is integrated into the codebase.
 
 <!-- > -->
 
-The module pattern uses scope to solve the problem above. Wrapping code in an anonymous function stores all of the variables and functions in the scope of that function. 
-
-```JavaScript
-// my-code.js
-(function() {
-  // Code safely scoped to function
-  function load() { /* does something important */}
-})() // Immediately executes the function above
-```
-
-```JavaScript
-<script src="my-code.js"></script>
-// ---------------------------------------
-<script>
-  function load() {} // global scoped 
-</script>
-```
+In this lesson, you will apply some of these ideas to your code base. 
 
 <!-- > -->
 
-This anonymous function is called an IIFE (Immediately Invoked Function Expression) pronounced 'Iffy'. Yeah, it's really a thing! The module pattern is based on the IIFE as it's base, and CommonJS and the other advanced patterns are based on this. 
+### Quick Discussion
 
-You can read more about the [module pattern](https://coryrylan.com/blog/javascript-module-pattern-basics). 
+Read this: https://codeship.com/continuous-integration-essentials
 
-While understanding how to write modules could be useful these days you'd be more likely to use a bundling utility to wrap your code in a module that is compatible with another system. 
+Pair up and answer these questions: 
 
-<!-- > -->
+**Q:** Do you see any advantages of using CI?
 
-Why does this work? 
-
-```JS
-(function() {
-
-  // Code inside is scoped to this function block
-
-})() // <-- Immediately runs this function
-```
+**Q:** Do you see any downsides to CI?
 
 <!-- > -->
 
-## Bundling code with Rollup
+## Why should you learn about Continuous Integration?
 
-There are several tools you can use to bundle your code and several patterns/standards that they follow. 
+CI is a modern software development *best practice*. You should always be striving to follow best practices in your work and be familiar with what industry considers best practices if you plan to integrate yourself with the industry! 
 
-- [Common.js](http://www.commonjs.org)
-- [Require.js](https://requirejs.org)
-- [rollUp.js](https://rollupjs.org/guide/en/)
-
-Rollup seems to be the most modern and up to date choice out of this list. 
+Using CI will provide automated feedback on the quality of a codebase as each new change is pushed. Feedback is good, automated feedback is even better since it saves you time and energy!
 
 <!-- > -->
 
-Rollup describes itself as a "module bundler for JavaScript". Sounds like what we need! 
+## Learning Objectives
 
-Rollup will bundle files to different standards like CommonJS, CommonJS2, RequireJS, and ES Modules. That said we need to understand why we would want or need to bundle our files to these different standards. 
-
-<!-- > -->
-
-What types of different environements will your code be run in? 
-
-- Browser
-- Node
-
-The Browser has an engine that runs your JS code. Node is an environment that runs your JS code. While they they both use JS they are different. 
+1. Use Linting to improve code quality and catch bugs
+1. Use Continuous Integration to automate testing
 
 <!-- > -->
 
-**What's the difference?**
+## Install ESLint and lint your work!
 
-With node you're scripting the server. Imagine a single computer where you have control over the configuration. 
-
-With browser imagine millions of mysterious computers where you have no control over configuration. 
+Linting is not a CI but is related as a part of industry best practices and code quality. We've covered this in other classes but it's important so we will review it again here. 
 
 <!-- > -->
 
-The **browser** uses the script tag:
+### Q: Why lint? 
 
-`<script src="somefile.js"></script>`
+Linting is an automated process that looks at your code and evaluates it for consistent style and quality. This has two effects on your work.
 
-Newer ES6 JS syntax uses **ES Modules** Syntax:
+- When working in a team it ensures that everyone on the team is coding with a **consistent style**. 
+- **Catches errors** and questionable coding structures before they get merged into a larger code base. 
 
-`import package from 'module-name'`
-
-Node.js uses **CommonJS**:
-
-`const package = require('module-name')`
+As a student **you should always be using the linter.** Think of every suggestion the linter makes as mentorship from a senior software engineer.
 
 <!-- > -->
 
-**That's too many options what should I do?** 😱
+ESLint needs to be installed in two places: 
 
-If you're working in Node.js use Common JS with `require()`
-
-If you're writing code for the browser you'll need to support older browsers that don't support the ES Modules. This means you need to support both the script tag and ES Modules.
-
-<!-- > -->
-
-**But what if my library could be used in both Node and the Browser?**
-
-You need to support both all three: CommonJS, ES, Modules, and Script tag. 
+- _in the project_ through npm 
+- _in your editor_.
 
 <!-- > -->
 
-**There's a tool for that!**
-
-UMD (Universal Module Definition) supports both `<script>` tag and `require()`
-
-There are several tools that will bundle your JS files into compatiple formats. 
+**Q:** Do you consider your self an advanced coder who follows professional best practices?
 
 <!-- > -->
 
-### Common JS 
-
-**CommonJS is the pattern used with Node JS projects.** To use the code in a library you've written for Node.js and Expres.js projects by extension you'll need to bundle your code as a CommonJS Module. This will allow your code to be used like this: 
-
-```JavaScript
-const yourCode = require('your-code')
-...
-yourCode.yourMethod()
-```
+**A:** You have already install installed ESLint, and you do it for every project!
 
 <!-- > -->
 
-### UMD (Universal Module Definition) 
+### Install in npm project
 
-**UMD is used for code used in a script tag in the browser.** A UMD module be imported via the script tag _and can be imported with `require()` in a Node JS environment._ 
+Follow the instruction here: 
 
-```JavaScript
-<script src="your-code.js"></script>
-<script>
-  ...
-  yourCode.method()
-  ...
-</script>
-```
+https://eslint.org/docs/user-guide/getting-started
 
-<!-- > -->
+tl;dr
 
-### ES Modules 
+`npm install eslint --save-dev`
 
-**ES Modules are used with ES6 Import from syntax.** ES Modules are the modules used with React and modern JS. These use the `import` and `export` directives. 
-
-```JavaScript
-import { yourMethod } from 'your-code'
-...
-yourMethod()
-```
-
-These modules might be further processed with babel before they are used. 
+`eslint --init`
 
 <!-- > -->
 
-## Recap: Modules
+Choose: 
 
-- Modules are used to make code compatible across different environments. 
-- There are several different module formats
-  - CommonJS
-  - UMD 
-  - ES
-
-<!-- > -->
-
-## Bundling files with rollup
-
-Follow the instructions below to bundle your project with rollup.js.
-
-Install rollup.js 
-
-`npm install --save-dev rollup`
+- Use a popular Styleguide
+- Airbnb style guide 
+- Use React No
+- Format JavaScript
+- Install Now Yes
 
 <!-- > -->
 
-Create a config file for rollup. Make a new file named `rollup.config.js`. 
+### Install ESLint in Editor
 
-```JavaScript
-export default {
-  input: 'src/index.js',
-  output: {
-    file: 'umd/your-module.js',
-    format: 'umd',
-    name: 'yourModule'
-  }
-};
-```
+You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
 
-**You will change the `input`, `output.file`, and  `output.name` to match your files.**
+1. Go to Settings Extensions/Plugins
+1. Add a new Extension/Plugin
+1. Search ESLint
+1. Install 
 
-This base config takes an input file from: `src/index.js` and outputs a UMD file `umd/your-module.js`. 
+You may need to close and reopen your project in your editor before the Linter starts registering errors. 
+
+**Do this now!** If you haven't already.  
 
 <!-- > -->
 
-When loaded this file will create a global variable named `yourModule`. Remember UMD format is meant to be loaded in the browser. The code is also wrapped in a function following the CommonJS module pattern for use with Node JS. 
+## Pair up and solve linting errors
 
-Move your source files into a folder named `src` create this folder if you haven't yet. 
+Pair with a person _you haven't paired with_ before. 
 
-<!-- > -->
-
-Test your work so far. 
-
-`npx rollup --config`
-
-This should build the UMD module from your source files and save these a folder named `umd`. 
-
-Rollup should have created `umd/your-module.js`. Take a look at this file. it contains the boiler plate code that manages your module/bundle. 
+Using a **single computer** spend 10 mins solving linter errors person A's project. Switch computers after 10 mins and continue solving linter errors on person B's project. 
 
 <!-- > -->
 
-If you saw a warning: `(!) Generated an empty bundle` you need to export code from  `src/index.js`. For example 
+### Discuss the linter suggestions
 
-```JS 
-function getWeather() {
-  ...
-}
+- **Q:** What suggestions did the linter make that were obviously useful? 
+- **Q:** Did the linter suggest anything that seemed strange or not obvious? 
+- **Q:** Do you think your code is of better quality after?
 
-export { getWeather }
-// or 
-export default getWeather
+<!-- > -->
+
+## Travis CI 
+
+[Travis CI](https://travis-ci.com) is a Continuous Integration platform. It automates building and testing your software projects. 
+
+Follow the instructions here: 
+
+https://docs.travis-ci.com/user/for-beginners/
+
+https://docs.travis-ci.com/user/tutorial/#to-get-started-with-travis-ci
+
+<!-- > -->
+
+### Setup Travis-CI 
+
+Travis-CI connects to your GitHub repos and automatically process files when it sees you push to a master or a branch. To make this magic work you'll need to authorize Travis through GitHub.
+
+[Sign up for Travis](https://travis-ci.com) with GitHub.
+
+Authorize Travis with your GitHub account.
+
+<!-- > -->
+
+#### Add .travis.yml
+
+Travis uses a config file to describe how it should work with the files in your repos. 
+
+Add a new file to the root directory of your String Lib project. Name this file:
+
+`.travis.yml`
+
+<!-- > -->
+
+Add the following to this file: 
+
+```yml
+sudo: false
+language: node_js
+node_js:
+- stable
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+before_install:
+- npm update
+install:
+- npm install
+script:
+- npm test
+- npm run coveralls
 ```
 
 <!-- > -->
 
-**Test your module.** 
+This config script uses the latest stable version of node, builds your project from the master branch, install node modules, and then runs your npm test script followed by the coveralls script. 
 
-Make a test file: `example.html`. Import your script with the script tag: 
+The `coverall` script you haven't added yet! Coveralls is another service that provides more information about your builds. You'll set this up this in the next step. 
 
-`<script src="./umd/just-in-case.js"></script>`
-
-Notice the path to your library, it points to the `umd` folder at the file named in your config file.
-
-Write some test code in your test file. Load the text file in the browser. 
+https://docs.travis-ci.com/user/tutorial/
 
 <!-- > -->
 
-Examine the source code that was written. It is pretty obscure. Note that it is using one of the module patterns evolved from the IIFE. 
+### Coveralls 
 
-The source code has not been minified. You can minify using Terser.js plugin for Rollup. 
+Coveralls is a service that helps you track code coverage. Code coverage answers the question: how much of my code is covered by the testing? Essentially it will give you a score telling you how much of your code is covered by the unit tests that exist. 
 
-Import `Terser.js` plugin for RollUp. 
-
-`npm install --save-dev rollup-plugin-terser`
+Go to [Coveralls.io](https://coveralls.io)
 
 <!-- > -->
 
-Modify `rollup.config.js`: 
+Create an account and login.
 
-```JavaScript
-import { terser } from 'rollup-plugin-terser';
+Click your account and link your GitHub.
 
-export default [
-  {
-    input: 'src/index.js',
-    plugins: [terser()],
-    output: {
-        file: 'umd/your-module.js',
-        format: 'umd',
-        name: 'yourModule',
-        esModule: false
-    }
-  },
-  {
-    input: 'src/index.js',
-    output: {
-      file: 'esm/index.js',
-      format: 'esm'
-    }
-  }
-];
-```
+Click Add Repo and add your String Lib Repo to Coveralls.
+
+Click Repos then click the Name of string repo.
 
 <!-- > -->
 
-Notice there are two outputs. The second 'esm' is for ES Modules. These don't need to be minified since they are consumed by other bundlers and won't benefit from minification. 
+Add the Coveralls package to your project. 
 
-Modify `package.json`. We need to make sure that importers of the library get the right file. Set "main" for Node JS environments.
+`npm install coveralls --save-dev`
+
+Add this line to your `package.json`:
 
 ```JSON
+"scripts": {
   ...
-  "main": "umd/jus-in-case.js",
+  "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
   ...
+},
 ```
 
 <!-- > -->
 
-Use "module" to designate ES Module.
+Find the "Coverage" badge. Click the embed button to the upper right. Copy the Markdown text. You can paste this into the README.md in the GitHub Repo of your library. 
 
-```JSON
-  ...
-  "module": "esm/index.js",
-  ...
-```
+https://coveralls.io
+
+https://medium.com/@ollelauribostr/start-measuring-coverage-with-jest-travis-ci-and-coveralls-1867928aca42
 
 <!-- > -->
 
-Use "files" to designate which files should be distributed by npm. 
+### Give yourself a badge! 
 
-```JSON
-  ...
-  "files": [
-    "esm/*",
-    "emd/*"
-  ]
-  ...
-```
+Give yourself a badge or two, you've earned them! Both Travis and Coveralls provide dynamic badges that show the state of a project in a repo. You should attach these badges to your repo. 
+
+**Q:** Why add these badges? 
+
+**A:** It will show the status of your software project at a glance. It increases the credibility of your repositories.
 
 <!-- > -->
 
-Add "prepare" script. This script is run by npm each time you install or publish. 
+#### Travis badge 
 
-```jSON
-  ...
-  "scripts: {
-    ...
-    "prepare": "rollup --config",
-    ...
-  }
-  ...
-```
+Go to your repo on Travis. You should see a badge to the left of the GitHub repo name. 
+
+Click this and choose "Markdown" from the menu.  
+
+Copy the Markdown code from the text box and paste it into your README. 
 
 <!-- > -->
 
-### Testing your work
+#### Coveralls Badge
 
-Pair up with someone you haven't paired with before. The goal will be to test the build system. You'll do this by following the instructions below. 
+Go to Coveralls. Visit the page for the repo you were working on. 
 
-Start here: 
+It should display a coverage badge near the right side. Click the tiny embed button up and to the right of the badge. 
 
-`npm pack`
+Copy the Markdown code in the text box. 
 
-<!-- > -->
-
-This command is like `npm publish` it prepares your files but doesn't send them to the server. Use `pack` to test your work locally. When you're satisfied use `publish` to upload to npm. 
-
-Run your tests
-
-`npm test`
+Paste the markdown code into your repo. 
 
 <!-- > -->
 
-If everything is good commit and push to GitHub. 
+## Stretch goals
 
-Check your Status on Travis. 
+**Stretch Goal** - 
 
-Check your Coverage on Coveralls.
+Version 2 of your library should add some new features. Your goal is to identify new string functions and utilities you can add to your library.
 
-<!-- > -->
+- Invent your own utility functions. 
+- Research existing libraries on npm to identify useful functions you can implement. Research these: 
+  - https://www.npmjs.com/package/string
+  - https://www.npmjs.com/package/query-string
+  - https://www.npmjs.com/package/chalk
+  - https://www.npmjs.com/package/validator
+  - https://www.npmjs.com/package/camelcase
+  - https://www.npmjs.com/package/crypto-random-string
+  - https://www.npmjs.com/package/url-parse
+  - https://www.npmjs.com/package/magic-string
 
-Take a look at your package on npm. Check the version number. 
+**Stretch Goal** - 
 
-You can test the Node JS version of the package using the "RunKit" link.
+Use CodeClimate to analyze and give your code a report card: https://codeclimate.com/dashboard 
 
-(I had a problem with this showing an outdated version.)
+Note! Code Climate is free for open source projects! 
 
-Create a test project for your package. 
 
-<!-- > -->
+### Homework
 
-Create a new folder and initialize a new npm project. 
-
-`npm init -y`
-
-Import your package. 
-
-`npm i your-module`
-
-Make an HTML file to test in browser 'example.html'.
-
-Add the script tag. 
-
-```HTML
-<script src="./node_modules/your-module/umd/your-module.js"></script>
-<script>
- console.log(yourModule)
- console.log(yourModule.method())
-</script>
-```
-
-<!-- > -->
-
-Note the path is pointing to the file in node_modules. You'll need to customize the second script to work with your code. 
-
-Test your work in Node JS. Make a new file `server.js`. 
-
-```JavaScript
-const yourModule = require('your-module')
-
-console.log(yourModule)
-console.log(yourModule.method())
-```
-
-<!-- > -->
-
-Again, modify the code here to test your library code. 
-
-Test your code in a React project. 
-
-Create a new React app. 
-
-`npx create-react-app your-module-react-test`
-
-<!-- > -->
-
-Import your module. 
-
-`npm i your-module`
-
-Write some test code in `App.js`
-
-```JavaScript
-import { yourMethod } from 'your-module'
-
-console.log(yourMethod())
-```
-
-<!-- > -->
-
-Wow, that's some pretty thorough testing! If you did everything here you've done everything that all of the professional developers are doing when they publish to npm. 
-
-<!-- > -->
-
-### Code Coverage
-
-Code coverage is a term that talks about what percentage of your code is covered by testing. You should strive for 100%. This is not always possible due to the nature of some code. As part of continuous integration, code coverage is a metric that gives another way to look at the quality and reliability of our code. 
-
-<!-- > -->
-
-**Run Coverage**
-
-`npx jest --coverage`
-
-You should see something like this: 
-
-```
-...
-  console.log lib/index.js:14
-    index.js
-
-----------|----------|----------|----------|----------|-------------------|
-File      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
-----------|----------|----------|----------|----------|-------------------|
-All files |    73.33 |    36.36 |    61.54 |     69.7 |                   |
- index.js |    73.33 |    36.36 |    61.54 |     69.7 |... 26,34,51,56,61 |
-----------|----------|----------|----------|----------|-------------------|
-Test Suites: 1 passed, 1 total
-Tests:       4 passed, 4 total
-Snapshots:   0 total
-Time:        1.583s
-Ran all test suites.
-...
-```
-
-<!-- > -->
-
-Let's read the coverage summary closely. 
-
-- File - Which files were tested? 
-- % Stmts - What percentage of statements in the program have been executed? 
-- % Branch - Has each branch in a control structure been executed? 
-- % Func - What percentage of functions have been executed? 
-- % Lines - What percentage of executable lines of code have been executed? 
-- Uncovered Line #s - Which lines have not been covered by testing?
-  - The line numbers refer to code in the lib folder! This is the compiled code not the source code in the 'src' folder. In the example test.js imports from './lib'.
-
-<!-- > -->
-
-Take a look at your code and figure out: 
-
-- What hasn't been tested
-- Which branches haven't been executed
-- Functions that have been tested
-
-https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b
-
-<!-- > -->
-
-### Pair programming 
-
-Take some time to pair program and solve issues with your code. You'll split the time half focussed on one project and half focussed on the other. 
-
-The goal of this session is to 
-
-Pair up with someone you haven't paired with before. 
-
-<!-- > -->
-
-## Homework 
-
-[Math Lib](./assignments/assignment-05.md)
+[Continuous Integration](./assignments/assignment-04.md)
 
 <!-- > -->
 
 ## Additional Resources
 
-1. https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+- 
 
 <!-- > -->
 
 ## Minute-by-Minute [OPTIONAL]
 
-| **Elapsed** | **Time**  | **Activity**              |
-| ----------- | --------- | ------------------------- |
-| 0:00        | 0:05      | Objectives                |
-| 0:05        | 0:15      | Overview                  |
-| 0:20        | 0:30      | Bundle files with RollUp  |
-| 0:50        | 0:10      | BREAK                     |
-| 1:00        | 0:45      | Code Coverage pair and test |
+| **Elapsed** | **Time**  | **Activity** |
+| ----------- | --------- | -------------- |
+| 0:00        | 0:05      | Introducntion  |
+| 0:05        | 0:05      | Objectives     |
+| 0:10        | 0:30      | Linting        |
+| 0:40        | 0:10      | BREAK          |
+| 0:50        | 0:15      | Travis CI      |
+| 1:05        | 0:15      | Coveralls      |
+| 1:20        | 0:25      | ** ??? **      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
-
+| TOTAL       | 1:50      | -              |
