@@ -1,6 +1,6 @@
 # FEW 2.1
 
-| Course Section | Instructor | Slack Channel | Course Website | Instructor 1-on-1 | Tracker |
+| Course Section | Instructor | Slack Channel | Course Website | Instructor 1-on-1 |
 | :---: | :---: | :---: | :---: | :---: |
 | A | **@mitchell** | `#few-2-1-js-libs` | [make.sc/few2.1](https://make.sc/few2.1) | [Virtual Office](https://make.sc/mitchell-zoom) |
 

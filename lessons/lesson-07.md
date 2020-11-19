@@ -9,7 +9,7 @@ The goal of this lesson is to look at JS and see how it handles Math and Numbers
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+<!-- ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
 <!-- > -->
 
@@ -151,9 +151,11 @@ function getTax(d, r) {
   if (isNaN(dollars) || isNaN(rate)) {
     return 0
   }
-  ...
+  return d * r / 100
 }
 ```
+
+Imagine the function above was calld from a form, or the method was part of a library and you're not sure if people will call it correctly. In either case you might want to check the input. 
 
 If the values passed to this function were not numbers you can't calculate the tax or the function could throw an error. 
 
