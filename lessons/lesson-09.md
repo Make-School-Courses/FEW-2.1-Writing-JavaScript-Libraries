@@ -303,7 +303,7 @@ Use "files" to designate which files should be distributed by npm.
   ...
   "files": [
     "esm/*",
-    "emd/*"
+    "umd/*"
   ]
   ...
 ```
