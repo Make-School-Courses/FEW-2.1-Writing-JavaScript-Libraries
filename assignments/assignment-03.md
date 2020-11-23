@@ -20,6 +20,20 @@ What should you test? For each function think of an input and what you expect th
 
 https://www.freecodecamp.org/news/a-beginners-guide-to-testing-implement-these-quick-checks-to-test-your-code-d50027ad5eed/
 
+### Setup 
+
+Be sure to import jest: 
+
+- `npm install jest`
+
+Add a `.gitignore` to your repo You don't want to upload your entire node modules folder to your github. 
+
+Use the generator here 
+
+- https://www.toptal.com/developers/gitignore
+
+Search for 'node'. 
+
 ### Notes on Testing String Functions
 
 - `capitalize()`
