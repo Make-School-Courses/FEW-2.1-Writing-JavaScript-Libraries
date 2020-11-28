@@ -24,7 +24,7 @@ You'll want lint your TypeScript code. It's industry best practice! To do this y
 
 ### Refactor your lib
 
-Choose one of your libraries to refactor with TypeScript. The Math lib is probably the best choice. Do the following. 
+Choose one of your libraries to refactor with TypeScript. The Math lib is probably the best choice. Do the following.
 
 - Refactor into TypeScript
 - Transpile into JavaScript - you should have a .js file and a .d.ts file
