@@ -45,7 +45,7 @@ Code reviewed by another student.
 
 ### Due date
 
-Class 9
+Class 10 Dec 8 - Submit to Gradscope
 
 ## Assessing the assignment
 
