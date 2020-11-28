@@ -491,7 +491,7 @@ Pair up with someone you haven't paired with before.
 
 <!-- > -->
 
-## Homework 
+## Homework
 
 [Math Lib](./assignments/assignment-05.md)
 
@@ -499,11 +499,18 @@ Pair up with someone you haven't paired with before.
 
 ## Additional Resources
 
-1. https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+Set up Jest with babel to use ES6 import from with your tests
 
-<!-- > -->
+- https://jestjs.io/docs/en/22.x/getting-started.html#using-babel
+- https://medium.com/@saplos123456/using-es6-import-and-export-statements-for-jest-testing-in-node-js-b20c8bd9041c
 
-## Minute-by-Minute [OPTIONAL]
+More info on bundling
+
+- https://levelup.gitconnected.com/code-splitting-for-libraries-bundling-for-npm-with-rollup-1-0-2522c7437697
+
+
+
+<!-- ## Minute-by-Minute [OPTIONAL]
 
 | **Elapsed** | **Time**  | **Activity**              |
 | ----------- | --------- | ------------------------- |
@@ -513,5 +520,5 @@ Pair up with someone you haven't paired with before.
 | 0:50        | 0:10      | BREAK                     |
 | 1:00        | 0:45      | Code Coverage pair and test |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -                         | -->
 

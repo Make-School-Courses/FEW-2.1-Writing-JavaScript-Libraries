@@ -9,7 +9,7 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+<!-- ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
 <!-- > -->
 
@@ -80,7 +80,6 @@ const intFuncs = []; // [number]
 
 intFuncs.push((x) => 2 * x);
 intFuncs.push((x) => x * x);
-
 intFuncs.push((x) => x.toFixed(2));
 
 let total = 0;
@@ -289,31 +288,89 @@ https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 - What was different about using typescript than using?
 - Did you see anything new? 
 
-<!-- > -->
+## Fizz Buzz 
 
-### Interfaces
+Use the fizz buzz code, you wrote test for this earlier. Let's convert it to TypeScript. 
 
-> **Interface**
-> a point where two systems, subjects, organizations, etc. meet and interact.
+**Step 1**
 
-This can be a USB cable, your keyboard, the button in your favorite app. 
+Get the code here at the link below or use your copy of the code from the previous assignment: 
 
-An interface in programming is where one piece of program connects to and interacts with another piece. This happens in a few places: 
+https://github.com/Make-School-Labs/fizz-buzz-test
 
-- Objects - Anything with properties and methods require the interfacing system to know the the property and method names. 
-- Functions - expect parameters and return values, this is how you interact with them and is their interface.
+**Step 2**
 
-<!-- > -->
+All of the code here is in `fizzbuzz.js`. Change the name of this file to `fizzbuzz.ts`. The .ts file extension denotes a TypeScript file. 
 
+**Step 3**
 
+VSCode will provide hints in the form of three small dots under the names of variables, function, parameters, and more to tell you where types are missing. You can hover over this to get a hint as to what is missing. 
+
+Set the types for the vairables at the top: 
+
+```TS
+const FIZZ = 'fizz'
+// FIZZ is type string change to:
+const FIZZ: string = 'fizz'
+```
+
+Not you're not getting a code hint since TypeScript is inferring the type. 
+
+Do the other variables. 
+
+**Step 4**
+
+Functions take parameters as input and provide a return value as output. These should define a type. Look at the comments for a clue about the parameters and return values: 
+
+```ts
+function isFizzy(n) {
+  return n % 3 === 0
+}
+// Takes a number returns a boolean change to:
+function isFizzy(n: number): boolean {
+  return n % 3 === 0
+}
+```
+
+Do the other functions: 
+
+- isFizzy
+- isBuzzy
+- isFizzyBuzzy
+- fizzyBuzzy
+
+**Step 5**
+
+The last function is more complicated. Here the input is just a number but the output is an object. You can see the "shape" of the object here:
+
+`const result = { count, fizz: 0, buzz: 0, fizzBuzz: 0 }`
+
+To define this you should create an interface. An interface defines all of the properties an object might have and their types. This interface becomes the type.
+
+Read more about interfaces here: 
+
+https://www.typescriptlang.org/docs/handbook/interfaces.html
+
+After reading the docs above, write an interface for the fizzbuzz results. Use it to complete the types for this function. 
+
+**Step 6**
+
+There's one last step, convert your .ts files into .js files. Follow the guide here: 
+
+https://www.typescriptlang.org/docs/handbook/typescript-tooling-in-5-minutes.html
+
+tl;dr
+
+- `npm install -g typescript`
+- `tsc fizzbuzz.ts`
+
+This should compile your TypeScript code into standard js, or provide helpful error messages where types are mismatched. 
 
 <!-- > -->
 
 ## Activity: Get Your Project Up and Running with TypeScript
 
-Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your library. You can add it to one of the libraries you have published or to a library you are currently working on. 
-
-The example below uses the String library. 
+Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your String library.
 
 Now, we just need to make a few small changes to get it working again!
 
