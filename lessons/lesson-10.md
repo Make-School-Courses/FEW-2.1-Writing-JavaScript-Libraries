@@ -28,9 +28,9 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 ### Q: What is a type?
 
-Data types describe the shape of the data that we're expecting.
+Data types describe the *shape* of the data that we're expecting.
 
-Examples: string, number, boolean, list, object
+Examples: `string`, `number`, `boolean`
 
 <!-- > -->
 
@@ -44,7 +44,7 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 
 **Q:** Can you use static typing in JS?
 
-**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS to be used. 
+**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS. So, you can't use static typing in JS but you can use static typing in TypeScript and compile TypeScript to JS. 
 
 <!-- > -->
 
@@ -53,9 +53,11 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
 
 ```JavaScript
-let x = 10;  // Number
-x = 'hello'; // String
+let x = 10;  // x starts as a Number
+x = 'hello'; // x becomes a String
 ```
+
+Usually you won't do this on purpose, most often it will happen by accident. 
 
 <!-- > -->
 
@@ -76,23 +78,14 @@ Examples of dynamically typed languages include Python, **JavaScript**, PHP, and
 **Q:** What is happening on each line of code below?
 
 ```JavaScript
-const intFuncs = []; // [number]
-
-intFuncs.push((x) => 2 * x);
-intFuncs.push((x) => x * x);
-intFuncs.push((x) => x.toFixed(2));
-
-let total = 0;
-intFuncs.forEach((func) => total += func(10));
+function getPriceWithTax(amount, rate) {
+ const price = amount.toFixed(2)
+ const tax = price * rate
+ return price + tax
+}
 ```
 
-<!-- > -->
-
-We catch the bug *at runtime*.
-
-```
-const intFuncs: Array<(x: number) => number> = [];
-```
+What could possibly go wrong?
 
 <!-- > -->
 
@@ -224,6 +217,7 @@ someValue = [1, 2, 3];
 We can add types to the parameters and return values of functions:
 
 ```TypeScript
+// Add types to each parameter, and a type for the return value
 function add(num1: number, num2: number): number {
   return num1 + num2;
 }
@@ -249,6 +243,16 @@ greet(); // prints 'Hello!'
 greet('Hola'); // prints 'Hola!'
 greet(undefined, 'Jane'); // prints 'Hello, Jane!'
 ```
+
+## Try it out
+
+Take a look at this Repl. The code is written in JS. There are no types. 
+
+https://repl.it/join/shempbkq-mitchellhudson
+
+Take a look at the same code but with TypeScript. 
+
+https://repl.it/join/joizyrwv-mitchellhudson
 
 <!-- > -->
 
