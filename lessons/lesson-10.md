@@ -298,7 +298,7 @@ Use the fizz buzz code, you wrote test for this earlier. Let's convert it to Typ
 
 **Step 1**
 
-Get the code here at the link below or use your copy of the code from the previous assignment: 
+Get the code here at the link below or use your copy of the code from the previous assignment:
 
 https://github.com/Make-School-Labs/fizz-buzz-test
 
@@ -358,6 +358,8 @@ https://www.typescriptlang.org/docs/handbook/interfaces.html
 After reading the docs above, write an interface for the fizzbuzz results. Use it to complete the types for this function. 
 
 **Step 6**
+
+Run the TypeScript compiler.
 
 There's one last step, convert your .ts files into .js files. Follow the guide here: 
 
@@ -493,24 +495,22 @@ Now running `npm run prepare` should do everything you need to get your files re
 
 ### Homework
 
-[Assignment 8 - Typescript](../assignments/assignment-08.md)
+<!-- [Assignment 8 - Typescript](../assignments/assignment-08.md) -->
 
-<!-- > -->
+Choose one: 
 
-## Wrap Up
-
-- Continue working on your current tutorial
-- Complete reading
-- Complete challenges
+- Update one of your libraries: Date lib or String Lib to TypeScript. 
+- Do the TypeScript Exercism: https://exercism.io/my/tracks/typescript
 
 <!-- > -->
 
 ## Additional Resources
 
-1. 
+1. https://exercism.io/my/tracks/typescript
+1. https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 
 <!-- > -->
-
+<!-- 
 ## Minute-by-Minute [OPTIONAL]
 
 | **Elapsed** | **Time**  | **Activity**              |
@@ -521,4 +521,4 @@ Now running `npm run prepare` should do everything you need to get your files re
 | 0:50        | 0:10      | BREAK                     |
 | 1:00        | 0:45      | In Class Activity II      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -                         |
+| TOTAL       | 1:50      | -                         | -->
