@@ -36,27 +36,26 @@ Students by the end of the course will be able to ...
 
 ## Schedule
 
-**Course Dates:** Thursday, October 22 – Thursday, December 10, 2020 (8 weeks)
+**Course Dates:** Tuesday, January 19 – Thursday, March 4, 2020 (7 weeks)
 
-**Class Times:** Tuesday 1:45-4:30 PM and Thursday at 2:45–5:30 PM (13 class sessions)
+**Class Times:** Tuesday and Thursday at 1:45–4:30pm (13 class sessions)
 
 | Class | Date | Topics | Assignment |
 |:------|:-----|:-------|:-----------|
-|  1 |  Thu, Oct 22  | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
-|  2 |  Tue, Oct 27  | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
-|  3 |  Thu, Oct 29  | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
-|  - |  Tue, Nov 3              | **Vote! - Civic Responsibility Break** |
-|  4 |  Thu, Nov 5 | [Lesson 4](./lessons/lesson-04.md) | [Date Lib](./assignments/assignment-07.md) |
-|  5 |  Tue, Nov 10  | [Lesson 5](./lessons/lesson-05.md) | - |
-|  6 |  Thu, Nov 12  | [Lesson 6](./lessons/lesson-06.md) | [API Lib](./assignments/assignment-09.md) |
-|  7 |  Tue, Nov 17  | [Lesson 7](./lessons/lesson-07.md) | Lab |
-|  8 |  Thu, Nov 19  | [Lesson 8](./lessons/lesson-08.md) | [Continuous Integration](./assignments/assignment-04.md) |
-|  9 |  Tue, Nov 24  | [Lesson 9](./lessons/lesson-09.md) | [Bundling code for distribution](./assignments/assignment-06.md) |
-|  - |  Thu, Nov 26               | **Holiday- Thanksgiving** |
-| 10 |  Tue, Dec 1   | [Lesson 10](./lessons/lesson-10.md) | - |
-| 11 |  Thu, Dec 3   | [Lesson 11](./lessons/lesson-11.md) | - |
-| 12 |  Tue, Dec 8   | [Lesson 12](./lessons/lesson-12.md) | - |
-| 13 |  Thu, Dec 10  | [Lesson 13](./lessons/lesson-13.md) | Final Assessment |
+|  -    | Tue, Jan 19 | No Class - MLK Day | - |
+|  1    | Thu, Jan 21 | [Lesson 1](./lessons/lesson-01.md) | [String Lib](./assignments/assignment-01.md) - Write your string lib |
+|  2    | Tue, Jan 26 | [Lesson 2](./lessons/lesson-02.md) | [Publish to npm](./assignments/assignment-02.md) - Publish your string lib to npm |
+|  3    | Thu, Jan 28 | [Lesson 3](./lessons/lesson-03.md) | [Add Unit Tests](./assignments/assignment-03.md) - Write unit tests for your string lib |
+|  4    | Tue, Feb 8 | [Lesson 4](./lessons/lesson-04.md) | [Date Lib](./assignments/assignment-07.md) |
+|  5    | Thu, Feb 4 | [Lesson 5](./lessons/lesson-05.md) | - |
+|  6    | Tue, Feb 9 | [Lesson 6](./lessons/lesson-06.md) | [API Lib](./assignments/assignment-09.md) |
+|  7    | Thu, Feb 11 | [Lesson 7](./lessons/lesson-07.md) | Lab |
+|  8    | Tue, Feb 16 | [Lesson 8](./lessons/lesson-08.md) | [Continuous Integration](./assignments/assignment-04.md) |
+|  9    | Thu, Feb 17 | [Lesson 9](./lessons/lesson-09.md) | [Bundling code for distribution](./assignments/assignment-06.md) |
+| 10    | Tue, Feb 23 | [Lesson 10](./lessons/lesson-10.md) | - |
+| 11    | Thu, Feb 25 | [Lesson 11](./lessons/lesson-11.md) | - |
+| 12    | Tue, Mar 2  | [Lesson 12](./lessons/lesson-12.md) | - |
+| 13    | Thu, Mar 4  | [Lesson 13](./lessons/lesson-13.md) | Final Assessment |
 
 <!-- | 14 | Tue, May 13 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations | -->
 
