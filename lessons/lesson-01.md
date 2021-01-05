@@ -28,7 +28,7 @@
 
 <!-- > -->
 
-- You'been using npm time to get a closer look
+- You've been using npm time to get a closer look
 - Practice your programming skills
 - Industry best practices 
 
