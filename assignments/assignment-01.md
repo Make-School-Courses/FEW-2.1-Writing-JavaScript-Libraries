@@ -1,7 +1,7 @@
 # FEW 2.1 Assignment 1 - String Lib
 
 
-
+<!-- 
 
 Add some challenges that build a markdown renderer? or code syntax highlighter? 
 
@@ -17,7 +17,7 @@ Add some challenges that build a markdown renderer? or code syntax highlighter?
 Add challenge:
 - convert to html entities 
 
-
+ -->
 
 
 The goal of this assignment is to create a JavaScript Library of String functions. 
