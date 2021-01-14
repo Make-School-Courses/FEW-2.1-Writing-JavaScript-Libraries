@@ -23,9 +23,9 @@ Bundling files also processes your files for different environments. Your files 
 
 ## Learning Objectives 
 
-- Describe reasons for bundling files
-- Define UMD and ESM bundles 
-- Use Rollup to bundle your library for distribution
+1. Describe reasons for bundling files
+1. Define UMD and ESM bundles 
+1. Use Rollup to bundle your library for distribution
 
 ## Bundling code with Rollup
 

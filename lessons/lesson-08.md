@@ -53,6 +53,7 @@ Using CI will provide automated feedback on the quality of a codebase as each ne
 
 1. Use Linting to improve code quality and catch bugs
 1. Use Continuous Integration to automate testing
+1. Implement industry best practices
 
 <!-- > -->
 

@@ -15,7 +15,10 @@ Dates are important they appear in one form or another in almost every applicati
 
 ## Learning Objectives (5 min)
 
-1. 
+1. Explain dates, UTC, and the Unix Epoch
+1. Use math to calculate dates
+1. Use composition with Objects
+1. Use JS to solve problems with Dates
 
 ## Date review
 
