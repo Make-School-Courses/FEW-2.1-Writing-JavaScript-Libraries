@@ -51,7 +51,7 @@ Example: **h**ello world -> **H**ello world
 
 Strategies:
 
-1) Use `str[0]` to get the first character. And [`str.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to convert that to uppercase. Use [`str.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) to get the remainder of the string and combine it with the uppercase first character. 
+1) Use `str[0]` to get the first character. Then use [`str.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) to convert that character to uppercase. Next use [`str.slice()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) to get the remainder of the string and combine it with the uppercase first character. 
 
 2) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) to convert the string into an array of characters, upper case the first element of the array with [`str.toUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase), and then join the array with [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
 
@@ -75,11 +75,11 @@ Example: **t**he **m**ost **f**oo in **b**ar -> **T**he **M**ost **F**oo *in* **
 
 Strategies: 
 
-1) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and split on a ' ' space. Use your `capitalize()`, loop through all of the elements (you can use `array.map()` here) and use your `capitalize()` function from challenge 1 on each element, last [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) all of the elements into a single string.
+1) Use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) and split on a `' '` space, loop through each of the strings in the array and use your `capitalize()` function on each elemen. You can use `array.map()` here and use your `capitalize()` function as the callback. Last, use [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) to join all of the elements into a single string.
 
 **Challenge 4** 
 
-`removeExtraSpaces()` - Removes all spaces from the beginning and end of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it is replaced by a single space. 
+`removeExtraSpaces()` - Removes all spaces from the beginning and end of a String along with any extra spaces in the middle. If more than one space appears in the middle of a string it is replaced by a single space.
 
 Example: 
 
@@ -87,9 +87,11 @@ Example:
 "   Hello    world!   " -> "Hello world!"
 ```
 
+Advanced: Remove all whitespace characters, this includes return, enter, and tabs along with spaces. 
+
 Strategies: 
 
-1) [`string.trim()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) will remove white space from the beginning and ending of a string. If you [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) on the `' '` (space) filter the empty strings and [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) with a ' '.
+1) Use [`string.trim()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim) to remove white space from the beginning and ending of a string. Then plit the string into an array with [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) (split on the `' '` space.) Filter the empty strings and use [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) with a ' ' to put them back together.
 
 **Challenge 5** 
 
@@ -101,9 +103,10 @@ Advanced: Remove special characters from the string. For example: `"Hello World!
 
 Strategies: 
 
-1) You need to remove all of the white space follow the challenge above. If you use [`str.split()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split) you shopuld have an array of strings you use [`str.toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) and [`array.join()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join) with a '-'.
-
-2) Advanced use [`str.replace()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) to remove special characters (~!@#$% etc.) from the string before joining. 
+1. Convert the whole string to lower case with: `string.toLowerCase()`
+2. Split the string into an array of characters with: `string.split('')`
+3. Not filter out the characters you don't want. One way to approach that is to use the character code. Every character is assigned a number (the character code) for lowercase letters the a through z are codes: 97 to 122. The space " " is character code 32. You can get the character code using `string.charCodeAt()`. To preserve the numbers look for character codes 48 to 57 (0 to 9). You're looking for character codes 32, 48-57, and 97-122. 
+4. Use map to loop over the array of characters. In the map callback if the character is `' '` (a space) return `'-'` return the hyphen, otherwise return the character. 
 
 **Challenge 6** 
 
