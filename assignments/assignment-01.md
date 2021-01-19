@@ -160,6 +160,19 @@ Strategies:
 
 1) You can use string.trim() to remove spaces at the beginning and end of the string. What's left is either empty characters like returns, enter or tab, or other characters. Loop over the remaining characters, if you find a character that is not `\n`, `\r`, or `\t` return false. If you got to the end of the loop return true. 
 
+## Video Lessons
+
+https://repl.it/@MitchellHudson/String-Study#index.js
+
+- https://youtu.be/jKx45OJSDO4
+- https://youtu.be/ZHg0iWJln8E
+- https://youtu.be/6MTbBMDWGmA
+- https://youtu.be/80y__y2OsHY
+- https://youtu.be/sK_a_u0kHvE
+- https://youtu.be/3Qnv_hc0rIc
+- https://youtu.be/ijB1b-Xet9c
+- https://youtu.be/MNDaSp3UUu8
+
 ## Deliverable 
 
 Your completed work is your Github repo and the files in it. Post the link to your work in the progress tracker. 
