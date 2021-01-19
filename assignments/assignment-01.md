@@ -95,7 +95,7 @@ Strategies:
 
 **Challenge 5** 
 
-`kabobCase()` - Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase. 
+`kebobCase()` - Removes extra spaces and replaces spaces with the hyphen "-", and makes all characters lowercase. 
 
 Example: `"   Hello    world   "` -> `"hello-world"`
 
@@ -105,8 +105,9 @@ Strategies:
 
 1. Convert the whole string to lower case with: `string.toLowerCase()`
 2. Split the string into an array of characters with: `string.split('')`
-3. Not filter out the characters you don't want. One way to approach that is to use the character code. Every character is assigned a number (the character code) for lowercase letters the a through z are codes: 97 to 122. The space " " is character code 32. You can get the character code using `string.charCodeAt()`. To preserve the numbers look for character codes 48 to 57 (0 to 9). You're looking for character codes 32, 48-57, and 97-122. 
-4. Use map to loop over the array of characters. In the map callback if the character is `' '` (a space) return `'-'` return the hyphen, otherwise return the character. 
+3. Filter out the characters you don't want. You want to keep letters, numbers, the space `' '`, and the hyphen `'-'`. One way to approach that is to use the character code. Every character is assigned a number (the character code) for lowercase letters the a through z are codes: 97 to 122. The space " " is character code 32. You can get the character code using `string.charCodeAt()`. To preserve the numbers look for character codes 48 to 57 (0 to 9). You're looking for character codes 32, 48-57, 97-122, and 45. 
+4. Use the `removeExtraSpaces()` to remove any extra spaces.
+5. Split on the space and join with hyphen. 
 
 **Challenge 6** 
 
@@ -116,7 +117,7 @@ Example:` "  what the    heck   "` -> `"what_the_heck"`
 
 Strategies: 
 
-1) Follow the `kabobcase()` example above and use the '_' in place of '-'.
+1) Edit the kebob case function so that it takes the separating character as a parameter. This will allow you to provide the character that replces the space. 
 
 **Challenge 7** 
 
