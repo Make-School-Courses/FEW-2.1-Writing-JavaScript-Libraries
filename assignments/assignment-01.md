@@ -117,7 +117,7 @@ Example:` "  what the    heck   "` -> `"what_the_heck"`
 
 Strategies: 
 
-1) Follow the `kabobcase()` example above and use the '_' in place of '-'.
+1) Edit the kebob case function so that it takes the separating character as a parameter. This will allow you to provide the character that replces the space. 
 
 **Challenge 7** 
 
