@@ -161,6 +161,12 @@ Strategies:
 
 1) You can use string.trim() to remove spaces at the beginning and end of the string. What's left is either empty characters like returns, enter or tab, or other characters. Loop over the remaining characters, if you find a character that is not `\n`, `\r`, or `\t` return false. If you got to the end of the loop return true. 
 
+**Challenge 11** Adding documentation 
+
+Add a readme.md to your GitHub Repo. In this file you will document your library of string functions. 
+
+Also include a link to your library on npm. You'll be publishing this npm in class 2. 
+
 ## Video Lessons
 
 https://repl.it/@MitchellHudson/String-Study#index.js
