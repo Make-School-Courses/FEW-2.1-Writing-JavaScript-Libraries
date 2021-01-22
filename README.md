@@ -61,6 +61,31 @@ Students by the end of the course will be able to ...
 
 <!-- | 14 | Tue, May 13 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations | -->
 
+[Lesson 1 - Solving string problems]: ./lessons/lesson-01.md
+[Lesson 2 - Publishing to npm]: ./lessons/lesson-02.md
+[Lesson 3 - Unit testing]: ./lessons/lesson-03.md
+[Lesson 4 - Working with Dates]: ./lessons/lesson-04.md
+[Lesson 5 - Solving problems with Dates]: ./lessons/lesson-05.md
+[Lesson 6 - Async JS]: ./lessons/lesson-06.md
+[Lesson 7 - Lab]: ./lessons/lesson-07.md
+[Lesson 8 - Continuous Integration]: ./lessons/lesson-08.md
+[Lesson 9]: ./lessons/lesson-09.md
+[Lesson 10]: ./lessons/lesson-10.md
+[Lesson 11]: ./lessons/lesson-11.md
+[Lesson 12]: ./lessons/lesson-12.md
+[Lesson 13]: ./lessons/lesson-13.md
+
+
+<!-- 
+
+| 43 |  Tue, May 11               | [Lesson 1] |
+| 44 |  Wed, May 12               | Final Exam/Presentations |
+
+[Lesson 1]: Lessons/Lesson1.md
+[Lesson 2]: Lessons/Lesson2.md 
+
+-->
+
 ## Projects
 
 - String Library 
