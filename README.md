@@ -45,14 +45,14 @@ Students by the end of the course will be able to ...
 | Class | Date | Topics | Assignment | Asignment Due |
 |:------|:-----|:-------|:-----------|:--------------|
 |  -    | Tue, Jan 19 | No Class - MLK Day | - | - |
-|  1    | Thu, Jan 21 | [Lesson 1 - Solving string problems] | [String Lib] - Write your string lib | - |
-|  2    | Tue, Jan 26 | [Lesson 2 - Publishing to npm] | [Publish to npm] - Publish your string lib to npm | - |
-|  3    | Thu, Jan 28 | [Lesson 3 - Unit testing] | [Add Unit Tests] - Write unit tests for your string lib | [String Lib](./assignments/assignment-01.md) - [GradeScope](https://www.gradescope.com/courses/219049) | 
-|  4    | Tue, Feb 8 | [Lesson 4 - Working with Dates] | [Date Lib] | - |
-|  5    | Thu, Feb 4 | [Lesson 5 - Solving problems with Dates] | - |  - |
-|  6    | Tue, Feb 9 | [Lesson 6 - Async JS] | [API Lib] | - |
-|  7    | Thu, Feb 11 | Lesson 7 - Lab | Work on API project | - |
-|  8    | Tue, Feb 16 | [Lesson 8 - Continuous Integration] | [Continuous Integration] | - |
+|  1    | Thu, Jan 21 | [Lesson 1 - Solving string problems] | [String Lib] | - |
+|  2    | Tue, Jan 26 | [Lesson 2 - Publishing to npm] | [Publish to npm] | - |
+|  3    | Thu, Jan 28 | [Lesson 3 - Unit testing] | [Add Unit Tests] | [String Lib] - [GradeScope] | 
+|  4    | Tue, Feb 8  | [Lesson 4 - Working with Dates] | [Date Lib] | - |
+|  5    | Thu, Feb 4  | [Lesson 5 - Solving problems with Dates] | - |  - |
+|  6    | Tue, Feb 9  | [Lesson 6 - Async JS] | [API Lib] | [Date Lib] - [GradeScope] |
+|  7    | Thu, Feb 11 |  Lesson 7 - Lab | Work on API project | - |
+|  8    | Tue, Feb 16 | [Lesson 8 - Continuous Integration] | [Continuous Integration] | [API Lib] - [GradeScope] |
 |  9    | Thu, Feb 17 | [Lesson 9 - Bundling Code] | [Bundling code for distribution] | - |
 | 10    | Tue, Feb 23 | [Lesson 10 - Typescript Intro] | - | - |
 | 11    | Thu, Feb 25 | [Lesson 11 - Typescript] | - | - |
@@ -75,6 +75,8 @@ Students by the end of the course will be able to ...
 [Lesson 12]: ./lessons/lesson-12.md
 [Lesson 13]: ./lessons/lesson-13.md
 
+[GradeScope]: https://www.gradescope.com/courses/219049
+
 [String Lib]: ./assignments/assignment-01.md
 [Publish to npm]: ./assignments/assignment-02.md
 [Add Unit Tests]: ./assignments/assignment-03.md
@@ -82,6 +84,7 @@ Students by the end of the course will be able to ...
 [API Lib]: ./assignments/assignment-09.md
 [Continuous Integration]: ./assignments/assignment-04.md
 [Bundling code for distribution]: ./assignments/assignment-06.md
+
 
 <!-- 
 
