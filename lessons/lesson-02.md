@@ -3,25 +3,6 @@
 
 <small style="display:block;text-align:center">Publishing JS Libraries</small>
 
-<!-- > -->
-
-## Minute-by-Minute [OPTIONAL]
-
-| **Elapsed** | **Time** | **Activity** |
-| ----------- | -------- | ------------ |
-| 0:05 | 0:05 | [Objectives](#learning-objectives) (Lecture) |
-| 0:15 | 0:10 | [What is npm?](#what-is-npm) (Lecture) |
-| 0:45 | 0:30 | [Publish packages to npm](#publish-packages-to-npm) (Lab) |
-| 1:00 | 0:15 | [Semver](#version-numbers-and-semver) (Dicussion) |
-| 1:10 | 0:10 | BREAK |
-| 1:25 | 0:15 | [Updating your package](#updating-your-package) (Activity) |
-| 1:55 | 0:30 | [Give yourself a badge](#give-yourself-a-badge) (Lecture/Lab) |
-| 2:35 | 0:40 | Code Review (Lab) |
-| 2:40 | 0:05 | Review Objectives (Lecture) |
-| 2:45 | 0:05 | Review Homework (Lecture) |
-
-In this lesson you will publish your library and share it with the world.
-
 <!-- Put a link to the slides so that students can find them -->
 
 ➡️ [**Slides**](https://docs.google.com/presentation/d/1BdgVBeemOXlARsS_wbS798UNFjCixwuIN9QhlDdxshg/edit?usp=sharing)
@@ -509,4 +490,21 @@ Q: What was covered today?
 
 Publish to NPM: https://zellwk.com/blog/publish-to-npm/
 
+<!-- > -->
 
+## Minute-by-Minute [OPTIONAL]
+
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:05 | 0:05 | [Objectives](#learning-objectives) (Lecture) |
+| 0:15 | 0:10 | [What is npm?](#what-is-npm) (Lecture) |
+| 0:45 | 0:30 | [Publish packages to npm](#publish-packages-to-npm) (Lab) |
+| 1:00 | 0:15 | [Semver](#version-numbers-and-semver) (Dicussion) |
+| 1:10 | 0:10 | BREAK |
+| 1:25 | 0:15 | [Updating your package](#updating-your-package) (Activity) |
+| 1:55 | 0:30 | [Give yourself a badge](#give-yourself-a-badge) (Lecture/Lab) |
+| 2:35 | 0:40 | Code Review (Lab) |
+| 2:40 | 0:05 | Review Objectives (Lecture) |
+| 2:45 | 0:05 | Review Homework (Lecture) |
+
+In this lesson you will publish your library and share it with the world.
