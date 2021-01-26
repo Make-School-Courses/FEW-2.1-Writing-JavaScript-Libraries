@@ -13,6 +13,14 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 <!-- > -->
 
+## Why Is This Important?
+
+TypeScript is becoming more popular, and is extremely useful in large codebases. Knowing how to refactor, write, and publish TypeScript code will allow you to decide whether TypeScript is right for a project.
+
+Writing TypeScript will also force you to think about the types you use in the code you write which will make a you a stronger programmer.
+
+<!-- > -->
+
 ## Learning Objectives
 
 1. Define static & dynamic typing
@@ -256,7 +264,7 @@ https://repl.it/join/joizyrwv-mitchellhudson
 
 <!-- > -->
 
-### Classes & Interfaces
+## Classes & Interfaces
 
 <!-- > -->
 
@@ -371,6 +379,12 @@ tl;dr
 - `tsc fizzbuzz.ts`
 
 This should compile your TypeScript code into standard js, or provide helpful error messages where types are mismatched. 
+
+<!-- > -->
+
+## Activity: TypeScript Exercises
+
+Go to [make.sc/typescript-activities](https://make.sc/typescript-activities) and complete the 8 activities there to help solidify how to use TypeScript. You can write in the same repl.it you were using before to check your work
 
 <!-- > -->
 
