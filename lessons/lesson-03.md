@@ -3,25 +3,9 @@
 
 <small style="display:block;text-align:center">Unit Testing</small>
 
-<!-- > -->
-
-## Minute-by-Minute 
-
-| **Elapsed** | **Time** | **Activity** |
-| ----------- | -------- | ------------ |
-| 0:10 | 0:10 | [Overview](#overview) (Lecture) |
-| 0:05 | 0:15 | [Learning Objectives](#learning-objectives) (Lecture) |
-| 0:10 | 0:25 | [Unit Testing](#unit-testing) (Discussion) |
-| 0:15 | 0:40 | [Testing Example](#testing-example) (Demo/setup) |
-| 1:00 | 1:40 | [Testing Fizz Buzz](#testing-fizz-buzz) (Activity) |
-| 0:10 | 1:50 | BREAK |
-| 0:15 | 2:05 | Discuss Testing |
-| 0:30 | 2:35 | Start Homework |
-| 0:10 | 2:45 | Wrap up |
-
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/lesson1.html ':ignore')
+➡️ [**Slides**](https://docs.google.com/presentation/d/1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4/edit?usp=sharing ':ignore')
 
 <!-- > -->
 
@@ -487,3 +471,18 @@ Use the coverage command with Jest to test the coverage of your tests.
 1. https://jestjs.io
 
 
+<!-- > -->
+
+## Minute-by-Minute 
+
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:10 | 0:10 | [Overview](#overview) (Lecture) |
+| 0:05 | 0:15 | [Learning Objectives](#learning-objectives) (Lecture) |
+| 0:10 | 0:25 | [Unit Testing](#unit-testing) (Discussion) |
+| 0:15 | 0:40 | [Testing Example](#testing-example) (Demo/setup) |
+| 1:00 | 1:40 | [Testing Fizz Buzz](#testing-fizz-buzz) (Activity) |
+| 0:10 | 1:50 | BREAK |
+| 0:15 | 2:05 | Discuss Testing |
+| 0:30 | 2:35 | Start Homework |
+| 0:10 | 2:45 | Wrap up |
