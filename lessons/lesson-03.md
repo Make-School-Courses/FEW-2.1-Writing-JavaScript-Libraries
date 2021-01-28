@@ -7,6 +7,11 @@
 
 ➡️ [**Slides**](https://docs.google.com/presentation/d/1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4/edit?usp=sharing ':ignore')
 
+### Video Lessons
+
+- https://youtu.be/xXm_8DYjW6w
+- https://youtu.be/04y5jPykoIY
+
 <!-- > -->
 
 ## Overview
@@ -450,11 +455,6 @@ Note! If your functions are global or they are added to the prototype of a globa
 Use the coverage command with Jest to test the coverage of your tests. 
 
 <!-- > -->
-
-### Video Lessons
-
-- https://youtu.be/xXm_8DYjW6w
-- https://youtu.be/04y5jPykoIY
 
 ### Homework
 
