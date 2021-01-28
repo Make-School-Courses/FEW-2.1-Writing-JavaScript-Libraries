@@ -451,6 +451,11 @@ Use the coverage command with Jest to test the coverage of your tests.
 
 <!-- > -->
 
+### Video Lessons
+
+- https://youtu.be/xXm_8DYjW6w
+- https://youtu.be/04y5jPykoIY
+
 ### Homework
 
 [Add Unit Tests](./assignments/assignment-03.md)
