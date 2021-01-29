@@ -11,6 +11,9 @@ Time for another library! This time you'll make a library that works with Dates.
 <!-- 
 ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
+➡️ [**Slides**](https://docs.google.com/presentation/d/1zBpVfNByDj5u4Bsg1EtW_zx3qm_6oEm85BStYOyKlDk/edit?usp=sharing ':ignore')
+
+
 <!-- > -->
 
 ## Why you should know this?
