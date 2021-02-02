@@ -27,6 +27,9 @@ Time for another library! This time you'll make a library that works with Dates.
 - https://youtu.be/gbKwrr94rbw
 - https://youtu.be/JeIe7hbITEc
 
+Playlist: 
+
+https://www.youtube.com/playlist?list=PLoN_ejT35AEioZ_5TEk0h3LVqzT-EoM2M
 
 <!-- > -->
 

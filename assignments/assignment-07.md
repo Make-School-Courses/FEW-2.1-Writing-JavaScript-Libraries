@@ -23,7 +23,7 @@ To do this you'll create a class that holds a Date object as a property. You cla
 ```JS
 class D {
 	constructor(...args) {
-		this.date = new Date(...args)
+		this._date = new Date(...args)
 	}
 }
 ```
@@ -34,11 +34,25 @@ tl;dr args is an array with all of the parameters passed to a function. The `...
 
 You should be able to instantiate this class like this now: 
 
-```JS 
+```JS
+// The date Object can be initialized in different ways:
+const a = new Date() // no parameters
+const b = new Date('January 1, 1970') // with a string
+const c = new Date(2001, 4, 12, 16, 45) // with year, month, date, hours, mins
+const d = new Date(new Date()) // with another date object
+```
+
+using the class as defined above your date class can be initialized in the same way as the built in date object. 
+
+```JS
+// With no parameters: 
+const a = new D()
 // Create a date from a string (single parameter)
-const d = new D('9/26/1965') 
+const b = new D('9/26/1965') 
 // Create a date from some numbers (list of parameters)
-const e = new D(1970, 1, 1, 0, 0, 0)
+const c = new D(1970, 1, 1, 0, 0, 0)
+// With a Date
+const d = new D(new Date())
 ```
 
 This should work with any number of arguments. 
@@ -49,29 +63,42 @@ Your class should provide human readable values for year, month, date, hour, min
 
 The built in Date provides the month and day of the week starting with 0, and it doesn't provide a string for the day of the week or month which is inconvenient. 
 
+Normally to get the year You'll use:
 ```JS
-// Gets the current date with no params
-const d = new D() 
-console.log(d.year())  // 2019 fullYear
-console.log(d.month()) // July
-console.log(d.day())   // 27
-console.log(d.hours()) // 18
-console.log(d.mins())  // 6
-console.log(d.secs())  // 5
+const oldDate = new Date()
+oldDate.getFullYear()
 ```
 
-Stretch goal: Use a getter for each of these. Using a getter each of the methods could be accessed as a property rather than y calling the method. For example: `d.month` instead of `d.month()`.
+This is not convenient. We want our date object to treat the year as a property, and the name year is easier to remember: 
 
 ```JS
 // Gets the current date with no params
 const d = new D() 
-console.log(d.year)  // 2019 fullYear
-console.log(d.month) // July 6
-console.log(d.day)   // 27
-console.log(d.hours) // 18
-console.log(d.mins)  // 6
-console.log(d.secs)  // 5
+console.log( d.year )  // 2019 fullYear
+console.log( d.yr )    // 19 short year
 ```
+
+The date object returns the month as an index for example: 0 = January. Often you'll want the name of the month spelled out and you might want the short name. The same is true for the day. 
+
+```JS
+const oldDate = new Date()
+console.log( oldDate.getMonth() ) // 1 (feb)
+console.log( oldDate.getDay() )   // 2 (Tues)
+console.log( oldDate.getDate() )  // 12
+```
+
+Your date object will do this: 
+
+```JS
+console.log( d.month ) // July
+console.log( d.day )   // Tuesday
+console.log( d.date )  // 27
+console.log( d.hours ) // 18
+console.log( d.mins )  // 6
+console.log( d.secs )  // 5
+```
+
+Externally these (month, day, date, year, yr etc.) look like properties. Internally they will be methods. These are called getters. 
 
 Read about getters here: 
 
