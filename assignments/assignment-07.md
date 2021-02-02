@@ -90,14 +90,16 @@ console.log( oldDate.getDate() )  // 12
 Your date object will to add these methods as getters to your date class: 
 
 ```JS
-console.log( d.month ) // July
-console.log( d.mon )   // Jul
-console.log( d.day )   // Tuesday
-console.log( d.day )   // Tuesday
-console.log( d.date )  // 27
-console.log( d.hours ) // 18
-console.log( d.mins )  // 6
-console.log( d.secs )  // 5
+console.log( d.year )  // 2021 - Full year
+console.log( d.yr )    // 21   - Short year
+console.log( d.month ) // July - Full month
+console.log( d.mon )   // Jul  - Short month
+console.log( d.day )   // Tuesday - Full day
+console.log( d.dy )    // Tue  - Short day
+console.log( d.date )  // 27   - Date
+console.log( d.hours ) // 18   - Hour
+console.log( d.mins )  // 6    - Minutes
+console.log( d.secs )  // 5    - Seconds
 ```
 
 Externally these (month, day, date, year, yr etc.) look like properties. Internally they will be methods. These are called getters. 
