@@ -14,6 +14,18 @@ Your job is to make a class that _wraps the Date object_. Your class should have
 
 Your date library should inlcude unit tests for all of it's functions. Writing these as you work might be a good idea. 
 
+**Challenge 0**
+
+Setup your project:
+
+- Make a new folder for your project. 
+- Make a `src` folder. This will contain your source code. 
+- Add a new file: `src/index.js`. This will be the main file for your source code. 
+- Add a folder for tests: `tests`
+- Add a file to run tests: `tests/index.test.js`
+- Initialize a new npm project: `npm init -y`
+- Install Jest: `npm install --save-dev jest`
+
 **Challenge 1** 
 
 The Date Object can be instantiated with a date string, with a list of parameter for: year, month, date, hours, mins, secs, or with another Date object. 
