@@ -82,15 +82,17 @@ The date object returns the month as an index for example: 0 = January. Often yo
 
 ```JS
 const oldDate = new Date()
-console.log( oldDate.getMonth() ) // 1 (feb)
+console.log( oldDate.getMonth() ) // 1 (Feb)
 console.log( oldDate.getDay() )   // 2 (Tues)
 console.log( oldDate.getDate() )  // 12
 ```
 
-Your date object will do this: 
+Your date object will to add these methods as getters to your date class: 
 
 ```JS
 console.log( d.month ) // July
+console.log( d.mon )   // Jul
+console.log( d.day )   // Tuesday
 console.log( d.day )   // Tuesday
 console.log( d.date )  // 27
 console.log( d.hours ) // 18
@@ -99,6 +101,21 @@ console.log( d.secs )  // 5
 ```
 
 Externally these (month, day, date, year, yr etc.) look like properties. Internally they will be methods. These are called getters. 
+
+A getter looks like this in code: 
+
+```JS
+class D {
+	...
+	get year() { // getter starts with get
+		return this._date.getFullYear() // returns full year
+	}
+}
+
+// Externally year looks like a property! 
+const d = new D()
+console.log( d.year ) // no parenthese! 
+```
 
 Read about getters here: 
 
@@ -113,18 +130,18 @@ The built in Date object has some limited formatting options. You're library wil
 
 List of formatting characters: 
 
-- 'Y' -> 2019 (Year full)
-- 'y' -> 19 (Year short)
-- 'M' -> July (Month full)
-- 'm' -> Jul (Month short)
-- 'D' -> 01 (date padded)
-- 'd' -> 1 (date)
-- 'H' -> 05 (Hours padded)
-- 'h' -> 5 (Hours)
-- 'I' -> 08 (Minutes padded)
-- 'i' -> 8 (Minutes)
-- 'S' -> 04 (Seconds padded)
-- 's' -> 4 (Seconds)
+- `'Y'` -> `2019` (Year full)
+- `'y'` -> `19` (Year short)
+- `'M'` -> `July` (Month full)
+- `'m'` -> `Jul` (Month short)
+- `'D'` -> `01` (date padded)
+- `'d'` -> `1` (date)
+- `'H'` -> `05` (Hours padded)
+- `'h'` -> `5` (Hours)
+- `'I'` -> `08` (Minutes padded)
+- `'i'` -> `8` (Minutes)
+- `'S'` -> `04` (Seconds padded)
+- `'s'` -> `4` (Seconds)
 
 The `format()` method should provide an acceptable default formatted date with no parameters. 
 
@@ -140,15 +157,15 @@ console.log(d.format('h:i:s'))       // 3:4:5
 console.log(d.format('Y-M-D h:I:S')) // 2017-January-02 3:04:05 
 ```
 
-Notice the "mask" string provided replaces each of the special characters with a component of the date. If the character is not recognized than it is printed. 
+Notice the "mask" string provided replaces each of the special characters with a component of the date. If the character is not recognized than the character is printed. 
 
 ```JS
 console.log(d.format('y/m/d'))       // 17/Jan/2
 ```
 
-In the example above `y` is replaced with short year, and the '/' is printed. The same applies to the rest of the string.
+In the example above `y` is replaced with short year, and the `/` is printed. The same applies to the rest of the string.
 
-Take a look at how moment JS handles date andf time formatting: 
+Take a look at how moment JS handles date and time formatting: 
 
 - https://momentjs.com/docs/#/parsing/string-format/
 
@@ -231,17 +248,22 @@ JS Docs follow the format:
 ```JS
 /** 
  * hello
- * @returns String 'Hello World'
+ * @param {String} input string
+ * @returns {String} 'Hello' and the input string
  */
 
-function hello() {
-	return 'Hello World'
+function hello(name) {
+	return `Hello ${name}`
 }
 ```
 
-JS Doc comments begin with 
+Take a look at the JSDocs cheatsheet: https://devhints.io/jsdoc 
 
 **Challenge 6**
+
+Write unit tests for your date library. Test all of the properties and methods. 
+
+**Challenge 7**
 
 Publish your date lib to npm. Include the following badges in your readme.md:
 
@@ -249,19 +271,6 @@ Publish your date lib to npm. Include the following badges in your readme.md:
 - license
 - size
 - GitHub Issues
-
-**Challenge 7**
-
-Add continuous integration. Use Travis-ci and Coveralls. 
-
-Add badges for: 
-
-- Build
-- Coverage
-
-**Challenge 8**
-
-Use Rollup to bundle your date lib. Include both umd and esm bundles. 
 
 **Stretch Challenge**
 
