@@ -22,6 +22,11 @@ Time for another library! This time you'll make a library that works with Dates.
 - https://youtu.be/a2zzi8wf5YY
 - https://youtu.be/obKWiV57zk0
 - https://youtu.be/hx64NZYRBjs
+- https://youtu.be/Lcl0xb5XaHE
+- https://youtu.be/seHP41DsUlU
+- https://youtu.be/gbKwrr94rbw
+- https://youtu.be/JeIe7hbITEc
+
 
 <!-- > -->
 
