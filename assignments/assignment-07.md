@@ -25,6 +25,7 @@ Setup your project:
 - Add a file to run tests: `tests/index.test.js`
 - Initialize a new npm project: `npm init -y`
 - Install Jest: `npm install --save-dev jest`
+- Add a `.gitignore` (make sure you ignore node_modules)
 
 **Challenge 1** 
 
