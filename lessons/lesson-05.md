@@ -42,11 +42,19 @@ A getter must return a value. Getters can not accept parameters!
 ```JS 
 class D {
 	...
+	constructor() {
+		this._day = 0
+	}
+
 	// Getters can only return a value, they can not take parameters
 	get year() {
 		return this._date.getFullYear()
 	}
 }
+
+const date = new D() 
+console.log( date.day ) // 88 
+console.log( date.year ) // call the getter
 ```
 
 Setters must accept a single parameter. A setter can not return anything:
@@ -56,9 +64,14 @@ class D {
 	...
 	// Setters must take only a single parameter, and can not return anything.
 	set year(n) {
+		// ...is n a number?
 		this._date.setFullYear(n)
 	}
 }
+
+const date = new D() 
+date.x = "99" // Not calling a function
+date.year = 1975 // calls a function
 ```
 
 ## Date format
@@ -69,7 +82,11 @@ The general solution is to create a string by looping over each character in the
 
 For example, image the mask string is: 'y/m/d'
 
-`D.format('y/m/d') // 20/Nov/10`
+```JS
+const d = new D()
+d.format('y/m/d') // 20/Nov/10
+d.format('M d, Y') // January 10, 2021
+```
 
 1. 'y' -> replace with the short year '20'
 2. '/' -> not special append it '20/'
@@ -95,6 +112,7 @@ Psuedo code:
 - Define a variable to hold the ouput string. This should start as an empty string.
 - Loop over each character in your format string.
 - If the character matches one of the formatting characters: `y, Y, m, M, d, D, ...` append the date element to the output string. If there's no match append that cahracter to the output string. `if else` or `switch case` will work here. 
+- Return the output string.
 
 ## When method 
 
