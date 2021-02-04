@@ -188,7 +188,9 @@ Note! Here the possible values for months would be 0 (Jan) to 11 (Dec). That mea
 
 To get a real count of the of the months add 12 times the difference in years.
 
-`const totalmonths = dy * 12 + dm`JS
+```JS
+const totalmonths = dy * 12 + dm
+```
 
 You can calculate the total days between two dates like this: 
 
