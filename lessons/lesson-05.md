@@ -15,10 +15,9 @@ Dates are important they appear in one form or another in almost every applicati
 
 ## Learning Objectives (5 min)
 
-1. Explain dates, UTC, and the Unix Epoch
-1. Use math to calculate dates
-1. Use composition with Objects
-1. Use JS to solve problems with Dates
+1. Identify the components of a problem
+1. Prioritize the steps to solutions
+1. 
 
 ## Date review
 
@@ -32,73 +31,9 @@ Dates are important they appear in one form or another in almost every applicati
 	- `new Date('9/26/65')`
 	- `new Date(1983, 09, 31)`
 
-
-## Composition 
-
-The goal of the current assignment is to create a class that manages a date. It will provide helper methods that make it easier to work with dates. 
-
-You can call your class anything you like. For the examples I'm calling my class `D`.
-
-```JS
-class D {
-
-}
-```
-
-## args
-
-It would be nice if our custom date class could be initialized in the same way that the built in Date class can be initialized. The built in Date class if you recall can be initialized with a variable number of arguments of different types. 
-
-You'll solve this problem like this: 
-
-```JS
-class D {
-	constructor(...args) { 
-		this.date = new Date(...args)
-	}
-}
-// new D(1978, 0, 1)
-// new D()
-// new D('Sept. 1, 1979')
-```
-
-Here our custom date class stores a date in a property, and initializes that date with all of the arguments passed. 
-
-The `args` is an array of all arguments supplied to the constructor. 
-
-This technique allows you to create functions that take a variable number of parameters. 
-
-## Human Readable values 
-
-Your class should provide human readable values for components of date. 
-
-JS Date provides these methods: 
-
-- `date.getFullYear()` - Returns a number like 2020
-- `date.getMonth()` - Returns a number 0 to 11. This is index of the month starting at 0.
-- `date.getDate()` - Returns a number like 1 to 31. This is a calendar date. 
-- `date.getDay()` - Returns a number 0 to 6. This is 0 indexed day of the week. Sun to Sat. 
-
-The goal is to create some helper methods that return human readable forms of these. 
-
-- `D.year()` - 2019
-- `D.yr()` - 19
-- `D.month()` - November
-- `D.mon()` - Nov
-- `D.day()` - Tuesday
-- `D.dy()` - Tue
-- `D.date()` - 10 (date on the calendar)
+## Getters and setters
 
 
-**Year** 
-
-To get the year you can use `getFullYear()`. To get the short year you'll need to get last two digits of the full year. You could do this by converting to a string and getting the last two characters with `substr()`. 
-
-**Month**
-
-The month should return a human readable month. To make this work you'll need an array of the months. Use `getMonth()` to get the index of the month in your array. 
-
-Follow this same idea for the short month. 
 
 ## Date format
 
@@ -118,26 +53,91 @@ For example, image the mask string is: 'y/m/d'
 
 Use the helper methods you created earlier rather than reproducing code that generates the short year etc. 
 
+Your function should take in a formatting string. 
+
+```JS
+class D {
+	...
+	format(str) {
+		...
+	}
+}
+```
+
+Psuedo code: 
+
+- Define a variable to hold the ouput string. This should start as an empty string.
+- Loop over each character in your format string.
+- If the character matches one of the formatting characters: `y, Y, m, M, d, D, ...` append the date element to the output string. If there's no match append that cahracter to the output string. `if else` or `switch case` will work here. 
+
 ## When method 
 
 The when method will require you to look at a date and provide a human readable string describing relative time between dates. It should return something like: '1 year ago' or 'three weeks from now'. 
 
-To get started you'll need to compare two dates. Find the difference in year. Here are a few ideas. 
+To do this you'll need to calculate the difference between two dates. You need the difference in years, months, and days. This way you can ask:
 
-Get the difference in years by numbers. Alternatively you could get the years and subtract. 
+- Is the difference in months greater than 11 if so this date is years ago.
+- Is the difference in days more than 30 if so the date is months ago.
+- Is the difference in days more than 1 than the date is days ago.
+
+Psuedo code: 
+
+- Make a new date that is the current date
+- Get the differnce between the two dates in...
+	- years
+	- months
+	- days
+- Check the differences: 
+	- diff months > 11 the date was years ago
+	- diff months < -11 is years from now
+	- diff days > 30 the date was months from ago
+	- diff days < -30 the date is months from now 
+	- diff days > 0 the date was days ago
+	- diff days < 0 the date is days from now
+
+Here are a few things to think about: 
+
+Consider: Dec 23, 2020 and Jan 1, 2021 are these dates 1 year apart? One month apart? Or just 9 days? It doesn't like a year, it could be a month, 9 days does feel pretty accurate. The correct answer may depend on your industry or business. You should decide which is correct and keep the answer in mind as you work. Potential ouput might be: 
+
+- 1 year ago
+- 1 month ago
+- 9 days ago
+
+Considering the output above, when the number of years, months, days, difference is 1 the output should read: 
+
+- n year ago
+- n month ago
+- n day ago
+
+When the difference is greater than 1 the output should read: 
+
+- n years ago
+- n months ago
+- n days ago
+
+When you subtract the date in question from now if the answer is positive the that date is in the past. If the number is negative the date is in the future. This means your output should read (past dates): 
+
+- n year/s ago
+- n month/s ago
+- n day/s ago
+
+Or (for future dates)
+
+- n year/s from now
+- n month/s from now
+- n day/s from now
+
+Create a date for now: 
 
 ```JS
-// D.when(date) // 
-const a = new Date(1965, 8, 26)
-const b = new Date()
-const c = new Date(b - a)
-// Calculate the year mathematically
-console.log(c / 1000 / 60 / 60 / 24 / 365.25)
-// 55.12536939092326
-
-// Get the numeric year
-console.log(b.getFullYear() - a.getFullYear())
-// 55
+class D {
+	...
+	when() {
+		// Create a new date
+		const now = new Date()
+		...
+	}
+}
 ```
 
 You can use these same ideas to calculate the difference in months and days. 
@@ -167,6 +167,12 @@ console.log(dd)
 ```
 
 Get the difference between the dates and divide by one day or 86400 seconds then divide by milliseconds. 
+
+Using this method you'll have the number of days difference. With this you can ask questions like: 
+
+- Are days difference greater than 365?
+- Are days difference greater than 30?
+- Are days difference greater than 7?
 
 ## After class 
 
