@@ -208,6 +208,8 @@ Using this method you'll have the number of days difference. With this you can a
 - Are days difference greater than 30?
 - Are days difference greater than 7?
 
+Note! This method might miss a leap year since a year is technically 365.25 days in lenth. It also misses months with fewer or greater than 30 days which may or may not be noticed as a discrepency by picky horologists. 
+
 ## After class 
 
 Continue the current assignment.
