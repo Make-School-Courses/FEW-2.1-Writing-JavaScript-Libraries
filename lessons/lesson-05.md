@@ -17,7 +17,7 @@ Dates are important they appear in one form or another in almost every applicati
 
 1. Identify the components of a problem
 1. Prioritize the steps to solutions
-1. 
+1. Writing psuedo code
 
 ## Date review
 
