@@ -33,7 +33,33 @@ Dates are important they appear in one form or another in almost every applicati
 
 ## Getters and setters
 
+Getters and Setters are class methods that act like properties. Using a getter/setter outside of a class it looks like a property. Using a getter/setter inside the class it looks like a method. 
 
+Precede the method definition with the keyword `get` or `set`. 
+
+A getter must return a value. Getters can not accept parameters! 
+
+```JS 
+class D {
+	...
+	// Getters can only return a value, they can not take parameters
+	get year() {
+		return this._date.getFullYear()
+	}
+}
+```
+
+Setters must accept a single parameter. A setter can not return anything:
+
+```JS 
+class D {
+	...
+	// Setters must take only a single parameter, and can not return anything.
+	set year(n) {
+		this._date.setFullYear(n)
+	}
+}
+```
 
 ## Date format
 
