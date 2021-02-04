@@ -184,6 +184,12 @@ console.log(dy, dm) // 1 year, 2 months
 console.log(totalmonths) // 14 months
 ```
 
+Note! Here the possible values for months would be 0 (Jan) to 11 (Dec). That means the difference in months between Feb (1) 6 2021 and Dec (11) 23 2020 would be -10 (1 - 11) while the difference in years would be 1 (2021 - 2020).
+
+To get a real count of the of the months add 12 times the difference in years.
+
+`const totalmonths = dy * 12 + dm`JS
+
 You can calculate the total days between two dates like this: 
 
 ```JS
