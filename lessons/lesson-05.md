@@ -114,7 +114,7 @@ Psuedo code:
 - If the character matches one of the formatting characters: `y, Y, m, M, d, D, ...` append the date element to the output string. If there's no match append that cahracter to the output string. `if else` or `switch case` will work here. 
 - Return the output string.
 
-## When method 
+## when() method 
 
 The when method will require you to look at a date and provide a human readable string describing relative time between dates. It should return something like: '1 year ago' or 'three weeks from now'. 
 
@@ -222,7 +222,7 @@ Get the difference between the dates and divide by one day or 86400 seconds then
 
 Using this method you'll have the number of days difference. With this you can ask questions like: 
 
-- Are days difference greater than 365?
+- Are days difference greater than 365.25?
 - Are days difference greater than 30?
 - Are days difference greater than 7?
 
