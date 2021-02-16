@@ -5,7 +5,7 @@
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore')
+<!-- ➡️ [**Slides**](/Syllabus-Template/Slides/Lesson1.html ':ignore') -->
 
 <!-- > -->
 
@@ -106,10 +106,10 @@ tl;dr
 Choose: 
 
 - Use a popular Styleguide
-- Airbnb style guide 
-- Use React No
-- Format JavaScript
-- Install Now Yes
+- Choose: Airbnb style guide 
+- Use React: No
+- Format: JavaScript
+- Install Now: Yes
 
 <!-- > -->
 
@@ -318,6 +318,7 @@ Note! Code Climate is free for open source projects!
 
 <!-- > -->
 
+<!-- 
 ## Minute-by-Minute [OPTIONAL]
 
 | **Elapsed** | **Time**  | **Activity** |
@@ -330,4 +331,4 @@ Note! Code Climate is free for open source projects!
 | 1:05        | 0:15      | Coveralls      |
 | 1:20        | 0:25      | ** ??? **      |
 | 1:45        | 0:05      | Wrap up review objectives |
-| TOTAL       | 1:50      | -              |
+| TOTAL       | 1:50      | -              | -->
