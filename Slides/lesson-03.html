@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Syllabus Template Slides</title>
-    <link rel="stylesheet" href="./css/reveal.css" />
-    <link rel="stylesheet" href="./css/theme/black.css" id="theme" />
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/white.css" id="theme" />
     <link rel="stylesheet" href="./css/highlight/zenburn.css" />
-    <link rel="stylesheet" href="./css/print/paper.css" type="text/css" media="print" />
     <link rel="stylesheet" href="./assets/Reveal/makeschool.css" />
 
     <script>
@@ -18,27 +18,18 @@
   <body>
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: data-background="./Images/header.svg" data-background-repeat="none" data-background-size="40% 40%" data-background-position="center 10%" class="header" -->
-# FEW 2.1 - Lesson 3
+# FEW 2.1 - Unit Testing
 
 <small style="display:block;text-align:center">Unit Testing</small>
-</script></section><section  data-markdown><script type="text/template">
-## Minute-by-Minute 
-
-| **Elapsed** | **Time** | **Activity** |
-| ----------- | -------- | ------------ |
-| 0:10 | 0:10 | [Overview](#overview) (Lecture) |
-| 0:05 | 0:15 | [Learning Objectives](#learning-objectives) (Lecture) |
-| 0:10 | 0:25 | [Unit Testing](#unit-testing) (Discussion) |
-| 0:15 | 0:40 | [Testing Example](#testing-example) (Demo/setup) |
-| 1:00 | 1:40 | [Testing Fizz Buzz](#testing-fizz-buzz) (Activity) |
-| 0:10 | 1:50 | BREAK |
-| 0:15 | 2:05 | Discuss Testing |
-| 0:30 | 2:35 | Start Homework |
-| 0:10 | 2:45 | Wrap up |
 
 <!-- Put a link to the slides so that students can find them -->
 
-➡️ [**Slides**](/Syllabus-Template/Slides/lesson1.html ':ignore')
+➡️ [**Slides**](https://docs.google.com/presentation/d/1aBUDlkov4Bg3BHjALA3u6NQPDSsLvHNwgO-pzNvcl-4/edit?usp=sharing ':ignore')
+
+### Video Lessons
+
+- https://youtu.be/xXm_8DYjW6w
+- https://youtu.be/04y5jPykoIY
 </script></section><section  data-markdown><script type="text/template">
 ## Overview
 
@@ -382,7 +373,7 @@ Use the coverage command with Jest to test the coverage of your tests.
 </script></section><section  data-markdown><script type="text/template">
 ### Homework
 
-[Add Unit Tests](./assignments/assignment-03.md)
+[Add Unit Tests](../assignments/assignment-03.md)
 </script></section><section  data-markdown><script type="text/template">
 ## Wrap Up
 
@@ -395,12 +386,29 @@ Use the coverage command with Jest to test the coverage of your tests.
 1. https://github.com/Make-School-Labs/fizz-buzz-test
 1. https://jestjs.io
 
+</script></section><section  data-markdown><script type="text/template">
+## Minute-by-Minute 
 
-</script></section></div>
+| **Elapsed** | **Time** | **Activity** |
+| ----------- | -------- | ------------ |
+| 0:10 | 0:10 | [Overview](#overview) (Lecture) |
+| 0:05 | 0:15 | [Learning Objectives](#learning-objectives) (Lecture) |
+| 0:10 | 0:25 | [Unit Testing](#unit-testing) (Discussion) |
+| 0:15 | 0:40 | [Testing Example](#testing-example) (Demo/setup) |
+| 1:00 | 1:40 | [Testing Fizz Buzz](#testing-fizz-buzz) (Activity) |
+| 0:10 | 1:50 | BREAK |
+| 0:15 | 2:05 | Discuss Testing |
+| 0:30 | 2:35 | Start Homework |
+| 0:10 | 2:45 | Wrap up |</script></section></div>
     </div>
 
-    <script src="./js/reveal.js"></script>
+    <script src="./dist/reveal.js"></script>
 
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
     <script>
       function extend() {
         var target = {};
@@ -415,16 +423,6 @@ Use the coverage command with Jest to test the coverage of your tests.
         return target;
       }
 
-      // Optional libraries used to extend on reveal.js
-      var deps = [
-        { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector('[data-markdown]'); } },
-        { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: './plugin/zoom-js/zoom.js', async: true },
-        { src: './plugin/notes/notes.js', async: true },
-        { src: './plugin/math/math.js', async: true }
-      ];
-
       // default options to init reveal.js
       var defaultOptions = {
         controls: true,
@@ -432,11 +430,17 @@ Use the coverage command with Jest to test the coverage of your tests.
         history: true,
         center: true,
         transition: 'default', // none/fade/slide/convex/concave/zoom
-        dependencies: deps
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
       };
 
       // options from URL query string
-      var queryOptions = Reveal.getQueryHash() || {};
+      var queryOptions = Reveal().getQueryHash() || {};
 
       var options = extend(defaultOptions, {"controls":true,"progress":true,"autoPlayMedia":false,"slideNumber":"c/t","showSlideNumber":"all","controlsTutorial":true,"controlsLayout":"edges","transition":"slide","transitionSpeed":"medium","minScale":0.5,"maxScale":3}, queryOptions);
     </script>
