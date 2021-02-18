@@ -28,6 +28,9 @@ You will write and publish a library that works with an API. Choose an API from 
 
 Explore these sites to find other APIs
 
+- https://dev.to/biplov/15-fun-apis-for-your-next-project-5053
+- https://rapidapi.com/blog/most-popular-api/
+- https://apilist.fun
 - https://rapidapi.com/
 - https://www.programmableweb.com/
 

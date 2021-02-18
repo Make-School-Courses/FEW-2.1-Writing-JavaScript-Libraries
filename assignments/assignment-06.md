@@ -6,11 +6,13 @@ The goal of this assignment is to bundle your libraries so they are usable in th
 
 ### Why this assignment?
 
-This is how professional level code is published. Its also what you need to do to make your code available across different JS environments. Bundling is a standard process expect to see it on a job.  
+This is how professional level code is published. Its also the process that makes your code available across different JS environments.
 
 ## Project requirements
 
-So far you have published two libraries: Strings, and Math. Your goal with this assignment is to do the following to **each** library. 
+So far you have published two libraries: Strings, and Dates. Your goal with this assignment is to do the following to **each** library. 
+
+Follow the guide in the lesson [here](../lessons/lesson-09.md) 
 
 - Bundle as umd and esm
 - Publish to npm 
@@ -19,7 +21,7 @@ So far you have published two libraries: Strings, and Math. Your goal with this 
   - Node project 
   - React project
 
-Use Coverage to find areas where your code hasn't been tested. Test these areas by writing new tests, modifying existing tests, and adding new assertions. 
+Use Coverage to find areas where your code hasn't been tested. Test these areas by writing new tests, modifying existing tests, and adding new assertions.
 
 ### Deliverable
 
@@ -29,7 +31,7 @@ Code reviewed by another student.
 
 ### Due date
 
-Class 7
+Class 9 
 
 ## Assessing the assignment
 
