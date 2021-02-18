@@ -84,7 +84,7 @@ Students by the end of the course will be able to ...
 [API Lib]: https://github.com/Make-School-Labs/weather-api
 [Continuous Integration]: ./assignments/assignment-04.md
 [Bundling code for distribution]: ./assignments/assignment-06.md
-
+[Final Project]: assignments/assignment-09.md
 
 <!-- 
 

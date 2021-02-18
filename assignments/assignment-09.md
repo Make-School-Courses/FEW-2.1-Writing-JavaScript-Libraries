@@ -61,7 +61,7 @@ Your code should be built and published to npm.
 
 ### Due date
 
-Class 12 - Tues Dec. 8
+Class 12 - Tues Mar. 12
 
 ## Assessing the assignment
 
