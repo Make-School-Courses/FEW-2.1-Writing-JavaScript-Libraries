@@ -331,7 +331,12 @@ console.log(nextName())   // Ann
 console.log(nextName())   // Bob
 console.log(nextObj())    // { name: 'Eun', age: 23 }
 console.log(nextObj())    // { name: 'Fin', age: 32 }
+
+// Challenge - when iterate gets to the end of the array you'll get an undefined. 
+// Try these: make iterate loop back to the first item after the last. 
 ```
+
+
 
 Here the type of the input array needs to be known and the type of the the return value for the function that is returned. 
 
