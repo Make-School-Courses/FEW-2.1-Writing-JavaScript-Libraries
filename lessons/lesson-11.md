@@ -306,6 +306,9 @@ function reverse<T>(arr: T[]): T[] {
 }
 
 console.log(reverse(numbers)) // 4,3,2,1
+
+// Challenge - write a shift function that takes an array. It should 
+// return an array of the same type with first item moved to the end.  
 ```
 
 What's going on there? The function takes an array of type `T` and returns an Array of type `T`. Inside the function we declare an array `rra` of type `T` and return this. 
