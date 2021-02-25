@@ -75,7 +75,7 @@ enum Unit {
   standard
 }
 
-function getWeather(zip, apikey, unit = Unit.metric) {
+function getWeather(zip: string, apikey: string, unit: Unit = Unit.metric) {
   // ...
 }
 ```
@@ -145,7 +145,7 @@ function move(direction: Direction) { // direction is enum type
 
 So what's the value of an enum? 
 
-`console.log(CardinalDirections.N) // 0`
+`console.log(Direction.N) // 0`
 
 Under the hood an enum is an array and each of the cases is just the index of that case. 
 
@@ -154,7 +154,7 @@ Some times it's useful to assign a value of an enum. For example maybe our progr
 Imagine a function that works with an array. The type might be hard to guess. 
 
 ```JS
-let currentDirection = CardinalDirections.N
+let currentDirection = Direction.N
 
 function printDirection() {
 	console.log(`You are travelling ${currentDirection}`)
@@ -181,7 +181,7 @@ enum Direction {
 With this change everything works the same as before but value of the enum is represented as the strings you defined: 
 
 ```JS
-console.log(CardinalDirections.N) // 'North'
+console.log(Direction.N) // 'North'
 printDirection() // You are travelling North
 ```
 
