@@ -224,6 +224,16 @@ console.log(m()) // 9
 console.log(m()) // 27
 console.log(m()) // 81
 console.log(m()) // 243
+
+// Challenge - Write a function that takes a function doLater(). It should
+// take a callback and a time in milliseconds. It should run the callback 
+// after the time.
+
+function doLater() {
+
+}
+
+doLater(() => {}, 2000) // executes the callback in 2 secs.
 ```
 
 ## Generic types 
@@ -338,8 +348,6 @@ console.log(nextObj())    // { name: 'Fin', age: 32 }
 // Challenge - when iterate gets to the end of the array you'll get an undefined. 
 // Try these: make iterate loop back to the first item after the last. 
 ```
-
-
 
 Here the type of the input array needs to be known and the type of the the return value for the function that is returned. 
 
