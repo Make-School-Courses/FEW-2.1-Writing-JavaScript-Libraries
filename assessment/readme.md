@@ -4,89 +4,93 @@ This assessment will give you a chance to show your skills by creating a library
 
 ## Description 
 
-This assessment will measure your knowledge in a range of the learning objectives covered in class.
+Imagine the data in data.json contains information about 
+car purchases. Your job is to format and print the data. 
 
-### Why this assignment?
+You can print the data to the console with node or in the 
+browser with html. 
 
-A big piece of writing and working with modern JS deals with writing code, testing your code, and using modern extensions of the JS language. 
+The data includes the follow fields:
 
-## Project requirements
+```JS
+{
+  "id": 1,
+  "first_name": "neel",
+  "last_name": "mclarty",
+  "purchased": "2018-04-03T18:13:55Z",
+  "lastpayment": "2020-08-22T11:10:41Z",
+  "phone": "1531589353",
+  "make": "saturn",
+  "model": "s-series",
+  "city": "sikeshu"
+}
+```
 
-Solve the programming problems. Write your code with TypeScript. Write unit tests.  
+## Challenges
 
-### Challenges 
+Solve the problems below. Feel free to use the libraries you have written in class!
 
-- **Challenge 1:** Golden Ratio
+The stretch challenge is to use TypeScript to solve the problems. It's listed last below but I'm mentioning it here since if you want to try this challenge you may want to start with TypeScript from the beginning.  
 
-The [Golden Ratio](https://en.wikipedia.org/wiki/Golden_ratio) is a value used in art and design. It also appears in nature. We need a function to calculate the value. 
+The goal is to load the JSON data from data.json. Process the information and print it out. It should read roughly as: 
 
-Your function should take any number as a parameter and return that number times 1.61803398875
+> Neel Mclarty
+> Saturn S-series
+> Purchased: April 3, 2018
+> Last Payment: 8 months ago
+> Phone: (153) 158-9353
+> City: Sikeshu
 
-- **Challenge 2:** Golden Ratio unit tests
+### Challenge 0 
 
-Write a unit test for the goldedRatio function. 
+Import than the data from data.json. You'll use this data to solve the problems that follow. 
 
-- **Challenge 3:** degrees to radians
+If you're going to run your code in node.js you should print the output to the console. 
 
-I'm surprised this function is not included with JS! your job is to write a function that takes a number in degrees and returns the value in radians. 
+If you're going to display the data in the browser you'll need to make an HTML and run your page in a local server to avoid CORS issues. 
 
-The formula is: deg * PI / 180
+### Challenge 1
 
-Your function should take a number in degrees and return a number in radians. 
+You should print the first_name and last_name. Convert the 
+first letter of each name to uppercase.
 
-- **Challenge 4:** degrees to radians unit test
+### Challenge 2
 
-Write a unit test for degreesToRadians.
+Print the purchased date to a a date and format it as: 
+Month date, Year for example:
 
-- **Challenge 5:** radians to degrees 
+> Purchased: January 21, 2019
 
-We also need a function to to convert radians into degrees. 
+### Challenge 3
 
-The formula is: rad * 180 / PI
+Print out last payment showing the date as "when". 
+For example: Last payment: 
 
-Your function should take a number in radians and return degrees. 
+> Last Payment: 3 months ago
 
-- **Challenge 6:** radians to degrees unit test
+### Challenge 4
 
-Write a unit test for radiansToDegrees
+Format the phone number as: (xxx) xxx-xxxx. You'll need to 
+write a function to do the formatting. It should take a 10
+digit number/string: 4155448375, and return a string formatted as:
 
-- **Challenge 7:** Convert value to dollars
+> (415) 544-8375
 
-The goal is to make a function that converts an input number to a string in dollar format. It should include the $, and round to 2 decimal places. 
+Write a function to handle this number formatting function. It should take a number/string as a parameter and return the formatted phone number as a string. 
 
-For example: toDollars(23) returns "$23.00"
+### Challenge 5
 
-- **Challenge 8:** Convert value to dollars unit test
+Write a unit test for your phone number formatting function.
 
-Write a unit test for toDollars.
+Think of any edge cases that might effect your phone number formatter and include these in your test case. 
 
-- **Challenge 9:** Random function
+### Challenge 6
 
-The `Math.random()` function built into JS is not easy to work with. Your goal is to make function that takes a min value and a max value and returns a number in that range. 
+Lint your code with ESLint. Use the Airbnb style guide.
 
-For example: 
+### Stretch Challenge 
 
-- random(1, 3) returns 1 or 2 or 3
-- random(5, 9) returns 5 or 6 or 7 or 8 or 9
-
-- **Challenge 10:** Random function unit test
-
-Write Unit test for random function. Note! writing tests for functions that return unpredictable values is not easy and not a great use of unit testing. These types of situations don't work well with unit testing. Do your best.
-
-- **Challenge 11:** Check your coverage
-
-Run coverage and check that you have covered 100% of your code. 
-
-- **Challenge 12:** Crazy API problem
-
-I need a function that gets the weather from the openweathermap API and translates the **description** into pig-latin. 
-
-You need to write a function that takes in the location in the form of a zip code, fetches the weather data, then passes the description to the funtranslate API, and final returns the pig-latin version of the description. Alternately you can write a function that does the translation.
-
-Here are the api end points: 
-
--  `https://api.openweathermap.org/data/2.5/weather?zip={zip}&appid={apiKey}&units={units}`
-- `https://api.funtranslations.com/translate/pig-latin?text={desc}`
+Use Typescript. 
 
 ### Submit your work on GradeScope
 
@@ -96,7 +100,7 @@ Submit your work via GradeScope.
 
 | Expectations | Does not meet | Meets | Exceeds |
 |:-------------|:--------------|:------|:--------|
-| Completion   | <100% of functions written | All functions written | Includes all stretch functions   |
-| Quality      | code is sloppy and throws errors or shows linting errors |Well written few to no errors | Includes comments, and variable, parameter, and function names are self documenting  |
-| Comprehension| Can't explain the code written | Can explain the code | Could write the code again from scratch |
-| Tests        | <100% test coverage | 100% Test coverage | - |
+| Completion   | < 100% challenges | 100% of challenges | Solved stretch challenges |
+| Quality      | code is sloppy and throws errors or shows linting errors | Well written no errors | Includes comments, and variable, parameter, and function names are self documenting  |
+| Comprehension | Can't explain the code written | Can explain the code | Could write the code again from scratch |
+| Tests        | < 100% test coverage | 100% Test coverage | Tests covers edge cases and well written descriptions |
