@@ -35,10 +35,15 @@ The stretch challenge is to use TypeScript to solve the problems. It's listed la
 The goal is to load the JSON data from data.json. Process the information and print it out. It should read roughly as: 
 
 > Neel Mclarty
+>
 > Saturn S-series
+>
 > Purchased: April 3, 2018
+>
 > Last Payment: 8 months ago
+>
 > Phone: (153) 158-9353
+>
 > City: Sikeshu
 
 ### Challenge 0 
