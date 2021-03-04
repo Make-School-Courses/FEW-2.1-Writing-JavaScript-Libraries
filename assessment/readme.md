@@ -90,7 +90,7 @@ Lint your code with ESLint. Use the Airbnb style guide.
 
 ### Stretch Challenge 
 
-Use Typescript. 
+Use Typescript.
 
 ### Submit your work on GradeScope
 
