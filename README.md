@@ -36,9 +36,9 @@ Students by the end of the course will be able to ...
 
 ## Schedule
 
-**Course Dates:** Tuesday, January 19 – Thursday, March 4, 2021 (7 weeks)
+**Course Dates:** Monday, March 29 – Wednesday, May 12, 2021 (7 weeks)
 
-**Class Times:** Tuesday and Thursday at 1:45–4:30pm (13 class sessions)
+**Class Times:** Monday and Wednesday at 2:45 PM - 5:30 PM (13 class sessions)
 
 [GradeScope](https://www.gradescope.com/courses/219049)
 
