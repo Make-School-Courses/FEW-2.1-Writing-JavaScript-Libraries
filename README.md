@@ -44,20 +44,20 @@ Students by the end of the course will be able to ...
 
 | Class | Date | Topics | Assignment | Asignment Due |
 |:------|:-----|:-------|:-----------|:--------------|
-|  -    | Tue, Jan 19 | No Class - MLK Day | - | - |
-|  1    | Thu, Jan 21 | [Lesson 1 - Solving string problems] | [String Lib] | - |
-|  2    | Tue, Jan 26 | [Lesson 2 - Publishing to npm] | [Publish to npm] | - |
-|  3    | Thu, Jan 28 | [Lesson 3 - Unit testing] | [Add Unit Tests] | [String Lib] - [GradeScope] | 
-|  4    | Tue, Feb 2  | [Lesson 4 - Working with Dates] | [Date Lib] | - |
-|  5    | Thu, Feb 4  | [Lesson 5 - Solving problems with Dates] | - |  - |
-|  6    | Tue, Feb 9  | [Lesson 6 - Async JS] | [API Lib] | [Date Lib] - [GradeScope] |
-|  7    | Thu, Feb 11 |  Lesson 7 - Lab | Work on API project | - |
-|  8    | Tue, Feb 16 | [Lesson 8 - Continuous Integration] | [Continuous Integration] | [API Lib] - [GradeScope] |
-|  9    | Thu, Feb 18 | [Lesson 9 - Bundling Code] | [Bundling code for distribution] - [Final Project] | [Continuous Integration] |
-| 10    | Tue, Feb 23 | [Lesson 10 - Typescript Intro] | - | [Bundling code for distribution] |
-| 11    | Thu, Feb 25 | [Lesson 11 - Typescript] | - | - |
-| 12    | Tue, Mar 2  | Lesson 12 - Final Presentation | - | - |
-| 13    | Thu, Mar 4  | Lesson 13 - Final Assesment | Final Assessment | - |
+|  1    | Mon, Mar 29 | [Lesson 1 - Solving string problems] | [String Lib] | - |
+|  -    | Wed, Mar 31 | **No Class - Cesar Chavez** | - |
+|  2    | Mon, Apr 5  | [Lesson 2 - Publishing to npm] | [Publish to npm] | - |
+|  3    | Wed, Apr 7  | [Lesson 3 - Unit testing] | [Add Unit Tests] | [String Lib] - [GradeScope] | 
+|  4    | Mon, Apr 12 | [Lesson 4 - Working with Dates] | [Date Lib] | - |
+|  5    | Wed, Apr 14 | [Lesson 5 - Solving problems with Dates] | - |  - |
+|  6    | Mon, Apr 19 | [Lesson 6 - Async JS] | [API Lib] | [Date Lib] - [GradeScope] |
+|  7    | Wed, Apr 21 |  Lesson 7 - Lab | Work on API project | - |
+|  8    | Mon, Apr 26 | [Lesson 8 - Continuous Integration] | [Continuous Integration] | [API Lib] - [GradeScope] |
+|  9    | Wed, Apr 28 | [Lesson 9 - Bundling Code] | [Bundling code for distribution] - [Final Project] | [Continuous Integration] |
+| 10    | Mon, May 3  | [Lesson 10 - Typescript Intro] | - | [Bundling code for distribution] |
+| 11    | Wed, May 5  | [Lesson 11 - Typescript] | - | - |
+| 12    | Mon, May 10 | Lesson 12 - Final Presentation | - | - |
+| 13    | Wed, May 12 | Lesson 13 - Final Assesment | Final Assessment | - |
 
 <!-- | 14 | Tue, May 13 | [Lesson 14](./lessons/lesson-14.md) | [Present your work](./assignments/assignment-10.md) - Final Presentations | -->
 
