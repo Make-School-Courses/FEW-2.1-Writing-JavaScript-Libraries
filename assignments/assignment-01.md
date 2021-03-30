@@ -145,9 +145,14 @@ These functions should all take a string as input and return a string as output.
 
 **Challenge 9**
 
-`makeHashTag(str)` - This function should convert the given string to a hash tag. A hash tag begins with `#` and no spaces. Each word in the phrase beginsd with an uppercase letter. 
+`makeHashTag(str)` - This function should convert the given string to a hash tag. A hash tag begins with `#` and no spaces. Each word in the phrase begins with an uppercase letter. 
 
-If the give string has more than three words pick the three longest and make the hash tag from those. 
+If the given string has more than three words pick the three longest and make the hash tag from those. 
+
+Example:
+
+- input: `"Amazing bongo drums for sale"`
+- output: `['#amazing', '#bongo', '#drums']`
 
 Strategies: 
 
@@ -156,6 +161,21 @@ Strategies:
 **Challenge 10**
 
 `isEmpty(str)` - Returns `true` if the given string is empty or contains only whitespace. White space includes: spaces, line returns, and tabs. These characters can be represented with: `\n` (new line) `\r` (carrige return), `\t` (tab).
+
+Example: 
+
+- Input: `"Abc def"`
+- Output: `isEmpty("Abc def") // false`
+
+```js
+// Example - notice source string 
+// contains tabs, spaces, and returns
+const str = `   
+			
+			`;
+
+isEmpty(str) // true 
+```
 
 Strategies: 
 
