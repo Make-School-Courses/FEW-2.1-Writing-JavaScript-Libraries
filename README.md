@@ -51,7 +51,7 @@ Students by the end of the course will be able to ...
 |  4    | Mon, Apr 12 | [Lesson 4 - Working with Dates] | [Date Lib] | - |
 |  5    | Wed, Apr 14 | [Lesson 5 - Solving problems with Dates] | - |  - |
 |  6    | Mon, Apr 19 | [Lesson 6 - Async JS] | [API Lib] | [Date Lib] - [GradeScope] |
-|  7    | Wed, Apr 21 |  Lesson 7 - Lab | Work on API project | - |
+|  7    | Wed, Apr 21 | Lesson 7 - Lab | Work on API project | - |
 |  8    | Mon, Apr 26 | [Lesson 8 - Continuous Integration] | [Continuous Integration] | [API Lib] - [GradeScope] |
 |  9    | Wed, Apr 28 | [Lesson 9 - Bundling Code] | [Bundling code for distribution] - [Final Project] | [Continuous Integration] |
 | 10    | Mon, May 3  | [Lesson 10 - Typescript Intro] | - | [Bundling code for distribution] |

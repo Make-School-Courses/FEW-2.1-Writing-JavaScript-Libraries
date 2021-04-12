@@ -14,6 +14,7 @@
 1. Describe, define, and use SEMVer
 1. Create NPM Packages
 1. Publish your NPM package
+1. Use ESLint to apply best practices to coding.
 
 <!-- > -->
 
@@ -311,6 +312,14 @@ npm ERR! 403 Forbidden - PUT https://registry.npmjs.org/@soggybag%2fjustincase -
 Here I tried to publish but the currently published version is: 1.0.2 and the version I'm publishing is: 1.0.2. These are the same.
 
 **To publish a new version you need to update the version number in package.json.**
+
+<!-- > -->
+
+## Install ESLint
+
+Install and use ESLint. Use the Airbnb style guide. 
+
+Lint your code and publish and update to your npm package. 
 
 <!-- > -->
 
