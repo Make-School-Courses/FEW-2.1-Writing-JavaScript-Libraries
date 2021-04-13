@@ -236,7 +236,7 @@ console.log(newDate) // 10 June 2019
 
 Date provides a couple of class methods. 
 
-****: Class methods are methods that Quick refresherare called from the class (class methods are not called from an instance)
+Class methods are methods that are called from the class (class methods are not called from an instance)
 
 <!-- > -->
 

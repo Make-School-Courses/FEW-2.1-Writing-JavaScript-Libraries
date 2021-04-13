@@ -299,6 +299,16 @@ Your goal is to examine the source code and write some tests. The [Fizz Buzz sam
 
 <!-- > -->
 
+When writing the tests for these functions ask yourself: 
+
+What is the range of possible values am I expecting? 
+
+What possible numbers do you think would be input? 
+
+<small>What numebrs would you input if you were playing fizzbuzz?</small>
+
+<!-- > -->
+
 You'll need to import these methods into your `test.js`. The example code is set up for a Node. Use require at the top of the file:
 
 `const fb = require('../fizzbuzz')`
