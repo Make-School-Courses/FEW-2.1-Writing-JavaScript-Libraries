@@ -13,11 +13,15 @@
 
 Dates are important they appear in one form or another in almost every application you might create and they are a core part of programming. 
 
+<!-- > -->
+
 ## Learning Objectives (5 min)
 
 1. Identify the components of a problem
 1. Prioritize the steps to solutions
 1. Writing psuedo code
+
+<!-- > -->
 
 ## Date review
 
@@ -31,13 +35,45 @@ Dates are important they appear in one form or another in almost every applicati
 	- `new Date('9/26/65')`
 	- `new Date(1983, 09, 31)`
 
+<!-- > -->
+
+## Data Library
+
+<!-- > -->
+
 ## Getters and setters
 
 Getters and Setters are class methods that act like properties. Using a getter/setter outside of a class it looks like a property. Using a getter/setter inside the class it looks like a method. 
 
-Precede the method definition with the keyword `get` or `set`. 
+<!-- > -->
 
-A getter must return a value. Getters can not accept parameters! 
+Precede the method definition with the keyword `get` or `set`.
+
+<!-- > -->
+
+```JS
+class Example {
+	get something() {
+		return this._name
+	}
+	set something(name) {
+		this._name = name
+	}
+}
+```
+
+A getter must return a value. Getters can not accept parameters!
+
+<!-- > -->
+
+Create a getter and setter for the `year`. 
+
+You need a short year also. Create a getter for `yr`. This should return the two digit year. Use `%` to get this: 
+
+```js
+1983 % 100 = 83
+```
+<!-- > -->
 
 ```JS 
 class D {
@@ -57,7 +93,11 @@ console.log( date.day ) // 88
 console.log( date.year ) // call the getter
 ```
 
+<!-- > -->
+
 Setters must accept a single parameter. A setter can not return anything:
+
+<!-- > -->
 
 ```JS 
 class D {
@@ -74,11 +114,28 @@ date.x = "99" // Not calling a function
 date.year = 1975 // calls a function
 ```
 
+Now make a getter for `month` and `mon`. The first should return the full month for example: `January` the other should return the short month: `Jan`
+
+Since `getMonth()` returns the index of the month you'll need the months spelled:
+
+```JS
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const monthsShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+const daysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+```
+
+<!-- > -->
+
 ## Date format
 
 You're date lib really needs a good formatter. The format function will use the idea of a 'mask'. The mask is a string that describes the date. Your format function will replace special characters with components of the date. See the homework description for more details. 
 
+<!-- > -->
+
 The general solution is to create a string by looping over each character in the mask string. With each iteration look at the current character or the mask string if it matches one of the special characters append the date component otherwise append the character. 
+
+<!-- > -->
 
 For example, image the mask string is: 'y/m/d'
 
@@ -113,6 +170,66 @@ Psuedo code:
 - Loop over each character in your format string.
 - If the character matches one of the formatting characters: `y, Y, m, M, d, D, ...` append the date element to the output string. If there's no match append that cahracter to the output string. `if else` or `switch case` will work here. 
 - Return the output string.
+
+<!-- > -->
+
+Define your method. Takes the mask string as a parameter. Define the output string. 
+
+```JS
+	format(mask = '') {
+		let dateStr = ''
+		// ...
+		return dateStr
+	}
+```
+
+<!-- > -->
+
+Loop over each character inb the format string: 
+
+```JS
+	format(mask = '') {
+		let dateStr = ''
+
+		// loops for once for each character in mask
+		for (let i = 0; i < mask.length; i += 1) {
+			
+		}
+
+		return dateStr
+	}
+```
+
+<!-- > -->
+
+Check for special characters. One strategy is to use an object:
+
+```JS
+// Define an object
+const special = {
+	Y: this.year, // gets the full year from your class
+	y: this.yr    // gets the short year from your class
+	...
+}
+
+special['Y'] // 2021
+special['y'] // 21
+special['?'] // undefined
+```
+
+<!-- > -->
+
+Use a conditional statement to get a date valeu or use the character: 
+
+```JS
+if (special[mask[i]] !== undefined) {
+	dateStr += special[mask[i]]
+} else {
+	dateStr += mask[i]
+}
+```
+
+<!-- > -->
 
 ## when() method 
 
@@ -198,6 +315,7 @@ const b = new Date()
 const dy = (b.getFullYear() - a.getFullYear())
 const dm = b.getMonth() - a.getMonth()
 const totalmonths = dy * 12 + dm
+
 console.log(dy, dm) // 1 year, 2 months
 console.log(totalmonths) // 14 months
 ```
