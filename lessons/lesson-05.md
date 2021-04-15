@@ -346,6 +346,27 @@ Using this method you'll have the number of days difference. With this you can a
 
 Note! This method might miss a leap year since a year is technically 365.25 days in length. It also misses months with fewer or greater than 30 days which may or may not be noticed as a discrepency by picky horologists. 
 
+### Forming the output sentence
+
+Here is an approach you might use. 
+
+Use `Math.abs()` to get the absolute value. You'll need this since you won't want to print `-6 days ago`, `Math.abs(-6)` = 6. 
+
+`Math.abs(daysDifference) < 7` would be true if `daysDifference` were -6 or +6.
+
+```JS
+// Check if absolute number of days is less than 7 
+if (Math.abs(dd) < 7) {
+	//           `${number} day${s?} ${ago or from now}`
+	//             6 days ago
+	console.log( `${Math.abs(dd)} day${Math.abs(dd) > 1 ? 's' : ''} ${dd < 0 ? 'ago' : 'from now'}` )
+} else if (Math.abs(dw) < 4) {
+	console.log(`${Math.abs(dw)} week${Math.abs(dw) > 1 ? 's' : ''} ${dw < 0 ? 'ago' : 'from now'}`)
+} else if (...) {
+	...
+}  
+```
+
 ## After class 
 
 Continue the current assignment.
