@@ -354,14 +354,24 @@ Use `Math.abs()` to get the absolute value. You'll need this since you won't wan
 
 `Math.abs(daysDifference) < 7` would be true if `daysDifference` were -6 or +6.
 
+You can use ternary operator to decide when to add an 's'. For example: 
+
+```js
+const dd = -4
+// if the absolute value of `dd` is greater than 1 we add an s after day
+console.log(`${Math.abs(dd)} day${Math.abs(dd) > 1 ? 's' : ''}`)
+```
+
+Here is more of a solution: 
+
 ```JS
 // Check if absolute number of days is less than 7 
 if (Math.abs(dd) < 7) {
 	//           `${number} day${s?} ${ago or from now}`
 	//             6 days ago
-	console.log( `${Math.abs(dd)} day${Math.abs(dd) > 1 ? 's' : ''} ${dd < 0 ? 'ago' : 'from now'}` )
+	return `${Math.abs(dd)} day${Math.abs(dd) > 1 ? 's' : ''} ${dd < 0 ? 'ago' : 'from now'}` )
 } else if (Math.abs(dw) < 4) {
-	console.log(`${Math.abs(dw)} week${Math.abs(dw) > 1 ? 's' : ''} ${dw < 0 ? 'ago' : 'from now'}`)
+	return `${Math.abs(dw)} week${Math.abs(dw) > 1 ? 's' : ''} ${dw < 0 ? 'ago' : 'from now'}`)
 } else if (...) {
 	...
 }  
