@@ -22,6 +22,15 @@ The last Library you will work on is a library that works with an API. APIs are 
 
 <!-- > -->
 
+Follow these lessons in these videos: 
+
+- [Callbacks](https://www.youtube.com/watch?v=x4FqqFCduuM&list=PLoN_ejT35AEioZ_5TEk0h3LVqzT-EoM2M&index=21&t=20s)
+- [Promises](https://www.youtube.com/watch?v=vRPhVPGuSd4&list=PLoN_ejT35AEioZ_5TEk0h3LVqzT-EoM2M&index=22)
+- [Async Await](https://www.youtube.com/watch?v=4exyyvKJ_GI&list=PLoN_ejT35AEioZ_5TEk0h3LVqzT-EoM2M&index=23)
+- [Challenges](https://www.youtube.com/watch?v=RfZQDxfrRt8&list=PLoN_ejT35AEioZ_5TEk0h3LVqzT-EoM2M&index=24)
+
+<!-- > -->
+
 ## What's a callback? 
 
 A callback is a function that invoked by another function. A callback is often used with asynchronous actions like handling network requests. 
@@ -32,14 +41,14 @@ Some examples of callbacks:
 - `map()`, `filter()`, and `reduce()` use a callback to execute code with each iteration. 
 - `addEventListener()` uses a callback to run code when an event occurs. 
 
-In practical terms a callback is a function passed to another function or Object as an argument. 
+In practical terms a callback is a function passed to another function or method as an argument. 
 
 In javascript a function is value and can be assigned or passed around your code just like any other type of value. 
 
 ```JS
 // doStuff is a function
 function doStuff(a,b) { 
-  // Hi I'm doStuff
+  // doing stuff
   // ...
 }
 
@@ -47,14 +56,14 @@ function doStuff(a,b) {
 const doesIt = doStuff
 
 // Passed as a parameter (it's a callback here)
-setTimeout(doStuff, 1000)
+setTimeout(doesIt, 1000)
 
 [1,2,3,4].map(doStuff)
 ```
 
 ### Implement a function with a callback. 
 
-Imagine you have worked with the OpenWeatherMap API. The next step is to take the code that fetches the weather and put it into a form that can be used anywhere in ann application. 
+Imagine you have worked with the OpenWeatherMap API. The next step is to take the code that fetches the weather and put it into a form that can be used anywhere in ann application.
 
 ```JS 
 function getWeather(callBack) {
@@ -97,7 +106,7 @@ function getWeather(callBack) {
   callback()
 }
 
-getWeather(function () {
+getWeather(() => {
   // something happens here after the weather data is loaded
 })
 
@@ -110,7 +119,7 @@ getWeather(() => {
 
 <!-- > -->
 
-Might be good if it had some parameters. 
+Might be good if it had some parameters.
 
 ```JS 
 function getWeather(callBack, apikey, units) {
@@ -131,7 +140,7 @@ function getWeather(callBack, apikey, units) {
   callback(json) // passes json to callback
 }
 
-getWeather(function (data) { // receives json here!
+getWeather( (data) => { // receives json here!
   // do stuff with data received from callback
 })
 ```
@@ -153,7 +162,7 @@ function getWeather(apikey, units, onSuccess, onError) {
     })
 }
 
-getWeather('myapikey', 'metric', function (data) { // receives json here!
+getWeather('myapikey', 'metric', (data) => { // receives json here!
   // do stuff with data received from callback
 }, function(err) {
   // something went wrong
