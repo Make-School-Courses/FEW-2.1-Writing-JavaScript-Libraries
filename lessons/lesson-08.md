@@ -89,6 +89,21 @@ ESLint needs to be installed in two places:
 
 <!-- > -->
 
+### Install ESLint in Editor
+
+You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
+
+1. Go to Settings Extensions/Plugins
+1. Add a new Extension/Plugin
+1. Search ESLint
+1. Install 
+
+You may need to close and reopen your project in your editor before the Linter starts registering errors. 
+
+**Do this now!** If you haven't already.  
+
+<!-- > -->
+
 ### Install in npm project
 
 Follow the instruction here: 
@@ -105,26 +120,15 @@ tl;dr
 
 Choose: 
 
-- Use a popular Styleguide
-- Choose: Airbnb style guide 
-- Use React: No
-- Format: JavaScript
-- Install Now: Yes
-
-<!-- > -->
-
-### Install ESLint in Editor
-
-You'll also need to add the ESLint plugin in your editor. The process for this is different for each editor but generally follows these steps: 
-
-1. Go to Settings Extensions/Plugins
-1. Add a new Extension/Plugin
-1. Search ESLint
-1. Install 
-
-You may need to close and reopen your project in your editor before the Linter starts registering errors. 
-
-**Do this now!** If you haven't already.  
+- To check syntax, find problems, and enforce code style
+- CommonJS (require/exports)
+- Use React Vue.js?: None of these
+- Does your project use TypeScript? › No
+- Where does your code run? Node
+- Use Popular Style Guide
+  - Airbnb: https://github.com/airbnb/javascript
+- What format do you want your config file to be in? JavaScript
+- Would you like to install now? Yes
 
 <!-- > -->
 
