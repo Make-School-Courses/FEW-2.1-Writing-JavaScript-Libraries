@@ -11,6 +11,22 @@ This class session covers the concept of bundling. This is the process of combin
 
 <!-- > -->
 
+## Review: Callbacks!
+
+
+
+<!-- > -->
+
+## Promises
+
+Let's study Promise! try these Replits! The first three review Promise and the last provides a practical use case and challenge!
+
+- https://replit.com/@MakeSchoolFEW/Promise-01#readme.md
+- https://replit.com/@MakeSchoolFEW/Promise-11#readme.md
+- https://replit.com/@MakeSchoolFEW/Promise-12#readme.md
+- https://replit.com/@MakeSchoolFEW/Promise-02#readme.md
+- https://replit.com/@MakeSchoolFEW/Promise-03#readme.md
+
 ## Why learn how to bundle files? 
 
 All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
