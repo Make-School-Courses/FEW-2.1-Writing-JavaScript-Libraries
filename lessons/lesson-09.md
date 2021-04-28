@@ -27,6 +27,10 @@ Let's study Promise! try these Replits! The first three review Promise and the l
 - https://replit.com/@MakeSchoolFEW/Promise-02#readme.md
 - https://replit.com/@MakeSchoolFEW/Promise-03#readme.md
 
+Solve this problem with Primsies and Callbacks. The sample code shows hoe to use the browsers geolocation API. It uses two callbacks. Your goal is to make it work with a Promise! 
+
+- https://replit.com/@MakeSchoolFEW/GeoLocation#script.js
+
 ## Why learn how to bundle files? 
 
 All of the files you have been using that you imported from another source were bundled. Understanding the process gives you a better understanding of the JavaScript and web application ecosystem. 
