@@ -11,21 +11,11 @@ You will show your knowledge of what was covered in class. The goal is to build 
 
 ### Why this assignment?
 
-This will give you a chance to test your ability in a close to real world setting. You'll have ~1.75 hrs to solve some problems covered in class. 
+This is an opportunity to use all of the things covered in class to implement your own idea.  
 
 ## Project requirements
 
-You need to show your API library in class. It should be presentanted in three ways: 
-
-- What is it? This ia quick "lightning talk" on what you have made. 
-  - What does it do?
-  - Who would use this? 
-  - What problems does it solve? 
-- The repo and documentation
-  - How to use it 
-  - Getting started 
-- An example of the code in use
-  - A demo project or example of your code in the wild
+- You will write all of the code. 
 
 ### Deliverable
 
