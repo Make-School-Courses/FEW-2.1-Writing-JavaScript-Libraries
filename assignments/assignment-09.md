@@ -2,21 +2,20 @@
 
 ## Description 
 
-People are using APIs to do all sorts of amazing things. They often writing lots of boilerplate/utility code to make their applications work. 
-
-The goal of this assignment is to create to lib that will simplify, improve and, speed up the workflow of developers using an API. 
-
-You will choose an API to work with and make a lib that you will publish to npm. Your lib should define one or more helper functions or classes that make working with your chosen API easier to work with. 
+Your goal with this assignment is to write a JavaScript library. Think of a programming problem you can solve. Think of code that you might write often and how you can provide an alternative to writing this code. 
 
 ### Why this assignment?
 
-APIs are the backbone of the web. Developers have writing these kinds of libraries for years. You have probably used a few already. By doing this assignment you will expand your abilities in new areas as you look at the code that implements API transactions. 
+This is a great practice writing JavaScript code. 
 
 ## Project requirements
 
-You will write and publish a library that works with an API. Choose an API from the list or choose one of your own. 
+You will write a library of code that solves a problem. Here are a few suggestions: 
 
-**Keep in mind that you are not building a product. You are building a tool that facilitates the use of the API you choose. The tool should make development easier and faster.**
+- Write library that works with an API to make that API easier to use. See the ideas below. 
+- 
+
+Here is a list of APIs that you could build a library around: 
 
 - [Yoda Speak](https://rapidapi.com/ismaelc/api/yoda-speak)
 - [AccuWeather](https://rapidapi.com/stefan.skliarov/api/AccuWeather)

@@ -13,7 +13,7 @@ In this class, you will begin writing TypeScript code and learn how to adapt you
 
 <!-- > -->
 
-## Why Is This Important?
+## Why Is This Important? 🤔
 
 TypeScript is becoming more popular, and is extremely useful in large codebases. Knowing how to refactor, write, and publish TypeScript code will allow you to decide whether TypeScript is right for a project.
 
@@ -25,7 +25,7 @@ Writing TypeScript will also force you to think about the types you use in the c
 
 1. Define static & dynamic typing
 2. Explain the pros & cons of static vs. dynamic typing
-3. Implement functions, classes, & interfaces using TypeScript
+3. Implement functions, enums, & interfaces using TypeScript
 4. Convert existing JS code to TypeScript
 
 <!-- > -->
@@ -52,7 +52,9 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 
 **Q:** Can you use static typing in JS?
 
-**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS. So, you can't use static typing in JS but you can use static typing in TypeScript and compile TypeScript to JS. 
+**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS. So, you can't use static typing in JS.
+
+You can use static typing in TypeScript and compile TypeScript to JS. 
 
 <!-- > -->
 
@@ -63,6 +65,7 @@ In a dynamically typed language, a variable's type can change over the course of
 ```JavaScript
 let x = 10;  // x starts as a Number
 x = 'hello'; // x becomes a String
+x = y.toFixed(2) // x becomes a string! 
 ```
 
 Usually you won't do this on purpose, most often it will happen by accident. 
@@ -87,17 +90,21 @@ Examples of dynamically typed languages include Python, **JavaScript**, PHP, and
 
 ```JavaScript
 function getPriceWithTax(amount, rate) {
- const price = amount.toFixed(2)
- const tax = price * rate
- return price + tax
+  const price = amount.toFixed(2)
+  const tax = price * rate
+  return price + tax
 }
 ```
+
+<small>Ask yourself what type is assigned the variables at each line.</small>
 
 What could possibly go wrong?
 
 <!-- > -->
 
 ### Static typing improves readability
+
+<!-- > -->
 
 Consider this code:
 
@@ -110,8 +117,6 @@ function mystery(x) {
   }
 }
 ```
-
-<!-- > -->
 
 Now, consider the following questions:
 - What is x?
@@ -132,9 +137,7 @@ class Cat {
   display(): void {...}
 }
 
-function mystery(x: Cat) {
-  ...
-}
+function mystery(x: Cat) { ... }
 ```
 
 <!-- > -->
@@ -146,6 +149,8 @@ Since our types are set in stone at compile time, many code editors will use tha
 <!-- > -->
 
 ### Advantages of dynamic typing
+
+<!-- > -->
 
 There isn't just one right answer that works in all scenarios; you will need to decide which style is right for your project. Here are some pros of dynamic typing to consider:
 
@@ -160,15 +165,28 @@ There isn't just one right answer that works in all scenarios; you will need to 
 
 <!-- > -->
 
+Follow the example with these files:
+
+https://github.com/Make-School-Labs/few-2.1-typescript/
+
+Your source code will be the files named: .ts 
+
+Typescript files must be compiled into .js before they can be used. 
+
+- `npm install -g typescript`
+- `tsc example-1.js`
+
+<!-- > -->
+
 ### Variables
 
 The most basic types are `string`, `number`, and `boolean`, and we can use them in the same way as in regular JavaScript; we just can't reassign a variable to a different type.
 
 ```TypeScript
-let y = 88;
-let sum: number = 10;
-const title: string = 'hello';
-let done: boolean = false;
+let y = 88; // implicitly typed number
+let sum: number = 10; // explicitly typed number
+const title: string = 'hello'; // type string
+let done: boolean = false; // type boolean
 
 sum = undefined; // OK
 sum = null; // OK
@@ -178,12 +196,81 @@ Math.round(title) // Compile error
 
 <!-- > -->
 
+Try these ideas out in example-2.ts 
+
+https://github.com/Make-School-Labs/few-2.1-typescript/
+
+<!-- > -->
+
+### Functions, Parameters, and Return types
+
+<!-- > -->
+
+We can add types to the parameters and return values of functions:
+
+```TypeScript
+// Add types to each parameter, and a type for the return value
+function add(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+add(4, 6);
+add('2', 7); // Compile Error
+```
+
+<!-- > -->
+
+Try these ideas out in example-3.ts 
+
+https://github.com/Make-School-Labs/few-2.1-typescript/
+
+<!-- > -->
+
+We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
+
+```TypeScript
+function greet(greeting = 'Hello', person?: string) {
+  if (person) {
+    console.log(`${greeting}, ${person}!`);
+  } else {
+    console.log(`${greeting}!`);
+  }
+}
+
+greet(); // prints 'Hello!'
+greet('Hola'); // prints 'Hola!'
+greet(undefined, 'Jane'); // prints 'Hello, Jane!'
+```
+
+<!-- > -->
+
+Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
+
+```TypeScript
+let someValue: any = 10;
+someValue = [1, 2, 3];
+```
+
+<!-- > -->
+
+Try these ideas out in example-4.ts 
+
+https://github.com/Make-School-Labs/few-2.1-typescript/
+
+<!-- > -->
+
+### Arrays and Tuples
+
+<!-- > -->
+
 There are two ways to declare an array, which are completely equivalent (if you've used Java before, these should look familiar):
 
 ```TypeScript
 let list1: number[] = [1, 2, 3];
 let list1: Array<number> = [1, 2, 3];
 ```
+
+Note! Every memeber of an array must be the same type. 
 
 <!-- > -->
 
@@ -209,61 +296,6 @@ console.log(Fruit.Pear);   // 2
 
 <!-- > -->
 
-Finally, if you don't know what type a piece of data will be, e.g. if you're receiving it from an API, you can always use the `any` type:
-
-```TypeScript
-let someValue: any = 10;
-someValue = [1, 2, 3];
-```
-
-<!-- > -->
-
-### Functions & Function Variables
-
-<!-- > -->
-
-We can add types to the parameters and return values of functions:
-
-```TypeScript
-// Add types to each parameter, and a type for the return value
-function add(num1: number, num2: number): number {
-  return num1 + num2;
-}
-
-add(4, 6);
-add('2', 7); // Compile Error
-```
-
-<!-- > -->
-
-We can also use default and optional parameters. If you want to skip one, just pass in `undefined`:
-
-```TypeScript
-function greet(greeting = 'Hello', person?: string) {
-  if (person) {
-    console.log(`${greeting}, ${person}!`);
-  } else {
-    console.log(`${greeting}!`);
-  }
-}
-
-greet(); // prints 'Hello!'
-greet('Hola'); // prints 'Hola!'
-greet(undefined, 'Jane'); // prints 'Hello, Jane!'
-```
-
-## Try it out
-
-Take a look at this Repl. The code is written in JS. There are no types. 
-
-https://repl.it/join/shempbkq-mitchellhudson
-
-Take a look at the same code but with TypeScript. 
-
-https://repl.it/join/joizyrwv-mitchellhudson
-
-<!-- > -->
-
 ## Classes & Interfaces
 
 <!-- > -->
@@ -271,8 +303,14 @@ https://repl.it/join/joizyrwv-mitchellhudson
 In addition to primitive types, we can denote the shape of a JavaScript object using type annotations:
 
 ```TypeScript
-let person: { name: string, age: number } = { name: 'Jane', age: 22 };
+let user: { firstname: string, lastname: string, postcount: number } = { 
+  firstname: 'Jane', 
+  lastname: 'Smith',
+  postcount: 222
+};
 ```
+
+<!-- > -->
 
 We can also define the type ahead of time using an interface:
 
@@ -283,12 +321,16 @@ interface Person {
   greet(message: string): string;
 }
 
-let person: Person = {name: 'Jane', age: 22}
+let person: Person = {
+  name: 'Jane', 
+  age: 22, 
+  greet(message) { return this.name + message }
+}
 ```
 
 <!-- > -->
 
-## Activity: Getting started with Typescript
+## Challenges: Getting started with Typescript
 
 Take a look at this 5 min tutorial from the source. Take 5 mins and do the tutorial. 
 
@@ -297,12 +339,16 @@ https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
 <!-- > -->
 
 - What did you see in the tutorial? 
-- What was different about using typescript than using?
+- What was different about using typescript than using JS?
 - Did you see anything new? 
+
+<!-- > -->
 
 ## Fizz Buzz 
 
 Use the fizz buzz code, you wrote test for this earlier. Let's convert it to TypeScript. 
+
+<!-- > -->
 
 **Step 1**
 
@@ -310,9 +356,13 @@ Get the code here at the link below or use your copy of the code from the previo
 
 https://github.com/Make-School-Labs/fizz-buzz-test
 
+<!-- > -->
+
 **Step 2**
 
 All of the code here is in `fizzbuzz.js`. Change the name of this file to `fizzbuzz.ts`. The .ts file extension denotes a TypeScript file. 
+
+<!-- > -->
 
 **Step 3**
 
@@ -329,6 +379,8 @@ const FIZZ: string = 'fizz'
 Not you're not getting a code hint since TypeScript is inferring the type. 
 
 Do the other variables. 
+
+<!-- > -->
 
 **Step 4**
 
@@ -351,6 +403,8 @@ Do the other functions:
 - isFizzyBuzzy
 - fizzyBuzzy
 
+<!-- > -->
+
 **Step 5**
 
 The last function is more complicated. Here the input is just a number but the output is an object. You can see the "shape" of the object here:
@@ -361,9 +415,11 @@ To define this you should create an interface. An interface defines all of the p
 
 Read more about interfaces here: 
 
-https://www.typescriptlang.org/docs/handbook/interfaces.html
+https://www.typescriptlang.org/docs/handbook/2/objects.html
 
 After reading the docs above, write an interface for the fizzbuzz results. Use it to complete the types for this function. 
+
+<!-- > -->
 
 **Step 6**
 
@@ -382,21 +438,37 @@ This should compile your TypeScript code into standard js, or provide helpful er
 
 <!-- > -->
 
-## Activity: TypeScript Exercises
+## Discuss TypeScript
 
-Go to [make.sc/typescript-activities](https://make.sc/typescript-activities) and complete the 8 activities there to help solidify how to use TypeScript. You can write in the same repl.it you were using before to check your work
+What do you think of typescript so far? 
 
 <!-- > -->
 
-## Activity: Get Your Project Up and Running with TypeScript
+
+
+
+
+
+
+
+
+
+<!-- 
+## Activity: TypeScript Exercises
+
+Go to [make.sc/typescript-activities](https://make.sc/typescript-activities) and complete the 8 activities there to help solidify how to use TypeScript. You can write in the same repl.it you were using before to check your work -->
+
+<!-- > -->
+
+<!-- ## Activity: Get Your Project Up and Running with TypeScript
 
 Let's try out what we learned by modifying an existing project with TypeScript. Add TypeScript to your String library.
 
-Now, we just need to make a few small changes to get it working again!
+Now, we just need to make a few small changes to get it working again! -->
 
 <!-- > -->
 
-### Add Types
+<!-- ### Add Types
 
 Rename the files to use a TypeScript extension (e.g. `index.js` to `index.ts`), and modify the functions to use types.
 
@@ -416,36 +488,36 @@ declare global {
     stripExtraSpaces(): string;
   }
 }
-```
+``` -->
 
 <!-- > -->
 
-To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty!
+<!-- To check your work so far, try running `tsc src/index.ts` and take a look at the output file produced. It should look like regular JavaScript, including some changes like using `var` instead of `let`. Nifty! -->
 
 <!-- > -->
 
-### Modify rollup.config.js
+<!-- ### Modify rollup.config.js
 
 Install the following in order to use TypeScript and the TypeScript Rollup plugin:
 
 ```bash
 npm install --save-dev rollup typescript rollup-plugin-typescript2
-```
+``` -->
 
 <!-- > -->
 
-Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
+<!-- Go to `rollup.config.js`. Change the `input` files to `src/index.ts`. This now points to the 'new' typescript file.
 
 
 Import the TypeScript plugin at the top of the file:
 
 ```
 import typescript from 'rollup-plugin-typescript2';
-```
+``` -->
 
 <!-- > -->
 
-Then enter the following into your plugins for both output files:
+<!-- Then enter the following into your plugins for both output files:
 
 ```JavaScript
 input: {
@@ -461,11 +533,11 @@ output: {
 }
 ```
 
-Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc.
+Try it out! The `rollup --config` command should work and give us the JS output files. Now we just need to configure tsc. -->
 
 <!-- > -->
 
-### Add tsconfig.json
+<!-- ### Add tsconfig.json
 
 Add a new file `tsconfig.json` with the following content:
 
@@ -489,21 +561,21 @@ Add a new file `tsconfig.json` with the following content:
 }
 ```
 
-For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396).
+For a more thorough explanation of each of these lines, see [here](https://hackernoon.com/building-and-publishing-a-module-with-typescript-and-rollup-js-faa778c85396). -->
 
 <!-- > -->
 
-### Modify package.json
+<!-- ### Modify package.json
 
 Now we need to tell our library users where to find the TypeScript types. Go to `package.json` and add the following line after the main and module:
 
 ```JSON
 "types": "esm/index.d.ts",
-```
+``` -->
 
 <!-- > -->
 
-Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module.
+<!-- Now running `npm run prepare` should do everything you need to get your files ready. To verify, try going through the steps in Lesson 6 to test out your module. -->
 
 <!-- > -->
 

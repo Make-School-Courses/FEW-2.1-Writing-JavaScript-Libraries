@@ -290,7 +290,7 @@ Where generics come into play often is Arrays. Since an array must be typed we n
 Imagine you have a function that takes in an array, of any type, and it prints the type of each item in the array: 
 
 ```JS
-const numbers = [1,43,6,71,8]
+const numbers = [1, 43, 6, 71, 8]
 const names = ['Ann', 'Bob', 'Cen', 'Dan']
 const objs = [{name: 'Eun', age: 23}, { name: 'Fin', age: 32 }]
 

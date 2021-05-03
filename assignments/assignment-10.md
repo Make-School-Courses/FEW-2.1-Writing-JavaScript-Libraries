@@ -28,7 +28,7 @@ You in class prepared.
 
 ### Due date
 
-Class 14 - Tue, Dec 10
+Wed, May 12
 
 ## Assessing the assignment
 
