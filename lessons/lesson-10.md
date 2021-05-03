@@ -178,7 +178,7 @@ Your source code will be the files named: .ts
 Typescript files must be compiled into .js before they can be used. 
 
 - `npm install -g typescript`
-- `tsc example-1.js`
+- `tsc example-2.ts`
 
 <!-- > -->
 
