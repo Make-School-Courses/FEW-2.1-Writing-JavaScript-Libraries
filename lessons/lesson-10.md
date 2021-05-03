@@ -38,7 +38,7 @@ Writing TypeScript will also force you to think about the types you use in the c
 
 Data types describe the *shape* of the data that we're expecting.
 
-Examples: `string`, `number`, `boolean`
+Examples: `string`, `number`, `boolean`, `object`, `array`, `class`
 
 <!-- > -->
 
@@ -52,27 +52,31 @@ Examples of statically typed languages include Java, C, C++, and Swift.
 
 **Q:** Can you use static typing in JS?
 
-**A:** Nope. TypeScript is another language separate from JS and must be compiled into vanilla JS. So, you can't use static typing in JS.
+**A:** Nope. 
 
-You can use static typing in TypeScript and compile TypeScript to JS. 
+TypeScript is another language separate from JS and must be compiled into vanilla JS. **You can't use static typing in vanilla JS.**
+
+You compile your TypeScript into vanilla JavaScript. 
 
 <!-- > -->
 
-### Q: What is dynamic typing?
+### What is dynamic typing?
 
 In a dynamically typed language, a variable's type can change over the course of the program. Consider the following code:
 
 ```JavaScript
-let x = 10;  // x starts as a Number
-x = 'hello'; // x becomes a String
+let x = 10       // x starts as a Number
+x = 'hello'      // x becomes a String
 x = y.toFixed(2) // x becomes a string! 
 ```
 
-Usually you won't do this on purpose, most often it will happen by accident. 
+Usually you won't do this on purpose, **most often it will happen by accident.** 
 
 <!-- > -->
 
 In a dynamically typed language, we do not know *until runtime* what type of data a particular variable holds.
+
+<!-- > -->
 
 Examples of dynamically typed languages include Python, **JavaScript**, PHP, and Ruby.
 
@@ -98,15 +102,15 @@ function getPriceWithTax(amount, rate) {
 
 <small>Ask yourself what type is assigned the variables at each line.</small>
 
-What could possibly go wrong?
+What could possibly go wrong? 🤔
 
 <!-- > -->
 
-### Static typing improves readability
+### Static typing improves readability 🥸
 
 <!-- > -->
 
-Consider this code:
+Consider this code 🔎:
 
 ```JavaScript
 function mystery(x) {
@@ -125,7 +129,7 @@ Now, consider the following questions:
 
 <!-- > -->
 
-Now, let's take a look at this code with some types added.
+Now, let's take a look at this code with some types added. 😎
 
 ```TypeScript
 class Cat {
@@ -142,13 +146,13 @@ function mystery(x: Cat) { ... }
 
 <!-- > -->
 
-### Static typing can improve your workflow
+### Static typing can improve your workflow ⚒️
 
 Since our types are set in stone at compile time, many code editors will use that information to give you smart autocomplete suggestions based on that particular data type. If you use VSCode, you can use Intellisense to browse available methods from a class while writing code. You can also Cmd+Click on a method name to go directly to its definition.
 
 <!-- > -->
 
-### Advantages of dynamic typing
+### Advantages of dynamic typing 🧐
 
 <!-- > -->
 
@@ -161,7 +165,7 @@ There isn't just one right answer that works in all scenarios; you will need to 
 
 <!-- > -->
 
-## Features of TypeScript
+## Features of TypeScript 
 
 <!-- > -->
 
