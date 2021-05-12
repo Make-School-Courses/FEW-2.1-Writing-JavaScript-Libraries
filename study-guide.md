@@ -1,4 +1,4 @@
-# FEW 2.3 Study Guide 
+# FEW 2.1 Study Guide 
 
 ## Strings
 
