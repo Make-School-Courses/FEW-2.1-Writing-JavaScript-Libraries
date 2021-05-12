@@ -4,7 +4,7 @@ This assessment will give you a chance to show your skills by creating a library
 
 ## Description 
 
-Imagine the data in data.json contains information about 
+The mock up data in `data.json` contains information about 
 car purchases. Your job is to format and print the data. 
 
 You can print the data to the console with node or in the 
@@ -30,9 +30,9 @@ The data includes the follow fields:
 
 Solve the problems below. Feel free to use the libraries you have written in class!
 
-The stretch challenge is to use TypeScript to solve the problems. It's listed last below but I'm mentioning it here since if you want to try this challenge you may want to start with TypeScript from the beginning.  
+Write your code with Typescript and compile it to JavaScript. 
 
-The goal is to load the JSON data from data.json. Process the information and print it out. It should read roughly as: 
+The goal is to load the JSON data from `data.json`. Process the information and print it out. It should read roughly as: 
 
 > Neel Mclarty
 >
@@ -48,7 +48,7 @@ The goal is to load the JSON data from data.json. Process the information and pr
 
 ### Challenge 0 
 
-Import than the data from data.json. You'll use this data to solve the problems that follow. 
+Import than the data from `data.json`. You'll use this data to solve the problems that follow. 
 
 If you're going to run your code in node.js you should print the output to the console. 
 
@@ -56,8 +56,9 @@ If you're going to display the data in the browser you'll need to make an HTML a
 
 ### Challenge 1
 
-You should print the first_name and last_name. Convert the 
-first letter of each name to uppercase.
+You should print the first_name and last_name. 
+
+Convert the first letter of each name to uppercase.
 
 ### Challenge 2
 
@@ -66,12 +67,18 @@ Month date, Year for example:
 
 > Purchased: January 21, 2019
 
+`<full-month> <date>, <full-year>`
+
 ### Challenge 3
 
 Print out last payment showing the date as "when". 
 For example: Last payment: 
 
 > Last Payment: 3 months ago
+
+You can use your library to do this! 
+
+Should read something like: 4 months ago
 
 ### Challenge 4
 
@@ -91,11 +98,11 @@ Think of any edge cases that might effect your phone number formatter and includ
 
 ### Challenge 6
 
-Lint your code with ESLint. Use the Airbnb style guide.
+Lint your code with ESLint. Use the Airbnb style guide. 
 
-### Stretch Challenge 
+### Challenge 7 
 
-Use Typescript.
+Compile your code from TypeScript to JS. 
 
 ### Submit your work on GradeScope
 
